@@ -1,0 +1,26 @@
+{
+  "name": "taiova-server",
+  "version": "1.0.0",
+  "description": "The server application of the taiova app.",
+  "main": "index.js",
+  "scripts": {
+    "start" : "index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arilith/taiova.git"
+  },
+  "keywords": [
+    "ov"
+  ],
+  "author": "Tristan van Triest",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arilith/taiova/issues"
+  },
+  "homepage": "https://github.com/Arilith/taiova#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
