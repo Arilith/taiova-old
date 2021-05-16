@@ -4,7 +4,7 @@
   "description": "The server application of the taiova app.",
   "main": "index.js",
   "scripts": {
-    "start" : "index.js",
+    "start": "index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +21,12 @@
   },
   "homepage": "https://github.com/Arilith/taiova#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "fast-xml-parser": "^3.19.0",
+    "gzip-js": "^0.3.2",
+    "mongoose": "^5.12.9",
+    "socket.io": "^4.1.1",
+    "zeromq": "^5.2.8"
   }
 }
