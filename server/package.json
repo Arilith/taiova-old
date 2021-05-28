@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "index.js",
+    "devStart": "nodemon --ignore 'downloads/gtfs/extracted' index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,10 +23,15 @@
   "homepage": "https://github.com/Arilith/taiova#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "csvtojson": "^2.0.10",
     "express": "^4.17.1",
+    "extract-zip": "^2.0.1",
     "fast-xml-parser": "^3.19.0",
     "gzip-js": "^0.3.2",
+    "line-by-line": "^0.1.6",
+    "line-reader": "^0.4.0",
     "mongoose": "^5.12.9",
+    "path": "^0.12.7",
     "socket.io": "^4.1.1",
     "zeromq": "^5.2.8"
   }
