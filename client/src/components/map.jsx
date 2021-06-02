@@ -1,232 +1,133 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState, useEffect, useRef } from 'react'
 import mapboxgl from "mapbox-gl";
+import { MapOptions } from './MapOptions';
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiYXJpbGl0aCIsImEiOiJja29xODZiMHcwMjVjMnZvaHI5bGh3bjJ6In0.ZTVaklGwPP-wm9gNyfi6tA";
 
-export default function Map({ data }) {
-  const response = data;
-  const mapContainer = useRef(null);
-  let map = useRef(null);
-  const [lng, setLng] = useState(4.966336589911254);
-  const [lat, setLat] = useState(51.952161496430836);
+const Map = props => {
+
+  const [mapData, setMapData] = useState();
+  const [lng, setLng] = useState(4.8987713);
+  const [lat, setLat] = useState(52.3778931);
   const [zoom, setZoom] = useState(9);
 
-  const [mapDataFeatures, setMapDataFeatures] = useState({
-    ARR: [],
-    CXX: [],
-    EBS: [],
-    KEOLIS: [],
-    QBUZZ: [],
-    RET: [],
-    HTM: [],
-    DELIJN: [],
-    TEC: [],
-  });
+  const mapContainer = useRef(null);
+  let map = useRef(null);
 
   useEffect(() => {
-    if (map.current) return; // initialize map only once
+    InitializeMap();
+  });
+
+  const InitializeMap = () => {
+    if (map.current) return; 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/arilith/ckoqabais7zs618pl77d73zaw",
+      style: 'mapbox://styles/arilith/ckoqabais7zs618pl77d73zaw',
       center: [lng, lat],
       zoom: zoom,
+      maxBounds: [
+        [3.31497114423, 50.803721015],
+        [7.09205325687, 53.5104033474]
+      ]
     });
-
-    if (!map.current) return; // wait for map to initialize
-    map.current.on("move", () => {
+    
+    if (!map.current) return; 
+    map.current.on('move', () => {
       setLng(map.current.getCenter().lng.toFixed(4));
       setLat(map.current.getCenter().lat.toFixed(4));
       setZoom(map.current.getZoom().toFixed(2));
     });
-
-    map.current.on("load", function () {
-      Object.keys(mapDataFeatures).forEach((key) => {
-        map.current.loadImage(`images/${key}.png`, function (error, image) {
-          if (error) throw error;
-          map.current.addImage(`${key}-marker`, image);
-          map.current.addSource(`${key}points`, {
-            type: "geojson",
-            data: {
-              type: "FeatureCollection",
-              features: mapDataFeatures.ARR,
-            },
-          });
-          map.current.addLayer({
-            id: `${key}points`,
-            type: "symbol",
-            source: `${key}points`,
-            layout: {
-              "icon-image": `${key}-marker`,
-              "icon-rotation-alignment": "viewport",
-              "icon-size": [
-                "interpolate",
-                ["exponential", 1],
-                ["zoom"],
-                10,
-                1,
-                15,
-                0.75,
-                21,
-                0.5,
-              ],
-              "text-field": "{title}",
-              "text-allow-overlap": true,
-              "icon-allow-overlap": true,
-              "text-line-height": 0.9,
-              "text-padding": [
-                "interpolate",
-                ["exponential", 9],
-                ["zoom"],
-                1,
-                2,
-                3,
-                4,
-              ],
-              "text-offset": [0, 0.4],
-              "icon-offset": [0, -40.6],
-              "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-              "text-size": [
-                "interpolate",
-                ["exponential", 8],
-                ["zoom"],
-                10,
-                10,
-                21,
-                14,
-              ],
-              "text-max-width": Infinity,
-              "icon-ignore-placement": true,
-              "text-rotation-alignment": "viewport",
-            },
-            paint: {
-              "text-color": "#FFF",
-              "text-halo-color": "#00318f",
-              "text-halo-width": 0,
-              "icon-opacity": [
-                "case",
-                ["boolean", ["feature-state", "hover"], false],
-                0.5,
-                1,
-              ],
-              "text-opacity": [
-                "case",
-                ["boolean", ["feature-state", "hover"], false],
-                0.5,
-                0,
-              ],
-            },
-          });
-        });
-      });
-
-      // Insert the layer beneath any symbol layer.
-      var layers = map.current.getStyle().layers;
-      var labelLayerId;
-      for (var i = 0; i < layers.length; i++) {
-        if (layers[i].type === "symbol" && layers[i].layout["text-field"]) {
-          labelLayerId = layers[i].id;
-          break;
-        }
-      }
-
-      // The 'building' layer in the Mapbox Streets
-      // vector tileset contains building height data
-      // from OpenStreetMap.
-      map.current.addLayer(
-        {
-          id: "add-3d-buildings",
-          source: "composite",
-          "source-layer": "building",
-          filter: ["==", "extrude", "true"],
-          type: "fill-extrusion",
-          minzoom: 15,
-          paint: {
-            "fill-extrusion-color": "#aaa",
-
-            // Use an 'interpolate' expression to
-            // add a smooth transition effect to
-            // the buildings as the user zooms in.
-            "fill-extrusion-height": [
-              "interpolate",
-              ["linear"],
-              ["zoom"],
-              15,
-              0,
-              15.05,
-              ["get", "height"],
-            ],
-            "fill-extrusion-base": [
-              "interpolate",
-              ["linear"],
-              ["zoom"],
-              15,
-              0,
-              15.05,
-              ["get", "min_height"],
-            ],
-            "fill-extrusion-opacity": 0.6,
-          },
-        },
-
-        labelLayerId
-      );
-    });
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }
 
   useEffect(() => {
-    const convertDataToCoordinates = () => {
-      const returnData = {
-        ARR: [],
-        CXX: [],
-        EBS: [],
-        KEOLIS: [],
-        QBUZZ: [],
-        RET: [],
-        HTM: [],
-        DELIJN: [],
-        TEC: [],
-      };
-      response &&
-        response.forEach((vehicleData) => {
-          if (vehicleData.type === "END") return;
-          if (vehicleData.vehicleData.position === "0, 0") return;
-          const positionXY = vehicleData.vehicleData.position.split(", ");
-          const coordinates = [positionXY[0], positionXY[1]];
-          const company = vehicleData.vehicleData.company;
-          returnData[company].push({
-            type: "Feature",
-            geometry: {
+    setMapData(props.data);
+
+    if(!mapData) return;
+    if(!map.current) InitializeMap();
+
+    const convertedData = props.data.reduce((acc, cur) => {
+      if(!acc[cur.company]) acc[cur.company] = []
+  
+      acc[cur.company].push({
+          type: "Feature",
+          geometry: {
               type: "Point",
-              coordinates: coordinates,
-            },
-            properties: {
-              title: vehicleData.vehicleId,
-            },
+              coordinates: cur.position,
+          },
+          properties: {
+              title: cur.vehicleNumber,
+              description: `<b>This is a bus from ${cur.company} with vehicle number ${cur.vehicleNumber}</b>`
+          }
+      })
+  
+      return acc
+    }, {})
+
+    for(let [company, values] of Object.entries(convertedData)) {
+      if(!map.current.getSource(`busses_${company}`)) {
+        map.current.loadImage(`images/${company}.png`, function (error, image) {
+          map.current.addImage(`${company}-marker`, image);
+          map.current.addSource(`busses_${company}`, {
+            type: 'geojson',
+            data: {
+              "type": "FeatureCollection",
+              "features": values
+            }
+        });
+        map.current.addLayer({
+          id: `busses_${company}`,
+          type: "symbol",
+          source: `busses_${company}`,
+          ...MapOptions(company)
           });
         });
-
-      return returnData;
-    };
-
-    setMapDataFeatures(convertDataToCoordinates());
-
-    Object.keys(mapDataFeatures).forEach((key) => {
-      if (map.current.getSource(`${key}points`)) {
-        map.current.getSource(`${key}points`).setData({
+        map.current.on('click', `busses_${company}`, function (e) {
+          var coordinates = e.features[0].geometry.coordinates.slice();
+          var description = e.features[0].properties.description;
+           
+          // Ensure that if the map is zoomed out such that multiple
+          // copies of the feature are visible, the popup appears
+          // over the copy being pointed to.
+          while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+          }
+           
+          new mapboxgl.Popup()
+            .setLngLat(coordinates.map((cord, index) => cord += index === 0 ? 0 : 0.01))
+            .setHTML(description)
+            .addTo(map.current);
+        });
+           
+        // Change the cursor to a pointer when the mouse is over the places layer.
+        map.current.on('mouseenter', `busses_${company}`, function () {
+          map.current.getCanvas().style.cursor = 'pointer';
+        });
+          
+        // Change it back to a pointer when it leaves.
+        map.current.on('mouseleave', `busses_${company}`, function () {
+          map.current.getCanvas().style.cursor = '';
+        });
+      } else {
+        map.current.getSource(`busses_${company}`).setData({
           type: "FeatureCollection",
-          features: mapDataFeatures[key],
+          features: values
         });
       }
-    });
-  }, [response]);
+    }
+
+    
+
+    console.log(props.data)
+
+  }, [props.data])
 
   return (
     <>
-      {/* <div className="sidebar">
-        Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
-      </div> */}
       <div ref={mapContainer} className="map-container" />
     </>
-  );
+  )
 }
+
+export default Map
+

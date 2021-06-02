@@ -21,7 +21,9 @@ export class Converter {
 
     Object.entries(kv6posinfo).forEach(([key, value]) => {
       for(let j =0; j < kv6posinfo[key].length; j++) {
-        const vehiclePosData : VehiclePosData =kv6posinfo[key][j];
+        const vehiclePosData : VehiclePosData = kv6posinfo[key][j];
+        if(!parseInt(vehiclePosData['rd-x'] + "") || !parseInt(vehiclePosData['rd-y'] + "")) continue;
+        
         array.push(
           {
             company: vehiclePosData.dataownercode,
@@ -77,7 +79,7 @@ export class Converter {
     const Latitude = 52.15517 + (SomN / 3600);
     const Longitude = 5.387206 + (SomE / 3600);
     
-    return [Latitude, Longitude]
+    return [Longitude, Latitude]
   }
 
 }

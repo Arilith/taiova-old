@@ -98,7 +98,8 @@ export class Database {
     await this.vehicleModel.findOneAndUpdate(vehicleToUpdate, updatedVehicleData);
   }
 
-  public async AddVehicle (vehicle : VehicleData) : Promise<void> {
+  public async AddVehicle (vehicle : VehicleData, onlyAddWhileOnRoute : boolean) : Promise<void> {
+    if(onlyAddWhileOnRoute && vehicle.status !== vehicleState.ONROUTE) return;
     new this.vehicleModel({
       ...vehicle
     }).save(error => {

@@ -14,7 +14,7 @@ import * as https from 'https';
 import * as fs from 'fs';
 
 const express = require("express");
-
+const cors = require("cors");
 /* --------------------
     CUSTOM IMPORTS
 ----------------------*/
@@ -22,6 +22,7 @@ const express = require("express");
 import { Database } from './database';
 import { Websocket } from './socket';
 import { OVData } from './realtime';
+import { WebServer } from './webserver';
 
 /* --------------------
       SSL CONFIG
@@ -48,18 +49,22 @@ const AppInit = async () => {
     },
     app
   );
+  
+
+  //THIS IS NOT SAFE
+
+  const corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200
+  }
+
+  app.use(cors(corsOptions))
+  app.options('*', cors())
+
 
   new Websocket(server);
 
-  app.get("/", (req, res) => res.send("This is the API endpoint for the TAIOVA application."));
-
-  app.get("/busses", async (req, res) => res.send(
-    await db.GetAllVehicles()
-  ))
-
-  app.get("/busses/:company/:number/", (req, res) => {
-    res.send(JSON.stringify(req.params));
-  });
+  new WebServer(app, db);
 
   server.listen(port, () => console.log(`Listening at http://localhost:${port}`));
 

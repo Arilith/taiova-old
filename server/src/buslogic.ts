@@ -1,5 +1,5 @@
 import { Database } from "./database";
-import { VehicleData } from "./types/VehicleData";
+import { VehicleData, vehicleState } from "./types/VehicleData";
 
 export class BusLogic {
 
@@ -18,10 +18,14 @@ export class BusLogic {
     
     busses.forEach(async (bus, index) => {
       const foundVehicle = await this.database.GetVehicle(bus.vehicleNumber, bus.company)
-      if(foundVehicle[0] != undefined)
-        await this.database.UpdateVehicle(foundVehicle, bus);
-      else
-      await this.database.AddVehicle(bus)
+      if(Object.keys(foundVehicle).length !== 0) {
+        console.log(`Updating vehicle ${bus.vehicleNumber} from ${bus.company}`)
+        await this.database.UpdateVehicle(foundVehicle, bus, true);
+      } else {
+        console.log(`creating new vehicle ${bus.vehicleNumber} from ${bus.company}`)
+        if(bus.status === vehicleState.ONROUTE) await this.database.AddVehicle(bus, true)
+      }
+              
     })
 
   }
