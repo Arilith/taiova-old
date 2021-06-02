@@ -9,15 +9,17 @@ export interface VehicleApiData {
       DEPARTURE : Array<VehiclePosData>,
       ONSTOP : Array<VehiclePosData>,
       ARRIVAL : Array<VehiclePosData>,
-      END : Array<VehiclePosData>
+      END : Array<VehiclePosData>,
+      INIT : Array<VehiclePosData>,
+      DELAY : Array<VehiclePosData>
     }
   }
 }
 
 
-interface VehiclePosData {
+export interface VehiclePosData {
   dataownercode: string,
-  lineplanningnumber: number,
+  lineplanningnumber: string,
   operatingday: string,
   journeynumber: number,
   reinforcementnumber: number,
@@ -25,7 +27,7 @@ interface VehiclePosData {
   passagesequencenumber: number,
   timestamp: string,
   source: string,
-  vehicleNumber: number,
+  vehiclenumber: number,
   punctuality: number,
   "rd-x": number,
   "rd-y": number

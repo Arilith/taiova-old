@@ -1,6 +1,8 @@
 import { VehicleData } from "./types/VehicleData";
 import { gunzip } from 'zlib';
 import { Converter } from './converter';
+import { BusLogic } from "./buslogic";
+
 import * as xml from 'fast-xml-parser';
 
 const zmq = require('zeromq');
@@ -8,31 +10,25 @@ const zmq = require('zeromq');
 export class OVData {
   
   private sock;
+  private busLogic : BusLogic;
 
-  constructor() {
+  constructor(database) {
     this.Init();
-  }
-
-  private static instance : OVData;
-  
-  public static getInstance(): OVData {
-    if(!OVData.instance)
-    OVData.instance = new OVData();
-
-    return OVData.instance;
+    this.busLogic = new BusLogic(database);
   }
 
   public Init() {
+
     const converter = new Converter();
 
     this.sock = zmq.socket("sub");
 
     this.sock.connect("tcp://pubsub.ndovloket.nl:7658");
     this.sock.subscribe("/ARR/KV6posinfo");
+    this.sock.subscribe("/CXX/KV6posinfo");
+    this.sock.subscribe("/EBS/KV6posinfo");
 
     this.sock.on("message", (opCode, ...content) => {
-      console.log(opCode.toString());
-
       const contents = Buffer.concat(content);
 
       gunzip(contents, (error, buffer) => {
@@ -41,16 +37,13 @@ export class OVData {
         const encodedXML = buffer.toString();
         const decoded = xml.parse(encodedXML);
 
-        console.log(converter.convertKV6ToJson(decoded));
+        const vehicleData = converter.decode(decoded);
+        
+        this.busLogic.UpdateBusses(vehicleData);
 
       })
 
     })
-  }
-
-  public convertToVehicleData (json : JSON) : VehicleData {
-
-    return null;
   }
 
 }

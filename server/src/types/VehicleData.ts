@@ -1,7 +1,11 @@
 export enum vehicleState {
   ONROUTE = 'ONROUTE',
   ENDED = 'ENDED',
-  DEPARTURE = 'DEPARTURE'
+  DEPARTURE = 'DEPARTURE',
+  INIT = 'INIT',
+  DELAY = 'DELAY',
+  ONSTOP = 'ONSTOP',
+  ARRIVAL = 'ARRIVAL'
 }
 
 export interface VehicleData {

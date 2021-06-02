@@ -32,8 +32,9 @@ const ca = fs.readFileSync("./certificate/key-ca.crt").toString();
 
 
 const AppInit = async () => {
-  const db = await Database.getInstance().Init();
-  const ov = OVData.getInstance();
+  const db = await Database.getInstance().Init().then();
+  
+  const ov = new OVData(db);
   
   const app = (module.exports = express());
 

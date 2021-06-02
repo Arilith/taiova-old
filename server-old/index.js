@@ -1,78 +1,78 @@
-/* --------------------
-        IMPORTS
-----------------------*/
-const { Database } = require('./database');
+// /* --------------------
+//         IMPORTS
+// ----------------------*/
+// const { Database } = require('./database');
 
-const express = require("express");
-const http = require("http");
-const zmq = require("zeromq");
-const zlib = require("zlib");
-const xml = require("fast-xml-parser");
-const fs = require("fs");
-let app = (module.exports = express());
-let https = require("https");
+// const express = require("express");
+// const http = require("http");
+// const zmq = require("zeromq");
+// const zlib = require("zlib");
+// const xml = require("fast-xml-parser");
+// const fs = require("fs");
+// let app = (module.exports = express());
+// let https = require("https");
 
-/* --------------------
-        CUSTOM
-----------------------*/
-const convert = require("./convertToLatLong");
-const BusInformation = require("./api/GTFSConvert");
-const trips = require("./api/Trips");
+// /* --------------------
+//         CUSTOM
+// ----------------------*/
+// const convert = require("./convertToLatLong");
+// const BusInformation = require("./api/GTFSConvert");
+// const trips = require("./api/Trips");
 
-/* --------------------
-        CONSTANTS
-----------------------*/
-const port = process.env.port || 3001;
-const sock = zmq.socket("sub");
-const router = express.Router();
+// /* --------------------
+//         CONSTANTS
+// ----------------------*/
+// const port = process.env.port || 3001;
+// const sock = zmq.socket("sub");
+// const router = express.Router();
 
 
-/* --------------------
-      SSL CONFIG
-----------------------*/
-const privateKey = fs.readFileSync("key.key").toString();
-const certificate = fs.readFileSync("cert.crt").toString();
-const ca = fs.readFileSync("key-ca.crt").toString();
+// /* --------------------
+//       SSL CONFIG
+// ----------------------*/
+// const privateKey = fs.readFileSync("key.key").toString();
+// const certificate = fs.readFileSync("cert.crt").toString();
+// const ca = fs.readFileSync("key-ca.crt").toString();
 
-/* --------------------
-    APP CONFIG
-----------------------*/
-const server = https.createServer(
-  {
-    key: privateKey,
-    cert: certificate,
-    ca: ca,
-    requestCert: true,
-    rejectUnauthorized: false,
-  },
-  app
-);
+// /* --------------------
+//     APP CONFIG
+// ----------------------*/
+// const server = https.createServer(
+//   {
+//     key: privateKey,
+//     cert: certificate,
+//     ca: ca,
+//     requestCert: true,
+//     rejectUnauthorized: false,
+//   },
+//   app
+// );
 
-const io = require("socket.io")(server, {
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST"],
-  },
-});
+// const io = require("socket.io")(server, {
+//   cors: {
+//     origin: "*",
+//     methods: ["GET", "POST"],
+//   },
+// });
 
-server.listen(port);
+// server.listen(port);
 
-const refreshRateInMilliseconds = 5000;
+// const refreshRateInMilliseconds = 5000;
 
-/* -----------------------
-        Application
--------------------------*/
-const db = new Database("mongodb://localhost:27017", "taiova");
+// /* -----------------------
+//         Application
+// -------------------------*/
+// const db = new Database("mongodb://localhost:27017", "taiova");
 
-;(async() => {
-  await db.InitializeDatabase();
-  console.log(await db.GetAllVehicles({type: { $ne: "END" }}))
+// ;(async() => {
+//   await db.InitializeDatabase();
+//   console.log(await db.GetAllVehicles({type: { $ne: "END" }}))
   
   
 
-})();
+// })();
 
-console.log("This runs before.")
+// console.log("This runs before.")
 
 
 
@@ -157,9 +157,9 @@ console.log("This runs before.")
 //   // sock.subscribe("/OPENOV/KV6posinfo"); // ALL POSITIONS -1 -1
 
 //   sock.on("message", message => {
-    const message = Array.prototype.slice.call(arguments);
-    address = message[0].toString();
-    var contents = Buffer.concat(message.slice(1));
+//     const message = Array.prototype.slice.call(arguments);
+//     address = message[0].toString();
+//     var contents = Buffer.concat(message.slice(1));
 
 //     zlib.gunzip(contents, (err, buffer) => {
 //       if (err) {
