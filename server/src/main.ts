@@ -23,6 +23,7 @@ import { Database } from './database';
 import { Websocket } from './socket';
 import { OVData } from './realtime';
 import { WebServer } from './webserver';
+import { BusLogic } from './buslogic';
 
 /* --------------------
       SSL CONFIG
@@ -30,7 +31,6 @@ import { WebServer } from './webserver';
 const privateKey = fs.readFileSync("./certificate/key.key").toString();
 const certificate = fs.readFileSync("./certificate/cert.crt").toString();
 const ca = fs.readFileSync("./certificate/key-ca.crt").toString();
-
 
 const AppInit = async () => {
   const db = await Database.getInstance().Init().then();
@@ -63,8 +63,8 @@ const AppInit = async () => {
 
 
   new Websocket(server);
-
   new WebServer(app, db);
+  new BusLogic(db, true);
 
   server.listen(port, () => console.log(`Listening at http://localhost:${port}`));
 

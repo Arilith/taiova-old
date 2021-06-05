@@ -113,4 +113,13 @@ export class Database {
     this.vehicleModel.findOneAndDelete(vehicle)
   }
 
+  public async RemoveVehiclesWhere( params : object, doLogging : boolean = false) : Promise<Array<VehicleData>> {
+    const removedVehicles : Array<VehicleData> = await this.GetAllVehicles(params);
+    this.vehicleModel.deleteMany(params).then(response => {
+      if(doLogging) console.log(`Deleted ${response.deletedCount} vehicles.`);
+      
+    });
+    return removedVehicles;
+  }
+
 }

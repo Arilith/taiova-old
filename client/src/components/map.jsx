@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import mapboxgl from "mapbox-gl";
 import { MapOptions } from './MapOptions';
-
+import BusInformationPanel from './BusInformationPanel';
+import '../css/map.css';
 mapboxgl.accessToken =
   "pk.eyJ1IjoiYXJpbGl0aCIsImEiOiJja29xODZiMHcwMjVjMnZvaHI5bGh3bjJ6In0.ZTVaklGwPP-wm9gNyfi6tA";
 
@@ -11,6 +12,8 @@ const Map = props => {
   const [lng, setLng] = useState(4.8987713);
   const [lat, setLat] = useState(52.3778931);
   const [zoom, setZoom] = useState(9);
+
+  const [busData, setBusData] = useState({});
 
   const mapContainer = useRef(null);
   let map = useRef(null);
@@ -26,10 +29,10 @@ const Map = props => {
       style: 'mapbox://styles/arilith/ckoqabais7zs618pl77d73zaw',
       center: [lng, lat],
       zoom: zoom,
-      maxBounds: [
-        [3.31497114423, 50.803721015],
-        [7.09205325687, 53.5104033474]
-      ]
+      // maxBounds: [
+      //   [3.31497114423, 50.803721015],
+      //   [7.09205325687, 53.5104033474]
+      // ]
     });
     
     if (!map.current) return; 
@@ -56,8 +59,17 @@ const Map = props => {
               coordinates: cur.position,
           },
           properties: {
-              title: cur.vehicleNumber,
-              description: `<b>This is a bus from ${cur.company} with vehicle number ${cur.vehicleNumber}</b>`
+            company: cur.company,
+            planningNumber: cur.planningNumber,
+            journeyNumber: cur.journeyNumber,
+            timestamp: cur.timestamp,
+            vehicleNumber: cur.vehicleNumber,
+            position: cur.position,
+            status: cur.status,
+            createdAt: cur.createdAt,
+            updatedAt: cur.updatedAt,
+            title: cur.vehicleNumber,
+            description: `<b>This is a bus from ${cur.company} with vehicle number ${cur.vehicleNumber}</b>`
           }
       })
   
@@ -83,20 +95,14 @@ const Map = props => {
           });
         });
         map.current.on('click', `busses_${company}`, function (e) {
-          var coordinates = e.features[0].geometry.coordinates.slice();
-          var description = e.features[0].properties.description;
-           
-          // Ensure that if the map is zoomed out such that multiple
-          // copies of the feature are visible, the popup appears
-          // over the copy being pointed to.
-          while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-          }
-           
-          new mapboxgl.Popup()
-            .setLngLat(coordinates.map((cord, index) => cord += index === 0 ? 0 : 0.01))
-            .setHTML(description)
-            .addTo(map.current);
+          toggleInformation(e.features[0]?.properties);
+          // var coordinates = e.features[0].geometry.coordinates.slice();
+          // var description = e.features[0].properties.description;
+          // console.log(e.features[0]);
+          // new mapboxgl.Popup()
+          //   .setLngLat(coordinates.map((cord, index) => cord += index === 0 ? 0 : 0.01))
+          //   .setHTML(description)
+          //   .addTo(map.current);
         });
            
         // Change the cursor to a pointer when the mouse is over the places layer.
@@ -115,16 +121,16 @@ const Map = props => {
         });
       }
     }
-
-    
-
-    console.log(props.data)
-
   }, [props.data])
+
+  const toggleInformation = (busData) => {
+    setBusData(busData);
+  }
 
   return (
     <>
       <div ref={mapContainer} className="map-container" />
+      <BusInformationPanel data={busData}/>
     </>
   )
 }

@@ -6,7 +6,7 @@ import { BusLogic } from "./buslogic";
 import * as xml from 'fast-xml-parser';
 
 const zmq = require('zeromq');
-
+const doLogging = process.env.APP_DO_LOGGING == "true" ? true : false;
 export class OVData {
   
   private sock;
@@ -14,7 +14,7 @@ export class OVData {
 
   constructor(database) {
     this.Init();
-    this.busLogic = new BusLogic(database);
+    this.busLogic = new BusLogic(database, false);
   }
 
   public Init() {
@@ -27,6 +27,9 @@ export class OVData {
     this.sock.subscribe("/ARR/KV6posinfo");
     this.sock.subscribe("/CXX/KV6posinfo");
     this.sock.subscribe("/EBS/KV6posinfo");
+    this.sock.subscribe("/QBUZZ/KV6posinfo");
+    this.sock.subscribe("/RIG/KV6posinfo");
+    this.sock.subscribe("/KEOLIS/KV6posinfo");
 
     this.sock.on("message", (opCode, ...content) => {
       const contents = Buffer.concat(content);

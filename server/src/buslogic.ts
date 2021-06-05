@@ -5,13 +5,18 @@ export class BusLogic {
 
   private database : Database;
 
-  constructor(database) {
+  constructor(database, doInit : boolean = false) {
     this.database = database;
-    this.Initialize();
+
+    if(doInit) this.Initialize();
   }
 
   async Initialize() {
-    
+    await this.ClearBusses();
+
+    setInterval(async () => {
+      await this.ClearBusses();
+    }, parseInt(process.env.APP_CLEANUP_DELAY))
   }
 
   UpdateBusses(busses : Array<VehicleData>) : void {
@@ -19,14 +24,21 @@ export class BusLogic {
     busses.forEach(async (bus, index) => {
       const foundVehicle = await this.database.GetVehicle(bus.vehicleNumber, bus.company)
       if(Object.keys(foundVehicle).length !== 0) {
-        console.log(`Updating vehicle ${bus.vehicleNumber} from ${bus.company}`)
+        if(process.env.APP_DO_UPDATE_LOGGING == "true") console.log(`Updating vehicle ${bus.vehicleNumber} from ${bus.company}`)
         await this.database.UpdateVehicle(foundVehicle, bus, true);
       } else {
-        console.log(`creating new vehicle ${bus.vehicleNumber} from ${bus.company}`)
+        if(process.env.APP_DO_CREATE_LOGGING == "true") console.log(`creating new vehicle ${bus.vehicleNumber} from ${bus.company}`)
         if(bus.status === vehicleState.ONROUTE) await this.database.AddVehicle(bus, true)
       }
               
     })
+  }
+
+  async ClearBusses() : Promise<void> {
+    if(process.env.APP_DO_CLEANUP_LOGGING == "true") console.log("Clearing busses")
+    const currentTime = Date.now();
+    const fifteenMinutesAgo = currentTime - (60 * parseInt(process.env.APP_CLEANUP_VEHICLE_AGE_REQUIREMENT) * 1000);
+    const RemovedVehicles = await this.database.RemoveVehiclesWhere({ updatedAt: { $lt: fifteenMinutesAgo } }, true);
 
   }
 }
