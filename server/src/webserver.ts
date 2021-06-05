@@ -18,8 +18,12 @@ export class WebServer {
       await this.database.GetAllVehicles()
     ))
 
-    this.app.get("/busses/:company/:number/", (req, res) => {
-      res.send(JSON.stringify(req.params));
-    });
+    this.app.get("/busses/:company/:number", async (req, res) => {
+      
+      const result = await this.database.GetVehicle(req.params.number, req.params.company, true);
+      if(Object.keys(result).length > 0) res.send(result["_doc"]);
+      else res.send({})
+     })
+    
   }
 }

@@ -66,6 +66,7 @@ const AppInit = async () => {
   new WebServer(app, db);
   new BusLogic(db, true);
 
+
   server.listen(port, () => console.log(`Listening at http://localhost:${port}`));
 
 }

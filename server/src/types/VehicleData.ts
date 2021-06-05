@@ -17,5 +17,7 @@ export interface VehicleData {
   position: [number, number],
   status: vehicleState,
   createdAt: number,
-  updatedAt: number
+  updatedAt: number,
+  punctuality: Array<number>,
+  updatedTimes: Array<number>
 }

@@ -32,9 +32,11 @@ export class Converter {
             timestamp: Date.parse(vehiclePosData.timestamp),
             vehicleNumber: vehiclePosData.vehiclenumber,
             position: this.rdToLatLong(vehiclePosData['rd-x'], vehiclePosData['rd-y']),
+            punctuality: [vehiclePosData.punctuality],
             status: vehicleState[key],
             createdAt: Date.now(),
-            updatedAt: Date.now()
+            updatedAt: Date.now(),
+            updatedTimes: [Date.now()]
           }
         )
       }

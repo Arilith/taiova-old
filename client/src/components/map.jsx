@@ -13,7 +13,7 @@ const Map = props => {
   const [lat, setLat] = useState(52.3778931);
   const [zoom, setZoom] = useState(9);
 
-  const [busData, setBusData] = useState({});
+  const [busData, setBusData] = useState();
 
   const mapContainer = useRef(null);
   let map = useRef(null);
@@ -75,7 +75,7 @@ const Map = props => {
   
       return acc
     }, {})
-
+    
     for(let [company, values] of Object.entries(convertedData)) {
       if(!map.current.getSource(`busses_${company}`)) {
         map.current.loadImage(`images/${company}.png`, function (error, image) {
@@ -120,17 +120,19 @@ const Map = props => {
           features: values
         });
       }
-    }
-  }, [props.data])
+    }  
+  }, [props.data]) // eslint-disable-line
 
   const toggleInformation = (busData) => {
     setBusData(busData);
   }
 
+
+
   return (
     <>
+      {busData && <BusInformationPanel data={busData} />}
       <div ref={mapContainer} className="map-container" />
-      <BusInformationPanel data={busData}/>
     </>
   )
 }

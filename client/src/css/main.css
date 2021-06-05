@@ -1,0 +1,11 @@
+
+.mr-1, .mr-outside {
+  -moz-transition: margin-right 0.4s ease-in-out;
+  -o-transition: margin-right 0.4s ease-in-out;
+  -webkit-transition: margin-right 0.4s ease-in-out;
+  transition: margin-right 0.4s ease-in-out;
+}
+
+.mr-outside {
+  margin-right: -50rem;
+}

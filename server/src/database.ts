@@ -57,8 +57,10 @@ export class Database {
               vehicleNumber: Number,
               position: [Number, Number],
               status: String,
+              punctuality: Array,
               createdAt: Number,
-              updatedAt: Number
+              updatedAt: Number,
+              updatedTimes: Array
           });
           
           this.vehicleModel = this.mongoose.model("VehiclePositions", this.vehicleSchema);
@@ -69,7 +71,7 @@ export class Database {
   }
 
   public async GetAllVehicles (args = {}) : Promise<Array<VehicleData>> {
-    return await this.vehicleModel.find(args);
+    return await this.vehicleModel.find({...args}, { punctuality: 0, updatedTimes: 0, __v : 0 });
   }
 
   public async GetVehicle (vehicleNumber, transporter, firstOnly : boolean = false) : Promise<VehicleData> {
@@ -90,9 +92,15 @@ export class Database {
 
     vehicleToUpdate = vehicleToUpdate["_doc"];
     
+    //Merge the punctualities of the old vehicleData with the new one.
+    updatedVehicleData.punctuality = vehicleToUpdate.punctuality.concat(updatedVehicleData.punctuality);
+
+    //Merge the updated times of the old vehicleData with the new one.
+    updatedVehicleData.updatedTimes = vehicleToUpdate.updatedTimes.concat(updatedVehicleData.updatedTimes);
+
     if(positionChecks && updatedVehicleData.status !== vehicleState.ONROUTE)
       updatedVehicleData.position = vehicleToUpdate.position;
-    
+
     updatedVehicleData.updatedAt = Date.now();  
 
     await this.vehicleModel.findOneAndUpdate(vehicleToUpdate, updatedVehicleData);
@@ -101,7 +109,8 @@ export class Database {
   public async AddVehicle (vehicle : VehicleData, onlyAddWhileOnRoute : boolean) : Promise<void> {
     if(onlyAddWhileOnRoute && vehicle.status !== vehicleState.ONROUTE) return;
     new this.vehicleModel({
-      ...vehicle
+      ...vehicle,
+      punctuality : vehicle.punctuality
     }).save(error => {
       if(error) console.error(`Something went wrong while trying to add vehicle: ${vehicle.vehicleNumber}. Error: ${error}`)
     })

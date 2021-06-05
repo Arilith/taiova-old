@@ -9,10 +9,7 @@ export default function App() {
 
   
   useEffect(() => {
-    const dataURL = window.location.href.includes("localhost")
-      ? "https://localhost:3001"
-      : "https://taiova.trvtserver.nl:3001";
-    const DataFetcher = new MapDataFetcher(dataURL);
+    const DataFetcher = new MapDataFetcher();
     async function fetchAPI() {
       let response = await DataFetcher.FetchAllVehicles();
       setResponse(response);
@@ -37,7 +34,7 @@ export default function App() {
 
 
   return (
-    <div>
+    <div className="h-screen flex">
       { <Map data={response !== undefined && response} /> }
     </div>
   );
