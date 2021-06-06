@@ -1,5 +1,7 @@
 import { Database } from "./database";
 import { VehicleData, vehicleState } from "./types/VehicleData";
+import { resolve } from 'path';
+import * as fs from 'fs';
 
 export class BusLogic {
 
@@ -11,7 +13,7 @@ export class BusLogic {
     if(doInit) this.Initialize();
   }
 
-  async Initialize() {
+  private async Initialize() {
     await this.ClearBusses();
 
     setInterval(async () => {
@@ -19,7 +21,11 @@ export class BusLogic {
     }, parseInt(process.env.APP_CLEANUP_DELAY))
   }
 
-  async UpdateBusses(busses : Array<VehicleData>) : Promise<void> {
+  /**
+   * Updates or creates a new bus depending on if it already exists or not.
+   * @param busses The list of busses to update.
+   */
+   public async UpdateBusses(busses : Array<VehicleData>) : Promise<void> {
     
     await busses.forEach(async (bus, index) => {
       const foundVehicle = await this.database.GetVehicle(bus.vehicleNumber, bus.company)
@@ -34,11 +40,34 @@ export class BusLogic {
     })
   }
 
-  async ClearBusses() : Promise<void> {
+  /**
+   * Clears busses every X amount of minutes specified in .env file.
+   */
+  public async ClearBusses() : Promise<void> {
     if(process.env.APP_DO_CLEANUP_LOGGING == "true") console.log("Clearing busses")
     const currentTime = Date.now();
     const fifteenMinutesAgo = currentTime - (60 * parseInt(process.env.APP_CLEANUP_VEHICLE_AGE_REQUIREMENT) * 1000);
     const RemovedVehicles = await this.database.RemoveVehiclesWhere({ updatedAt: { $lt: fifteenMinutesAgo } }, process.env.APP_DO_CLEANUP_LOGGING == "true");
+  }
 
+  /**
+   * Initializes the "Koppelvlak 7 and 8 turbo" files to database.
+   */
+  public InitKV78() : void {
+    this.InitTrips();
+  }
+
+  /**
+   * Initializes the trips from the specified URL in the .env , or "../GTFS/extracted/trips.json" to the database.
+   */
+  private InitTrips () : void { 
+    const tripsPath = resolve("GTFS/extracted/trips.txt.json")
+    const tripsJSON = fs.readFile(tripsPath, 'utf-8', (error, json) => {
+      if(error) console.error("Error opening trips file"); 
+
+      console.log(json);
+    });
+
+    //this.database.InsertManyTrips();
   }
 }

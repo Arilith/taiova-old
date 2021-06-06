@@ -1,4 +1,5 @@
 import { Connection, Model, Mongoose, FilterQuery } from 'mongoose';
+import { Trip } from './types/Trip';
 import { VehicleData, vehicleState } from './types/VehicleData';
 
 export class Database {
@@ -8,7 +9,9 @@ export class Database {
   private db : Connection;
   private mongoose : Mongoose;
   private vehicleSchema : any;
+  private tripsSchema : any;
   private vehicleModel : typeof Model;
+  private tripModel : typeof Model;
 
   public static getInstance(): Database {
     if(!Database.instance)
@@ -50,21 +53,34 @@ export class Database {
           console.log("Connection to database established.")
 
           this.vehicleSchema = new this.mongoose.Schema({
-              company: String,
-              planningNumber: String,
-              journeyNumber: Number,
-              timestamp: Number,
-              vehicleNumber: Number,
-              position: [Number, Number],
-              status: String,
-              punctuality: Array,
-              createdAt: Number,
-              updatedAt: Number,
-              updatedTimes: Array
+            company: String,
+            planningNumber: String,
+            journeyNumber: Number,
+            timestamp: Number,
+            vehicleNumber: Number,
+            position: [Number, Number],
+            status: String,
+            punctuality: Array,
+            createdAt: Number,
+            updatedAt: Number,
+            updatedTimes: Array
           });
           
-          this.vehicleModel = this.mongoose.model("VehiclePositions", this.vehicleSchema);
+          this.tripsSchema = new this.mongoose.Schema({
+            routeId: Number,
+            serviceId: Number,
+            tripId: Number,
+            tripVehicle: Number,
+            tripPlanningNumber: Number,
+            tripHeadsign: String,
+            tripName: String,
+            directionId: Number,
+            shapeId: Number,
+            wheelchairAccessible: Number
+          })
 
+          this.vehicleModel = this.mongoose.model("VehiclePositions", this.vehicleSchema);
+          this.tripModel = this.mongoose.model("Trips", this.tripsSchema);
           res();
         });
       })
@@ -129,6 +145,45 @@ export class Database {
       
     });
     return removedVehicles;
+  }
+
+  public async GetTrips(params : object = {}) : Promise<Array<Trip>> {
+    return await this.tripModel.find(params)
+  }
+
+  public async GetTrip(tripVehicle, tripPlanningNumber) {
+    return { 
+      ...await this.tripModel.findOne({
+        tripVehicle : tripVehicle,
+        tripPlanningNumber: tripPlanningNumber
+      })
+    };
+  }
+
+  public async RemoveTrip(params : object = {}, doLogging : boolean = false) : Promise<void> {
+    await this.tripModel.deleteMany(params).then(response => {
+      if(doLogging) console.log(`Deleted ${response.deletedCount} trips`);
+    })
+  }
+  /**
+   * Inserts many trips at once into the database.
+   * @param trips The trips to add.
+   */
+  public async InsertManyTrips(trips : Array<Trip>) : Promise<void> {
+    await this.tripModel.insertMany(trips).catch(error => {
+      if(error) console.error(`Something went wrong while adding many trips. Error ${error}`)
+    });
+  }
+
+  /**
+   * Initializes the "Koppelvlak 7 and 8 turbo" files to database.
+   */
+  public async InsertTrip(trip : Trip) : Promise<void> {
+    new this.tripModel({
+      ...trip,
+    }).save(error => {
+      if(error) console.error(`Something went wrong while trying to add trip: ${trip.tripHeadsign}. Error: ${error}`)
+    })
   }
 
   // public async AddRoute()

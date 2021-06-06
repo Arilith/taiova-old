@@ -1,16 +1,19 @@
 import * as fs from 'fs';
 import * as http from 'http';
 import { resolve } from 'path';
+import { BusLogic } from './buslogic';
 import { DateYYYYMMDD } from './converters/date';
+import { Database } from './database';
 const extract = require("extract-zip");
 const csv = require("csvtojson");
 
 export class Downloader {
 
   url: string;
-
-  constructor() {
+  busLogic : BusLogic;
+  constructor(db : Database) {
     this.Init();
+    this.busLogic = new BusLogic(db);
   }
 
   async Init() {
@@ -27,25 +30,26 @@ export class Downloader {
   }
 
   async DownloadLatestGTFS()  {
-    const url = process.env.GTFS_URL || "http://gtfs.ovapi.nl/nl/gtfs-nl.zip";
+    const url = process.env.GTFS_URL || "http://gtfs.openov.nl/gtfs-rt/gtfs-openov-nl.zip";
     const dest = process.env.GTFS_DOWNLOAD_LOCATION ? resolve(`${process.env.GTFS_DOWNLOAD_LOCATION}/${DateYYYYMMDD()}.zip`) : resolve(`GTFS/${DateYYYYMMDD()}.zip`)
 
     console.log("Starting bus information download.");
     const file = fs.createWriteStream(dest);
-    const request = http
-      .get(url, function (response) {
+    const Extract = () => {
+      this.ExtractFile(dest);
+    }
+    http.get(url, function (response) {
         response.pipe(file);
         file.on("finish", function () {
           file.close();
           console.log("Finished downloading");
-          this.ExtractFile(dest);
+          Extract();
         });
-      })
-      .on("error", function (err) {
-        // Handle errors
-        fs.unlink(dest, this);
-        console.error(err);
-      });
+    }).on("error", function (err) {
+      // Handle errors
+      fs.unlink(dest, this);
+      console.error(err);
+    });
   }
 
   CheckForFilesInFolder = (path) => {
@@ -69,6 +73,9 @@ export class Downloader {
           this.convertCSVtoJSON(`${path}\\${file}`);
       });
     });
+
+    console.log("Done extracting!");
+    this.busLogic.InitKV78();
   }
 
   async ExtractFile(path) {

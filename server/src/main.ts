@@ -67,7 +67,7 @@ const AppInit = async () => {
   const ov = new OVData(db, socket);
   new WebServer(app, db);
   new BusLogic(db, true);
-  // new Downloader();
+  new Downloader(db);
 
   server.listen(port, () => console.log(`Listening at http://localhost:${port}`));
 

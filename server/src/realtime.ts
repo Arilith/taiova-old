@@ -11,6 +11,7 @@ const doLogging = process.env.APP_DO_LOGGING == "true" ? true : false;
 export class OVData {
   
   private sock;
+  private kv78socket;
   private busLogic : BusLogic;
   private websocket : Websocket;
 
@@ -48,8 +49,9 @@ export class OVData {
         const decoded = xml.parse(encodedXML);
         let vehicleData;
 
+        
 
-        if(operator !== "/KEOLIS/KV6posinfo") 
+        if(operator !== "/KEOLIS/KV6posinfo" || operator !== "/GVB/KV6posinfo") 
           vehicleData = converter.decode(decoded);
         else
           vehicleData = converter.decode(decoded, true);
@@ -59,6 +61,17 @@ export class OVData {
       })
 
     })
+
+    // this.kv78socket = zmq.socket("sub");
+    // this.kv78socket.connect("tcp://pubsub.ndovloket.nl:7817");
+    // this.kv78socket.subscribe("/")
+    // this.kv78socket.on("message", (opCode, ...content) => {
+    //   const contents = Buffer.concat(content);
+    //   gunzip(contents, async(error, buffer) => { 
+    //     console.log(buffer.toString('utf8'))
+    //   });
+    // });
   }
 
+  
 }

@@ -4,7 +4,6 @@ export interface RouteTypesArray {
   ONSTOP : Array<VehiclePosData>,
   ARRIVAL : Array<VehiclePosData>,
   END : Array<VehiclePosData>,
-  ENDED : Array<VehiclePosData>,
   INIT : Array<VehiclePosData>,
   DELAY : Array<VehiclePosData>
 }
@@ -15,7 +14,6 @@ export interface RouteTypesSingle {
   ONSTOP : VehiclePosData,
   ARRIVAL : VehiclePosData,
   END : VehiclePosData,
-  ENDED : VehiclePosData,
   INIT : VehiclePosData,
   DELAY : VehiclePosData
 }
