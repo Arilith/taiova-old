@@ -1,6 +1,8 @@
 export enum vehicleState {
   ONROUTE = 'ONROUTE',
+  OFFROUTE = 'OFFROUTE',
   ENDED = 'ENDED',
+  END = "END",
   DEPARTURE = 'DEPARTURE',
   INIT = 'INIT',
   DELAY = 'DELAY',

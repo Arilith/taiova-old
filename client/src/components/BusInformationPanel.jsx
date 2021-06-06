@@ -58,7 +58,12 @@ const BusInformationPanel = (props) => {
     QBUZZ: "red-300",
     CXX: "green-500",
     RET: "red-500",
-    EBS: "blue-500"
+    EBS: "blue-500",
+    KEOLIS: "blue-500",
+    DELIJN: "blue-500",
+    SYNTUS: "blue-500",
+    GVB: "blue-500",
+    TEC: "blue-500"
   }
 
   return (

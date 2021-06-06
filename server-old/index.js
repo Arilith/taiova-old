@@ -89,51 +89,51 @@
 //   });
 // };
 
-// const convertJSONToDatabaseData = (json) => {
-//   const kv6posinfo = json.VV_TM_PUSH.KV6posinfo;
+const convertJSONToDatabaseData = (json) => {
+  const kv6posinfo = json.VV_TM_PUSH.KV6posinfo;
 
-//   const busses = [];
-//   kv6posinfo != undefined &&
-//     Object.entries(kv6posinfo).forEach(([key, value]) => {
-//       //If is an array of objects
-//       if (value[1] !== undefined) {
-//         value.map((busData) => {
-//           const timeStamp = new Date(busData.timestamp);
-//           const position = busData["rd-x"]
-//             ? convert.rd2wgs(busData["rd-x"], busData["rd-y"])
-//             : "0, 0";
+  const busses = [];
+  kv6posinfo != undefined &&
+    Object.entries(kv6posinfo).forEach(([key, value]) => {
+      //If is an array of objects
+      if (value[1] !== undefined) {
+        value.map((busData) => {
+          const timeStamp = new Date(busData.timestamp);
+          const position = busData["rd-x"]
+            ? convert.rd2wgs(busData["rd-x"], busData["rd-y"])
+            : "0, 0";
 
-//           busses.push({
-//             company: busData.dataownercode,
-//             planningNumber: busData.lineplanningnumber,
-//             journeyNumber: busData.journeynumber,
-//             timestamp: timeStamp.getTime(),
-//             vehicleNumber: busData.vehiclenumber,
-//             position: position,
-//             status: key,
-//           });
-//         });
-//         //If is single object
-//       } else {
-//         const timeStamp = new Date(value.timestamp);
-//         const position = value["rd-x"]
-//           ? convert.rd2wgs(value["rd-x"], value["rd-y"])
-//           : "0, 0";
+          busses.push({
+            company: busData.dataownercode,
+            planningNumber: busData.lineplanningnumber,
+            journeyNumber: busData.journeynumber,
+            timestamp: timeStamp.getTime(),
+            vehicleNumber: busData.vehiclenumber,
+            position: position,
+            status: key,
+          });
+        });
+        //If is single object
+      } else {
+        const timeStamp = new Date(value.timestamp);
+        const position = value["rd-x"]
+          ? convert.rd2wgs(value["rd-x"], value["rd-y"])
+          : "0, 0";
 
-//         busses.push({
-//           company: value.dataownercode,
-//           planningNumber: value.lineplanningnumber,
-//           journeyNumber: value.journeynumber,
-//           timestamp: timeStamp.getTime(),
-//           vehicleNumber: value.vehiclenumber,
-//           position: position,
-//           status: key,
-//         });
-//       }
-//     });
+        busses.push({
+          company: value.dataownercode,
+          planningNumber: value.lineplanningnumber,
+          journeyNumber: value.journeynumber,
+          timestamp: timeStamp.getTime(),
+          vehicleNumber: value.vehiclenumber,
+          position: position,
+          status: key,
+        });
+      }
+    });
 
-//   return busses;
-// };
+  return busses;
+};
 
 // const cutOffTmi8 = (json) => {
 //   let stringJson = JSON.stringify(json);

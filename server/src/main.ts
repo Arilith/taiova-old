@@ -24,6 +24,7 @@ import { Websocket } from './socket';
 import { OVData } from './realtime';
 import { WebServer } from './webserver';
 import { BusLogic } from './buslogic';
+import { Downloader } from './downloader';
 
 /* --------------------
       SSL CONFIG
@@ -35,7 +36,7 @@ const ca = fs.readFileSync("./certificate/key-ca.crt").toString();
 const AppInit = async () => {
   const db = await Database.getInstance().Init().then();
   
-  const ov = new OVData(db);
+  
   
   const app = (module.exports = express());
 
@@ -62,10 +63,11 @@ const AppInit = async () => {
   app.options('*', cors())
 
 
-  new Websocket(server);
+  const socket = new Websocket(server, db);
+  const ov = new OVData(db, socket);
   new WebServer(app, db);
   new BusLogic(db, true);
-
+  // new Downloader();
 
   server.listen(port, () => console.log(`Listening at http://localhost:${port}`));
 
