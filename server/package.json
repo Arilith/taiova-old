@@ -1,26 +1,30 @@
 {
-  "name": "taiova-server",
+  "name": "taiovaserver",
   "version": "1.0.0",
-  "description": "The server application of the taiova app.",
   "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-loader": "^9.2.2",
+    "typescript": "^4.3.2",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
+  },
   "scripts": {
-    "start" : "index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --config=webpack.config.js",
+    "watch": "yarn build -w",
+    "start": "node build/bundle.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Arilith/taiova.git"
-  },
-  "keywords": [
-    "ov"
-  ],
-  "author": "Tristan van Triest",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Arilith/taiova/issues"
-  },
-  "homepage": "https://github.com/Arilith/taiova#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "extract-zip": "^2.0.1",
+    "fast-xml-parser": "^3.19.0",
+    "gunzip": "^1.2.2",
+    "mongoose": "^5.12.12",
+    "socket.io": "^4.1.2",
+    "webpack-node-externals": "^3.0.0",
+    "zeromq": "^5.2.8"
   }
 }
