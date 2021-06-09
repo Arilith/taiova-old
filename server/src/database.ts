@@ -1,7 +1,10 @@
 import { Connection, Model, Mongoose, FilterQuery } from 'mongoose';
 import { Trip } from './types/Trip';
 import { VehicleData, vehicleState } from './types/VehicleData';
-
+import * as fs from 'fs';
+import { resolve } from 'path';
+const streamToMongoDB = require('stream-to-mongo-db').streamToMongoDB;
+const split = require('split');
 export class Database {
   
   private static instance : Database;
@@ -12,6 +15,7 @@ export class Database {
   private tripsSchema : any;
   private vehicleModel : typeof Model;
   private tripModel : typeof Model;
+  private outputDBConfig;
 
   public static getInstance(): Database {
     if(!Database.instance)
@@ -33,10 +37,13 @@ export class Database {
     console.log(`Connecting to database with name: ${name} at url: ${url}`)
     this.mongoose.connect(`${url}/${name}`, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
+      poolSize: 120
     })
 
     this.db = this.mongoose.connection;
+
+    this.outputDBConfig = { dbURL : `${url}/${name}`, collection : 'trips' };
 
     this.db.on('error', error => {
       throw new error(`Error connecting to database. ${error}`);
@@ -45,6 +52,10 @@ export class Database {
     await this.DatabaseListener();
 
     return this;
+  }
+
+  public GetDatabase() : Connection {
+    return this.db;
   }
 
   public async DatabaseListener () : Promise<void> {
@@ -67,10 +78,11 @@ export class Database {
           });
           
           this.tripsSchema = new this.mongoose.Schema({
+            company: String,
             routeId: Number,
             serviceId: Number,
             tripId: Number,
-            tripVehicle: Number,
+            tripNumber: String,
             tripPlanningNumber: Number,
             tripHeadsign: String,
             tripName: String,
@@ -169,19 +181,15 @@ export class Database {
    * Inserts many trips at once into the database.
    * @param trips The trips to add.
    */
-  public async InsertManyTrips(trips : Array<Trip>) : Promise<void> {
-    await this.tripModel.insertMany(trips).catch(error => {
-      if(error) console.error(`Something went wrong while adding many trips. Error ${error}`)
-    });
+  public async InsertManyTrips(trips) : Promise<void> {
+    await this.tripModel.insertMany(trips, { ordered: false });
   }
 
   /**
    * Initializes the "Koppelvlak 7 and 8 turbo" files to database.
    */
   public async InsertTrip(trip : Trip) : Promise<void> {
-    new this.tripModel({
-      ...trip,
-    }).save(error => {
+    new this.tripModel(trip).save(error => {
       if(error) console.error(`Something went wrong while trying to add trip: ${trip.tripHeadsign}. Error: ${error}`)
     })
   }

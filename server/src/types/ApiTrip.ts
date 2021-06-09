@@ -1,4 +1,4 @@
-export interface TripApi {
+export interface ApiTrip {
   route_id: string,
   service_id: string,
   trip_id: string,

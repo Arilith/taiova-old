@@ -1,12 +1,14 @@
 export interface Trip {
-  routeId: number,
-  serviceId: number,
-  tripId: number,
-  tripVehicle: number,
-  tripPlanningNumber: number,
+  company: string,
+  routeId: string,
+  serviceId: string,
+  tripId: string,
+  // tripVehicle: string,
+  tripNumber: string,
+  tripPlanningNumber: string,
   tripHeadsign: string,
   tripName: string,
-  directionId: number,
-  shapeId: number,
-  wheelchairAccessible: number
+  directionId: string,
+  shapeId: string,
+  wheelchairAccessible: string
 }

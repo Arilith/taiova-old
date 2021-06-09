@@ -2,7 +2,6 @@
 gtfs/
 downloads/
 certificate/
-server-old/
 # Logs
 logs
 *.log
@@ -126,3 +125,4 @@ dist
 server/cert.crt
 server/key-ca.crt
 server/key.key
+/server-old

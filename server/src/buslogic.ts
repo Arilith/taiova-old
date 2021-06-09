@@ -2,6 +2,8 @@ import { Database } from "./database";
 import { VehicleData, vehicleState } from "./types/VehicleData";
 import { resolve } from 'path';
 import * as fs from 'fs';
+import { Trip } from "./types/Trip";
+import { ApiTrip } from "./types/ApiTrip";
 
 export class BusLogic {
 
@@ -54,20 +56,50 @@ export class BusLogic {
    * Initializes the "Koppelvlak 7 and 8 turbo" files to database.
    */
   public InitKV78() : void {
-    this.InitTrips();
+    this.InitTripsNew();
   }
 
   /**
    * Initializes the trips from the specified URL in the .env , or "../GTFS/extracted/trips.json" to the database.
    */
-  private InitTrips () : void { 
-    const tripsPath = resolve("GTFS/extracted/trips.txt.json")
-    const tripsJSON = fs.readFile(tripsPath, 'utf-8', (error, json) => {
-      if(error) console.error("Error opening trips file"); 
+  private InitTripsNew() : void { 
+    const tripsPath = resolve("GTFS\\extracted\\trips.txt.json");
+    const testPath = resolve("GTFS\\extracted\\trips.stripped.json");
+    const tripsFile = fs.readFile(tripsPath, 'utf8', async(error, data) => { 
+      if(data) console.log("Loading done.");
+      data = data.trim();
+      const lines = data.split("\n");
+      
+      const convertedTrips = [];
 
-      console.log(json);
+      for(let line of lines) {
+        const tripJSON : ApiTrip = JSON.parse(line);
+        const realTimeTripId = tripJSON.realtime_trip_id.split(":");
+        const company = realTimeTripId[0];
+        const planningNumber = realTimeTripId[1];
+        const tripNumber = realTimeTripId[2];
+
+        const trip = {
+          company: company,
+          routeId: tripJSON.route_id,
+          serviceId: tripJSON.service_id,
+          tripId: tripJSON.trip_id,
+          tripNumber: tripNumber,
+          tripPlanningNumber: planningNumber,
+          tripHeadsign: tripJSON.trip_headsign,
+          tripName: tripJSON.trip_long_name,
+          directionId: tripJSON.direction_id,
+          shapeId: tripJSON.shape_id,
+          wheelchairAccessible: tripJSON.wheelchair_accessible
+        }
+        
+        convertedTrips.push(trip);
+        
+      }   
+      await this.database.InsertManyTrips(convertedTrips.slice(0, 20000));
     });
-
-    //this.database.InsertManyTrips();
+   
+    
   }
+
 }

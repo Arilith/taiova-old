@@ -80,9 +80,9 @@ export class Downloader {
 
   async ExtractFile(path) {
     try {
-      console.log(`Starting extraction of ${path}`);
       const targetPath = resolve("GTFS/extracted");
       this.CheckForFilesInFolder(targetPath);
+      console.log(`Starting extraction of ${path}`);
       await extract(path, { dir: targetPath });
       console.log("Extraction complete");
       this.ConvertExtractedFiles(targetPath);

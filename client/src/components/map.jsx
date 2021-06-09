@@ -3,9 +3,9 @@ import mapboxgl from "mapbox-gl";
 import { MapOptions } from './MapOptions';
 import BusInformationPanel from './BusInformationPanel';
 import '../css/map.css';
-mapboxgl.accessToken =
-  "pk.eyJ1IjoiYXJpbGl0aCIsImEiOiJja29xODZiMHcwMjVjMnZvaHI5bGh3bjJ6In0.ZTVaklGwPP-wm9gNyfi6tA";
+import { accessToken } from "./api/token"
 
+mapboxgl.accessToken = accessToken;
 const Map = props => {
 
   const [mapData, setMapData] = useState();
