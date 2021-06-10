@@ -22,8 +22,8 @@ export default function App() {
   useEffect(() => {
     console.log("Connecting to websocket...");
     const url = window.location.href.includes("localhost")
-      ? "wss://localhost:3001"
-      : "wss://taiova.trvtserver.nl:3001";
+      ? "wss://localhost:3002"
+      : "wss://taiova.trvtserver.nl:3002";
     const socket = io(url);
     socket.on("connect", () => {
       socket.on("ovdata", (data) => {

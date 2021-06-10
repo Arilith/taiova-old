@@ -5,8 +5,6 @@ import * as fs from 'fs';
 import { Trip } from "./types/Trip";
 import { ApiTrip } from "./types/ApiTrip";
 import { exec } from 'child_process';
-import { Route } from "./types/Route";
-import { ApiRoute } from "./types/ApiRoute";
 
 export class BusLogic {
 
@@ -59,8 +57,7 @@ export class BusLogic {
    * Initializes the "Koppelvlak 7 and 8 turbo" files to database.
    */
   public InitKV78() : void {
-    //this.InitTripsNew();
-    this.InitRoutes();
+    this.InitTripsNew();
   }
 
   /**
@@ -115,63 +112,6 @@ export class BusLogic {
     if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Importing trips to mongodb");
 
     await exec("mongoimport --db taiova --collection trips --file .\\GTFS\\converted\\trips.json", (error, stdout, stderr) => {
-      if (error) {
-        console.log(`error: ${error.message}`);
-        return;
-      }
-
-      if (stderr) {
-        console.log(`stderr: ${stderr}`);
-        return;
-      }
-
-      if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log(`stdout: ${stdout}`);
-    });
-
-  }
-
-  /**
-   * Initializes the trips from the specified URL in the .env , or "../GTFS/extracted/routes.json" to the database.
-   */
-  private InitRoutes () {
-    const routesPath = resolve("GTFS\\extracted\\routes.txt.json");
-    const outputPath = resolve("GTFS\\converted\\routes.json");
-    fs.readFile(routesPath, 'utf8', async(error, data) => { 
-      if(error) console.error(error);
-      if(data && process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Loaded routes file into memory.");
-      data = data.trim();
-      const lines = data.split("\n");
-      const writeStream = fs.createWriteStream(outputPath)
-
-      for(let line of lines) {
-        const routeJson : ApiRoute = JSON.parse(line);
-        const companySplit = routeJson.agency_id.split(':');
-        const route : Route = {
-          routeId: parseInt(routeJson.route_id),
-          company: companySplit[0],
-          subCompany: companySplit[1] ? companySplit[1] : "None",
-          routeShortName: routeJson.route_short_name,
-          routeLongName: routeJson.route_long_name,
-          routeDescription: routeJson.route_desc,
-          routeType: parseInt(routeJson.route_type)
-        }
-
-        writeStream.write(JSON.stringify(route) + "\n");
-      }
-      
-      writeStream.end(() => {
-        if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Finished writing routes file, importing to database.");
-        this.ImportRoutes();
-      })
-    });
-  }
-
-  async ImportRoutes() : Promise<void> {
-    await this.database.DropRoutesCollection();
-
-    if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Importing routes to mongodb");
-
-    await exec("mongoimport --db taiova --collection routes --file .\\GTFS\\converted\\routes.json", (error, stdout, stderr) => {
       if (error) {
         console.log(`error: ${error.message}`);
         return;

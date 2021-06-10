@@ -21,4 +21,14 @@ export class MapDataFetcher {
     return result.data;
   }
 
+  async FetchTrip(planningNumber, tripNumber) {
+    const result = await axios.get(`${this.url}/trip/${planningNumber}/${tripNumber}`);
+    return result.data;
+  }
+
+  async FetchRoute(routeId) {
+    const result = await axios.get(`${this.url}/route/${routeId}`);
+    return result.data;
+  }
+
 }

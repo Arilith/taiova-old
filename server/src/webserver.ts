@@ -25,5 +25,13 @@ export class WebServer {
       else res.send({})
      })
     
+
+    this.app.get("/trip/:planningnumber/:tripnumber", async(req, res) => {
+      res.send(await this.database.GetTrip(req.params.tripnumber, req.params.planningnumber));
+    })
+
+    this.app.get("/route/:routenumber", async(req, res) => {
+      res.send(await this.database.GetRoute(req.params.routenumber));
+    })
   }
 }

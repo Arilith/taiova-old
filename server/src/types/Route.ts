@@ -1,6 +1,9 @@
 export interface Route {
-  route_id: string,
-  agency_id: string,
-  route_short_name: string,
-  route_long_name: string
+  routeId: number,
+  company: string,
+  subCompany: string,
+  routeShortName: string,
+  routeLongName: string,
+  routeDescription: string,
+  routeType: number
 }

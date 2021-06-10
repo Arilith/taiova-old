@@ -5,7 +5,7 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3002;
 
 /* --------------------
       YARN IMPORTS
@@ -20,9 +20,8 @@ const cors = require("cors");
 ----------------------*/
 
 import { Database } from './database';
-import { WebServer } from './webserver';
-import { BusLogic } from './buslogic';
-import { Downloader } from './downloader';
+import { Websocket } from './socket';
+import { OVData } from './realtime';
 
 /* --------------------
       SSL CONFIG
@@ -33,6 +32,7 @@ const ca = fs.readFileSync("./certificate/key-ca.crt").toString();
 
 const AppInit = async () => {
   const db = await Database.getInstance().Init().then();
+  
   const app = (module.exports = express());
 
   const server = https.createServer(
@@ -58,10 +58,9 @@ const AppInit = async () => {
   app.options('*', cors())
 
 
-  new WebServer(app, db);
-  const busLogic = new BusLogic(db, true);
-  // new Downloader(db);
-  busLogic.InitKV78();
+  const socket = new Websocket(server, db);
+  const ov = new OVData(db, socket);
+  //busLogic.InitKV78();
   
   server.listen(port, () => console.log(`Listening at http://localhost:${port}`));
 

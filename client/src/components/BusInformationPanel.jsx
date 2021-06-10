@@ -11,7 +11,23 @@ const BusInformationPanel = (props) => {
   
   const [extraData, setExtraData] = useState();
 
-  const [punctualityChart, setPunctualityChart] = useState()
+  const [punctualityChart, setPunctualityChart] = useState({
+    options: {
+      chart: {
+        id: 'punctuality'
+      },
+      xaxis: {
+        categories: []
+      },
+      stroke: {
+        curve: 'smooth',
+      }
+    },
+    series: [{
+      name: 'Punctualiteit',
+      data: []
+    }]
+  })
 
   const api = new MapDataFetcher();
 
@@ -23,8 +39,12 @@ const BusInformationPanel = (props) => {
       });
 
     const fetchData = async() => {
-      const receivedData = await api.FetchVehicle(props.data.company, props.data.vehicleNumber);
-      setExtraData(receivedData);
+
+      const receivedVehicleData = await api.FetchVehicle(props.data.company, props.data.vehicleNumber);
+      const receivedTripData = await api.FetchTrip(props.data.planningNumber, props.data.journeyNumber);
+      const receivedRouteData = await api.FetchRoute(receivedTripData.routeId);
+
+      setExtraData({busData : {...receivedVehicleData}, tripData : {...receivedTripData}, routeData : {...receivedRouteData}});
     }
 
     fetchData();
@@ -32,13 +52,14 @@ const BusInformationPanel = (props) => {
   }, [props.data])
 
   useEffect(() => {
-    setPunctualityChart({
+    extraData
+     && setPunctualityChart({
       options: {
         chart: {
           id: 'punctuality'
         },
         xaxis: {
-          categories: extraData?.updatedTimes.map(time => {
+          categories: extraData?.busData?.updatedTimes.map(time => {
             return timeConverter(time)
           })
         },
@@ -48,7 +69,7 @@ const BusInformationPanel = (props) => {
       },
       series: [{
         name: 'Punctualiteit',
-        data: extraData?.punctuality
+        data: extraData?.busData?.punctuality
       }]
     })
   }, [extraData])
@@ -67,15 +88,19 @@ const BusInformationPanel = (props) => {
   }
 
   return (
-    <>{busData &&
+    <>{busData && 
       <div className={`relative bg-white rounded-xl shadow-md overflow-hidden md:max-w-xl sm:max-w-xs sm:max-h-xs h-xl z-10 ml-auto mt-auto mb-auto ${ open ? "mr-1" : "mr-outside"}`}>
         <div className="md:flex">
           <div className="p-8">
             <div onClick={e => setOpen(false)} className="float-right hover:underline">
               X
             </div>
-            <div className={`uppercase tracking-wide text-lg text-${colors[busData.company]} font-semibold`}>Lijn XXX</div>
-            <span className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">BEGIN &gt; EIND, via TUSSEN</span>
+            {extraData && 
+            <>
+              <div className={`uppercase tracking-wide text-lg text-${colors[busData.company]} font-semibold`}>Lijn {extraData.routeData.routeShortName}</div>
+              <span className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{extraData.routeData.routeLongName}</span>
+            </>
+            }
             <div className="mt-2 text-gray-500">
               <ul className="list-none">
                 <li>Voertuignummer <span className={`text-${colors[busData.company]}`}>{busData.vehicleNumber}</span></li>
@@ -83,6 +108,14 @@ const BusInformationPanel = (props) => {
                 <li>Ritnummer <span className={`text-${colors[busData.company]}`}>{busData.journeyNumber}</span></li>
                 <li>Status <span className={`text-${colors[busData.company]}`}>{busData.status}</span></li>
                 <li>Laatst geupdated <span className={`text-${colors[busData.company]}`}>{timeConverter(busData.updatedAt)}</span></li>
+                {extraData && 
+                <>
+                  <li>Rolstoelbereikbaar <span className={`text-${colors[busData.company]}`}>{extraData.tripData.wheelchairAccessible === 1 ? "Ja" : "Nee"}</span></li>
+                  <li>Text op bus <span className={`text-${colors[busData.company]}`}>{extraData.tripData.tripHeadsign}</span></li>
+                  <li>Subcompany <span className={`text-${colors[busData.company]}`}>{extraData.routeData.company}</span></li>
+                
+                </>
+                }
                 <span>Punctualiteiten</span>
               </ul>
               { extraData && <Chart options={punctualityChart.options} series={punctualityChart.series} type="line" width={500} height={320} /> }
