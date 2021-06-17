@@ -11,6 +11,7 @@ export enum vehicleState {
 
 export interface VehicleData {
   company: string,
+  originalCompany: string,
   planningNumber: string,
   journeyNumber: number,
   lineNumber : string,

@@ -1,0 +1,20 @@
+{
+  "name": "taiova",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Arilith/taiova.git",
+  "author": "Tristan <tristantriest@gmail.com>",
+  "license": "'",
+  "devDependencies": {
+    "concurrently": "^6.2.0"
+  },
+  "scripts": {
+    "client": "cd client && npm start",
+    "watch-server": "cd server && yarn watch",
+    "server": "cd server && yarn start",
+    "watch-realtime-server": "cd realtime-server && yarn watch",
+    "realtime": "cd realtime-server && yarn start",
+    "start": "concurrently \"npm run client\" \"npm run watch-server\"  \"npm run watch-realtime-server\" \"npm run realtime\"",
+    "start-server": "npm run server"
+  }
+}

@@ -71,6 +71,7 @@ export class Database {
 
           this.vehicleSchema = new this.mongoose.Schema({
             company: String,
+            originalCompany: String,
             planningNumber: String,
             journeyNumber: Number,
             timestamp: Number,

@@ -94,6 +94,7 @@ const Map = props => {
           },
           properties: {
             company: cur.company,
+            originalCompany: cur.originalCompany,
             planningNumber: cur.planningNumber,
             journeyNumber: cur.journeyNumber,
             timestamp: cur.timestamp,

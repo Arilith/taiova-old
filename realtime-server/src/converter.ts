@@ -24,6 +24,7 @@ export class Converter {
         const vehiclePosData : VehiclePosData = statusWithBus[Object.keys(statusWithBus)[0]];
           array.push({
             company: vehiclePosData.dataownercode,
+            originalCompany: vehiclePosData.dataownercode,
             planningNumber: vehiclePosData.lineplanningnumber.toString(),
             journeyNumber: vehiclePosData.journeynumber,
             timestamp: Date.parse(vehiclePosData.timestamp),
@@ -41,6 +42,7 @@ export class Converter {
       const vehiclePosData : VehiclePosData = kv6posinfo[Object.keys(kv6posinfo)[0]];
       array.push({
         company: vehiclePosData.dataownercode,
+        originalCompany: vehiclePosData.dataownercode,
         planningNumber: vehiclePosData.lineplanningnumber.toString(),
         journeyNumber: vehiclePosData.journeynumber,
         timestamp: Date.parse(vehiclePosData.timestamp),
@@ -74,6 +76,7 @@ export class Converter {
             array.push(
               {
                 company: vehiclePosData.dataownercode,
+                originalCompany: vehiclePosData.dataownercode,
                 planningNumber: vehiclePosData.lineplanningnumber.toString(),
                 journeyNumber: vehiclePosData.journeynumber,
                 timestamp: Date.parse(vehiclePosData.timestamp),
@@ -96,6 +99,7 @@ export class Converter {
             array.push(
               {
                 company: vehiclePosData.dataownercode,
+                originalCompany: vehiclePosData.dataownercode,
                 planningNumber: vehiclePosData.lineplanningnumber.toString(),
                 journeyNumber: vehiclePosData.journeynumber,
                 timestamp: Date.parse(vehiclePosData.timestamp),
