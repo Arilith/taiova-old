@@ -46,7 +46,7 @@ const BusInformationPanel = (props) => {
     const fetchData = async() => {
 
       const receivedVehicleData = await api.FetchVehicle(props.data.company, props.data.vehicleNumber);
-      const receivedTripData = await api.FetchTrip(props.data.planningNumber, props.data.journeyNumber);
+      const receivedTripData = await api.FetchTrip(props.data.planningNumber, props.data.journeyNumber, props.data.company);
       const receivedRouteData = await api.FetchRoute(receivedTripData.routeId);
       const receivedShapeData = await api.FetchShape(receivedTripData.shapeId);
 

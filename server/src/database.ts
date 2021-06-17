@@ -114,7 +114,7 @@ export class Database {
             DistanceSinceLastPoint: Number
           })
 
-          this.tripsSchema.index({ tripNumber: -1, tripPlanningNumber: -1 })
+          this.tripsSchema.index({ tripNumber: -1, tripPlanningNumber: -1, company: -1 })
           this.shapesSchema.index({ shapeId: -1 })
 
           this.vehicleModel = this.mongoose.model("VehiclePositions", this.vehicleSchema);
@@ -194,9 +194,10 @@ export class Database {
     return await this.tripModel.find(params)
   }
 
-  public async GetTrip(tripNumber : number, tripPlanningNumber : string) {
+  public async GetTrip(tripNumber : number, tripPlanningNumber : string, company: string) {
 
     const response = await this.tripModel.findOne({
+      company: company,
       tripNumber : tripNumber,
       tripPlanningNumber: tripPlanningNumber
     });

@@ -33,7 +33,7 @@ export class BusLogic {
 
 
     await Promise.all(busses.map(async (bus) => {
-      const foundTrip : Trip = await this.database.GetTrip(bus.journeyNumber, bus.planningNumber);
+      const foundTrip : Trip = await this.database.GetTrip(bus.journeyNumber, bus.planningNumber, bus.company);
       const foundRoute : Route = await this.database.GetRoute(foundTrip.routeId);
 
       if(foundRoute.company !== undefined) bus.company = foundRoute.company;

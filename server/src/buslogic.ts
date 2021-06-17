@@ -29,25 +29,6 @@ export class BusLogic {
   }
 
   /**
-   * Updates or creates a new bus depending on if it already exists or not.
-   * @param busses The list of busses to update.
-   */
-   public async UpdateBusses(busses : Array<VehicleData>) : Promise<void> {
-    
-    await busses.forEach(async (bus, index) => {
-      const foundVehicle = await this.database.GetVehicle(bus.vehicleNumber, bus.company)
-      if(Object.keys(foundVehicle).length !== 0) {
-        if(process.env.APP_DO_UPDATE_LOGGING == "true") console.log(`Updating vehicle ${bus.vehicleNumber} from ${bus.company}`)
-        await this.database.UpdateVehicle(foundVehicle, bus, true);
-      } else {
-        if(process.env.APP_DO_CREATE_LOGGING == "true") console.log(`creating new vehicle ${bus.vehicleNumber} from ${bus.company}`)
-        if(bus.status === vehicleState.ONROUTE) await this.database.AddVehicle(bus, true)
-      }
-              
-    })
-  }
-
-  /**
    * Clears busses every X amount of minutes specified in .env file.
    */
   public async ClearBusses() : Promise<void> {

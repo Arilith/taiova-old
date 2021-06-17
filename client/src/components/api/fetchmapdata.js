@@ -21,8 +21,8 @@ export class MapDataFetcher {
     return result.data;
   }
 
-  async FetchTrip(planningNumber, tripNumber) {
-    const result = await axios.get(`${this.url}/trip/${planningNumber}/${tripNumber}`);
+  async FetchTrip(planningNumber, tripNumber, company) {
+    const result = await axios.get(`${this.url}/trip/${company}/${planningNumber}/${tripNumber}`);
     return result.data;
   }
 
