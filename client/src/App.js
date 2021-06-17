@@ -7,6 +7,7 @@ export default function App() {
 
   const [response, setResponse] = useState([])
 
+  const [mapHasLoaded, setMapHasLoaded] = useState(false);
   
   useEffect(() => {
     const DataFetcher = new MapDataFetcher();
@@ -27,15 +28,16 @@ export default function App() {
     const socket = io(url);
     socket.on("connect", () => {
       socket.on("ovdata", (data) => {
-        setResponse(data);
+        if(response !== [] && mapHasLoaded)
+          setResponse(data);
       });
     });
-  }, []);
+  }, [mapHasLoaded]);
 
 
   return (
     <div className="h-screen flex">
-      { <Map data={response !== undefined && response} /> }
+      { <Map data={response !== undefined && response} setMapLoaded={setMapHasLoaded} /> }
     </div>
   );
 }

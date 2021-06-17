@@ -5,6 +5,7 @@ import * as fs from 'fs';
 import { Trip } from "./types/Trip";
 import { ApiTrip } from "./types/ApiTrip";
 import { exec } from 'child_process';
+import { Route } from "./types/Route";
 
 export class BusLogic {
 
@@ -29,18 +30,26 @@ export class BusLogic {
    * @param busses The list of busses to update.
    */
    public async UpdateBusses(busses : Array<VehicleData>) : Promise<void> {
-    
-    await busses.forEach(async (bus, index) => {
-      const foundVehicle = await this.database.GetVehicle(bus.vehicleNumber, bus.company)
+
+
+    await Promise.all(busses.map(async (bus) => {
+      const foundTrip : Trip = await this.database.GetTrip(bus.journeyNumber, bus.planningNumber);
+      const foundRoute : Route = await this.database.GetRoute(foundTrip.routeId);
+
+      if(foundRoute.company !== undefined) bus.company = foundRoute.company;
+      if(foundRoute !== undefined) bus.lineNumber = foundRoute.routeShortName;
+
+      const foundVehicle : VehicleData = await this.database.GetVehicle(bus.vehicleNumber, bus.company);
+          
       if(Object.keys(foundVehicle).length !== 0) {
         if(process.env.APP_DO_UPDATE_LOGGING == "true") console.log(`Updating vehicle ${bus.vehicleNumber} from ${bus.company}`)
-        await this.database.UpdateVehicle(foundVehicle, bus, true);
+        await this.database.UpdateVehicle(foundVehicle, bus, true)
+        
       } else {
         if(process.env.APP_DO_CREATE_LOGGING == "true") console.log(`creating new vehicle ${bus.vehicleNumber} from ${bus.company}`)
         if(bus.status === vehicleState.ONROUTE) await this.database.AddVehicle(bus, true)
       }
-              
-    })
+    }))
   }
 
   /**

@@ -31,6 +31,11 @@ const BusInformationPanel = (props) => {
 
   const api = new MapDataFetcher();
 
+  const closePanel = () => {
+    setOpen(false);
+    props.setShape([])
+  }
+
   useEffect(() => {
     setOpen(true);
     setBusData(
@@ -43,12 +48,12 @@ const BusInformationPanel = (props) => {
       const receivedVehicleData = await api.FetchVehicle(props.data.company, props.data.vehicleNumber);
       const receivedTripData = await api.FetchTrip(props.data.planningNumber, props.data.journeyNumber);
       const receivedRouteData = await api.FetchRoute(receivedTripData.routeId);
+      const receivedShapeData = await api.FetchShape(receivedTripData.shapeId);
 
-      setExtraData({busData : {...receivedVehicleData}, tripData : {...receivedTripData}, routeData : {...receivedRouteData}});
+      setExtraData({busData : {...receivedVehicleData}, tripData : {...receivedTripData}, routeData : {...receivedRouteData}, shapeData : receivedShapeData});
     }
 
     fetchData();
-
   }, [props.data])
 
   useEffect(() => {
@@ -72,6 +77,8 @@ const BusInformationPanel = (props) => {
         data: extraData?.busData?.punctuality
       }]
     })
+
+    extraData && props.setShape(extraData.shapeData.positionsOnly);
   }, [extraData])
 
   const colors = {
@@ -82,17 +89,22 @@ const BusInformationPanel = (props) => {
     EBS: "blue-500",
     KEOLIS: "blue-500",
     DELIJN: "blue-500",
-    SYNTUS: "blue-500",
+    SYNTUS: "red-500",
     GVB: "blue-500",
-    TEC: "blue-500"
+    TEC: "blue-500",
+    BRAVO: "purple-500",
+    TWENTS: "red-500",
+    WATERBUS: "blue-500"
   }
+
+
 
   return (
     <>{busData && 
       <div className={`relative bg-white rounded-xl shadow-md overflow-hidden md:max-w-xl sm:max-w-xs sm:max-h-xs h-xl z-10 ml-auto mt-auto mb-auto ${ open ? "mr-1" : "mr-outside"}`}>
         <div className="md:flex">
           <div className="p-8">
-            <div onClick={e => setOpen(false)} className="float-right hover:underline">
+            <div onClick={e => closePanel()} className="float-right hover:underline">
               X
             </div>
             {extraData && 

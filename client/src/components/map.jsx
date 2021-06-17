@@ -4,7 +4,8 @@ import { MapOptions } from './MapOptions';
 import BusInformationPanel from './BusInformationPanel';
 import '../css/map.css';
 import { accessToken } from "./api/token"
-
+import { Search } from './Search';
+import { CompanyNameFromArray } from './functions/CompanyConverter'
 mapboxgl.accessToken = accessToken;
 const Map = props => {
 
@@ -22,6 +23,8 @@ const Map = props => {
     InitializeMap();
   });
 
+  const [companies, setCompanies] = useState([]);
+
   const InitializeMap = () => {
     if (map.current) return; 
     map.current = new mapboxgl.Map({
@@ -34,13 +37,44 @@ const Map = props => {
       //   [7.09205325687, 53.5104033474]
       // ]
     });
-    
+   // map.current.scrollZooom.setWheelZoomRate('1/135');
     if (!map.current) return; 
+    
     map.current.on('move', () => {
       setLng(map.current.getCenter().lng.toFixed(4));
       setLat(map.current.getCenter().lat.toFixed(4));
       setZoom(map.current.getZoom().toFixed(2));
     });
+
+    map.current.on('load', () => {
+      
+      map.current.addSource('shape', {
+        'type' : 'geojson',
+        'data' : {
+          'type': 'Feature',
+          'properties': {},
+          'geometry': {
+            'type': 'LineString',
+            'coordinates': []
+          }
+        }
+      })
+  
+      map.current.addLayer({
+        'id': 'shapes',
+        'type': 'line',
+        'source': 'shape',
+        'layout': {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        'paint': {
+          'line-blur' : 2,
+          'line-color': '#7B1010',
+          'line-width': 4
+        }
+      });
+    })
   }
 
   useEffect(() => {
@@ -68,6 +102,7 @@ const Map = props => {
             status: cur.status,
             createdAt: cur.createdAt,
             updatedAt: cur.updatedAt,
+            lineNumber: cur.lineNumber,
             title: cur.vehicleNumber,
             description: `<b>This is a bus from ${cur.company} with vehicle number ${cur.vehicleNumber}</b>`
           }
@@ -76,6 +111,8 @@ const Map = props => {
       return acc
     }, {})
     
+    setCompanies(CompanyNameFromArray(Object.keys(convertedData)));
+
     for(let [company, values] of Object.entries(convertedData)) {
       if(!map.current.getSource(`busses_${company}`)) {
         map.current.loadImage(`images/${company}.png`, function (error, image) {
@@ -120,18 +157,51 @@ const Map = props => {
           features: values
         });
       }
-    }  
+      props.setMapLoaded(true);
+    }
+        
   }, [props.data]) // eslint-disable-line
+
+  
 
   const toggleInformation = (busData) => {
     setBusData(busData);
   }
 
+  const setShape = (shapeArray) => {
 
+    
+
+    if(map.current.getSource('shape'))  {
+      //console.log(map.current.getSource('shape'));
+      map.current.getSource('shape').setData({
+        'type': 'Feature',
+        'properties': {},
+        'geometry': {
+          'type': 'LineString',
+          'coordinates': shapeArray
+        }
+      })
+    }
+      
+  }
+
+  const setFilter = (filter) => {
+    if(filter.company) {
+      const filterLayer = map.current.getLayer(`busses_${filter.company}`);
+      if(filterLayer) {
+        if(map.current.getLayoutProperty(`busses_${filter.company}`, 'visibility') !== 'none')
+          map.current.setLayoutProperty(`busses_${filter.company}`, 'visibility', 'none')
+        else
+          map.current.setLayoutProperty(`busses_${filter.company}`, 'visibility', 'visible')
+      }
+    }
+  }
 
   return (
     <>
-      {busData && <BusInformationPanel data={busData} />}
+      <Search setFilter={setFilter} companies={companies} />
+      {busData && <BusInformationPanel data={busData} setShape={setShape} />}
       <div ref={mapContainer} className="map-container" />
     </>
   )

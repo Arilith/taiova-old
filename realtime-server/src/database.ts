@@ -3,6 +3,7 @@ import { Trip } from './types/Trip';
 import { VehicleData, vehicleState } from './types/VehicleData';
 import * as fs from 'fs';
 import { resolve } from 'path';
+import { Route } from './types/Route';
 const streamToMongoDB = require('stream-to-mongo-db').streamToMongoDB;
 const split = require('split');
 export class Database {
@@ -13,8 +14,10 @@ export class Database {
   private mongoose : Mongoose;
   private vehicleSchema : Schema;
   private tripsSchema : Schema;
+  private routesSchema : Schema;
   private vehicleModel : typeof Model;
   private tripModel : typeof Model;
+  private routesModel : typeof Model;
   private outputDBConfig;
 
   public static getInstance(): Database {
@@ -71,6 +74,7 @@ export class Database {
             vehicleNumber: Number,
             position: [Number, Number],
             status: String,
+            lineNumber: String,
             punctuality: Array,
             createdAt: Number,
             updatedAt: Number,
@@ -91,10 +95,21 @@ export class Database {
             wheelchairAccessible: Number
           })
 
+          this.routesSchema = new this.mongoose.Schema({
+            routeId: Number,
+            company: String,
+            subCompany: String,
+            routeShortName: String,
+            routeLongName: String,
+            routeDescription: String,
+            routeType: Number,
+          })
+
           this.tripsSchema.index({ tripNumber: -1, tripPlanningNumber: -1 })
 
           this.vehicleModel = this.mongoose.model("VehiclePositions", this.vehicleSchema);
           this.tripModel = this.mongoose.model("trips", this.tripsSchema);
+          this.routesModel = this.mongoose.model("routes", this.routesSchema);
 
           this.tripModel.createIndexes();
           
@@ -134,6 +149,11 @@ export class Database {
     if(positionChecks && updatedVehicleData.status !== vehicleState.ONROUTE)
       updatedVehicleData.position = vehicleToUpdate.position;
 
+    if(updatedVehicleData.status === vehicleState.INIT || updatedVehicleData.status === vehicleState.END) {
+      updatedVehicleData.punctuality = [];
+      updatedVehicleData.updatedTimes = [];
+    }
+
     updatedVehicleData.updatedAt = Date.now();  
 
     await this.vehicleModel.findOneAndUpdate(vehicleToUpdate, updatedVehicleData);
@@ -168,14 +188,14 @@ export class Database {
     return await this.tripModel.find(params)
   }
 
-  public async GetTrip(tripNumber : number, tripPlanningNumber : number) {
+  public async GetTrip(tripNumber : number, tripPlanningNumber : string) {
 
     const response = await this.tripModel.findOne({
       tripNumber : tripNumber,
-      tripPlanningNumber: tripPlanningNumber.toString()
+      tripPlanningNumber: tripPlanningNumber
     });
 
-    return response["_doc"];
+    return response !== null ? response : {};
   }
 
   public async RemoveTrip(params : object = {}, doLogging : boolean = false) : Promise<void> {
@@ -204,6 +224,19 @@ export class Database {
     if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Dropping trips collection");
     await this.tripModel.remove({});
     if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Dropped trips collection");
+  }
+  public async DropRoutesCollection(): Promise<void> {
+    if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Dropping routes collection");
+    await this.routesModel.remove({});
+    if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Dropped routes collection");
+  }
+
+  public async GetRoute(routeId : number) : Promise<Route> {
+    const response = await this.routesModel.findOne({
+      routeId : routeId,
+    });
+
+    return response !== null ? response : {};
   }
 
   // public async AddRoute()

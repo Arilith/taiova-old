@@ -7,6 +7,8 @@ import { ApiTrip } from "./types/ApiTrip";
 import { exec } from 'child_process';
 import { Route } from "./types/Route";
 import { ApiRoute } from "./types/ApiRoute";
+import { ApiShape } from "./types/ApiShape";
+import { Shape } from "./types/Shape";
 
 export class BusLogic {
 
@@ -58,17 +60,18 @@ export class BusLogic {
   /**
    * Initializes the "Koppelvlak 7 and 8 turbo" files to database.
    */
-  public InitKV78() : void {
-    //this.InitTripsNew();
+  public async InitKV78() : Promise<void> {
+    this.InitTripsNew();
     this.InitRoutes();
+    this.InitShapes();
   }
 
   /**
    * Initializes the trips from the specified URL in the .env , or "../GTFS/extracted/trips.json" to the database.
    */
   private InitTripsNew() : void { 
-    const tripsPath = resolve("GTFS\\extracted\\trips.txt.json");
-    const outputPath = resolve("GTFS\\converted\\trips.json");
+    const tripsPath = resolve("GTFS/extracted/trips.txt.json");
+    const outputPath = resolve("GTFS/converted/trips.json");
     fs.readFile(tripsPath, 'utf8', async(error, data) => { 
       if(error) console.error(error);
       if(data && process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Loaded trips file into memory.");
@@ -100,9 +103,9 @@ export class BusLogic {
         writeStream.write(JSON.stringify(trip) + "\n");
       }
       
-      writeStream.end(() => {
+      writeStream.end(async () => {
         if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Finished writing trips file, importing to database.");
-        this.ImportTrips();
+        await this.ImportTrips();
       })
     });
    
@@ -114,7 +117,7 @@ export class BusLogic {
 
     if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Importing trips to mongodb");
 
-    await exec("mongoimport --db taiova --collection trips --file .\\GTFS\\converted\\trips.json", (error, stdout, stderr) => {
+    await exec("mongoimport --db taiova --collection trips --file ./GTFS/converted/trips.json", (error, stdout, stderr) => {
       if (error) {
         console.log(`error: ${error.message}`);
         return;
@@ -131,11 +134,11 @@ export class BusLogic {
   }
 
   /**
-   * Initializes the trips from the specified URL in the .env , or "../GTFS/extracted/routes.json" to the database.
+   * Initializes the routes from the specified URL in the .env , or "../GTFS/extracted/routes.json" to the database.
    */
   private InitRoutes () {
-    const routesPath = resolve("GTFS\\extracted\\routes.txt.json");
-    const outputPath = resolve("GTFS\\converted\\routes.json");
+    const routesPath = resolve("GTFS/extracted/routes.txt.json");
+    const outputPath = resolve("GTFS/converted/routes.json");
     fs.readFile(routesPath, 'utf8', async(error, data) => { 
       if(error) console.error(error);
       if(data && process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Loaded routes file into memory.");
@@ -171,7 +174,7 @@ export class BusLogic {
 
     if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Importing routes to mongodb");
 
-    await exec("mongoimport --db taiova --collection routes --file .\\GTFS\\converted\\routes.json", (error, stdout, stderr) => {
+    await exec("mongoimport --db taiova --collection routes --file ./GTFS/converted/routes.json", (error, stdout, stderr) => {
       if (error) {
         console.log(`error: ${error.message}`);
         return;
@@ -187,4 +190,56 @@ export class BusLogic {
 
   }
 
+  /**
+   * Initializes the shapes from the specified URL in the .env , or "../GTFS/extracted/routes.json" to the database.
+   */
+   private InitShapes () {
+    const routesPath = resolve("GTFS/extracted/shapes.txt.json");
+    const outputPath = resolve("GTFS/converted/shapes.json");
+    fs.readFile(routesPath, 'utf8', async(error, data) => { 
+      if(error) console.error(error);
+      if(data && process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Loaded shapes file into memory.");
+      data = data.trim();
+      const lines = data.split("\n");
+      const writeStream = fs.createWriteStream(outputPath)
+
+      for(let line of lines) {
+        const shapeJson : ApiShape = JSON.parse(line);
+        const shape : Shape = {
+          shapeId: parseInt(shapeJson.shape_id),
+          shapeSequenceNumber: parseInt(shapeJson.shape_pt_sequence),
+          Position: [parseFloat(shapeJson.shape_pt_lat), parseFloat(shapeJson.shape_pt_lon)],
+          DistanceSinceLastPoint: parseInt(shapeJson.shape_dist_traveled)
+        }
+
+        writeStream.write(JSON.stringify(shape) + "\n");
+      }
+      
+      writeStream.end(() => {
+        if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Finished writing shapes file, importing to database.");
+        this.ImportShapes();
+      })
+    });
+  }
+
+  async ImportShapes() : Promise<void> {
+    await this.database.DropShapesCollection();
+
+    if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Importing shapes to mongodb");
+
+    await exec("mongoimport --db taiova --collection shapes --file ./GTFS/converted/shapes.json", (error, stdout, stderr) => {
+      if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+      }
+
+      if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+      }
+
+      if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log(`stdout: ${stdout}`);
+    });
+
+  }
 }

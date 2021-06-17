@@ -4,6 +4,7 @@ import { VehicleData, vehicleState } from './types/VehicleData';
 import * as fs from 'fs';
 import { resolve } from 'path';
 import { Route } from './types/Route';
+import { Shape } from './types/Shape';
 const streamToMongoDB = require('stream-to-mongo-db').streamToMongoDB;
 const split = require('split');
 export class Database {
@@ -15,9 +16,11 @@ export class Database {
   private vehicleSchema : Schema;
   private tripsSchema : Schema;
   private routesSchema : Schema;
+  private shapesSchema : Schema;
   private vehicleModel : typeof Model;
   private tripModel : typeof Model;
   private routesModel : typeof Model;
+  private shapesModel : typeof Model;
   private outputDBConfig;
 
   public static getInstance(): Database {
@@ -104,11 +107,20 @@ export class Database {
             routeType: Number,
           })
 
+          this.shapesSchema = new this.mongoose.Schema({
+            shapeId: Number,
+            shapeSequenceNumber: Number,
+            Position: [Number, Number],
+            DistanceSinceLastPoint: Number
+          })
+
           this.tripsSchema.index({ tripNumber: -1, tripPlanningNumber: -1 })
+          this.shapesSchema.index({ shapeId: -1 })
 
           this.vehicleModel = this.mongoose.model("VehiclePositions", this.vehicleSchema);
           this.tripModel = this.mongoose.model("trips", this.tripsSchema);
           this.routesModel = this.mongoose.model("routes", this.routesSchema);
+          this.shapesModel = this.mongoose.model("shapes", this.shapesSchema);
 
           this.tripModel.createIndexes();
           
@@ -182,14 +194,14 @@ export class Database {
     return await this.tripModel.find(params)
   }
 
-  public async GetTrip(tripNumber : number, tripPlanningNumber : number) {
+  public async GetTrip(tripNumber : number, tripPlanningNumber : string) {
 
     const response = await this.tripModel.findOne({
       tripNumber : tripNumber,
-      tripPlanningNumber: tripPlanningNumber.toString()
+      tripPlanningNumber: tripPlanningNumber
     });
 
-    return response["_doc"];
+    return response !== null ? response : {};
   }
 
   public async RemoveTrip(params : object = {}, doLogging : boolean = false) : Promise<void> {
@@ -224,6 +236,11 @@ export class Database {
     await this.routesModel.remove({});
     if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Dropped routes collection");
   }
+  public async DropShapesCollection(): Promise<void> {
+    if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Dropping shapes collection");
+    await this.shapesModel.remove({});
+    if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Dropped shapes collection");
+  }
 
   public async GetRoute(routeId : number) : Promise<Route> {
     const response = await this.routesModel.findOne({
@@ -231,6 +248,14 @@ export class Database {
     });
 
     return response !== null ? response : {};
+  }
+
+  public async GetShape(shapeId : number) : Promise<Array<Shape>> {
+    const response = await this.shapesModel.find({
+      shapeId : shapeId,
+    });
+
+    return response !== [] ? response : [];
   }
 
   // public async AddRoute()

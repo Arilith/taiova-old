@@ -31,4 +31,21 @@ export class MapDataFetcher {
     return result.data;
   }
 
+  async FetchShape(shapeId) {
+    const result = await axios.get(`${this.url}/shape/${shapeId}`);
+    const sortedList = result.data.sort((a, b) => (a.shapeSequenceNumber > b.shapeSequenceNumber ? 1 : -1));
+
+    const positions = [];
+    sortedList.forEach(shapePoint => {
+      positions.push([shapePoint.Position[1], shapePoint.Position[0]])
+    }) 
+
+    const returnData = {
+      allShapeInfo : sortedList,
+      positionsOnly: positions
+    }
+
+    return returnData;
+  }
+
 }

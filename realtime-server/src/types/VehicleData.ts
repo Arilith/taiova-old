@@ -13,6 +13,7 @@ export interface VehicleData {
   company: string,
   planningNumber: string,
   journeyNumber: number,
+  lineNumber : string,
   timestamp: number,
   vehicleNumber: number,
   position: [number, number],

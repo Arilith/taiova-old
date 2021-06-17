@@ -59,7 +59,6 @@ export class Websocket {
         this.io.emit("ovdata", vehicles);
       })
     }, 100)
-    //TODO: Fix this to be only the new vehicles instead of all vehicles.
   }
 
 }

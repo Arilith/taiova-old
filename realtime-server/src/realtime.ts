@@ -57,8 +57,7 @@ export class OVData {
           vehicleData = converter.decode(decoded, true);
                  
         await this.busLogic.UpdateBusses(vehicleData);
-
-        
+                
       })
 
     })
@@ -66,7 +65,6 @@ export class OVData {
     setInterval(() => {
       this.websocket.Emit();
     }, parseInt(process.env.APP_BUS_UPDATE_DELAY))
-        
     
     // this.kv78socket = zmq.socket("sub");
     // this.kv78socket.connect("tcp://pubsub.ndovloket.nl:7817");

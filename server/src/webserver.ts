@@ -33,5 +33,9 @@ export class WebServer {
     this.app.get("/route/:routenumber", async(req, res) => {
       res.send(await this.database.GetRoute(req.params.routenumber));
     })
+
+    this.app.get("/shape/:shapenumber", async(req, res) => {
+      res.send(await this.database.GetShape(req.params.shapenumber));
+    })
   }
 }

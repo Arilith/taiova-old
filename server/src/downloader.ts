@@ -69,13 +69,13 @@ export class Downloader {
   ConvertExtractedFiles (path) {
     fs.readdir(path, (error, files) => {
       files.forEach((file) => {
-        if(file != "stop_times.txt" && file != "shapes.txt")
+        if(file != "stop_times.txt")
           this.convertCSVtoJSON(`${path}\\${file}`);
       });
     });
 
     console.log("Done extracting!");
-    this.busLogic.InitKV78();
+    //this.busLogic.InitKV78();
   }
 
   async ExtractFile(path) {
