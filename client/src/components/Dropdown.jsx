@@ -35,25 +35,25 @@ export const Dropdown = (props) => {
           >
             <Menu.Items
               static
-              className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
+              className={`origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none`}
             >
               {/* FOR DIVIDER <div className="py-1"></div> */}
               <div className="py-1">
-                { companies && companies.map(company => {
+                { companies && Object.entries(companies).map(([originalCompany, company]) => {
                   return (
                     <Menu.Item key={company}>
                       {({ active }) => (
                         <span href={`#${company}`} className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-gray-700','block px-4 py-2 text-sm')}
                           onClick={() =>  { 
-                            props.setFilter({ company: company }); 
-                            if(!activeFilters.includes(company))
-                              setActiveFilters([...activeFilters, company])
+                            props.setFilter({ company: originalCompany }); 
+                            if(!activeFilters.includes(originalCompany))
+                              setActiveFilters([...activeFilters, originalCompany])
                             else
-                              setActiveFilters(activeFilters.filter(name => name !== company))
+                              setActiveFilters(activeFilters.filter(name => name !== originalCompany))
                             }}>
                           
                           {company}
-                          {!activeFilters.includes(company) && <CheckIcon className="w-3 mb-1 inline-block ml-2" />}
+                          {!activeFilters.includes(originalCompany) && <CheckIcon className="w-3 mb-1 inline-block ml-2" />}
                         </span>
                       )}
                     </Menu.Item>

@@ -40,7 +40,7 @@ export const CompanyName = company => {
 }
 
 export const CompanyNameFromArray = arrayOfCompanies => {
-  const newCompanies = [];
-  arrayOfCompanies.forEach(company => newCompanies.push(CompanyName(company)))
+  const newCompanies = {};
+  arrayOfCompanies.forEach(company => newCompanies[company] = CompanyName(company))
   return newCompanies; 
 }

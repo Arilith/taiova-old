@@ -6,6 +6,21 @@
   transition: margin-right 0.4s ease-in-out;
 }
 
-.mr-outside {
+/* .mr-outside {
   margin-right: -50rem;
+} */
+
+.bg-white-trans {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.bg-black-trans {
+  background: rgba(0, 0, 0, 0.7);
+}
+.backdrop-blur {
+  backdrop-filter: blur(10px);
+}
+
+button:focus {
+  outline: none;
 }

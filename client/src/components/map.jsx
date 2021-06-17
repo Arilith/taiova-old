@@ -4,8 +4,9 @@ import { MapOptions } from './MapOptions';
 import BusInformationPanel from './BusInformationPanel';
 import '../css/map.css';
 import { accessToken } from "./api/token"
-import { Search } from './Search';
+import { Search } from './search/Search';
 import { CompanyNameFromArray } from './functions/CompanyConverter'
+import { FunctionButtons } from './FunctionButtons';
 mapboxgl.accessToken = accessToken;
 const Map = props => {
 
@@ -16,8 +17,12 @@ const Map = props => {
 
   const [busData, setBusData] = useState();
 
+  const [dark, setDark] = useState(localStorage.getItem('dark-mode') === "false" ? false : true);
+
   const mapContainer = useRef(null);
   let map = useRef(null);
+
+  
 
   useEffect(() => {
     InitializeMap();
@@ -199,10 +204,23 @@ const Map = props => {
     }
   }
 
+  const toggleDark = () => {
+    
+    if(localStorage.getItem('dark-mode') === "false")
+      localStorage.setItem('dark-mode', true)
+    else
+      localStorage.setItem('dark-mode', false)
+
+    setDark(!dark);
+  }
+
   return (
     <>
-      <Search setFilter={setFilter} companies={companies} />
-      {busData && <BusInformationPanel data={busData} setShape={setShape} />}
+      <Search setFilter={setFilter} companies={companies} dark={dark} />
+      <div className="flex lg:flex-row flex-col-reverse p-1 mt-auto">
+        <FunctionButtons dark={dark} toggleDark={toggleDark} />
+        {busData && <BusInformationPanel data={busData} setShape={setShape} dark={dark} />}
+      </div>
       <div ref={mapContainer} className="map-container" />
     </>
   )

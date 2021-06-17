@@ -36,7 +36,7 @@ export default function App() {
 
 
   return (
-    <div className="h-screen flex">
+    <div className="h-screen flex flex-col">
       { <Map data={response !== undefined && response} setMapLoaded={setMapHasLoaded} /> }
     </div>
   );
