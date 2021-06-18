@@ -33,6 +33,8 @@ export const CompanyName = company => {
       return "GVB Amsterdam";
     case "OVERAL":
       return "Overal";
+    case "TEXELHOPPER":
+      return "Texelhopper";
     default:
       return company;
   }

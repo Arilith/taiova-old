@@ -5,6 +5,7 @@ import * as fs from 'fs';
 import { resolve } from 'path';
 import { Route } from './types/Route';
 import { Shape } from './types/Shape';
+import { TripPositionData } from './types/TripPositionData';
 const streamToMongoDB = require('stream-to-mongo-db').streamToMongoDB;
 const split = require('split');
 export class Database {
@@ -17,10 +18,12 @@ export class Database {
   private tripsSchema : Schema;
   private routesSchema : Schema;
   private shapesSchema : Schema;
+  private drivenRoutesSchema : Schema;
   private vehicleModel : typeof Model;
   private tripModel : typeof Model;
   private routesModel : typeof Model;
   private shapesModel : typeof Model;
+  private drivenRoutesModel : typeof Model;
   private outputDBConfig;
 
   public static getInstance(): Database {
@@ -115,13 +118,22 @@ export class Database {
             DistanceSinceLastPoint: Number
           })
 
+          this.drivenRoutesSchema = new this.mongoose.Schema({
+            tripId : Number,
+            company : String,
+            positions: Array,
+            updatedTimes : Array
+          })
+
           this.tripsSchema.index({ tripNumber: -1, tripPlanningNumber: -1, company: -1 })
           this.shapesSchema.index({ shapeId: -1 })
+          this.drivenRoutesSchema.index({ tripId: -1, company: -1 })
 
           this.vehicleModel = this.mongoose.model("VehiclePositions", this.vehicleSchema);
           this.tripModel = this.mongoose.model("trips", this.tripsSchema);
           this.routesModel = this.mongoose.model("routes", this.routesSchema);
           this.shapesModel = this.mongoose.model("shapes", this.shapesSchema);
+          this.drivenRoutesModel = this.mongoose.model("drivenroutes", this.drivenRoutesSchema);
 
           this.tripModel.createIndexes();
           
@@ -258,6 +270,13 @@ export class Database {
     });
 
     return response !== [] ? response : [];
+  }
+
+  public async GetTripPositions(tripId : number, company : string) : Promise<Array<TripPositionData>> {
+    return await this.drivenRoutesModel.findOne({ 
+      tripId: tripId,
+      company: company,
+    })
   }
 
   // public async AddRoute()

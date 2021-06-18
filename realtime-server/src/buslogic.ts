@@ -6,6 +6,7 @@ import { Trip } from "./types/Trip";
 import { ApiTrip } from "./types/ApiTrip";
 import { exec } from 'child_process';
 import { Route } from "./types/Route";
+import { TripPositionData } from "./types/TripPositionData";
 
 export class BusLogic {
 
@@ -30,8 +31,6 @@ export class BusLogic {
    * @param busses The list of busses to update.
    */
    public async UpdateBusses(busses : Array<VehicleData>) : Promise<void> {
-
-
     await Promise.all(busses.map(async (bus) => {
       const foundTrip : Trip = await this.database.GetTrip(bus.journeyNumber, bus.planningNumber, bus.company);
       const foundRoute : Route = await this.database.GetRoute(foundTrip.routeId);
@@ -39,10 +38,30 @@ export class BusLogic {
       if(foundRoute.company !== undefined) bus.company = foundRoute.company;
       if(foundRoute !== undefined) bus.lineNumber = foundRoute.routeShortName;
 
-      const foundVehicle : VehicleData = await this.database.GetVehicle(bus.vehicleNumber, bus.company);
-          
+      let foundVehicle : VehicleData = await this.database.GetVehicle(bus.vehicleNumber, bus.company);
+      
       if(Object.keys(foundVehicle).length !== 0) {
         if(process.env.APP_DO_UPDATE_LOGGING == "true") console.log(`Updating vehicle ${bus.vehicleNumber} from ${bus.company}`)
+        if(!foundVehicle["_doc"]) { console.error(`Vehicle ${bus.vehicleNumber} from ${bus.company} did not include a doc. `); return }
+
+        foundVehicle = foundVehicle["_doc"];
+        
+        //Merge the punctualities of the old vehicleData with the new one.
+        bus.punctuality = foundVehicle.punctuality.concat(bus.punctuality);
+
+        //Merge the updated times of the old vehicleData with the new one.
+        bus.updatedTimes = foundVehicle.updatedTimes.concat(bus.updatedTimes);
+
+        if(bus.status !== vehicleState.ONROUTE) bus.position = foundVehicle.position;
+
+        if(bus.status === vehicleState.INIT || bus.status === vehicleState.END) {
+          bus.punctuality = [];
+          bus.updatedTimes = [];
+        }
+        //TODO: Remove punctuality data older than 60 minutes.
+
+        bus.updatedAt = Date.now();  
+        if(foundTrip) this.AddPositionToTripRoute(foundTrip.tripId, foundTrip.company, bus.position);
         await this.database.UpdateVehicle(foundVehicle, bus, true)
         
       } else {
@@ -50,6 +69,21 @@ export class BusLogic {
         if(bus.status === vehicleState.ONROUTE) await this.database.AddVehicle(bus, true)
       }
     }))
+  }
+
+  public async AddPositionToTripRoute (tripId : number, company : string, position : [number, number]) {
+    let retrievedTripRouteData : TripPositionData = await this.database.GetTripPositions(tripId, company);
+    if(retrievedTripRouteData)
+      retrievedTripRouteData.positions.push(position) && retrievedTripRouteData.updatedTimes.push(new Date().getTime());
+    else
+      retrievedTripRouteData = {
+        tripId : tripId,
+        company : company,
+        positions: [position],
+        updatedTimes : [new Date().getTime()]
+      }
+
+    await this.database.UpdateTripPositions(tripId, company, retrievedTripRouteData);
   }
 
   /**

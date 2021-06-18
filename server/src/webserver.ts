@@ -20,22 +20,43 @@ export class WebServer {
 
     this.app.get("/busses/:company/:number", async (req, res) => {
       
-      const result = await this.database.GetVehicle(req.params.number, req.params.company, true);
-      if(Object.keys(result).length > 0) res.send(result["_doc"]);
-      else res.send({})
+      try {
+        const result = await this.database.GetVehicle(req.params.number, req.params.company, true);
+        if(Object.keys(result).length > 0) 
+          res.send(result["_doc"]);
+        else 
+          res.send({})  
+      }
+      catch(error) { res.send(error.message) }
+
      })
     
 
     this.app.get("/trip/:company/:planningnumber/:tripnumber", async(req, res) => {
-      res.send(await this.database.GetTrip(req.params.tripnumber, req.params.planningnumber, req.params.company));
+      
+      try { res.send(await this.database.GetTrip(req.params.tripnumber, req.params.planningnumber, req.params.company)); }
+      catch(error) { res.send(error.message) }
+
     })
 
     this.app.get("/route/:routenumber", async(req, res) => {
-      res.send(await this.database.GetRoute(req.params.routenumber));
+      
+
+      try { res.send(await this.database.GetRoute(req.params.routenumber)); }
+      catch(error) { res.send(error.message) }
+
     })
 
     this.app.get("/shape/:shapenumber", async(req, res) => {
-      res.send(await this.database.GetShape(req.params.shapenumber));
+      
+      try { res.send(await this.database.GetShape(req.params.shapenumber)); }
+      catch(error) { res.send(error.message) }
+
+    })
+
+    this.app.get("/tripdata/:company/:tripId", async(req, res) => {
+      try { res.send(await this.database.GetTripPositions(req.params.tripId, req.params.company)); }
+      catch(error) { res.send(error.message) }      
     })
   }
 }

@@ -7,6 +7,7 @@ import { accessToken } from "./api/token"
 import { Search } from './search/Search';
 import { CompanyNameFromArray } from './functions/CompanyConverter'
 import { FunctionButtons } from './FunctionButtons';
+import { turf } from '@turf/turf';
 mapboxgl.accessToken = accessToken;
 const Map = props => {
 
@@ -53,6 +54,33 @@ const Map = props => {
 
     map.current.on('load', () => {
       
+      // Insert the layer beneath any symbol layer.
+      const layers = map.current.getStyle().layers;
+      let buildingLayerId;
+      for (var i = 0; i < layers.length; i++) {
+        if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
+          buildingLayerId = layers[i].id;
+          break;
+        }
+      }
+
+      map.current.addLayer(
+        {
+          'id': 'add-3d-buildings',
+          'source': 'composite',
+          'source-layer': 'building',
+          'filter': ['==', 'extrude', 'true'],
+          'type': 'fill-extrusion',
+          'minzoom': 10,
+          'paint': {
+            'fill-extrusion-color': '#aaa',
+            'fill-extrusion-height': ['interpolate',['linear'],['zoom'],15,0,15.05,['get', 'height']],
+            'fill-extrusion-base': ['interpolate', ['linear'],['zoom'],15,0,15.05,['get', 'min_height']],
+            'fill-extrusion-opacity': 0.8
+          }
+        },
+        buildingLayerId
+      );
       map.current.addSource('shape', {
         'type' : 'geojson',
         'data' : {
@@ -80,6 +108,10 @@ const Map = props => {
         }
       });
     })
+  }
+
+  const AnimateCamera = () => {
+    
   }
 
   useEffect(() => {
@@ -139,21 +171,12 @@ const Map = props => {
         });
         map.current.on('click', `busses_${company}`, function (e) {
           toggleInformation(e.features[0]?.properties);
-          // var coordinates = e.features[0].geometry.coordinates.slice();
-          // var description = e.features[0].properties.description;
-          // console.log(e.features[0]);
-          // new mapboxgl.Popup()
-          //   .setLngLat(coordinates.map((cord, index) => cord += index === 0 ? 0 : 0.01))
-          //   .setHTML(description)
-          //   .addTo(map.current);
         });
            
-        // Change the cursor to a pointer when the mouse is over the places layer.
         map.current.on('mouseenter', `busses_${company}`, function () {
           map.current.getCanvas().style.cursor = 'pointer';
         });
           
-        // Change it back to a pointer when it leaves.
         map.current.on('mouseleave', `busses_${company}`, function () {
           map.current.getCanvas().style.cursor = '';
         });

@@ -40,6 +40,7 @@ export const Dropdown = (props) => {
               {/* FOR DIVIDER <div className="py-1"></div> */}
               <div className="py-1">
                 { companies && Object.entries(companies).map(([originalCompany, company]) => {
+                  if(originalCompany === "TEC" || originalCompany === "DELIJN") return null; 
                   return (
                     <Menu.Item key={company}>
                       {({ active }) => (

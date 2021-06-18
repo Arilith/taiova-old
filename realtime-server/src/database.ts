@@ -4,6 +4,7 @@ import { VehicleData, vehicleState } from './types/VehicleData';
 import * as fs from 'fs';
 import { resolve } from 'path';
 import { Route } from './types/Route';
+import { TripPositionData } from './types/TripPositionData';
 const streamToMongoDB = require('stream-to-mongo-db').streamToMongoDB;
 const split = require('split');
 export class Database {
@@ -15,9 +16,11 @@ export class Database {
   private vehicleSchema : Schema;
   private tripsSchema : Schema;
   private routesSchema : Schema;
+  private drivenRoutesSchema : Schema;
   private vehicleModel : typeof Model;
   private tripModel : typeof Model;
   private routesModel : typeof Model;
+  private drivenRoutesModel : typeof Model;
   private outputDBConfig;
 
   public static getInstance(): Database {
@@ -106,11 +109,20 @@ export class Database {
             routeType: Number,
           })
 
+          this.drivenRoutesSchema = new this.mongoose.Schema({
+            tripId : Number,
+            company : String,
+            positions: Array,
+            updatedTimes : Array
+          })
+
           this.tripsSchema.index({ tripNumber: -1, tripPlanningNumber: -1, company: -1 })
+          this.drivenRoutesSchema.index({ tripId: -1, company: -1 })
 
           this.vehicleModel = this.mongoose.model("VehiclePositions", this.vehicleSchema);
           this.tripModel = this.mongoose.model("trips", this.tripsSchema);
           this.routesModel = this.mongoose.model("routes", this.routesSchema);
+          this.drivenRoutesModel = this.mongoose.model("drivenroutes", this.drivenRoutesSchema);
 
           this.tripModel.createIndexes();
           
@@ -137,26 +149,6 @@ export class Database {
   }
 
   public async UpdateVehicle (vehicleToUpdate : any, updatedVehicleData : VehicleData, positionChecks : boolean = false) : Promise<void> {
-    if(!vehicleToUpdate["_doc"]) return
-
-    vehicleToUpdate = vehicleToUpdate["_doc"];
-    
-    //Merge the punctualities of the old vehicleData with the new one.
-    updatedVehicleData.punctuality = vehicleToUpdate.punctuality.concat(updatedVehicleData.punctuality);
-
-    //Merge the updated times of the old vehicleData with the new one.
-    updatedVehicleData.updatedTimes = vehicleToUpdate.updatedTimes.concat(updatedVehicleData.updatedTimes);
-
-    if(positionChecks && updatedVehicleData.status !== vehicleState.ONROUTE)
-      updatedVehicleData.position = vehicleToUpdate.position;
-
-    if(updatedVehicleData.status === vehicleState.INIT || updatedVehicleData.status === vehicleState.END) {
-      updatedVehicleData.punctuality = [];
-      updatedVehicleData.updatedTimes = [];
-    }
-
-    updatedVehicleData.updatedAt = Date.now();  
-
     await this.vehicleModel.findOneAndUpdate(vehicleToUpdate, updatedVehicleData);
   }
 
@@ -239,6 +231,26 @@ export class Database {
     });
 
     return response !== null ? response : {};
+  }
+
+  public async UpdateTripPositions(tripId, company, tripData : TripPositionData) : Promise<void> {
+    await this.drivenRoutesModel.findOneAndUpdate(
+      {
+        tripId : tripId,
+        company : company
+      }, 
+      tripData, 
+      { upsert : true }
+    )
+  }
+
+  public async GetTripPositions(tripId : number, company : string) : Promise<TripPositionData> {
+    return await this.drivenRoutesModel.findOne({ 
+      tripId: tripId,
+      company: company,
+    })
+
+
   }
 
   // public async AddRoute()
