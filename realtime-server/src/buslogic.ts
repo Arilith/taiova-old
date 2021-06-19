@@ -7,6 +7,7 @@ import { ApiTrip } from "./types/ApiTrip";
 import { exec } from 'child_process';
 import { Route } from "./types/Route";
 import { TripPositionData } from "./types/TripPositionData";
+import * as turf from '@turf/turf'
 
 export class BusLogic {
 
@@ -61,7 +62,7 @@ export class BusLogic {
         //TODO: Remove punctuality data older than 60 minutes.
 
         bus.updatedAt = Date.now();  
-        if(foundTrip) this.AddPositionToTripRoute(foundTrip.tripId, foundTrip.company, bus.position);
+        if(Object.keys(foundTrip).length !== 0) this.AddPositionToTripRoute(foundTrip.tripId, foundTrip.company, bus.position);
         await this.database.UpdateVehicle(foundVehicle, bus, true)
         
       } else {
@@ -72,9 +73,34 @@ export class BusLogic {
   }
 
   public async AddPositionToTripRoute (tripId : number, company : string, position : [number, number]) {
+    if(position == [3.3135291562643467, 47.974753856237534]) return;
     let retrievedTripRouteData : TripPositionData = await this.database.GetTripPositions(tripId, company);
-    if(retrievedTripRouteData)
-      retrievedTripRouteData.positions.push(position) && retrievedTripRouteData.updatedTimes.push(new Date().getTime());
+    if(retrievedTripRouteData) { 
+      retrievedTripRouteData.updatedTimes.push(new Date().getTime());
+      const newUpdatedTimes = retrievedTripRouteData.updatedTimes;
+      const turfPoints = retrievedTripRouteData.positions.map(position => turf.point(position))
+
+      const targetPoint = turf.point(position);
+      const currentPoints = turf.featureCollection(turfPoints)
+      const nearest = turf.nearestPoint(targetPoint, currentPoints);
+      const index = nearest.properties.featureIndex;
+
+      const firstHalf = currentPoints.features.slice(0, index);
+      const secondHalf = currentPoints.features.slice(index)
+      firstHalf.push(targetPoint);
+      const resultArray = firstHalf.concat(secondHalf);
+      
+      const cordArray = resultArray.map(result => result.geometry.coordinates)
+      
+      retrievedTripRouteData = {
+        tripId : tripId,
+        company : company,
+        positions: cordArray as [number, number][],
+        updatedTimes : newUpdatedTimes
+      }
+
+    }
+      
     else
       retrievedTripRouteData = {
         tripId : tripId,
@@ -85,6 +111,8 @@ export class BusLogic {
 
     await this.database.UpdateTripPositions(tripId, company, retrievedTripRouteData);
   }
+
+  
 
   /**
    * Clears busses every X amount of minutes specified in .env file.

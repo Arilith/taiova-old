@@ -93,6 +93,18 @@ const Map = props => {
         }
       })
   
+      map.current.addSource('drivenShape', {
+        'type' : 'geojson',
+        'data' : {
+          'type': 'Feature',
+          'properties': {},
+          'geometry': {
+            'type': 'LineString',
+            'coordinates': []
+          }
+        }
+      })
+
       map.current.addLayer({
         'id': 'shapes',
         'type': 'line',
@@ -105,6 +117,21 @@ const Map = props => {
           'line-blur' : 2,
           'line-color': '#7B1010',
           'line-width': 4
+        }
+      });
+
+      map.current.addLayer({
+        'id': 'drivenShapes',
+        'type': 'line',
+        'source': 'drivenShape',
+        'layout': {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        'paint': {
+          'line-blur' : 2,
+          'line-color': '#F5A5F7',
+          'line-width': 6
         }
       });
     })
@@ -198,9 +225,6 @@ const Map = props => {
   }
 
   const setShape = (shapeArray) => {
-
-    
-
     if(map.current.getSource('shape'))  {
       //console.log(map.current.getSource('shape'));
       map.current.getSource('shape').setData({
@@ -211,8 +235,21 @@ const Map = props => {
           'coordinates': shapeArray
         }
       })
-    }
-      
+    }  
+  }
+
+  const setDrivenShape = (shapeArray) => {
+    if(map.current.getSource('drivenShape'))  {
+      //console.log(map.current.getSource('shape'));
+      map.current.getSource('drivenShape').setData({
+        'type': 'Feature',
+        'properties': {},
+        'geometry': {
+          'type': 'LineString',
+          'coordinates': shapeArray
+        }
+      })
+    }  
   }
 
   const setFilter = (filter) => {
@@ -242,7 +279,7 @@ const Map = props => {
       <Search setFilter={setFilter} companies={companies} dark={dark} />
       <div className="flex lg:flex-row flex-col-reverse p-1 mt-auto">
         <FunctionButtons dark={dark} toggleDark={toggleDark} />
-        {busData && <BusInformationPanel data={busData} setShape={setShape} dark={dark} />}
+        {busData && <BusInformationPanel data={busData} setShape={setShape} setDrivenShape={setDrivenShape} dark={dark} />}
       </div>
       <div ref={mapContainer} className="map-container" />
     </>

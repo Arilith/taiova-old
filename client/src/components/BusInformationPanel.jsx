@@ -35,6 +35,7 @@ const BusInformationPanel = (props) => {
   const closePanel = () => {
     setOpen(false);
     props.setShape([])
+    props.setDrivenShape([])
   }
 
   useEffect(() => {
@@ -49,16 +50,14 @@ const BusInformationPanel = (props) => {
       const receivedTripData = await api.FetchTrip(props.data.planningNumber, props.data.journeyNumber, props.data.originalCompany);
       let receivedRouteData; 
       let receivedShapeData;
-      if(Object.keys(receivedTripData).length != 0) {
+      let receivedDrivenShapeData;
+      if(Object.keys(receivedTripData).length !== 0) {
         receivedRouteData = await api.FetchRoute(receivedTripData.routeId);
         receivedShapeData = await api.FetchShape(receivedTripData.shapeId);
+        receivedDrivenShapeData = await api.FetchDrivenShape(props.data.originalCompany, receivedTripData.tripId);
       }
         
-
-        
-       
-
-      setExtraData({busData : {...receivedVehicleData}, tripData : {...receivedTripData}, routeData : {...receivedRouteData}, shapeData : receivedShapeData});
+      setExtraData({busData : {...receivedVehicleData}, tripData : {...receivedTripData}, routeData : {...receivedRouteData}, shapeData : receivedShapeData, drivenShapeData : receivedDrivenShapeData});
     }
 
     fetchData();
@@ -86,7 +85,11 @@ const BusInformationPanel = (props) => {
       }]
     })
 
-    extraData && extraData.shapeData && props.setShape(extraData.shapeData.positionsOnly);
+    if(extraData) {
+      if(extraData.shapeData) props.setShape(extraData.shapeData.positionsOnly)
+      if(extraData.drivenShapeData) props.setDrivenShape(extraData.drivenShapeData)
+    }
+
   }, [extraData])
 
   const colors = {

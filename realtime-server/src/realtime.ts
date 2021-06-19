@@ -35,7 +35,7 @@ export class OVData {
     this.sock.subscribe("/RIG/KV6posinfo");
     this.sock.subscribe("/KEOLIS/KV6posinfo");
     this.sock.subscribe("/SYNTUS/KV6posinfo");
-    this.sock.subscribe("/OPENOV/KV6posinfo");
+    // this.sock.subscribe("/OPENOV/KV6posinfo");
     this.sock.subscribe("/GVB/KV6posinfo");
     this.sock.subscribe("/DITP/KV6posinfo");
 

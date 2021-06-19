@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@turf/nearest-point": "^6.4.0",
+    "@turf/turf": "^6.4.0",
     "cors": "^2.8.5",
     "csvtojson": "^2.0.10",
     "dotenv": "^10.0.0",

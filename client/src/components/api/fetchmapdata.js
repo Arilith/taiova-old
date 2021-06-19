@@ -48,4 +48,16 @@ export class MapDataFetcher {
     return returnData;
   }
 
+  async FetchDrivenShape(company, tripId) {
+    let result = await axios.get(`${this.url}/tripdata/${company}/${tripId}`);
+    if(result) result = result.data;
+
+    const positions = [];
+    result.positions?.forEach(shapePoint => {
+      positions.push([shapePoint[0], shapePoint[1]]);
+    })
+
+    return positions;
+  }
+
 }
