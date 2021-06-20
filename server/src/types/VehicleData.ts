@@ -21,5 +21,7 @@ export interface VehicleData {
   createdAt: number,
   updatedAt: number,
   punctuality: Array<number>,
-  updatedTimes: Array<number>
+  updatedTimes: Array<number>,
+  currentRouteId: number,
+  currentTripId: number
 }

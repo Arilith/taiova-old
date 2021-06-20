@@ -40,23 +40,20 @@ const BusInformationPanel = (props) => {
 
   useEffect(() => {
     setOpen(true);
-    setBusData(
-      {...props.data, 
-        position: JSON.parse(props.data.position),
-      });
+    setBusData({...props.data, position: JSON.parse(props.data.position)});
 
     const fetchData = async() => {
       const receivedVehicleData = await api.FetchVehicle(props.data.company, props.data.vehicleNumber);
-      const receivedTripData = await api.FetchTrip(props.data.planningNumber, props.data.journeyNumber, props.data.originalCompany);
+      const receivedTripData = await api.FetchTrip(receivedVehicleData.planningNumber, receivedVehicleData.journeyNumber, receivedVehicleData.originalCompany);
       let receivedRouteData; 
       let receivedShapeData;
       let receivedDrivenShapeData;
       if(Object.keys(receivedTripData).length !== 0) {
         receivedRouteData = await api.FetchRoute(receivedTripData.routeId);
         receivedShapeData = await api.FetchShape(receivedTripData.shapeId);
-        receivedDrivenShapeData = await api.FetchDrivenShape(props.data.originalCompany, receivedTripData.tripId);
+        receivedDrivenShapeData = await api.FetchDrivenShape(receivedVehicleData.originalCompany, receivedTripData.tripId);
       }
-        
+      setBusData(receivedVehicleData)
       setExtraData({busData : {...receivedVehicleData}, tripData : {...receivedTripData}, routeData : {...receivedRouteData}, shapeData : receivedShapeData, drivenShapeData : receivedDrivenShapeData});
     }
 
@@ -64,6 +61,7 @@ const BusInformationPanel = (props) => {
   }, [props.data])
 
   useEffect(() => {
+
     extraData
      && setPunctualityChart({
       options: {

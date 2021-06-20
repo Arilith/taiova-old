@@ -93,13 +93,13 @@ const Map = props => {
         }
       })
   
-      map.current.addSource('drivenShape', {
+      map.current.addSource('drivenPoints', {
         'type' : 'geojson',
         'data' : {
           'type': 'Feature',
           'properties': {},
           'geometry': {
-            'type': 'LineString',
+            'type': 'Point',
             'coordinates': []
           }
         }
@@ -120,25 +120,18 @@ const Map = props => {
         }
       });
 
+
       map.current.addLayer({
-        'id': 'drivenShapes',
-        'type': 'line',
-        'source': 'drivenShape',
-        'layout': {
-          'line-join': 'round',
-          'line-cap': 'round'
-        },
-        'paint': {
-          'line-blur' : 2,
-          'line-color': '#F5A5F7',
-          'line-width': 6
+        id: `drivenPoints`,
+        type: "circle",
+        source: `drivenPoints`,
+        paint: {
+          'circle-radius': 5,
+          'circle-color': '#A96ECA'
         }
       });
-    })
-  }
 
-  const AnimateCamera = () => {
-    
+    })
   }
 
   useEffect(() => {
@@ -148,28 +141,18 @@ const Map = props => {
     if(!map.current) InitializeMap();
 
     const convertedData = props.data.reduce((acc, cur) => {
-      if(!acc[cur.company]) acc[cur.company] = []
+      if(!acc[cur.c]) acc[cur.c] = []
   
-      acc[cur.company].push({
+      acc[cur.c].push({
           type: "Feature",
           geometry: {
               type: "Point",
-              coordinates: cur.position,
+              coordinates: cur.p,
           },
           properties: {
-            company: cur.company,
-            originalCompany: cur.originalCompany,
-            planningNumber: cur.planningNumber,
-            journeyNumber: cur.journeyNumber,
-            timestamp: cur.timestamp,
-            vehicleNumber: cur.vehicleNumber,
-            position: cur.position,
-            status: cur.status,
-            createdAt: cur.createdAt,
-            updatedAt: cur.updatedAt,
-            lineNumber: cur.lineNumber,
-            title: cur.vehicleNumber,
-            description: `<b>This is a bus from ${cur.company} with vehicle number ${cur.vehicleNumber}</b>`
+            position : cur.p,
+            vehicleNumber: cur.v,
+            company: cur.c
           }
       })
   
@@ -226,7 +209,6 @@ const Map = props => {
 
   const setShape = (shapeArray) => {
     if(map.current.getSource('shape'))  {
-      //console.log(map.current.getSource('shape'));
       map.current.getSource('shape').setData({
         'type': 'Feature',
         'properties': {},
@@ -239,15 +221,22 @@ const Map = props => {
   }
 
   const setDrivenShape = (shapeArray) => {
-    if(map.current.getSource('drivenShape'))  {
-      //console.log(map.current.getSource('shape'));
-      map.current.getSource('drivenShape').setData({
-        'type': 'Feature',
-        'properties': {},
-        'geometry': {
-          'type': 'LineString',
-          'coordinates': shapeArray
-        }
+    if(map.current.getSource('drivenPoints'))  {
+      const points = [];
+      shapeArray.forEach(point => {
+        points.push({
+          'type': 'Feature',
+          'properties': {},
+          'geometry': {
+            'type': 'Point',
+            'coordinates': point
+          }
+        })
+      })
+
+      map.current.getSource('drivenPoints').setData({
+        type: "FeatureCollection",
+        features: points
       })
     }  
   }

@@ -37,7 +37,12 @@ export class BusLogic {
       const foundRoute : Route = await this.database.GetRoute(foundTrip.routeId);
 
       if(foundRoute.company !== undefined) bus.company = foundRoute.company;
-      if(foundRoute !== undefined) bus.lineNumber = foundRoute.routeShortName;
+      if(foundRoute !== undefined) {
+        bus.lineNumber = foundRoute.routeShortName;
+        bus.currentRouteId = foundRoute.routeId
+      }
+
+      if(foundTrip !== undefined) bus.currentTripId = foundTrip.tripId
 
       let foundVehicle : VehicleData = await this.database.GetVehicle(bus.vehicleNumber, bus.company);
       
@@ -73,29 +78,33 @@ export class BusLogic {
   }
 
   public async AddPositionToTripRoute (tripId : number, company : string, position : [number, number]) {
-    if(position == [3.3135291562643467, 47.974753856237534]) return;
+    if(position[0] == 3.3135291562643467) return;
     let retrievedTripRouteData : TripPositionData = await this.database.GetTripPositions(tripId, company);
     if(retrievedTripRouteData) { 
       retrievedTripRouteData.updatedTimes.push(new Date().getTime());
       const newUpdatedTimes = retrievedTripRouteData.updatedTimes;
-      const turfPoints = retrievedTripRouteData.positions.map(position => turf.point(position))
+      let resultArray;
 
-      const targetPoint = turf.point(position);
-      const currentPoints = turf.featureCollection(turfPoints)
-      const nearest = turf.nearestPoint(targetPoint, currentPoints);
-      const index = nearest.properties.featureIndex;
-
-      const firstHalf = currentPoints.features.slice(0, index);
-      const secondHalf = currentPoints.features.slice(index)
-      firstHalf.push(targetPoint);
-      const resultArray = firstHalf.concat(secondHalf);
+      if(retrievedTripRouteData.positions.length > 1) {
+        const targetPoint = turf.point(position);
+        const currentLine = turf.lineString(retrievedTripRouteData.positions)
+        const nearest = turf.nearestPointOnLine(currentLine, targetPoint);
+        const index = nearest.properties.index;
+  
+        const firstHalf = retrievedTripRouteData.positions.slice(0, index);
+        const secondHalf = retrievedTripRouteData.positions.slice(index)
+        firstHalf.push([targetPoint.geometry.coordinates[0], targetPoint.geometry.coordinates[1]]);
+        resultArray = firstHalf.concat(secondHalf);
+      } else {
+        retrievedTripRouteData.positions.push(position);
+        resultArray = retrievedTripRouteData.positions;
+      }
       
-      const cordArray = resultArray.map(result => result.geometry.coordinates)
       
       retrievedTripRouteData = {
         tripId : tripId,
         company : company,
-        positions: cordArray as [number, number][],
+        positions: resultArray,
         updatedTimes : newUpdatedTimes
       }
 

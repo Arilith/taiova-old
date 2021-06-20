@@ -5,6 +5,7 @@ import * as fs from 'fs';
 import { resolve } from 'path';
 import { Route } from './types/Route';
 import { TripPositionData } from './types/TripPositionData';
+import { WebsocketVehicleData } from './types/WebsocketVehicleData';
 const streamToMongoDB = require('stream-to-mongo-db').streamToMongoDB;
 const split = require('split');
 export class Database {
@@ -82,7 +83,9 @@ export class Database {
             punctuality: Array,
             createdAt: Number,
             updatedAt: Number,
-            updatedTimes: Array
+            updatedTimes: Array,
+            currentRouteId: Number,
+            currentTripId: Number,
           });
           
           this.tripsSchema = new this.mongoose.Schema({
@@ -133,6 +136,35 @@ export class Database {
 
   public async GetAllVehicles (args = {}) : Promise<Array<VehicleData>> {
     return await this.vehicleModel.find({...args}, { punctuality: 0, updatedTimes: 0, __v : 0 });
+  }
+
+  public async GetAllVehiclesSmall (args = {}) : Promise<Array<WebsocketVehicleData>> {
+    const smallBusses : Array<WebsocketVehicleData> = [];
+
+    const result = await this.vehicleModel.find({...args},
+      { 
+      punctuality: 0, 
+      updatedTimes: 0, 
+      __v : 0,
+      journeyNumber: 0,
+      timestamp : 0,
+      lineNUmber: 0,
+      createdAt: 0,
+      updatedAt: 0,
+      currentRouteId: 0,
+      currentTripId: 0,
+      planningNumber: 0,
+      status: 0
+    })
+
+    result.forEach(res => {
+      smallBusses.push({
+        p: res.position,
+        c: res.company,
+        v: res.vehicleNumber
+      })
+    })
+    return smallBusses;
   }
 
   public async GetVehicle (vehicleNumber, transporter, firstOnly : boolean = false) : Promise<VehicleData> {

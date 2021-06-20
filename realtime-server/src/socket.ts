@@ -55,8 +55,22 @@ export class Websocket {
   Emit() {
     //Small delay to make sure the server catches up.
     setTimeout(() => {
-      this.db.GetAllVehicles().then((vehicles) => {
-        this.io.emit("ovdata", vehicles);
+      this.db.GetAllVehiclesSmall().then((vehicles) => {
+
+        let buf = Buffer.alloc((4 + 4 + 4 + 10) * vehicles.length)
+        vehicles.forEach((vehicle, index) => {
+          buf.writeFloatBE(vehicle.p[0], index * 22)
+          buf.writeFloatBE(vehicle.p[1], index * 22 + 4)
+          buf.writeUInt32BE(vehicle.v, index * 22 + 4 + 4)
+          buf.write(vehicle.c, index * 22 + 4 + 4 + 4)
+          for(let i = 0; i < 10 - vehicle.c.length; i++) {
+            buf.writeUInt8(0, index * 22 + 4 + 4 + 4 + vehicle.c.length)
+          }
+        })
+        
+
+
+        this.io.emit("ovdata", buf);
       })
     }, 100)
   }

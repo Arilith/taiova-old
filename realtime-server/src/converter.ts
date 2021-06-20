@@ -35,7 +35,9 @@ export class Converter {
             status: vehicleState[Object.keys(statusWithBus)[0]],
             createdAt: Date.now(),
             updatedAt: Date.now(),
-            updatedTimes: [Date.now()]
+            updatedTimes: [Date.now()],
+            currentRouteId: 0,
+            currentTripId: 0
           })
       })
     } else {
@@ -53,7 +55,9 @@ export class Converter {
         status: vehicleState[Object.keys(kv6posinfo)[0]],
         createdAt: Date.now(),
         updatedAt: Date.now(),
-        updatedTimes: [Date.now()]
+        updatedTimes: [Date.now()],
+        currentRouteId: 0,
+        currentTripId: 0
       })
     }
     
@@ -87,7 +91,9 @@ export class Converter {
                 status: vehicleState[key],
                 createdAt: Date.now(),
                 updatedAt: Date.now(),
-                updatedTimes: [Date.now()]
+                updatedTimes: [Date.now()],
+                currentRouteId: 0, 
+                currentTripId: 0
               }
             )
           }  
@@ -110,7 +116,9 @@ export class Converter {
                 status: vehicleState[key],
                 createdAt: Date.now(),
                 updatedAt: Date.now(),
-                updatedTimes: [Date.now()]
+                updatedTimes: [Date.now()],
+                currentRouteId : 0,
+                currentTripId : 0
               }
             )
           }

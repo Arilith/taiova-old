@@ -1,13 +1,15 @@
 import { Database } from "./database";
+import { SearchHandler } from "./searchhandler";
 
 export class WebServer {
 
   private app;
   private database : Database;
-
+  private searchHandler : SearchHandler;
   constructor(app, database : Database) {
     this.app = app;
     this.database = database;
+    this.searchHandler = new SearchHandler(database);
     this.Initialize();
   }
 
@@ -15,7 +17,7 @@ export class WebServer {
     this.app.get("/", (req, res) => res.send("This is the API endpoint for the TAIOVA application."));
 
     this.app.get("/busses", async (req, res) => res.send(
-      await this.database.GetAllVehicles()
+      await this.database.GetAllVehiclesSmall()
     ))
 
     this.app.get("/busses/:company/:number", async (req, res) => {
@@ -55,8 +57,18 @@ export class WebServer {
     })
 
     this.app.get("/tripdata/:company/:tripId", async(req, res) => {
-      try { res.send(await this.database.GetTripPositions(req.params.tripId, req.params.company)); }
+      try { 
+        const response = await this.database.GetTripPositions(req.params.tripId, req.params.company);
+        const sortedPositions = response.positions.sort((a, b) => Math.sqrt(a[0] + a[1]) - Math.sqrt(a[0] + b[1]))
+        response.positions = sortedPositions;
+        res.send(response); }
       catch(error) { res.send(error.message) }      
+    })
+
+    this.app.get("/search/:query", async(req, res) => {
+      try {
+        res.send(await this.searchHandler.SearchForEverything(req.params.query));
+      } catch(error) { res.send(error.message) }
     })
   }
 }

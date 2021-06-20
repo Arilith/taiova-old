@@ -6,6 +6,7 @@ import { resolve } from 'path';
 import { Route } from './types/Route';
 import { Shape } from './types/Shape';
 import { TripPositionData } from './types/TripPositionData';
+import { WebsocketVehicleData } from './types/WebsocketVehicleData';
 const streamToMongoDB = require('stream-to-mongo-db').streamToMongoDB;
 const split = require('split');
 export class Database {
@@ -84,7 +85,9 @@ export class Database {
             punctuality: Array,
             createdAt: Number,
             updatedAt: Number,
-            updatedTimes: Array
+            updatedTimes: Array,
+            currentRouteId: Number,
+            currentTripId: Number,
           });
           
           this.tripsSchema = new this.mongoose.Schema({
@@ -126,6 +129,7 @@ export class Database {
           })
 
           this.tripsSchema.index({ tripNumber: -1, tripPlanningNumber: -1, company: -1 })
+          this.routesSchema.index({ company: -1, subCompany: -1, routeShortName: -1 , routeLongName: -1})
           this.shapesSchema.index({ shapeId: -1 })
           this.drivenRoutesSchema.index({ tripId: -1, company: -1 })
 
@@ -146,6 +150,35 @@ export class Database {
     return await this.vehicleModel.find({...args}, { punctuality: 0, updatedTimes: 0, __v : 0 });
   }
 
+  public async GetAllVehiclesSmall (args = {}) : Promise<Array<WebsocketVehicleData>> {
+    const smallBusses : Array<WebsocketVehicleData> = [];
+
+    const result = await this.vehicleModel.find({...args},
+      { 
+      punctuality: 0, 
+      updatedTimes: 0, 
+      __v : 0,
+      journeyNumber: 0,
+      timestamp : 0,
+      lineNUmber: 0,
+      createdAt: 0,
+      updatedAt: 0,
+      currentRouteId: 0,
+      currentTripId: 0,
+      planningNumber: 0,
+      status: 0
+    })
+
+    result.forEach(res => {
+      smallBusses.push({
+        p: res.position,
+        c: res.company, 
+        v: res.vehicleNumber
+      })
+    })
+    return smallBusses;
+  }
+
   public async GetVehicle (vehicleNumber, transporter, firstOnly : boolean = false) : Promise<VehicleData> {
     return { 
       ...await this.vehicleModel.findOne({
@@ -155,45 +188,6 @@ export class Database {
     };
   }
 
-  public async VehicleExists(vehicleNumber, transporter) : Promise<boolean> {
-    return await this.GetVehicle(vehicleNumber, transporter) !== null;
-  }
-
-  public async UpdateVehicle (vehicleToUpdate : any, updatedVehicleData : VehicleData, positionChecks : boolean = false) : Promise<void> {
-    if(!vehicleToUpdate["_doc"]) return
-
-    vehicleToUpdate = vehicleToUpdate["_doc"];
-    
-    //Merge the punctualities of the old vehicleData with the new one.
-    updatedVehicleData.punctuality = vehicleToUpdate.punctuality.concat(updatedVehicleData.punctuality);
-
-    //Merge the updated times of the old vehicleData with the new one.
-    updatedVehicleData.updatedTimes = vehicleToUpdate.updatedTimes.concat(updatedVehicleData.updatedTimes);
-
-    if(positionChecks && updatedVehicleData.status !== vehicleState.ONROUTE)
-      updatedVehicleData.position = vehicleToUpdate.position;
-
-    updatedVehicleData.updatedAt = Date.now();  
-
-    await this.vehicleModel.findOneAndUpdate(vehicleToUpdate, updatedVehicleData);
-  }
-
-  public async AddVehicle (vehicle : VehicleData, onlyAddWhileOnRoute : boolean) : Promise<void> {
-    if(onlyAddWhileOnRoute && vehicle.status !== vehicleState.ONROUTE) return;
-    new this.vehicleModel({
-      ...vehicle,
-      punctuality : vehicle.punctuality
-    }).save(error => {
-      if(error) console.error(`Something went wrong while trying to add vehicle: ${vehicle.vehicleNumber}. Error: ${error}`)
-    })
-  }
-  
-  public async RemoveVehicle (vehicle : VehicleData) : Promise<void> {
-    if(!vehicle["_doc"]) return
-
-    this.vehicleModel.findOneAndDelete(vehicle)
-  }
-
   public async RemoveVehiclesWhere( params : object, doLogging : boolean = false) : Promise<Array<VehicleData>> {
     const removedVehicles : Array<VehicleData> = await this.GetAllVehicles(params);
     this.vehicleModel.deleteMany(params).then(response => {
@@ -201,10 +195,6 @@ export class Database {
       
     });
     return removedVehicles;
-  }
-
-  public async GetTrips(params : object = {}) : Promise<Array<Trip>> {
-    return await this.tripModel.find(params)
   }
 
   public async GetTrip(tripNumber : number, tripPlanningNumber : string, company: string) {
@@ -218,38 +208,18 @@ export class Database {
     return response !== null ? response : {};
   }
 
-  public async RemoveTrip(params : object = {}, doLogging : boolean = false) : Promise<void> {
-    await this.tripModel.deleteMany(params).then(response => {
-      if(doLogging) console.log(`Deleted ${response.deletedCount} trips`);
-    })
-  }
-  /**
-   * Inserts many trips at once into the database.
-   * @param trips The trips to add.
-   */
-  public async InsertManyTrips(trips) : Promise<void> {
-   await this.tripModel.insertMany(trips, { ordered: false });
-  }
-
-  /**
-   * Initializes the "Koppelvlak 7 and 8 turbo" files to database.
-   */
-  public async InsertTrip(trip : Trip) : Promise<void> {
-    new this.tripModel(trip).save(error => {
-      if(error) console.error(`Something went wrong while trying to add trip: ${trip.tripHeadsign}. Error: ${error}`)
-    })
-  }
-
   public async DropTripsCollection(): Promise<void> {
     if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Dropping trips collection");
     await this.tripModel.remove({});
     if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Dropped trips collection");
   }
+  
   public async DropRoutesCollection(): Promise<void> {
     if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Dropping routes collection");
     await this.routesModel.remove({});
     if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Dropped routes collection");
   }
+
   public async DropShapesCollection(): Promise<void> {
     if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Dropping shapes collection");
     await this.shapesModel.remove({});
@@ -272,13 +242,29 @@ export class Database {
     return response !== [] ? response : [];
   }
 
-  public async GetTripPositions(tripId : number, company : string) : Promise<Array<TripPositionData>> {
+  public async GetTripPositions(tripId : number, company : string) : Promise<TripPositionData> {
     return await this.drivenRoutesModel.findOne({ 
       tripId: tripId,
       company: company,
     })
   }
 
-  // public async AddRoute()
+  public async GetRoutesByString (query : string) : Promise<Array<Route>> {    
+      return await this.routesModel.find(
+        { 
+          $or: [ 
+            { routeLongName : { "$regex" : query } }, 
+            { company : { "$regex" : query } }, { subCompany: { "$regex" : query } }, 
+            { routeShortName : query }
+          ] 
+        }
+      )
+  } 
+  
+  public async GetVehiclesByRouteId (routeId : number) : Promise<Array<VehicleData>> {
+    return await this.vehicleModel.find({ 
+      currentRouteId: routeId
+    })
+  }
 
 }

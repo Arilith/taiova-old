@@ -28,3 +28,7 @@ button:focus {
 .fit-content {
   height: fit-content;
 }
+
+.min-width-icon {
+  min-width: 16.6666667%;
+}
