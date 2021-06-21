@@ -1,4 +1,3 @@
-import { VehicleData } from "./types/VehicleData";
 import { gunzip } from 'zlib';
 import { Converter } from './converter';
 import { BusLogic } from "./buslogic";
@@ -6,16 +5,20 @@ import { BusLogic } from "./buslogic";
 import * as xml from 'fast-xml-parser';
 import { Websocket } from "./socket";
 
-const zmq = require('zeromq');
-const doLogging = process.env.APP_DO_LOGGING == "true" ? true : false;
+import * as fs from 'fs';
+import { Database } from './database';
+
+// const zmq = require('zeromq');
+import * as zmq from 'zeromq';
+import { VehicleData } from './types/VehicleData';
 export class OVData {
   
-  private sock;
-  private kv78socket;
+  private sock : zmq.Socket;
+  //private kv78socket;
   private busLogic : BusLogic;
   private websocket : Websocket;
 
-  constructor(database, socket : Websocket) {
+  constructor(database : Database, socket : Websocket) {
     this.websocket = socket;
     this.Init();
     this.busLogic = new BusLogic(database, false);
@@ -30,32 +33,26 @@ export class OVData {
     this.sock.connect("tcp://pubsub.ndovloket.nl:7658");
     this.sock.subscribe("/ARR/KV6posinfo");
     this.sock.subscribe("/CXX/KV6posinfo");
+    this.sock.subscribe("/DITP/KV6posinfo");
     this.sock.subscribe("/EBS/KV6posinfo");
+    this.sock.subscribe("/GVB/KV6posinfo");
+    this.sock.subscribe("/OPENOV/KV6posinfo");
     this.sock.subscribe("/QBUZZ/KV6posinfo");
     this.sock.subscribe("/RIG/KV6posinfo");
     this.sock.subscribe("/KEOLIS/KV6posinfo");
-    this.sock.subscribe("/SYNTUS/KV6posinfo");
-    // this.sock.subscribe("/OPENOV/KV6posinfo");
-    this.sock.subscribe("/GVB/KV6posinfo");
-    this.sock.subscribe("/DITP/KV6posinfo");
 
-    this.sock.on("message", (opCode, ...content) => {
+    
+
+    this.sock.on("message", (opCode : any, ...content : any) => {
       const contents = Buffer.concat(content);
       const operator = opCode.toString();
       gunzip(contents, async(error, buffer) => {
         if(error) return console.error(`Something went wrong while trying to unzip. ${error}`)
         
         const encodedXML = buffer.toString();
-        const decoded = xml.parse(encodedXML);
-        let vehicleData;
-
+        const decoded = xml.parse(this.removeTmi8(encodedXML));
+        let vehicleData : Array<VehicleData> = converter.decode(decoded, operator);
         
-
-        if(operator !== "/KEOLIS/KV6posinfo" || operator !== "/GVB/KV6posinfo") 
-          vehicleData = converter.decode(decoded);
-        else
-          vehicleData = converter.decode(decoded, true);
-                 
         await this.busLogic.UpdateBusses(vehicleData);
                 
       })
@@ -77,5 +74,7 @@ export class OVData {
     // });
   }
 
-  
+  removeTmi8 (data) : any {
+    return data.replace(/tmi8:/g, "");
+  }
 }

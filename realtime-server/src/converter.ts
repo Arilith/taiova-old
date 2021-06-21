@@ -1,141 +1,121 @@
 import { VehicleData, vehicleState } from './types/VehicleData'
 import { VehicleApiData, VehiclePosData, VehicleApiDataKeolis } from './types/VehicleApiData'
+import { Companies } from './types/Companies';
+import { bearingToAngle } from '@turf/turf';
+import { KV6Generic } from './types/api/KV6Arriva';
+import { DELAY, INIT, ONROUTE, Types } from './types/api/KV6Common';
 export class Converter {
 
-  decode(data: VehicleApiData, isKeolis : boolean = false) : any {
-    
-    let newData : any = data;
+  decode(data : any, operator : string) : any {
+    const company = this.CheckCompany(operator);
 
-    if(JSON.stringify(data).includes('tmi8:'))
-      newData = this.removeTmi8(data); 
+    switch (company) {
+      case Companies.ARR:
+        return this.DecodeMain(data);
+      case Companies.CXX:
+        return this.DecodeMain(data);
+      case Companies.EBS:
+        return this.DecodeMain(data);
+      case Companies.QBUZZ:
+        return this.DecodeMain(data);
+      case Companies.RIG:
+        return this.DecodeMain(data);
+      case Companies.OPENOV:
+        return this.DecodeMain(data);
+      case Companies.DITP:
+        return this.DecodeMain(data);
+      case Companies.KEOLIS:
+        return this.DecodeOther(data);
+      case Companies.GVB:
+        return this.DecodeOther(data);
+      default:
+        console.error(`Company ${company} unknown.`)
+        break;
+    }
 
-    if(!isKeolis)
-      return this.convertKV6ToJson(newData);
-
-    return this.convertKV6ToJsonKeolis(newData);
   } 
 
-  convertKV6ToJsonKeolis(data: any) : any {
-    const array : Array<VehicleData> = [];
-    const kv6posinfo = data.VV_TM_PUSH.KV6posinfo;
-    
-    if(kv6posinfo.length !== undefined) {
-      kv6posinfo.forEach(statusWithBus => {
-        const vehiclePosData : VehiclePosData = statusWithBus[Object.keys(statusWithBus)[0]];
-          array.push({
-            company: vehiclePosData.dataownercode,
-            originalCompany: vehiclePosData.dataownercode,
-            planningNumber: vehiclePosData.lineplanningnumber.toString(),
-            journeyNumber: vehiclePosData.journeynumber,
-            timestamp: Date.parse(vehiclePosData.timestamp),
-            vehicleNumber: vehiclePosData.vehiclenumber,
-            lineNumber: "Onbekend",
-            position: this.rdToLatLong(vehiclePosData['rd-x'], vehiclePosData['rd-y']),
-            punctuality: [vehiclePosData.punctuality],
-            status: vehicleState[Object.keys(statusWithBus)[0]],
-            createdAt: Date.now(),
-            updatedAt: Date.now(),
-            updatedTimes: [Date.now()],
-            currentRouteId: 0,
-            currentTripId: 0
-          })
-      })
-    } else {
-      const vehiclePosData : VehiclePosData = kv6posinfo[Object.keys(kv6posinfo)[0]];
-      array.push({
-        company: vehiclePosData.dataownercode,
-        originalCompany: vehiclePosData.dataownercode,
-        planningNumber: vehiclePosData.lineplanningnumber.toString(),
-        journeyNumber: vehiclePosData.journeynumber,
-        timestamp: Date.parse(vehiclePosData.timestamp),
-        vehicleNumber: vehiclePosData.vehiclenumber,
-        lineNumber: "Onbekend",
-        position: this.rdToLatLong(vehiclePosData['rd-x'], vehiclePosData['rd-y']),
-        punctuality: [vehiclePosData.punctuality],
-        status: vehicleState[Object.keys(kv6posinfo)[0]],
-        createdAt: Date.now(),
-        updatedAt: Date.now(),
-        updatedTimes: [Date.now()],
-        currentRouteId: 0,
-        currentTripId: 0
-      })
-    }
-    
+  /** 
+  * This is the main decoding function. It works for Arriva, Connexxion, EBS, QBUZZ, RIG (RET), OPENOV, DITP
+  * @param data The required data. It should be of type "KV6Generic", which works for the companies mentioned above.
+  * @returns An array with the converted vehicledata.
+  */
+  DecodeMain (data : KV6Generic) : Array<VehicleData> {
+    const returnData : Array<VehicleData> = [];
 
-    return array;
-  }
-
-  convertKV6ToJson (data : VehicleApiData) : any {
-
-    let kv6posinfo = data.VV_TM_PUSH.KV6posinfo;
-    const array : Array<VehicleData> = [];
-
-    if(kv6posinfo != undefined) {
-      Object.entries(kv6posinfo).forEach(([key, value]) => {
-        //If true, the received data is just one object instead of array. Typeof VehiclePosData
-        if(value.hasOwnProperty("dataownercode")) { 
-
-          const vehiclePosData : VehiclePosData = kv6posinfo[key];
-          if(!(!parseInt(vehiclePosData['rd-x'] + "") || !parseInt(vehiclePosData['rd-y'] + ""))) {
-            array.push(
-              {
-                company: vehiclePosData.dataownercode,
-                originalCompany: vehiclePosData.dataownercode,
-                planningNumber: vehiclePosData.lineplanningnumber.toString(),
-                journeyNumber: vehiclePosData.journeynumber,
-                timestamp: Date.parse(vehiclePosData.timestamp),
-                vehicleNumber: vehiclePosData.vehiclenumber,
-                lineNumber: "Onbekend",
-                position: this.rdToLatLong(vehiclePosData['rd-x'], vehiclePosData['rd-y']),
-                punctuality: [vehiclePosData.punctuality],
-                status: vehicleState[key],
-                createdAt: Date.now(),
-                updatedAt: Date.now(),
-                updatedTimes: [Date.now()],
-                currentRouteId: 0, 
-                currentTripId: 0
-              }
-            )
-          }  
-        //If this is true, the received data is an array of objects.  Typeof VehiclePosData[]
-        } else if(value[Object.keys(value)[0]] !== undefined) {
-          for(let j =0; j < kv6posinfo[key].length; j++) {
-            const vehiclePosData : VehiclePosData = kv6posinfo[key][j];
-            if(!parseInt(vehiclePosData['rd-x'] + "") || !parseInt(vehiclePosData['rd-y'] + "")) continue; 
-            array.push(
-              {
-                company: vehiclePosData.dataownercode,
-                originalCompany: vehiclePosData.dataownercode,
-                planningNumber: vehiclePosData.lineplanningnumber.toString(),
-                journeyNumber: vehiclePosData.journeynumber,
-                timestamp: Date.parse(vehiclePosData.timestamp),
-                vehicleNumber: vehiclePosData.vehiclenumber,
-                lineNumber: "Onbekend",
-                position: this.rdToLatLong(vehiclePosData['rd-x'], vehiclePosData['rd-y']),
-                punctuality: [vehiclePosData.punctuality],
-                status: vehicleState[key],
-                createdAt: Date.now(),
-                updatedAt: Date.now(),
-                updatedTimes: [Date.now()],
-                currentRouteId : 0,
-                currentTripId : 0
-              }
-            )
-          }
-        } 
-      });
+    if(data.VV_TM_PUSH.KV6posinfo) {
+      const kv6posinfo = data.VV_TM_PUSH.KV6posinfo;
+      if(Object.keys(kv6posinfo).length > 0)
+        Object.keys(kv6posinfo).forEach(VehicleStatusCode => {
+          
+          if(Array.isArray(kv6posinfo[VehicleStatusCode])) {
+            for(const vehicleData of kv6posinfo[VehicleStatusCode]) {
+              //TODO: This maybe is stupid. Causes types without vehicleNumber to not appear.
+              if(!vehicleData.vehiclenumber) continue;
+              returnData.push(this.Mapper(vehicleData, VehicleStatusCode))
+            }
+          } else if(kv6posinfo[VehicleStatusCode].vehiclenumber) 
+            returnData.push(this.Mapper(kv6posinfo[VehicleStatusCode], VehicleStatusCode))     
+        })
     }
 
-    return array;
+    return returnData;
 
   }
+  /** 
+  * This is the secondary decoding function. It works for Keolis and GVB
+  * @param data The required data. It should be of type "KV6Generic", which works for the companies mentioned above.
+  * @returns An array with the converted vehicledata.
+  */
+  DecodeOther(data) : Array<VehicleData> {
+    const returnData : Array<VehicleData> = [];
 
-  removeTmi8 (data : VehicleApiData) : VehicleApiData {
-    let dataString : string = JSON.stringify(data);
-    dataString = dataString.replace(/tmi8:/g, "");
-    return JSON.parse(dataString);
+    if(data.VV_TM_PUSH.KV6posinfo) {
+      const kv6posinfo = data.VV_TM_PUSH.KV6posinfo;
+      if(Array.isArray(kv6posinfo)) {
+        for(const StatusObject of kv6posinfo) {
+          const VehicleStatusCode = Object.keys(StatusObject)[0];
+          returnData.push(this.Mapper(StatusObject[VehicleStatusCode], VehicleStatusCode))
+        }
+      } else {
+        const VehicleStatusCode = Object.keys(kv6posinfo)[0];
+        returnData.push(this.Mapper(kv6posinfo[VehicleStatusCode], VehicleStatusCode))
+      }
+    } 
+    return returnData;
   }
 
+  CheckCompany(operator : string) : string {
+    let returnCompany : string;
+    Object.values(Companies).forEach(company => {
+      if(operator.includes(company)) returnCompany = company;
+    })
+    return returnCompany;
+  }
+
+  Mapper(vehiclePosData, status : string) { 
+    const newData = {
+      company: vehiclePosData.dataownercode,
+      originalCompany: vehiclePosData.dataownercode,
+      planningNumber: vehiclePosData.lineplanningnumber.toString(),
+      journeyNumber: vehiclePosData.journeynumber,
+      timestamp: Date.parse(vehiclePosData.timestamp),
+      vehicleNumber: vehiclePosData.vehiclenumber ? vehiclePosData.vehiclenumber : 999999,
+      lineNumber: "Onbekend",
+      position: this.rdToLatLong(vehiclePosData['rd-x'], vehiclePosData['rd-y']),
+      punctuality: [vehiclePosData.punctuality],
+      status: vehicleState[status],
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+      updatedTimes: [Date.now()],
+      currentRouteId: 0,
+      currentTripId: 0
+    }
+
+    return newData;
+  } 
+
+  
   rdToLatLong (x, y) : [number, number] {
     if(x === undefined || y === undefined) return [0, 0];
 
