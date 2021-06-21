@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Chart from 'react-apexcharts'
+// import Chart from 'react-apexcharts'
 import { timeConverter } from '../components/functions/DateConverter'
 import { MapDataFetcher } from '../components/api/fetchmapdata'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
@@ -149,7 +149,7 @@ const BusInformationPanel = (props) => {
               }
               <span>Punctualiteiten</span>
             </ul>
-            { extraData && <Chart className="hidden" options={punctualityChart.options} series={punctualityChart.series} type="line" width={500} height={320} /> }
+            {/* { extraData && <Chart className="hidden" options={punctualityChart.options} series={punctualityChart.series} type="line" width={500} height={320} /> } */}
           </div>
         </div>
       </div>

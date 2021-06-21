@@ -36,16 +36,22 @@ export class BusLogic {
       const foundTrip : Trip = await this.database.GetTrip(bus.journeyNumber, bus.planningNumber, bus.company);
       const foundRoute : Route = await this.database.GetRoute(foundTrip.routeId);
 
-      if(foundRoute.company !== undefined) bus.company = foundRoute.company;
-      if(foundRoute !== undefined) {
+      //TODO: Maybe this should be different.
+      bus.lineNumber = "999";
+      bus.currentRouteId = 0;
+      bus.currentTripId = 0;
+
+      if(foundRoute.company) bus.company = foundRoute.company;
+      if(foundRoute && foundRoute.routeShortName && foundRoute.routeId) {
         bus.lineNumber = foundRoute.routeShortName;
         bus.currentRouteId = foundRoute.routeId
       }
 
-      if(foundTrip !== undefined) bus.currentTripId = foundTrip.tripId
+      if(foundTrip && foundTrip.tripId) bus.currentTripId = foundTrip.tripId;
 
       let foundVehicle : VehicleData = await this.database.GetVehicle(bus.vehicleNumber, bus.company);
       
+
       if(Object.keys(foundVehicle).length !== 0) {
         if(process.env.APP_DO_UPDATE_LOGGING == "true") console.log(`Updating vehicle ${bus.vehicleNumber} from ${bus.company}`)
         if(!foundVehicle["_doc"]) { console.error(`Vehicle ${bus.vehicleNumber} from ${bus.company} did not include a doc. `); return }
@@ -64,6 +70,8 @@ export class BusLogic {
           bus.punctuality = [];
           bus.updatedTimes = [];
         }
+
+        
         //TODO: Remove punctuality data older than 60 minutes.
 
         bus.updatedAt = Date.now();  

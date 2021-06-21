@@ -39,15 +39,18 @@ export default function App() {
 
     const vehicles = [];
 
-    for(let i = 0; i < (buffer.byteLength / 22); i++) {
-      const x = buffer.readFloatBE(i * 22)
-      const y =buffer.readFloatBE(i * 22 + 4)
-      const v = buffer.readUInt32BE(i * 22 + 4 + 4)
-      let c = buffer.slice(i * 22 + 4 + 4 + 4, i * 22 + 4 + 4 + 4 + 10).toString().split('\u0000')[0];
+    for(let i = 0; i < (buffer.byteLength / 27); i++) {
+      const x = buffer.readFloatBE(i * 27)
+      const y =buffer.readFloatBE(i * 27 + 4)
+      const v = buffer.readUInt32BE(i * 27 + 4 + 4)
+      const combined = buffer.slice(i * 27 + 4 + 4 + 4, i * 27 + 4 + 4 + 4 + 15).toString().split('\u0000')[0];
+      const c = combined.split("|")[0];
+      const n = combined.split("|")[1];
       vehicles.push({
         p: [x, y],
         c: c,
-        v: v
+        v: v,
+        n : n
       })
     }
 

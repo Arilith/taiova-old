@@ -152,7 +152,9 @@ const Map = props => {
           properties: {
             position : cur.p,
             vehicleNumber: cur.v,
-            company: cur.c
+            company: cur.c,
+            title: cur.n,
+            lineNumber: cur.n,
           }
       })
   

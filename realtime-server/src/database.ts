@@ -148,7 +148,6 @@ export class Database {
       __v : 0,
       journeyNumber: 0,
       timestamp : 0,
-      lineNUmber: 0,
       createdAt: 0,
       updatedAt: 0,
       currentRouteId: 0,
@@ -161,9 +160,11 @@ export class Database {
       smallBusses.push({
         p: res.position,
         c: res.company,
-        v: res.vehicleNumber
+        v: res.vehicleNumber,
+        n: res.lineNumber
       })
     })
+
     return smallBusses;
   }
 
