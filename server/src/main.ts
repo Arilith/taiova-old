@@ -61,7 +61,7 @@ const AppInit = async () => {
   new WebServer(app, db);
   const busLogic = new BusLogic(db, true);
   //new Downloader(db);
-  // busLogic.InitKV78();
+  busLogic.InitKV78();
   
   server.listen(port, () => console.log(`Listening at http://localhost:${port}`));
 
