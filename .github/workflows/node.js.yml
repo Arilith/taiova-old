@@ -30,4 +30,4 @@ jobs:
       working-directory: ./realtime-server
       run: yarn && yarn build
     - name: Set up client
-      run: npm i && npm build
+      run: npm i && npm run build
