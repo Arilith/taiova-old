@@ -1,0 +1,415 @@
+{
+  "ns1:PutReisInformatieBoodschapIn": {
+    "ns2:ReisInformatieProductDVS": {
+      "ns2:RIPAdministratie": {
+        "ns2:ReisInformatieProductID": 2106221740412300000,
+        "ns2:AbonnementId": 54,
+        "ns2:ReisInformatieTijdstip": "2021-06-22T16:39:00.000Z"
+      },
+      "ns2:DynamischeVertrekStaat": {
+        "ns2:RitId": 3060,
+        "ns2:RitDatum": "2021-06-22",
+        "ns2:RitStation": {
+          "ns2:StationCode": "ASD",
+          "ns2:Type": 6,
+          "ns2:KorteNaam": "Amsterdm C",
+          "ns2:MiddelNaam": "Amsterdam C.",
+          "ns2:LangeNaam": "Amsterdam Centraal",
+          "ns2:UICCode": 8400058
+        },
+        "ns2:Trein": {
+          "ns2:TreinNummer": 3060,
+          "ns2:TreinSoort": "Intercity",
+          "ns2:TreinFormule": 3,
+          "ns2:TreinStatus": 0,
+          "ns2:Vervoerder": "NS",
+          "ns2:Reserveren": "N",
+          "ns2:Toeslag": "N",
+          "ns2:NietInstappen": "N",
+          "ns2:AchterBlijvenAchtersteTreinDeel": "N",
+          "ns2:RangeerBeweging": "N",
+          "ns2:SpeciaalKaartje": "N",
+          "ns2:ReisTip": [{
+            "ns2:ReisTipStation": {
+              "ns2:StationCode": "HLO",
+              "ns2:Type": 0,
+              "ns2:KorteNaam": "Heiloo",
+              "ns2:MiddelNaam": "Heiloo",
+              "ns2:LangeNaam": "Heiloo",
+              "ns2:UICCode": 8400309
+            },
+            "ns2:ReisTipCode": "STO",
+            "ns2:PresentatieReisTip": {
+              "ns2:Uitingen": [{
+                "ns2:Uiting": "Stopt ook in Heiloo"
+              }, {
+                "ns2:Uiting": "Also stopping in Heiloo"
+              }]
+            }
+          }, {
+            "ns2:ReisTipStation": {
+              "ns2:StationCode": "AMR",
+              "ns2:Type": 5,
+              "ns2:KorteNaam": "Alkmaar",
+              "ns2:MiddelNaam": "Alkmaar",
+              "ns2:LangeNaam": "Alkmaar",
+              "ns2:UICCode": 8400050
+            },
+            "ns2:ReisTipCode": "STVA",
+            "ns2:PresentatieReisTip": {
+              "ns2:Uitingen": [{
+                "ns2:Uiting": "Stopt na Alkmaar op alle stations"
+              }, {
+                "ns2:Uiting": "Stopping at all stations after Alkmaar"
+              }]
+            }
+          }],
+          "ns2:TreinEindBestemming": [{
+            "ns2:StationCode": "HDR",
+            "ns2:Type": 4,
+            "ns2:KorteNaam": "Den Helder",
+            "ns2:MiddelNaam": "Den Helder",
+            "ns2:LangeNaam": "Den Helder",
+            "ns2:UICCode": 8400311
+          }, {
+            "ns2:StationCode": "HDR",
+            "ns2:Type": 4,
+            "ns2:KorteNaam": "Den Helder",
+            "ns2:MiddelNaam": "Den Helder",
+            "ns2:LangeNaam": "Den Helder",
+            "ns2:UICCode": 8400311
+          }],
+          "ns2:PresentatieTreinEindBestemming": {
+            "ns2:Uitingen": {
+              "ns2:Uiting": "Den Helder"
+            }
+          },
+          "ns2:VertrekTijd": ["2021-06-22T16:39:00.000Z", "2021-06-22T16:42:40.000Z"],
+          "ns2:ExacteVertrekVertraging": "PT3M40S",
+          "ns2:PresentatieVertrekVertraging": {
+            "ns2:Uitingen": {
+              "ns2:Uiting": "+3 min."
+            }
+          },
+          "ns2:GedempteVertrekVertraging": "PT5M",
+          "ns2:TreinVertrekSpoor": [{
+            "ns2:SpoorNummer": 8,
+            "ns2:SpoorFase": "a"
+          }, {
+            "ns2:SpoorNummer": 8,
+            "ns2:SpoorFase": "a"
+          }],
+          "ns2:PresentatieTreinVertrekSpoor": {
+            "ns2:Uitingen": {
+              "ns2:Uiting": "8a"
+            }
+          },
+          "ns2:VertrekRichting": "A",
+          "ns2:AfstandPerronEindKopVertrekTrein": 0,
+          "ns2:VerkorteRoute": [{
+            "ns2:Station": [{
+              "ns2:StationCode": "ASS",
+              "ns2:Type": 5,
+              "ns2:KorteNaam": "Sloterdijk",
+              "ns2:MiddelNaam": "Sloterdijk",
+              "ns2:LangeNaam": "Amsterdam Sloterdijk",
+              "ns2:UICCode": 8400059
+            }, {
+              "ns2:StationCode": "ZD",
+              "ns2:Type": 5,
+              "ns2:KorteNaam": "Zaandam",
+              "ns2:MiddelNaam": "Zaandam",
+              "ns2:LangeNaam": "Zaandam",
+              "ns2:UICCode": 8400731
+            }, {
+              "ns2:StationCode": "CAS",
+              "ns2:Type": 4,
+              "ns2:KorteNaam": "Castricum",
+              "ns2:MiddelNaam": "Castricum",
+              "ns2:LangeNaam": "Castricum",
+              "ns2:UICCode": 8400151
+            }, {
+              "ns2:StationCode": "AMR",
+              "ns2:Type": 5,
+              "ns2:KorteNaam": "Alkmaar",
+              "ns2:MiddelNaam": "Alkmaar",
+              "ns2:LangeNaam": "Alkmaar",
+              "ns2:UICCode": 8400050
+            }]
+          }, {
+            "ns2:Station": [{
+              "ns2:StationCode": "ASS",
+              "ns2:Type": 5,
+              "ns2:KorteNaam": "Sloterdijk",
+              "ns2:MiddelNaam": "Sloterdijk",
+              "ns2:LangeNaam": "Amsterdam Sloterdijk",
+              "ns2:UICCode": 8400059
+            }, {
+              "ns2:StationCode": "ZD",
+              "ns2:Type": 5,
+              "ns2:KorteNaam": "Zaandam",
+              "ns2:MiddelNaam": "Zaandam",
+              "ns2:LangeNaam": "Zaandam",
+              "ns2:UICCode": 8400731
+            }, {
+              "ns2:StationCode": "CAS",
+              "ns2:Type": 4,
+              "ns2:KorteNaam": "Castricum",
+              "ns2:MiddelNaam": "Castricum",
+              "ns2:LangeNaam": "Castricum",
+              "ns2:UICCode": 8400151
+            }, {
+              "ns2:StationCode": "AMR",
+              "ns2:Type": 5,
+              "ns2:KorteNaam": "Alkmaar",
+              "ns2:MiddelNaam": "Alkmaar",
+              "ns2:LangeNaam": "Alkmaar",
+              "ns2:UICCode": 8400050
+            }]
+          }],
+          "ns2:PresentatieVerkorteRoute": {
+            "ns2:Uitingen": {
+              "ns2:Uiting": "Sloterdijk, Zaandam, Castricum, Alkmaar"
+            }
+          },
+          "ns2:TreinVleugel": {
+            "ns2:TreinVleugelVertrekSpoor": [{
+              "ns2:SpoorNummer": 8,
+              "ns2:SpoorFase": "a"
+            }, {
+              "ns2:SpoorNummer": 8,
+              "ns2:SpoorFase": "a"
+            }],
+            "ns2:PresentatieTreinVleugelVertrekSpoor": {
+              "ns2:Uitingen": {
+                "ns2:Uiting": "8a"
+              }
+            },
+            "ns2:TreinVleugelEindBestemming": [{
+              "ns2:StationCode": "HDR",
+              "ns2:Type": 4,
+              "ns2:KorteNaam": "Den Helder",
+              "ns2:MiddelNaam": "Den Helder",
+              "ns2:LangeNaam": "Den Helder",
+              "ns2:UICCode": 8400311
+            }, {
+              "ns2:StationCode": "HDR",
+              "ns2:Type": 4,
+              "ns2:KorteNaam": "Den Helder",
+              "ns2:MiddelNaam": "Den Helder",
+              "ns2:LangeNaam": "Den Helder",
+              "ns2:UICCode": 8400311
+            }],
+            "ns2:PresentatieTreinVleugelEindBestemming": {
+              "ns2:Uitingen": {
+                "ns2:Uiting": "Den Helder"
+              }
+            },
+            "ns2:StopStations": [{
+              "ns2:Station": [{
+                "ns2:StationCode": "ASS",
+                "ns2:Type": 5,
+                "ns2:KorteNaam": "Sloterdijk",
+                "ns2:MiddelNaam": "Sloterdijk",
+                "ns2:LangeNaam": "Amsterdam Sloterdijk",
+                "ns2:UICCode": 8400059
+              }, {
+                "ns2:StationCode": "ZD",
+                "ns2:Type": 5,
+                "ns2:KorteNaam": "Zaandam",
+                "ns2:MiddelNaam": "Zaandam",
+                "ns2:LangeNaam": "Zaandam",
+                "ns2:UICCode": 8400731
+              }, {
+                "ns2:StationCode": "CAS",
+                "ns2:Type": 4,
+                "ns2:KorteNaam": "Castricum",
+                "ns2:MiddelNaam": "Castricum",
+                "ns2:LangeNaam": "Castricum",
+                "ns2:UICCode": 8400151
+              }, {
+                "ns2:StationCode": "HLO",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Heiloo",
+                "ns2:MiddelNaam": "Heiloo",
+                "ns2:LangeNaam": "Heiloo",
+                "ns2:UICCode": 8400309
+              }, {
+                "ns2:StationCode": "AMR",
+                "ns2:Type": 5,
+                "ns2:KorteNaam": "Alkmaar",
+                "ns2:MiddelNaam": "Alkmaar",
+                "ns2:LangeNaam": "Alkmaar",
+                "ns2:UICCode": 8400050
+              }, {
+                "ns2:StationCode": "AMRN",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Alkmaar N",
+                "ns2:MiddelNaam": "Alkmaar N.",
+                "ns2:LangeNaam": "Alkmaar Noord",
+                "ns2:UICCode": 8400052
+              }, {
+                "ns2:StationCode": "HWD",
+                "ns2:Type": 1,
+                "ns2:KorteNaam": "Heerhugow",
+                "ns2:MiddelNaam": "Heerhugowaard",
+                "ns2:LangeNaam": "Heerhugowaard",
+                "ns2:UICCode": 8400306
+              }, {
+                "ns2:StationCode": "SGN",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Schagen",
+                "ns2:MiddelNaam": "Schagen",
+                "ns2:LangeNaam": "Schagen",
+                "ns2:UICCode": 8400549
+              }, {
+                "ns2:StationCode": "ANA",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Anna Paulo",
+                "ns2:MiddelNaam": "Anna Paulowna",
+                "ns2:LangeNaam": "Anna Paulowna",
+                "ns2:UICCode": 8400065
+              }, {
+                "ns2:StationCode": "HDRZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Dn Heldr Z",
+                "ns2:MiddelNaam": "Den Helder Z.",
+                "ns2:LangeNaam": "Den Helder Zuid",
+                "ns2:UICCode": 8400303
+              }, {
+                "ns2:StationCode": "HDR",
+                "ns2:Type": 4,
+                "ns2:KorteNaam": "Den Helder",
+                "ns2:MiddelNaam": "Den Helder",
+                "ns2:LangeNaam": "Den Helder",
+                "ns2:UICCode": 8400311
+              }]
+            }, {
+              "ns2:Station": [{
+                "ns2:StationCode": "ASS",
+                "ns2:Type": 5,
+                "ns2:KorteNaam": "Sloterdijk",
+                "ns2:MiddelNaam": "Sloterdijk",
+                "ns2:LangeNaam": "Amsterdam Sloterdijk",
+                "ns2:UICCode": 8400059
+              }, {
+                "ns2:StationCode": "ZD",
+                "ns2:Type": 5,
+                "ns2:KorteNaam": "Zaandam",
+                "ns2:MiddelNaam": "Zaandam",
+                "ns2:LangeNaam": "Zaandam",
+                "ns2:UICCode": 8400731
+              }, {
+                "ns2:StationCode": "CAS",
+                "ns2:Type": 4,
+                "ns2:KorteNaam": "Castricum",
+                "ns2:MiddelNaam": "Castricum",
+                "ns2:LangeNaam": "Castricum",
+                "ns2:UICCode": 8400151
+              }, {
+                "ns2:StationCode": "HLO",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Heiloo",
+                "ns2:MiddelNaam": "Heiloo",
+                "ns2:LangeNaam": "Heiloo",
+                "ns2:UICCode": 8400309
+              }, {
+                "ns2:StationCode": "AMR",
+                "ns2:Type": 5,
+                "ns2:KorteNaam": "Alkmaar",
+                "ns2:MiddelNaam": "Alkmaar",
+                "ns2:LangeNaam": "Alkmaar",
+                "ns2:UICCode": 8400050
+              }, {
+                "ns2:StationCode": "AMRN",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Alkmaar N",
+                "ns2:MiddelNaam": "Alkmaar N.",
+                "ns2:LangeNaam": "Alkmaar Noord",
+                "ns2:UICCode": 8400052
+              }, {
+                "ns2:StationCode": "HWD",
+                "ns2:Type": 1,
+                "ns2:KorteNaam": "Heerhugow",
+                "ns2:MiddelNaam": "Heerhugowaard",
+                "ns2:LangeNaam": "Heerhugowaard",
+                "ns2:UICCode": 8400306
+              }, {
+                "ns2:StationCode": "SGN",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Schagen",
+                "ns2:MiddelNaam": "Schagen",
+                "ns2:LangeNaam": "Schagen",
+                "ns2:UICCode": 8400549
+              }, {
+                "ns2:StationCode": "ANA",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Anna Paulo",
+                "ns2:MiddelNaam": "Anna Paulowna",
+                "ns2:LangeNaam": "Anna Paulowna",
+                "ns2:UICCode": 8400065
+              }, {
+                "ns2:StationCode": "HDRZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Dn Heldr Z",
+                "ns2:MiddelNaam": "Den Helder Z.",
+                "ns2:LangeNaam": "Den Helder Zuid",
+                "ns2:UICCode": 8400303
+              }, {
+                "ns2:StationCode": "HDR",
+                "ns2:Type": 4,
+                "ns2:KorteNaam": "Den Helder",
+                "ns2:MiddelNaam": "Den Helder",
+                "ns2:LangeNaam": "Den Helder",
+                "ns2:UICCode": 8400311
+              }]
+            }],
+            "ns2:MaterieelDeelDVS": {
+              "ns2:MaterieelSoort": "VIRM",
+              "ns2:MaterieelAanduiding": 6,
+              "ns2:MaterieelLengte": 16210,
+              "ns2:MaterieelNummer": "000000-08746-0",
+              "ns2:MaterieelDeelEindBestemming": [{
+                "ns2:StationCode": "HDR",
+                "ns2:Type": 4,
+                "ns2:KorteNaam": "Den Helder",
+                "ns2:MiddelNaam": "Den Helder",
+                "ns2:LangeNaam": "Den Helder",
+                "ns2:UICCode": 8400311
+              }, {
+                "ns2:StationCode": "HDR",
+                "ns2:Type": 4,
+                "ns2:KorteNaam": "Den Helder",
+                "ns2:MiddelNaam": "Den Helder",
+                "ns2:LangeNaam": "Den Helder",
+                "ns2:UICCode": 8400311
+              }],
+              "ns2:PresentatieMaterieelDeelEindBestemming": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": "Den Helder"
+                }
+              }
+            }
+          },
+          "ns2:Wijziging": {
+            "ns2:WijzigingType": 10,
+            "ns2:PresentatieWijziging": {
+              "ns2:Uitingen": [{
+                "ns2:Uiting": "Later vertrek"
+              }, {
+                "ns2:Uiting": "Delayed"
+              }]
+            }
+          }
+        },
+        "ns2:PresentatieOpmerkingen": {
+          "ns2:Uitingen": [{
+            "ns2:Uiting": ["Stopt na Alkmaar op alle stations", "Stopt ook in Heiloo", "Later vertrek"]
+          }, {
+            "ns2:Uiting": ["Stopping at all stations after Alkmaar", "Also stopping in Heiloo", "Delayed"]
+          }]
+        }
+      }
+    }
+  }
+}

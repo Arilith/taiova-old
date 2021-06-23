@@ -31,20 +31,20 @@ export class SearchResult extends React.Component {
 
   render () {
     return (
-      <article className={`relative overflow-hidden ${!this.props.dark ? "bg-white-trans" : "bg-black-trans"} flex space-x-4 backdrop-blur rounded-xl shadow-md  md:max-w-md md:w-full md:mr-0 sm:max-w-xs sm:max-h-xs z-10 ml-1 m-1`}>
+      <a href="#test" className={`relative overflow-hidden ${!this.props.dark ? "bg-white-trans" : "bg-black-trans"} flex space-x-4 backdrop-blur rounded-xl shadow-md  md:max-w-md md:w-full md:mr-0 sm:max-w-xs sm:max-h-xs z-10 ml-1 m-1`}>
         <div className="flex min-width-icon w-1/6" style={{ backgroundColor: this.color}}>
           <img src={`/images/original/${this.company}.png`} alt="" className="h-8 m-auto" />
         </div>
         <div className="p-2">
-        <div className="min-w-0 relative flex-auto sm:pr-20 lg:pr-0 xl:pr-20">
-          <h3 className={`text-md font-semibold ${this.props.dark && "text-white"} mb-0.5`}>
-            { this.result.routeLongName }
-          </h3>
-        </div>
+          <div className="min-w-0 relative flex-auto sm:pr-20 lg:pr-0 xl:pr-20">
+            <h3 className={`text-md font-semibold ${this.props.dark && "text-white"} mb-0.5 hover:underline`}>
+              { this.result.routeLongName }
+            </h3>
+          </div>
         </div>
         
         
-      </article>
+      </a>
     )
   }
   

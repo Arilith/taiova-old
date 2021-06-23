@@ -32,6 +32,7 @@ export class BusLogic {
    * @param busses The list of busses to update.
    */
    public async UpdateBusses(busses : Array<VehicleData>) : Promise<void> {
+     
     await Promise.all(busses.map(async (bus) => {
       const foundTrip : Trip = await this.database.GetTrip(bus.journeyNumber, bus.planningNumber, bus.company);
       const foundRoute : Route = await this.database.GetRoute(foundTrip.routeId);
@@ -50,6 +51,7 @@ export class BusLogic {
       if(foundTrip && foundTrip.tripId) bus.currentTripId = foundTrip.tripId;
 
       let foundVehicle : VehicleData = await this.database.GetVehicle(bus.vehicleNumber, bus.company);
+      
       
 
       if(Object.keys(foundVehicle).length !== 0) {
@@ -80,7 +82,7 @@ export class BusLogic {
         
       } else {
         if(process.env.APP_DO_CREATE_LOGGING == "true") console.log(`creating new vehicle ${bus.vehicleNumber} from ${bus.company}`)
-        if(bus.status === vehicleState.ONROUTE) await this.database.AddVehicle(bus, true)
+        if(bus.status === vehicleState.ONROUTE) await this.database.AddVehicle(bus)
       }
     }))
   }

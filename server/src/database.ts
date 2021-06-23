@@ -253,8 +253,8 @@ export class Database {
       return await this.routesModel.find(
         { 
           $or: [ 
-            { routeLongName : { "$regex" : query } }, 
-            { company : { "$regex" : query } }, { subCompany: { "$regex" : query } }, 
+            { routeLongName : new RegExp(query, 'i') }, 
+            { company : new RegExp(query, 'i') }, { subCompany: new RegExp(query, 'i') }, 
             { routeShortName : query }
           ] 
         }
