@@ -60,4 +60,9 @@ export class MapDataFetcher {
     return positions;
   }
 
+  async Search(searchTerm) {
+    let result = await axios.get(`${this.url}/search/${searchTerm}/5`);
+    if(result) result = result.data
+    return result;
+  }
 }

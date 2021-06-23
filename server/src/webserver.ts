@@ -33,7 +33,14 @@ export class WebServer {
 
      })
     
+     this.app.get("/busses/:routeId", async (req, res) => {
+      
+      try {
+        res.send(await this.database.GetVehiclesByRouteId(req.params.routeId));
+      }
+      catch(error) { res.send(error.message) }
 
+     })
     this.app.get("/trip/:company/:planningnumber/:tripnumber", async(req, res) => {
       
       try { res.send(await this.database.GetTrip(req.params.tripnumber, req.params.planningnumber, req.params.company)); }
@@ -65,9 +72,9 @@ export class WebServer {
       catch(error) { res.send(error.message) }      
     })
 
-    this.app.get("/search/:query", async(req, res) => {
+    this.app.get("/search/:query/:limit", async(req, res) => {
       try {
-        res.send(await this.searchHandler.SearchForEverything(req.params.query));
+        res.send(await this.searchHandler.SearchForEverything(req.params.query, req.params.limit));
       } catch(error) { res.send(error.message) }
     })
   }

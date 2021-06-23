@@ -4,12 +4,9 @@ import { Socket } from 'socket.io';
 import { Database } from './database';
 import { WebsocketVehicleData } from "./types/WebsocketVehicleData";
 
-const bus_update_rate = parseInt(process.env.APP_BUS_UPDATE_DELAY);
-
 export class Websocket {
   
   private io : Socket;
-  private activeSocket : Socket;
   private db : Database;
 
   constructor(server : Server, db : Database) {
@@ -33,15 +30,7 @@ export class Websocket {
   }
 
   Socket(socket : Socket) {
-    this.activeSocket = socket;
     console.log("New client connected.");
-
-    // const interval = setInterval(() => {
-    //       //console.log("Emitting new data.");
-    //       this.db.GetAllVehicles().then((vehicles) => {
-    //         socket.emit("ovdata", vehicles);
-    //       })
-    // }, bus_update_rate);
 
     socket.on("disconnect", () => {
       console.log("Client disconnected");
@@ -53,9 +42,9 @@ export class Websocket {
     this.io.emit("deletedVehicles", vehicles);
   }
 
-  CreateBufferFromVehicles(vehicles) { 
+  CreateBufferFromVehicles(vehicles : Array<WebsocketVehicleData>) { 
     let buf = Buffer.alloc((4 + 4 + 4 + 15) * vehicles.length)
-    vehicles.forEach((vehicle : WebsocketVehicleData, index) => {
+    vehicles.forEach((vehicle : WebsocketVehicleData, index : number) => {
       buf.writeFloatBE(vehicle.p[0], index * 27)
       buf.writeFloatBE(vehicle.p[1], index * 27 + 4)
       buf.writeUInt32BE(vehicle.v, index * 27 + 4 + 4)
@@ -69,9 +58,9 @@ export class Websocket {
   }
 
   Emit() {
-    //Small delay to make sure the server catches up.
     setTimeout(() => {
       this.db.GetAllVehiclesSmall().then((vehicles) => this.io.emit("ovdata", this.CreateBufferFromVehicles(vehicles)))
+        //Small delay to make sure the server catches up.
     }, 100)
   }
 

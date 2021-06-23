@@ -1,0 +1,210 @@
+{
+  "ns1:PutReisInformatieBoodschapIn": {
+    "ns2:ReisInformatieProductPatroonInformatieLandelijk": {
+      "ns2:RIPAdministratie": {
+        "ns2:ReisInformatieProductId": 1801010519,
+        "ns2:AbonnementId": 0,
+        "ns2:ReisInformatieTijdstip": "2021-06-22T15:41:55.000Z"
+      },
+      "ns2:LandelijkePatroonInformatie": {
+        "ns2:DossierNummer": 6011155,
+        "ns2:DossierVolgNummer": 3,
+        "ns2:DossierNaam": "Asn-Gn defecte - trein 0",
+        "ns2:VerstoringSoort": "EV",
+        "ns2:VerstoringFase": 5,
+        "ns2:VerstoringImpact": 3,
+        "ns2:ImpactOmschrijving": {
+          "ns2:ImpactOmschrijvingKort": "geen treinverkeer, beperkt gebied",
+          "ns2:ImpactOmschrijvingLang": "calamiteit waarbij geen of nauwelijks treinverkeer meer mogelijk is in een bepaald gebied"
+        },
+        "ns2:RegistratieTijd": "2021-06-22T15:41:55.000Z",
+        "ns2:VrijgaveTijd": "2021-06-22T15:41:55.000Z",
+        "ns2:PresentatieMeldTijd": {
+          "ns2:Uitingen": [{
+            "ns2:Uiting": "17:41"
+          }, {
+            "ns2:Uiting": "17:41 uur"
+          }, {
+            "ns2:Uiting": "dinsdag 22 juni 2021, 17:41 uur"
+          }]
+        },
+        "ns2:WijzigingTypeBericht": "V",
+        "ns2:Situatie": {
+          "ns2:EVBeginTijd": "2021-06-22T15:24:00.000Z",
+          "ns2:PresentatieEVBeginTijd": {
+            "ns2:Uitingen": [{
+              "ns2:Uiting": "17:24"
+            }, {
+              "ns2:Uiting": "17:24 uur"
+            }, {
+              "ns2:Uiting": "dinsdag 22 juni 2021, 17:24 uur"
+            }]
+          },
+          "ns2:BaanvakBeperking": {
+            "ns2:Id": 90007184,
+            "ns2:StationVan": {
+              "ns2:StationCode": "ASN",
+              "ns2:Type": 5,
+              "ns2:KorteNaam": "Assen",
+              "ns2:MiddelNaam": "Assen",
+              "ns2:LangeNaam": "Assen",
+              "ns2:UICCode": 8400073
+            },
+            "ns2:StationTot": {
+              "ns2:StationCode": "GN",
+              "ns2:Type": 5,
+              "ns2:KorteNaam": "Groningen",
+              "ns2:MiddelNaam": "Groningen",
+              "ns2:LangeNaam": "Groningen",
+              "ns2:UICCode": 8400263
+            },
+            "ns2:Richting": "Beide",
+            "ns2:GevolgenTreindienst": {
+              "ns2:GevolgenTreindienstCode": "F5",
+              "ns2:Niveau": "MinderTreinen",
+              "ns2:Omschrijving": {
+                "ns2:Kort": "treinverkeer hervat",
+                "ns2:Middel": "het treinverkeer is volledig hervat",
+                "ns2:Lang": "is het treinverkeer volledig hervat"
+              }
+            },
+            "ns2:Traject": {
+              "ns2:TrajectCode": 102,
+              "ns2:TrajectType": "NL",
+              "ns2:TrajectNaamCodes": {
+                "ns2:VanStationCode": "ZL",
+                "ns2:NaarStationCode": "GN"
+              },
+              "ns2:TrajectNaam": {
+                "ns2:Van": "Zwolle",
+                "ns2:Naar": "Groningen"
+              },
+              "ns2:Ligging": "VolledigNL",
+              "ns2:TrajectStations": [{
+                "ns2:StationCode": "ZL",
+                "ns2:Type": 5,
+                "ns2:KorteNaam": "Zwolle",
+                "ns2:MiddelNaam": "Zwolle",
+                "ns2:LangeNaam": "Zwolle",
+                "ns2:UICCode": 8400747
+              }, {
+                "ns2:StationCode": "MP",
+                "ns2:Type": 1,
+                "ns2:KorteNaam": "Meppel",
+                "ns2:MiddelNaam": "Meppel",
+                "ns2:LangeNaam": "Meppel",
+                "ns2:UICCode": 8400435
+              }, {
+                "ns2:StationCode": "HGV",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Hoogeveen",
+                "ns2:MiddelNaam": "Hoogeveen",
+                "ns2:LangeNaam": "Hoogeveen",
+                "ns2:UICCode": 8400330
+              }, {
+                "ns2:StationCode": "BL",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Beilen",
+                "ns2:MiddelNaam": "Beilen",
+                "ns2:LangeNaam": "Beilen",
+                "ns2:UICCode": 8400100
+              }, {
+                "ns2:StationCode": "ASN",
+                "ns2:Type": 5,
+                "ns2:KorteNaam": "Assen",
+                "ns2:MiddelNaam": "Assen",
+                "ns2:LangeNaam": "Assen",
+                "ns2:UICCode": 8400073
+              }, {
+                "ns2:StationCode": "HRN",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Haren",
+                "ns2:MiddelNaam": "Haren",
+                "ns2:LangeNaam": "Haren",
+                "ns2:UICCode": 8400297
+              }, {
+                "ns2:StationCode": "GERP",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Europapark",
+                "ns2:MiddelNaam": "Europapark",
+                "ns2:LangeNaam": "Groningen Europapark",
+                "ns2:UICCode": 8400238
+              }, {
+                "ns2:StationCode": "GN",
+                "ns2:Type": 5,
+                "ns2:KorteNaam": "Groningen",
+                "ns2:MiddelNaam": "Groningen",
+                "ns2:LangeNaam": "Groningen",
+                "ns2:UICCode": 8400263
+              }],
+              "ns2:AantalReizen": 11000,
+              "ns2:TrajectVervoerder": "NS"
+            },
+            "ns2:PresentatieBaanvakBeperking": {
+              "ns2:Uitingen": [{
+                "ns2:Uiting": "Tussen Assen en Groningen het treinverkeer is volledig hervat"
+              }, {
+                "ns2:Uiting": "Tussen Assen en Groningen is het treinverkeer volledig hervat."
+              }]
+            }
+          },
+          "ns2:SignaleringVerstoring": {
+            "ns2:TijdVak": {
+              "ns2:BeginTijd": "2021-06-22T15:41:55.000Z",
+              "ns2:EindTijd": "2021-06-22T15:45:00.000Z"
+            },
+            "ns2:VerstoordBaanvak": {
+              "ns2:Baanvak": [{
+                "ns2:StationCode": ["ASN", "HRN", "GERP", "GN"]
+              }, {
+                "ns2:StationCode": ["GN", "GERP", "HRN", "ASN"]
+              }]
+            }
+          },
+          "ns2:AanleidingCode": "DEF017",
+          "ns2:OorzaakKort": "defecte trein",
+          "ns2:OorzaakLang": "door een defecte trein",
+          "ns2:PresentatieOorzaak": {
+            "ns2:Uitingen": [{
+              "ns2:Uiting": "Defecte trein"
+            }, {
+              "ns2:Uiting": "Door een defecte trein."
+            }]
+          },
+          "ns2:Prognose": {
+            "ns2:SituatieDuidelijk": "J",
+            "ns2:TreindienstNormaalCode": 6,
+            "ns2:Omschrijving": {
+              "ns2:Kort": "treindienst normaal:",
+              "ns2:Middel": "treindienst normaal rond",
+              "ns2:Lang": "de treinen rijden weer normaal rond"
+            },
+            "ns2:PrognoseVanTijd": "2021-06-22T15:45:00.000Z"
+          },
+          "ns2:PresentatiePrognose": {
+            "ns2:Uitingen": [{
+              "ns2:Uiting": "Treindienst normaal rond 17:45 uur"
+            }, {
+              "ns2:Uiting": "De treinen rijden weer normaal rond 17:45 uur."
+            }]
+          }
+        },
+        "ns2:PresentatieLocatie": {
+          "ns2:Uitingen": [{
+            "ns2:Uiting": "Zwolle-Groningen"
+          }, {
+            "ns2:Uiting": "Zwolle-Groningen"
+          }]
+        },
+        "ns2:PresentatieSituatie": {
+          "ns2:Uitingen": [{
+            "ns2:Uiting": "Tussen Assen en Groningen het treinverkeer is volledig hervat"
+          }, {
+            "ns2:Uiting": "Tussen Assen en Groningen is het treinverkeer volledig hervat."
+          }]
+        },
+        "ns2:OmreizenMogelijk": "N"
+      }
+    }
+  }
+}

@@ -14,7 +14,7 @@ export class SearchHandler {
     
   }
 
-  public async SearchForEverything(searchString : string) : Promise<any> {
+  public async SearchForEverything(searchString : string, limit : number) : Promise<any> {
 
     // const priorities = {
     //   ROUTE : 10,
@@ -41,7 +41,7 @@ export class SearchHandler {
     }) 
            
     
-    return foundRoutesByTerms;
+    return foundRoutesByTerms.slice(0, limit);
   }
 
   public async GetRoutes (searchString: string) : Promise<Array<Route>>  {

@@ -1,0 +1,947 @@
+{
+  "ns1:PutReisInformatieBoodschapIn": {
+    "ns2:ReisInformatieProductRitInfo": {
+      "ns2:RIPAdministratie": {
+        "ns2:ReisInformatieProductID": 2106221746262500000,
+        "ns2:AbonnementId": 0,
+        "ns2:ReisInformatieTijdstip": "2021-06-22T15:06:00.000Z",
+        "ns2:GeldigTot": "2021-06-22T16:19:00.000Z"
+      },
+      "ns2:RitInfo": {
+        "ns2:TreinNummer": 4554,
+        "ns2:TreinDatum": "2021-06-22",
+        "ns2:TreinNaam": "Intercity",
+        "ns2:TreinSoort": "Intercity",
+        "ns2:Vervoerder": "NS",
+        "ns2:Reserveren": "N",
+        "ns2:Toeslag": "N",
+        "ns2:SpeciaalKaartje": "N",
+        "ns2:Reisplanner": "J",
+        "ns2:LogischeRit": {
+          "ns2:LogischeRitNummer": 4554,
+          "ns2:LogischeRitDeel": {
+            "ns2:LogischeRitDeelNummer": 4554,
+            "ns2:LogischeRitDeelStation": [{
+              "ns2:Station": {
+                "ns2:StationCode": "ASD",
+                "ns2:Type": 6,
+                "ns2:KorteNaam": "Amsterdm C",
+                "ns2:MiddelNaam": "Amsterdam C.",
+                "ns2:LangeNaam": "Amsterdam Centraal",
+                "ns2:UICCode": 8400058
+              },
+              "ns2:StationToegankelijk": "N",
+              "ns2:PresentatieStationToegankelijk": {
+                "ns2:Uitingen": [{
+                  "ns2:Uiting": "Station is niet toegankelijk"
+                }, {
+                  "ns2:Uiting": "Station is not accessible"
+                }]
+              },
+              "ns2:StationReisAssistentie": "J",
+              "ns2:PresentatieStationReisAssistentie": {
+                "ns2:Uitingen": [{
+                  "ns2:Uiting": "Reisassistentie beschikbaar op dit station"
+                }, {
+                  "ns2:Uiting": "Travel Assistance available at this station"
+                }]
+              },
+              "ns2:TreinEindBestemming": [{
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              }, {
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              }],
+              "ns2:PresentatieTreinEindBestemming": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": "Enkhuizen"
+                }
+              },
+              "ns2:Stopt": ["J", "J"],
+              "ns2:VertrekTijd": ["2021-06-22T15:06:00.000Z", "2021-06-22T15:06:00.000Z"],
+              "ns2:TreinVertrekSpoor": [{
+                "ns2:SpoorNummer": 7,
+                "ns2:SpoorFase": "a"
+              }, {
+                "ns2:SpoorNummer": 7,
+                "ns2:SpoorFase": "a"
+              }],
+              "ns2:PresentatieTreinVertrekSpoor": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": "7a"
+                }
+              },
+              "ns2:StationnementType": "X",
+              "ns2:MaterieelDeel": {
+                "ns2:MaterieelDeelID": "AD46",
+                "ns2:MaterieelDeelSoort": "VIRM",
+                "ns2:MaterieelDeelAanduiding": 4,
+                "ns2:MaterieelDeelLengte": 10860,
+                "ns2:MaterieelNummer": "000000-09566-0",
+                "ns2:MaterieelDeelToegankelijk": "N",
+                "ns2:PresentatieMaterieelDeelToegankelijk": {
+                  "ns2:Uitingen": [{
+                    "ns2:Uiting": "Trein is niet toegankelijk"
+                  }, {
+                    "ns2:Uiting": "Train is not accessible"
+                  }]
+                },
+                "ns2:MaterieelDeelEindBestemming": [{
+                  "ns2:StationCode": "EKZ",
+                  "ns2:Type": 0,
+                  "ns2:KorteNaam": "Enkhuizen",
+                  "ns2:MiddelNaam": "Enkhuizen",
+                  "ns2:LangeNaam": "Enkhuizen",
+                  "ns2:UICCode": 8400210
+                }, {
+                  "ns2:StationCode": "EKZ",
+                  "ns2:Type": 0,
+                  "ns2:KorteNaam": "Enkhuizen",
+                  "ns2:MiddelNaam": "Enkhuizen",
+                  "ns2:LangeNaam": "Enkhuizen",
+                  "ns2:UICCode": 8400210
+                }],
+                "ns2:PresentatieMaterieelDeelEindBestemming": {
+                  "ns2:Uitingen": {
+                    "ns2:Uiting": "Enkhuizen"
+                  }
+                },
+                "ns2:AchterBlijvenMaterieelDeel": "N"
+              },
+              "ns2:NietInstappen": "N"
+            }, {
+              "ns2:Station": {
+                "ns2:StationCode": "ASS",
+                "ns2:Type": 5,
+                "ns2:KorteNaam": "Sloterdijk",
+                "ns2:MiddelNaam": "Sloterdijk",
+                "ns2:LangeNaam": "Amsterdam Sloterdijk",
+                "ns2:UICCode": 8400059
+              },
+              "ns2:StationToegankelijk": "N",
+              "ns2:PresentatieStationToegankelijk": {
+                "ns2:Uitingen": [{
+                  "ns2:Uiting": "Station is niet toegankelijk"
+                }, {
+                  "ns2:Uiting": "Station is not accessible"
+                }]
+              },
+              "ns2:StationReisAssistentie": "J",
+              "ns2:PresentatieStationReisAssistentie": {
+                "ns2:Uitingen": [{
+                  "ns2:Uiting": "Reisassistentie beschikbaar op dit station"
+                }, {
+                  "ns2:Uiting": "Travel Assistance available at this station"
+                }]
+              },
+              "ns2:TreinEindBestemming": [{
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              }, {
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              }],
+              "ns2:PresentatieTreinEindBestemming": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": "Enkhuizen"
+                }
+              },
+              "ns2:Stopt": ["J", "J"],
+              "ns2:AankomstTijd": ["2021-06-22T15:11:00.000Z", "2021-06-22T15:11:00.000Z"],
+              "ns2:TreinAankomstSpoor": [{
+                "ns2:SpoorNummer": 3
+              }, {
+                "ns2:SpoorNummer": 3
+              }],
+              "ns2:PresentatieTreinAankomstSpoor": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": 3
+                }
+              },
+              "ns2:VertrekTijd": ["2021-06-22T15:11:00.000Z", "2021-06-22T15:12:54.000Z"],
+              "ns2:ExacteVertrekVertraging": "PT1M54S",
+              "ns2:PresentatieVertrekVertraging": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": "+1 min."
+                }
+              },
+              "ns2:GedempteVertrekVertraging": "PT0S",
+              "ns2:TreinVertrekSpoor": [{
+                "ns2:SpoorNummer": 3
+              }, {
+                "ns2:SpoorNummer": 3
+              }],
+              "ns2:PresentatieTreinVertrekSpoor": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": 3
+                }
+              },
+              "ns2:StationnementType": "X",
+              "ns2:MaterieelDeel": {
+                "ns2:MaterieelDeelID": "AD46",
+                "ns2:MaterieelDeelSoort": "VIRM",
+                "ns2:MaterieelDeelAanduiding": 4,
+                "ns2:MaterieelDeelLengte": 10860,
+                "ns2:MaterieelNummer": "000000-09566-0",
+                "ns2:MaterieelDeelToegankelijk": "N",
+                "ns2:PresentatieMaterieelDeelToegankelijk": {
+                  "ns2:Uitingen": [{
+                    "ns2:Uiting": "Trein is niet toegankelijk"
+                  }, {
+                    "ns2:Uiting": "Train is not accessible"
+                  }]
+                },
+                "ns2:MaterieelDeelEindBestemming": [{
+                  "ns2:StationCode": "EKZ",
+                  "ns2:Type": 0,
+                  "ns2:KorteNaam": "Enkhuizen",
+                  "ns2:MiddelNaam": "Enkhuizen",
+                  "ns2:LangeNaam": "Enkhuizen",
+                  "ns2:UICCode": 8400210
+                }, {
+                  "ns2:StationCode": "EKZ",
+                  "ns2:Type": 0,
+                  "ns2:KorteNaam": "Enkhuizen",
+                  "ns2:MiddelNaam": "Enkhuizen",
+                  "ns2:LangeNaam": "Enkhuizen",
+                  "ns2:UICCode": 8400210
+                }],
+                "ns2:PresentatieMaterieelDeelEindBestemming": {
+                  "ns2:Uitingen": {
+                    "ns2:Uiting": "Enkhuizen"
+                  }
+                },
+                "ns2:AchterBlijvenMaterieelDeel": "N"
+              },
+              "ns2:NietInstappen": "N",
+              "ns2:Wijziging": {
+                "ns2:WijzigingType": 10,
+                "ns2:PresentatieWijziging": {
+                  "ns2:Uitingen": [{
+                    "ns2:Uiting": "Later vertrek"
+                  }, {
+                    "ns2:Uiting": "Delayed"
+                  }]
+                }
+              }
+            }, {
+              "ns2:Station": {
+                "ns2:StationCode": "ZD",
+                "ns2:Type": 5,
+                "ns2:KorteNaam": "Zaandam",
+                "ns2:MiddelNaam": "Zaandam",
+                "ns2:LangeNaam": "Zaandam",
+                "ns2:UICCode": 8400731
+              },
+              "ns2:Stopt": ["N", "N"],
+              "ns2:StationnementType": "D"
+            }, {
+              "ns2:Station": {
+                "ns2:StationCode": "ZDK",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Kogerveld",
+                "ns2:MiddelNaam": "Kogerveld",
+                "ns2:LangeNaam": "Zaandam Kogerveld",
+                "ns2:UICCode": 8400728
+              },
+              "ns2:Stopt": ["N", "N"],
+              "ns2:StationnementType": "D"
+            }, {
+              "ns2:Station": {
+                "ns2:StationCode": "PMW",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Weidevenne",
+                "ns2:MiddelNaam": "Weidevenne",
+                "ns2:LangeNaam": "Purmerend Weidevenne",
+                "ns2:UICCode": 8400499
+              },
+              "ns2:Stopt": ["N", "N"],
+              "ns2:StationnementType": "D"
+            }, {
+              "ns2:Station": {
+                "ns2:StationCode": "PMR",
+                "ns2:Type": 1,
+                "ns2:KorteNaam": "Purmerend",
+                "ns2:MiddelNaam": "Purmerend",
+                "ns2:LangeNaam": "Purmerend",
+                "ns2:UICCode": 8400508
+              },
+              "ns2:Stopt": ["N", "N"],
+              "ns2:StationnementType": "D"
+            }, {
+              "ns2:Station": {
+                "ns2:StationCode": "PMO",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Overwhere",
+                "ns2:MiddelNaam": "Overwhere",
+                "ns2:LangeNaam": "Purmerend Overwhere",
+                "ns2:UICCode": 8400506
+              },
+              "ns2:Stopt": ["N", "N"],
+              "ns2:StationnementType": "D"
+            }, {
+              "ns2:Station": {
+                "ns2:StationCode": "HN",
+                "ns2:Type": 5,
+                "ns2:KorteNaam": "Hoorn",
+                "ns2:MiddelNaam": "Hoorn",
+                "ns2:LangeNaam": "Hoorn",
+                "ns2:UICCode": 8400337
+              },
+              "ns2:StationToegankelijk": "N",
+              "ns2:PresentatieStationToegankelijk": {
+                "ns2:Uitingen": [{
+                  "ns2:Uiting": "Station is niet toegankelijk"
+                }, {
+                  "ns2:Uiting": "Station is not accessible"
+                }]
+              },
+              "ns2:StationReisAssistentie": "J",
+              "ns2:PresentatieStationReisAssistentie": {
+                "ns2:Uitingen": [{
+                  "ns2:Uiting": "Reisassistentie beschikbaar op dit station"
+                }, {
+                  "ns2:Uiting": "Travel Assistance available at this station"
+                }]
+              },
+              "ns2:TreinEindBestemming": [{
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              }, {
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              }],
+              "ns2:PresentatieTreinEindBestemming": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": "Enkhuizen"
+                }
+              },
+              "ns2:Stopt": ["J", "J"],
+              "ns2:AankomstTijd": ["2021-06-22T15:38:00.000Z", "2021-06-22T15:38:00.000Z"],
+              "ns2:TreinAankomstSpoor": [{
+                "ns2:SpoorNummer": 1
+              }, {
+                "ns2:SpoorNummer": 1
+              }],
+              "ns2:PresentatieTreinAankomstSpoor": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": 1
+                }
+              },
+              "ns2:VertrekTijd": ["2021-06-22T15:41:00.000Z", "2021-06-22T15:41:00.000Z"],
+              "ns2:TreinVertrekSpoor": [{
+                "ns2:SpoorNummer": 1
+              }, {
+                "ns2:SpoorNummer": 1
+              }],
+              "ns2:PresentatieTreinVertrekSpoor": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": 1
+                }
+              },
+              "ns2:StationnementType": "X",
+              "ns2:MaterieelDeel": {
+                "ns2:MaterieelDeelID": "AD46",
+                "ns2:MaterieelDeelSoort": "VIRM",
+                "ns2:MaterieelDeelAanduiding": 4,
+                "ns2:MaterieelDeelLengte": 10860,
+                "ns2:MaterieelNummer": "000000-09566-0",
+                "ns2:MaterieelDeelToegankelijk": "N",
+                "ns2:PresentatieMaterieelDeelToegankelijk": {
+                  "ns2:Uitingen": [{
+                    "ns2:Uiting": "Trein is niet toegankelijk"
+                  }, {
+                    "ns2:Uiting": "Train is not accessible"
+                  }]
+                },
+                "ns2:MaterieelDeelEindBestemming": [{
+                  "ns2:StationCode": "EKZ",
+                  "ns2:Type": 0,
+                  "ns2:KorteNaam": "Enkhuizen",
+                  "ns2:MiddelNaam": "Enkhuizen",
+                  "ns2:LangeNaam": "Enkhuizen",
+                  "ns2:UICCode": 8400210
+                }, {
+                  "ns2:StationCode": "EKZ",
+                  "ns2:Type": 0,
+                  "ns2:KorteNaam": "Enkhuizen",
+                  "ns2:MiddelNaam": "Enkhuizen",
+                  "ns2:LangeNaam": "Enkhuizen",
+                  "ns2:UICCode": 8400210
+                }],
+                "ns2:PresentatieMaterieelDeelEindBestemming": {
+                  "ns2:Uitingen": {
+                    "ns2:Uiting": "Enkhuizen"
+                  }
+                },
+                "ns2:AchterBlijvenMaterieelDeel": "N"
+              },
+              "ns2:NietInstappen": "N"
+            }, {
+              "ns2:Station": {
+                "ns2:StationCode": "HNK",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Hoorn Kers",
+                "ns2:MiddelNaam": "Kersenboogerd",
+                "ns2:LangeNaam": "Hoorn Kersenboogerd",
+                "ns2:UICCode": 8400336
+              },
+              "ns2:StationToegankelijk": "N",
+              "ns2:PresentatieStationToegankelijk": {
+                "ns2:Uitingen": [{
+                  "ns2:Uiting": "Station is niet toegankelijk"
+                }, {
+                  "ns2:Uiting": "Station is not accessible"
+                }]
+              },
+              "ns2:StationReisAssistentie": "J",
+              "ns2:PresentatieStationReisAssistentie": {
+                "ns2:Uitingen": [{
+                  "ns2:Uiting": "Reisassistentie beschikbaar op dit station"
+                }, {
+                  "ns2:Uiting": "Travel Assistance available at this station"
+                }]
+              },
+              "ns2:TreinEindBestemming": [{
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              }, {
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              }],
+              "ns2:PresentatieTreinEindBestemming": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": "Enkhuizen"
+                }
+              },
+              "ns2:Stopt": ["J", "J"],
+              "ns2:AankomstTijd": ["2021-06-22T15:45:00.000Z", "2021-06-22T15:45:00.000Z"],
+              "ns2:TreinAankomstSpoor": [{
+                "ns2:SpoorNummer": 1
+              }, {
+                "ns2:SpoorNummer": 1
+              }],
+              "ns2:PresentatieTreinAankomstSpoor": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": 1
+                }
+              },
+              "ns2:VertrekTijd": ["2021-06-22T15:45:00.000Z", "2021-06-22T15:46:05.000Z"],
+              "ns2:ExacteVertrekVertraging": "PT1M5S",
+              "ns2:PresentatieVertrekVertraging": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": "+1 min."
+                }
+              },
+              "ns2:GedempteVertrekVertraging": "PT0S",
+              "ns2:TreinVertrekSpoor": [{
+                "ns2:SpoorNummer": 1
+              }, {
+                "ns2:SpoorNummer": 1
+              }],
+              "ns2:PresentatieTreinVertrekSpoor": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": 1
+                }
+              },
+              "ns2:StationnementType": "X",
+              "ns2:MaterieelDeel": {
+                "ns2:MaterieelDeelID": "AD46",
+                "ns2:MaterieelDeelSoort": "VIRM",
+                "ns2:MaterieelDeelAanduiding": 4,
+                "ns2:MaterieelDeelLengte": 10860,
+                "ns2:MaterieelNummer": "000000-09566-0",
+                "ns2:MaterieelDeelToegankelijk": "N",
+                "ns2:PresentatieMaterieelDeelToegankelijk": {
+                  "ns2:Uitingen": [{
+                    "ns2:Uiting": "Trein is niet toegankelijk"
+                  }, {
+                    "ns2:Uiting": "Train is not accessible"
+                  }]
+                },
+                "ns2:MaterieelDeelEindBestemming": [{
+                  "ns2:StationCode": "EKZ",
+                  "ns2:Type": 0,
+                  "ns2:KorteNaam": "Enkhuizen",
+                  "ns2:MiddelNaam": "Enkhuizen",
+                  "ns2:LangeNaam": "Enkhuizen",
+                  "ns2:UICCode": 8400210
+                }, {
+                  "ns2:StationCode": "EKZ",
+                  "ns2:Type": 0,
+                  "ns2:KorteNaam": "Enkhuizen",
+                  "ns2:MiddelNaam": "Enkhuizen",
+                  "ns2:LangeNaam": "Enkhuizen",
+                  "ns2:UICCode": 8400210
+                }],
+                "ns2:PresentatieMaterieelDeelEindBestemming": {
+                  "ns2:Uitingen": {
+                    "ns2:Uiting": "Enkhuizen"
+                  }
+                },
+                "ns2:AchterBlijvenMaterieelDeel": "N"
+              },
+              "ns2:NietInstappen": "N",
+              "ns2:Wijziging": {
+                "ns2:WijzigingType": 10,
+                "ns2:PresentatieWijziging": {
+                  "ns2:Uitingen": [{
+                    "ns2:Uiting": "Later vertrek"
+                  }, {
+                    "ns2:Uiting": "Delayed"
+                  }]
+                }
+              }
+            }, {
+              "ns2:Station": {
+                "ns2:StationCode": "HKS",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Hoogkrspl",
+                "ns2:MiddelNaam": "Hoogkarspel",
+                "ns2:LangeNaam": "Hoogkarspel",
+                "ns2:UICCode": 8400334
+              },
+              "ns2:StationToegankelijk": "N",
+              "ns2:PresentatieStationToegankelijk": {
+                "ns2:Uitingen": [{
+                  "ns2:Uiting": "Station is niet toegankelijk"
+                }, {
+                  "ns2:Uiting": "Station is not accessible"
+                }]
+              },
+              "ns2:StationReisAssistentie": "N",
+              "ns2:PresentatieStationReisAssistentie": {
+                "ns2:Uitingen": [{
+                  "ns2:Uiting": "Geen Reisassistentie beschikbaar op dit station"
+                }, {
+                  "ns2:Uiting": "No Travel Assistance available at this station"
+                }]
+              },
+              "ns2:TreinEindBestemming": [{
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              }, {
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              }],
+              "ns2:PresentatieTreinEindBestemming": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": "Enkhuizen"
+                }
+              },
+              "ns2:Stopt": ["J", "J"],
+              "ns2:AankomstTijd": ["2021-06-22T15:52:00.000Z", "2021-06-22T15:52:00.000Z"],
+              "ns2:TreinAankomstSpoor": [{
+                "ns2:SpoorNummer": 1
+              }, {
+                "ns2:SpoorNummer": 1
+              }],
+              "ns2:PresentatieTreinAankomstSpoor": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": 1
+                }
+              },
+              "ns2:VertrekTijd": ["2021-06-22T15:53:00.000Z", "2021-06-22T15:53:00.000Z"],
+              "ns2:TreinVertrekSpoor": [{
+                "ns2:SpoorNummer": 1
+              }, {
+                "ns2:SpoorNummer": 1
+              }],
+              "ns2:PresentatieTreinVertrekSpoor": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": 1
+                }
+              },
+              "ns2:StationnementType": "X",
+              "ns2:MaterieelDeel": {
+                "ns2:MaterieelDeelID": "AD46",
+                "ns2:MaterieelDeelSoort": "VIRM",
+                "ns2:MaterieelDeelAanduiding": 4,
+                "ns2:MaterieelDeelLengte": 10860,
+                "ns2:MaterieelNummer": "000000-09566-0",
+                "ns2:MaterieelDeelToegankelijk": "N",
+                "ns2:PresentatieMaterieelDeelToegankelijk": {
+                  "ns2:Uitingen": [{
+                    "ns2:Uiting": "Trein is niet toegankelijk"
+                  }, {
+                    "ns2:Uiting": "Train is not accessible"
+                  }]
+                },
+                "ns2:MaterieelDeelEindBestemming": [{
+                  "ns2:StationCode": "EKZ",
+                  "ns2:Type": 0,
+                  "ns2:KorteNaam": "Enkhuizen",
+                  "ns2:MiddelNaam": "Enkhuizen",
+                  "ns2:LangeNaam": "Enkhuizen",
+                  "ns2:UICCode": 8400210
+                }, {
+                  "ns2:StationCode": "EKZ",
+                  "ns2:Type": 0,
+                  "ns2:KorteNaam": "Enkhuizen",
+                  "ns2:MiddelNaam": "Enkhuizen",
+                  "ns2:LangeNaam": "Enkhuizen",
+                  "ns2:UICCode": 8400210
+                }],
+                "ns2:PresentatieMaterieelDeelEindBestemming": {
+                  "ns2:Uitingen": {
+                    "ns2:Uiting": "Enkhuizen"
+                  }
+                },
+                "ns2:AchterBlijvenMaterieelDeel": "N"
+              },
+              "ns2:NietInstappen": "N"
+            }, {
+              "ns2:Station": {
+                "ns2:StationCode": "BKG",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Bovenk-Gr",
+                "ns2:MiddelNaam": "Bovenkarspel-Gr.",
+                "ns2:LangeNaam": "Bovenkarspel-Grootebroek",
+                "ns2:UICCode": 8400127
+              },
+              "ns2:StationToegankelijk": "N",
+              "ns2:PresentatieStationToegankelijk": {
+                "ns2:Uitingen": [{
+                  "ns2:Uiting": "Station is niet toegankelijk"
+                }, {
+                  "ns2:Uiting": "Station is not accessible"
+                }]
+              },
+              "ns2:StationReisAssistentie": "N",
+              "ns2:PresentatieStationReisAssistentie": {
+                "ns2:Uitingen": [{
+                  "ns2:Uiting": "Geen Reisassistentie beschikbaar op dit station"
+                }, {
+                  "ns2:Uiting": "No Travel Assistance available at this station"
+                }]
+              },
+              "ns2:TreinEindBestemming": [{
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              }, {
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              }],
+              "ns2:PresentatieTreinEindBestemming": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": "Enkhuizen"
+                }
+              },
+              "ns2:Stopt": ["J", "J"],
+              "ns2:AankomstTijd": ["2021-06-22T15:58:00.000Z", "2021-06-22T15:58:00.000Z"],
+              "ns2:TreinAankomstSpoor": [{
+                "ns2:SpoorNummer": 2
+              }, {
+                "ns2:SpoorNummer": 2
+              }],
+              "ns2:PresentatieTreinAankomstSpoor": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": 2
+                }
+              },
+              "ns2:VertrekTijd": ["2021-06-22T15:58:00.000Z", "2021-06-22T15:58:00.000Z"],
+              "ns2:TreinVertrekSpoor": [{
+                "ns2:SpoorNummer": 2
+              }, {
+                "ns2:SpoorNummer": 2
+              }],
+              "ns2:PresentatieTreinVertrekSpoor": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": 2
+                }
+              },
+              "ns2:StationnementType": "X",
+              "ns2:MaterieelDeel": {
+                "ns2:MaterieelDeelID": "AD46",
+                "ns2:MaterieelDeelSoort": "VIRM",
+                "ns2:MaterieelDeelAanduiding": 4,
+                "ns2:MaterieelDeelLengte": 10860,
+                "ns2:MaterieelNummer": "000000-09566-0",
+                "ns2:MaterieelDeelToegankelijk": "N",
+                "ns2:PresentatieMaterieelDeelToegankelijk": {
+                  "ns2:Uitingen": [{
+                    "ns2:Uiting": "Trein is niet toegankelijk"
+                  }, {
+                    "ns2:Uiting": "Train is not accessible"
+                  }]
+                },
+                "ns2:MaterieelDeelEindBestemming": [{
+                  "ns2:StationCode": "EKZ",
+                  "ns2:Type": 0,
+                  "ns2:KorteNaam": "Enkhuizen",
+                  "ns2:MiddelNaam": "Enkhuizen",
+                  "ns2:LangeNaam": "Enkhuizen",
+                  "ns2:UICCode": 8400210
+                }, {
+                  "ns2:StationCode": "EKZ",
+                  "ns2:Type": 0,
+                  "ns2:KorteNaam": "Enkhuizen",
+                  "ns2:MiddelNaam": "Enkhuizen",
+                  "ns2:LangeNaam": "Enkhuizen",
+                  "ns2:UICCode": 8400210
+                }],
+                "ns2:PresentatieMaterieelDeelEindBestemming": {
+                  "ns2:Uitingen": {
+                    "ns2:Uiting": "Enkhuizen"
+                  }
+                },
+                "ns2:AchterBlijvenMaterieelDeel": "N"
+              },
+              "ns2:NietInstappen": "N"
+            }, {
+              "ns2:Station": {
+                "ns2:StationCode": "BKF",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Bovenk Flo",
+                "ns2:MiddelNaam": "Bovenkarspel Fl.",
+                "ns2:LangeNaam": "Bovenkarspel Flora",
+                "ns2:UICCode": 8400230
+              },
+              "ns2:StationToegankelijk": "N",
+              "ns2:PresentatieStationToegankelijk": {
+                "ns2:Uitingen": [{
+                  "ns2:Uiting": "Station is niet toegankelijk"
+                }, {
+                  "ns2:Uiting": "Station is not accessible"
+                }]
+              },
+              "ns2:StationReisAssistentie": "J",
+              "ns2:PresentatieStationReisAssistentie": {
+                "ns2:Uitingen": [{
+                  "ns2:Uiting": "Reisassistentie beschikbaar op dit station"
+                }, {
+                  "ns2:Uiting": "Travel Assistance available at this station"
+                }]
+              },
+              "ns2:TreinEindBestemming": [{
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              }, {
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              }],
+              "ns2:PresentatieTreinEindBestemming": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": "Enkhuizen"
+                }
+              },
+              "ns2:Stopt": ["J", "J"],
+              "ns2:AankomstTijd": ["2021-06-22T16:00:00.000Z", "2021-06-22T16:00:00.000Z"],
+              "ns2:TreinAankomstSpoor": [{
+                "ns2:SpoorNummer": 1
+              }, {
+                "ns2:SpoorNummer": 1
+              }],
+              "ns2:PresentatieTreinAankomstSpoor": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": 1
+                }
+              },
+              "ns2:VertrekTijd": ["2021-06-22T16:00:00.000Z", "2021-06-22T16:00:00.000Z"],
+              "ns2:TreinVertrekSpoor": [{
+                "ns2:SpoorNummer": 1
+              }, {
+                "ns2:SpoorNummer": 1
+              }],
+              "ns2:PresentatieTreinVertrekSpoor": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": 1
+                }
+              },
+              "ns2:StationnementType": "X",
+              "ns2:MaterieelDeel": {
+                "ns2:MaterieelDeelID": "AD46",
+                "ns2:MaterieelDeelSoort": "VIRM",
+                "ns2:MaterieelDeelAanduiding": 4,
+                "ns2:MaterieelDeelLengte": 10860,
+                "ns2:MaterieelNummer": "000000-09566-0",
+                "ns2:MaterieelDeelToegankelijk": "N",
+                "ns2:PresentatieMaterieelDeelToegankelijk": {
+                  "ns2:Uitingen": [{
+                    "ns2:Uiting": "Trein is niet toegankelijk"
+                  }, {
+                    "ns2:Uiting": "Train is not accessible"
+                  }]
+                },
+                "ns2:MaterieelDeelEindBestemming": [{
+                  "ns2:StationCode": "EKZ",
+                  "ns2:Type": 0,
+                  "ns2:KorteNaam": "Enkhuizen",
+                  "ns2:MiddelNaam": "Enkhuizen",
+                  "ns2:LangeNaam": "Enkhuizen",
+                  "ns2:UICCode": 8400210
+                }, {
+                  "ns2:StationCode": "EKZ",
+                  "ns2:Type": 0,
+                  "ns2:KorteNaam": "Enkhuizen",
+                  "ns2:MiddelNaam": "Enkhuizen",
+                  "ns2:LangeNaam": "Enkhuizen",
+                  "ns2:UICCode": 8400210
+                }],
+                "ns2:PresentatieMaterieelDeelEindBestemming": {
+                  "ns2:Uitingen": {
+                    "ns2:Uiting": "Enkhuizen"
+                  }
+                },
+                "ns2:AchterBlijvenMaterieelDeel": "N"
+              },
+              "ns2:NietInstappen": "N"
+            }, {
+              "ns2:Station": {
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              },
+              "ns2:StationToegankelijk": "J",
+              "ns2:PresentatieStationToegankelijk": {
+                "ns2:Uitingen": [{
+                  "ns2:Uiting": "Station is toegankelijk"
+                }, {
+                  "ns2:Uiting": "Station is accessible"
+                }]
+              },
+              "ns2:StationReisAssistentie": "J",
+              "ns2:PresentatieStationReisAssistentie": {
+                "ns2:Uitingen": [{
+                  "ns2:Uiting": "Reisassistentie beschikbaar op dit station"
+                }, {
+                  "ns2:Uiting": "Travel Assistance available at this station"
+                }]
+              },
+              "ns2:TreinEindBestemming": [{
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              }, {
+                "ns2:StationCode": "EKZ",
+                "ns2:Type": 0,
+                "ns2:KorteNaam": "Enkhuizen",
+                "ns2:MiddelNaam": "Enkhuizen",
+                "ns2:LangeNaam": "Enkhuizen",
+                "ns2:UICCode": 8400210
+              }],
+              "ns2:PresentatieTreinEindBestemming": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": "Enkhuizen"
+                }
+              },
+              "ns2:Stopt": ["J", "J"],
+              "ns2:AankomstTijd": ["2021-06-22T16:04:00.000Z", "2021-06-22T16:04:00.000Z"],
+              "ns2:TreinAankomstSpoor": [{
+                "ns2:SpoorNummer": 2
+              }, {
+                "ns2:SpoorNummer": 2
+              }],
+              "ns2:PresentatieTreinAankomstSpoor": {
+                "ns2:Uitingen": {
+                  "ns2:Uiting": 2
+                }
+              },
+              "ns2:StationnementType": "X",
+              "ns2:MaterieelDeel": {
+                "ns2:MaterieelDeelID": "AD46",
+                "ns2:MaterieelDeelSoort": "VIRM",
+                "ns2:MaterieelDeelAanduiding": 4,
+                "ns2:MaterieelDeelLengte": 10860,
+                "ns2:MaterieelNummer": "000000-09566-0",
+                "ns2:MaterieelDeelToegankelijk": "N",
+                "ns2:PresentatieMaterieelDeelToegankelijk": {
+                  "ns2:Uitingen": [{
+                    "ns2:Uiting": "Trein is niet toegankelijk"
+                  }, {
+                    "ns2:Uiting": "Train is not accessible"
+                  }]
+                },
+                "ns2:MaterieelDeelEindBestemming": [{
+                  "ns2:StationCode": "EKZ",
+                  "ns2:Type": 0,
+                  "ns2:KorteNaam": "Enkhuizen",
+                  "ns2:MiddelNaam": "Enkhuizen",
+                  "ns2:LangeNaam": "Enkhuizen",
+                  "ns2:UICCode": 8400210
+                }, {
+                  "ns2:StationCode": "EKZ",
+                  "ns2:Type": 0,
+                  "ns2:KorteNaam": "Enkhuizen",
+                  "ns2:MiddelNaam": "Enkhuizen",
+                  "ns2:LangeNaam": "Enkhuizen",
+                  "ns2:UICCode": 8400210
+                }],
+                "ns2:PresentatieMaterieelDeelEindBestemming": {
+                  "ns2:Uitingen": {
+                    "ns2:Uiting": "Enkhuizen"
+                  }
+                },
+                "ns2:AchterBlijvenMaterieelDeel": "N"
+              },
+              "ns2:NietInstappen": "N"
+            }]
+          }
+        }
+      }
+    }
+  }
+}

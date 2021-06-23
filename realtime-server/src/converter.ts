@@ -69,6 +69,7 @@ export class Converter {
   */
   DecodeOther(data) : Array<VehicleData> {
     const returnData : Array<VehicleData> = [];
+    
 
     if(data.VV_TM_PUSH.KV6posinfo) {
       const kv6posinfo = data.VV_TM_PUSH.KV6posinfo;
@@ -82,6 +83,7 @@ export class Converter {
         returnData.push(this.Mapper(kv6posinfo[VehicleStatusCode], VehicleStatusCode))
       }
     } 
+
     return returnData;
   }
 
@@ -118,7 +120,7 @@ export class Converter {
   
   rdToLatLong (x, y) : [number, number] {
     if(x === undefined || y === undefined) return [0, 0];
-
+    
     const dX = (x - 155000) * Math.pow(10, -5);
     const dY = (y - 463000) * Math.pow(10, -5);
     const SomN = (3235.65389 * dY) + (-32.58297 * Math.pow(dX, 2)) + (-0.2475 *
