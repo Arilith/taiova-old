@@ -26,16 +26,12 @@ jobs:
     - name: Set up server
       working-directory: ./server
       run: yarn && yarn build
-      run: yarn start
     - name: Set up Realtime Server
       working-directory: ./realtime-server
       run: yarn && yarn build
-      run: yarn start
     - name: Set up client
       working-directory: ./client
-      run: npm i
-      working-director: ./client
-      run: npm run build
+      run: npm i && npm run build
     # - name: Move Servers to server account
     #   run: cp ./server 
     # - name: Run both servers
