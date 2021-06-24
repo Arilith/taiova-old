@@ -24,13 +24,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Set up server
-      working-directory: ./server
-      run: yarn && yarn build
+      run: yarn run build-server
     - name: Set up Realtime Server
-      working-directory: ./realtime-server
-      run: yarn && yarn build
+      run: yarn run build-realtime-server
     - name: Set up client
-      working-directory: ./client
-      run: npm i && npm run build
-    - name: Run both servers
-      run: npm run start-servers
+      run: yarn run build-client
+    # - name: Run both servers
+    #   run: npm run start-servers
