@@ -5,8 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ development ]
-
+    branches: [ development, automaticbuild]
+  pull_request:
+    branches: [development, master ]
 jobs:
   build:
 
@@ -32,7 +33,3 @@ jobs:
     - name: Set up client
       working-directory: ./client
       run: npm i && npm run build
-    # - name: Move Servers to server account
-    #   run: cp ./server 
-    # - name: Run both servers
-    #   run: npm run start-servers
