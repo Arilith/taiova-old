@@ -1,35 +1,30 @@
 import React, { useState, useEffect, useRef } from 'react'
 import mapboxgl from "mapbox-gl";
 import { MapOptions } from './MapOptions';
-import BusInformationPanel from './BusInformationPanel';
-import '../css/map.css';
-import { accessToken } from "./api/token"
-import { Search } from './search/Search';
-import { CompanyNameFromArray } from './functions/CompanyConverter'
-import { FunctionButtons } from './FunctionButtons';
-import { turf } from '@turf/turf';
-mapboxgl.accessToken = accessToken;
-const Map = props => {
+import { accessToken } from "../api/token"
+import { CompanyNameFromArray } from '../functions/CompanyConverter'
+import { convertToMapData } from '../api/decoder';
 
-  const [mapData, setMapData] = useState();
+mapboxgl.accessToken = accessToken;
+
+export const Map = props => {
+
+  const [busses, setBusses] = useState();
+
   const [lng, setLng] = useState(4.8987713);
   const [lat, setLat] = useState(52.3778931);
   const [zoom, setZoom] = useState(9);
 
   const [busData, setBusData] = useState();
 
-  const [dark, setDark] = useState(localStorage.getItem('dark-mode') === "false" ? false : true);
-
   const mapContainer = useRef(null);
   let map = useRef(null);
-
-  
 
   useEffect(() => {
     InitializeMap();
   });
 
-  const [companies, setCompanies] = useState([]);
+  
 
   const InitializeMap = () => {
     if (map.current) return; 
@@ -37,13 +32,9 @@ const Map = props => {
       container: mapContainer.current,
       style: 'mapbox://styles/arilith/ckoqabais7zs618pl77d73zaw',
       center: [lng, lat],
-      zoom: zoom,
-      // maxBounds: [
-      //   [3.31497114423, 50.803721015],
-      //   [7.09205325687, 53.5104033474]
-      // ]
+      zoom: zoom
     });
-   // map.current.scrollZooom.setWheelZoomRate('1/135');
+
     if (!map.current) return; 
     
     map.current.on('move', () => {
@@ -135,38 +126,20 @@ const Map = props => {
   }
 
   useEffect(() => {
-    setMapData(props.data);
+    setBusses(props.busses);
 
-    if(!mapData) return;
+    if(!busses) return;
     if(!map.current) InitializeMap();
 
-    const convertedData = props.data.reduce((acc, cur) => {
-      if(!acc[cur.c]) acc[cur.c] = []
-  
-      acc[cur.c].push({
-          type: "Feature",
-          geometry: {
-              type: "Point",
-              coordinates: cur.p,
-          },
-          properties: {
-            position : cur.p,
-            vehicleNumber: cur.v,
-            company: cur.c,
-            title: cur.n,
-            lineNumber: cur.n,
-          }
-      })
-  
-      return acc
-    }, {})
+    const convertedData = convertToMapData(props.busses)
     
-    setCompanies(CompanyNameFromArray(Object.keys(convertedData)));
+    props.setCompanies(CompanyNameFromArray(Object.keys(convertedData)));
 
     for(let [company, values] of Object.entries(convertedData)) {
       if(!map.current.getSource(`busses_${company}`)) {
         map.current.loadImage(`images/${company}.png`, function (error, image) {
-          map.current.addImage(`${company}-marker`, image);
+          if(!map.current.hasImage(`${company}-marker`)) map.current.addImage(`${company}-marker`, image);
+          
           map.current.addSource(`busses_${company}`, {
             type: 'geojson',
             data: {
@@ -201,12 +174,21 @@ const Map = props => {
       props.setMapLoaded(true);
     }
         
-  }, [props.data]) // eslint-disable-line
+  }, [props.busses]) // eslint-disable-line
 
-  
+  useEffect(() => {
+    if(props.shape)
+      setShape(props.shape)
+  }, [props.shape])
+
+  useEffect(() => {
+    if(props.drivenShape)
+      setDrivenShape(props.drivenShape)
+  }, [props.drivenShape])
+
 
   const toggleInformation = (busData) => {
-    setBusData(busData);
+    props.setClickedBusData(busData);
   }
 
   const setShape = (shapeArray) => {
@@ -243,6 +225,10 @@ const Map = props => {
     }  
   }
 
+  useEffect(() => {
+    setFilter(props.filter)
+  }, [props.filter])
+
   const setFilter = (filter) => {
     if(filter.company) {
       const filterLayer = map.current.getLayer(`busses_${filter.company}`);
@@ -255,27 +241,9 @@ const Map = props => {
     }
   }
 
-  const toggleDark = () => {
-    
-    if(localStorage.getItem('dark-mode') === "false")
-      localStorage.setItem('dark-mode', true)
-    else
-      localStorage.setItem('dark-mode', false)
+  
 
-    setDark(!dark);
-  }
-
-  return (
-    <>
-      <Search setFilter={setFilter} companies={companies} dark={dark} />
-      <div className="flex lg:flex-row flex-col-reverse p-1 mt-auto">
-        <FunctionButtons dark={dark} toggleDark={toggleDark} />
-        {busData && <BusInformationPanel data={busData} setShape={setShape} setDrivenShape={setDrivenShape} dark={dark} />}
-      </div>
-      <div ref={mapContainer} className="map-container" />
-    </>
-  )
+  return <div ref={mapContainer} className="map-container" />
 }
 
-export default Map
 

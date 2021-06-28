@@ -10,7 +10,7 @@
   },
   "scripts": {
     "client": "cd client && npm start",
-    "build-client" : "cd client && npm run build",
+    "build-client": "cd client && npm run build",
     "watch-server": "cd server && yarn watch",
     "server": "cd server && yarn start",
     "build-server": "cd server && yarn build",
@@ -19,5 +19,8 @@
     "build-realtime-server": "cd realtime-server && yarn build",
     "start": "concurrently \"npm run client\"  \"npm run realtime-server\" \"npm run server\"",
     "start-servers": "concurrently \"npm run realtime-server\" \"npm run server\""
+  },
+  "dependencies": {
+    "react-loading-skeleton": "^2.2.0"
   }
 }

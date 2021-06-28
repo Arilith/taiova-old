@@ -1,9 +1,7 @@
 const axios = require('axios');
 
-export class MapDataFetcher {
+export class DataFetcher {
   
-  url;
-
   constructor() {
     const dataURL = window.location.href.includes("localhost")
       ? "https://localhost:3001"

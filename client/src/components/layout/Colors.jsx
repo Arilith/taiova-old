@@ -1,0 +1,22 @@
+export const TextColors = {
+  ARR: "text-blue-400",
+  QBUZZ: "text-red-300",
+  CXX: "text-green-300",
+  RET: "text-red-500",
+  EBS: "text-green-500",
+  KEOLIS: "text-blue-500",
+  DELIJN: "text-blue-500",
+  SYNTUS: "text-red-500",
+  GVB: "text-blue-500",
+  TEC: "text-blue-500",
+  BRAVO: "text-purple-500",
+  TWENTS: "text-red-500",
+  WATERBUS: "text-blue-500",
+  BRENG: "text-pink-500",
+  UOV : "text-red-300",
+  HTM : "text-red-500",
+  OVERAL : "text-green-600",
+  ALLGO : "text-blue-300",
+  OVREGIOY: "text-blue-500",
+  TEXELHOPPER: "text-yellow-400"
+}

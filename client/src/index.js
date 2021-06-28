@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
 import './css/main.css';
+import './css/map.css';
 import App from './App';
 
 ReactDOM.render(

@@ -11,7 +11,7 @@ const haloColors = {
   TEC: "#fff",
   BRAVO: "#fff",
   TWENTS: "#DC001A",
-  TEXELHOPPER: "#000",
+  TEXELHOPPER: "#fff",
   WATERBUS: "#fff",
   UOV: "#fff",
   OVREGIOY: "#fff",
@@ -36,13 +36,13 @@ const textColors = {
   BRAVO: "#5C2583",
   TWENTS: "#FFF",
   WATERBUS: "#000",
-  TEXELHOPPER: "#000",
+  TEXELHOPPER: "#EDD468",
   UOV: "#F48B34",
   OVREGIOY: "#0060A0",
   BRENG: "#E31082",
   OVERAL: "#469896",
   ALLGO: "#000",
-  HTM: "#000"
+  HTM: "#000",
 }
 
 export const MapOptions = key => ({

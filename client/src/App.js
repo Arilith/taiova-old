@@ -1,7 +1,16 @@
+//* NPM MODULES *//
 import React, { useEffect, useState } from "react";
-import { MapDataFetcher } from './components/api/fetchmapdata'
-import Map from "./components/Map";
 import { io } from "socket.io-client";
+
+//* API MODULES *//
+import { DataFetcher } from './components/api/datafetcher'
+import { decodeBuffer } from './components/api/decoder'
+
+//* COMPONENTS *//
+import { Map } from "./components/map/Map";
+import { BusInformationPanel } from './components/layout/BusInformationPanel';
+import { Search } from './components/search/Search';
+import { FunctionButtons } from './components/layout/FunctionButtons';
 
 export default function App() {
 
@@ -9,16 +18,23 @@ export default function App() {
 
   const [mapHasLoaded, setMapHasLoaded] = useState(false);
   
-  useEffect(() => {
-    const DataFetcher = new MapDataFetcher();
-    async function fetchAPI() {
-      let response = await DataFetcher.FetchAllVehicles();
-      setResponse(response);
-    }
+  const [companies, setCompanies] = useState([]);
 
+  const [shape, setShape] = useState([]);
+  const [drivenShape, setDrivenShape] = useState([]);
+
+  const [filter, setFilter] = useState({});
+
+  const [clickedBusData, setClickedBusData] = useState();
+  const [updatedBus, setUpdatedBus] = useState();
+
+  const [receivedBusData, setReceivedBusData] = useState();
+  const [informationPanelOpen, setInformationPanelOpen] = useState(false);
+
+  useEffect(() => {
+    const fetchAPI = async () => setResponse(await new DataFetcher().FetchAllVehicles());
     fetchAPI()
   }, [])
-
 
   useEffect(() => {
     console.log("Connecting to websocket...");
@@ -32,35 +48,44 @@ export default function App() {
           setResponse(decodeBuffer(data))
       });
     });
-  }, [mapHasLoaded]);
+  }, [mapHasLoaded]); // eslint-disable-line
 
-  const decodeBuffer = buffer => {
-    buffer = Buffer.from(buffer);
+  useEffect(() => {
+    if(clickedBusData) {
+      const foundBus = response.find(bus => bus.v === clickedBusData.vehicleNumber && bus.c === clickedBusData.company);
+      if(foundBus.p[0] !== updatedBus?.p[0] || foundBus.p[1] !== updatedBus?.p[1]) setUpdatedBus(foundBus)
+    }     
+  }, [response, clickedBusData, updatedBus]); // es
 
-    const vehicles = [];
-
-    for(let i = 0; i < (buffer.byteLength / 27); i++) {
-      const x = buffer.readFloatBE(i * 27)
-      const y =buffer.readFloatBE(i * 27 + 4)
-      const v = buffer.readUInt32BE(i * 27 + 4 + 4)
-      const combined = buffer.slice(i * 27 + 4 + 4 + 4, i * 27 + 4 + 4 + 4 + 15).toString().split('\u0000')[0];
-      const c = combined.split("|")[0];
-      const n = combined.split("|")[1];
-      vehicles.push({
-        p: [x, y],
-        c: c,
-        v: v,
-        n : n
-      })
+  useEffect(() => {
+    const fetchUpdatedBusData = async () => {
+      const fetchBusData = async bus => await new DataFetcher().FetchVehicle(bus.c, bus.v);
+      setReceivedBusData(await fetchBusData(updatedBus))
     }
+    if(updatedBus && receivedBusData) fetchUpdatedBusData();
+  }, [updatedBus])
+  useEffect(() => {
+    const fetchBusData = async () => {
 
-    return vehicles;
-  }
+      if(clickedBusData) {
+        setInformationPanelOpen(true);
+        setReceivedBusData()
+        const fetchBusData = async bus => await new DataFetcher().FetchVehicle(bus.company, bus.vehicleNumber);
+        setReceivedBusData(await fetchBusData(clickedBusData))  
+      } 
+    }
+    fetchBusData(); 
+  }, [clickedBusData])
 
 
   return (
     <div className="h-screen flex flex-col">
-      { <Map data={response !== undefined && response} setMapLoaded={setMapHasLoaded} /> }
+      <Map busses={response} setMapLoaded={setMapHasLoaded} setClickedBusData={setClickedBusData} shape={shape} drivenShape={drivenShape} setCompanies={setCompanies} filter={filter} /> 
+      <Search setFilter={setFilter} companies={companies} />
+      <div className="flex lg:flex-row flex-col-reverse p-1 mt-auto">
+        <FunctionButtons />
+        <BusInformationPanel open={informationPanelOpen} setInformationPanelOpen={setInformationPanelOpen} data={receivedBusData} />
+      </div>
     </div>
   );
 }
