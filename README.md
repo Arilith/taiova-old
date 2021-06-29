@@ -4,7 +4,7 @@ is an application which aims to provide users with the best possible realtime in
 # Deployment instructions
 To run the client perform the following:
 
-cd client && npm start
+cd client && yarn start
 
 To run the server perform the following:
 
@@ -14,3 +14,5 @@ To run the realtime-server perform the following:
 
 cd realtime-server && yarn start
 
+# Development Instructions
+For both the server and realtime server, running yarn watch will automatically rebuild on changes.
