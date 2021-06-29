@@ -19,6 +19,7 @@ export class OVData {
   private busLogic : BusLogic;
   private websocket : Websocket;
 
+  private updatedVehicles;
   constructor(database : Database, socket : Websocket) {
     this.websocket = socket;
     this.Init();
@@ -55,8 +56,12 @@ export class OVData {
         let vehicleData : Array<VehicleData> = converter.decode(decoded, operator);
         
 
-        await this.busLogic.UpdateBusses(vehicleData);
-                
+        const updatedVehicles = await this.busLogic.UpdateBusses(vehicleData);
+        if(updatedVehicles.length > 0) {
+          const convertedUpdatedVehicles = await this.busLogic.ConvertToWebsocket(updatedVehicles);
+          this.websocket.Emit(convertedUpdatedVehicles);
+        }
+        
       })
 
     })
@@ -87,7 +92,7 @@ export class OVData {
     // })
 
     setInterval(() => {
-      this.websocket.Emit();
+      
     }, parseInt(process.env.APP_BUS_UPDATE_DELAY))
     
     // this.kv78socket = zmq.socket("sub");

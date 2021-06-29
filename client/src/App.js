@@ -1,16 +1,19 @@
 //* NPM MODULES *//
 import React, { useEffect, useState } from "react";
-import { io } from "socket.io-client";
+import socketIOClient from "socket.io-client";
 
 //* API MODULES *//
 import { DataFetcher } from './components/api/datafetcher'
 import { decodeBuffer } from './components/api/decoder'
+import { convertToMapData, ConvertToMapDataNew } from './components/api/decoder';
+import { CompanyNameFromArray } from './components/functions/CompanyConverter'
 
 //* COMPONENTS *//
 import { Map } from "./components/map/Map";
 import { BusInformationPanel } from './components/layout/BusInformationPanel';
 import { Search } from './components/search/Search';
 import { FunctionButtons } from './components/layout/FunctionButtons';
+import { MapNew } from "./components/map/MapNew";
 
 export default function App() {
 
@@ -31,24 +34,41 @@ export default function App() {
   const [receivedBusData, setReceivedBusData] = useState();
   const [informationPanelOpen, setInformationPanelOpen] = useState(false);
 
+  const [buffer, setBuffer] = useState();
+
+  const [busses, setBusses] = useState();
+
+  const url = window.location.href.includes("localhost")
+        ? "wss://localhost:3002"
+        : "wss://taiova.trvtserver.nl:3002";
   useEffect(() => {
     const fetchAPI = async () => setResponse(await new DataFetcher().FetchAllVehicles());
     fetchAPI()
   }, [])
 
   useEffect(() => {
-    console.log("Connecting to websocket...");
-    const url = window.location.href.includes("localhost")
-      ? "wss://localhost:3002"
-      : "wss://taiova.trvtserver.nl:3002";
-    const socket = io(url);
-    socket.on("connect", () => {
-      socket.on("ovdata", (data) => {
-        if(response !== [] && mapHasLoaded)
-          setResponse(decodeBuffer(data))
+    if(mapHasLoaded) {
+      console.log("Connecting to socket")
+      const socket = socketIOClient(url);
+      socket.on("ovdata", data => {
+        const decoded = decodeBuffer(data);
+        setBuffer(decoded)
+        
       });
-    });
-  }, [mapHasLoaded]); // eslint-disable-line
+    }
+  }, [mapHasLoaded, url]); 
+
+  useEffect(() => {
+    if(buffer) {
+      const cleanedResponse = response.filter( x => {
+        return !buffer.some(t => t.v === x.v && t.c === x.c)
+      })
+  
+      const newResponse = cleanedResponse.concat(buffer);
+      setResponse(newResponse);
+    }
+    
+  }, [buffer])
 
   useEffect(() => {
     if(clickedBusData) {
@@ -58,12 +78,21 @@ export default function App() {
   }, [response, clickedBusData, updatedBus]); // es
 
   useEffect(() => {
+    if(response) {
+      setBusses(ConvertToMapDataNew(response));
+      //Todo: this is inefficient
+      CompanyNameFromArray(Object.keys(convertToMapData(response)))
+    }
+  }, [response])
+
+  useEffect(() => {
     const fetchUpdatedBusData = async () => {
       const fetchBusData = async bus => await new DataFetcher().FetchVehicle(bus.c, bus.v);
       setReceivedBusData(await fetchBusData(updatedBus))
     }
     if(updatedBus && receivedBusData) fetchUpdatedBusData();
   }, [updatedBus])
+
   useEffect(() => {
     const fetchBusData = async () => {
 
@@ -77,10 +106,10 @@ export default function App() {
     fetchBusData(); 
   }, [clickedBusData])
 
-
   return (
     <div className="h-screen flex flex-col">
-      <Map busses={response} setMapLoaded={setMapHasLoaded} setClickedBusData={setClickedBusData} shape={shape} drivenShape={drivenShape} setCompanies={setCompanies} filter={filter} /> 
+      <MapNew busses={busses} setMapLoaded={setMapHasLoaded} setClickedBusData={setClickedBusData} shape={shape} drivenShape={drivenShape} setCompanies={setCompanies} filter={filter} />
+      {/* <Map busses={response} setMapLoaded={setMapHasLoaded} setClickedBusData={setClickedBusData} shape={shape} drivenShape={drivenShape} setCompanies={setCompanies} filter={filter} />  */}
       <Search setFilter={setFilter} companies={companies} />
       <div className="flex lg:flex-row flex-col-reverse p-1 mt-auto">
         <FunctionButtons />

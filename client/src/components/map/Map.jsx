@@ -15,8 +15,6 @@ export const Map = props => {
   const [lat, setLat] = useState(52.3778931);
   const [zoom, setZoom] = useState(9);
 
-  const [busData, setBusData] = useState();
-
   const mapContainer = useRef(null);
   let map = useRef(null);
 
@@ -37,11 +35,6 @@ export const Map = props => {
 
     if (!map.current) return; 
     
-    map.current.on('move', () => {
-      setLng(map.current.getCenter().lng.toFixed(4));
-      setLat(map.current.getCenter().lat.toFixed(4));
-      setZoom(map.current.getZoom().toFixed(2));
-    });
 
     map.current.on('load', () => {
       

@@ -26,3 +26,22 @@ export interface VehicleData {
   currentRouteId: number,
   currentTripId: number
 }
+
+export interface VehicleDataWithId {
+  _id: string,
+  company: string,
+  originalCompany: string,
+  planningNumber: string,
+  journeyNumber: number,
+  lineNumber : string,
+  timestamp: number,
+  vehicleNumber: number,
+  position: [number, number],
+  status: vehicleState,
+  createdAt: number,
+  updatedAt: number,
+  punctuality: Array<number>,
+  updatedTimes: Array<number>,
+  currentRouteId: number,
+  currentTripId: number
+}

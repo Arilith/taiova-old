@@ -3,6 +3,7 @@ import { Server } from 'https';
 import { Socket } from 'socket.io';
 import { Database } from './database';
 import { WebsocketVehicleData } from "./types/WebsocketVehicleData";
+import * as zlib from 'zlib';
 
 export class Websocket {
   
@@ -43,23 +44,29 @@ export class Websocket {
   }
 
   CreateBufferFromVehicles(vehicles : Array<WebsocketVehicleData>) { 
-    let buf = Buffer.alloc((4 + 4 + 4 + 15) * vehicles.length)
+    let buf = Buffer.alloc((4 + 4 + 4 + 39) * vehicles.length)
     vehicles.forEach((vehicle : WebsocketVehicleData, index : number) => {
-      buf.writeFloatBE(vehicle.p[0], index * 27)
-      buf.writeFloatBE(vehicle.p[1], index * 27 + 4)
-      buf.writeUInt32BE(vehicle.v, index * 27 + 4 + 4)
-      buf.write(`${vehicle.c}|${vehicle.n}`, index * 27 + 4 + 4 + 4)
-      for(let i = 0; i < 15 - (vehicle.c.length + 1 + vehicle.n.length); i++) {
-        buf.writeUInt8(0, index * 27 + 4 + 4 + 4 + vehicle.c.length + 1 + vehicle.n.length)
+      buf.writeFloatBE(vehicle.p[0], index * 51)
+      buf.writeFloatBE(vehicle.p[1], index * 51 + 4)
+      buf.writeUInt32BE(vehicle.v, index * 51 + 4 + 4)
+      buf.write(`${vehicle.c}|${vehicle.n}|${vehicle.i}`, index * 51 + 4 + 4 + 4)
+      for(let i = 0; i < 39 - (vehicle.c.length + 1 + vehicle.n.length); i++) {
+        buf.writeUInt8(0, index * 51 + 4 + 4 + 4 + vehicle.c.length + 1 + vehicle.n.length)
       }
     })
 
     return buf;
   }
 
-  Emit() {
+  Emit(vehicles) {
     setTimeout(() => {
-      this.db.GetAllVehiclesSmall().then((vehicles) => this.io.emit("ovdata", this.CreateBufferFromVehicles(vehicles)))
+      //Todo: See if this really is a smart way and if it saves data.
+      const buffer = this.CreateBufferFromVehicles(vehicles);
+        // const compressed = zlib.deflate(buffer, (err, buffer) => {
+        //   if(!err) this.io.emit("ovdata", buffer)
+          
+        // })
+        this.io.emit("ovdata", buffer)
         //Small delay to make sure the server catches up.
     }, 100)
   }

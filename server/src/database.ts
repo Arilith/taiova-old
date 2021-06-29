@@ -88,6 +88,7 @@ export class Database {
             updatedTimes: Array,
             currentRouteId: Number,
             currentTripId: Number,
+            lineNumber: String
           });
           
           this.tripsSchema = new this.mongoose.Schema({
@@ -160,7 +161,6 @@ export class Database {
       __v : 0,
       journeyNumber: 0,
       timestamp : 0,
-      lineNUmber: 0,
       createdAt: 0,
       updatedAt: 0,
       currentRouteId: 0,
@@ -171,11 +171,14 @@ export class Database {
 
     result.forEach(res => {
       smallBusses.push({
+        i: res._id,
         p: res.position,
         c: res.company, 
-        v: res.vehicleNumber
+        v: res.vehicleNumber,
+        n: res.lineNumber
       })
     })
+
     return smallBusses;
   }
 

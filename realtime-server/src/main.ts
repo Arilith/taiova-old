@@ -47,7 +47,7 @@ const AppInit = async () => {
   );
   
 
-  //THIS IS NOT SAFE
+  //Todo: Cors only for own server
 
   const corsOptions = {
     origin: '*',
@@ -60,7 +60,6 @@ const AppInit = async () => {
 
   const socket = new Websocket(server, db);
   const ov = new OVData(db, socket);
-  //busLogic.InitKV78();
   
   server.listen(port, () => console.log(`Listening at http://localhost:${port}`));
 

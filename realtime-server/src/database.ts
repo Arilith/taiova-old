@@ -1,6 +1,6 @@
 import { Connection, Model, Mongoose, FilterQuery, Schema } from 'mongoose';
 import { Trip } from './types/Trip';
-import { VehicleData, vehicleState } from './types/VehicleData';
+import { VehicleData, VehicleDataWithId, vehicleState } from './types/VehicleData';
 import * as fs from 'fs';
 import { resolve } from 'path';
 import { Route } from './types/Route';
@@ -138,10 +138,8 @@ export class Database {
     return await this.vehicleModel.find({...args}, { punctuality: 0, updatedTimes: 0, __v : 0 });
   }
 
-  public async GetAllVehiclesSmall (args = {}) : Promise<Array<WebsocketVehicleData>> {
-    const smallBusses : Array<WebsocketVehicleData> = [];
-
-    const result = await this.vehicleModel.find({...args},
+  public async GetAllVehiclesSmall (args = {}) : Promise<Array<VehicleDataWithId>> {
+    return await this.vehicleModel.find({...args},
       { 
       punctuality: 0, 
       updatedTimes: 0, 
@@ -155,17 +153,6 @@ export class Database {
       planningNumber: 0,
       status: 0
     })
-
-    result.forEach(res => {
-      smallBusses.push({
-        p: res.position,
-        c: res.company,
-        v: res.vehicleNumber,
-        n: res.lineNumber
-      })
-    })
-
-    return smallBusses;
   }
 
   public async GetVehicle (vehicleNumber, transporter, firstOnly : boolean = false) : Promise<VehicleData> {
@@ -181,19 +168,18 @@ export class Database {
     return await this.GetVehicle(vehicleNumber, transporter) !== null;
   }
 
-  public async UpdateVehicle (vehicleToUpdate : any, updatedVehicleData : VehicleData, positionChecks : boolean = false) : Promise<void> {
-    await this.vehicleModel.findOneAndUpdate(vehicleToUpdate, updatedVehicleData);
-  }
-
-  public async AddVehicle (vehicle : VehicleData) : Promise<void> {
-    new this.vehicleModel({
-      ...vehicle,
-      punctuality : vehicle.punctuality
-    }).save(error => {
-      if(error) console.error(`Something went wrong while trying to add vehicle: ${vehicle.vehicleNumber}. Error: ${error}`)
-    })
+  public async UpdateVehicle (vehicleToUpdate : any, updatedVehicleData : VehicleData, positionChecks : boolean = false) : Promise<VehicleDataWithId> {
+    return await this.vehicleModel.findOneAndUpdate(vehicleToUpdate, updatedVehicleData);
   }
   
+  public async AddVehicle (vehicle) : Promise<VehicleDataWithId>{
+    try { 
+      return await this.vehicleModel.create({...vehicle});
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   public async RemoveVehicle (vehicle : VehicleData) : Promise<void> {
     if(!vehicle["_doc"]) return
 

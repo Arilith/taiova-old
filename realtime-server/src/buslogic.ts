@@ -1,5 +1,5 @@
 import { Database } from "./database";
-import { VehicleData, vehicleState } from "./types/VehicleData";
+import { VehicleData, VehicleDataWithId, vehicleState } from "./types/VehicleData";
 import { resolve } from 'path';
 import * as fs from 'fs';
 import { Trip } from "./types/Trip";
@@ -8,6 +8,7 @@ import { exec } from 'child_process';
 import { Route } from "./types/Route";
 import { TripPositionData } from "./types/TripPositionData";
 import * as turf from '@turf/turf'
+import { WebsocketVehicleData } from "./types/WebsocketVehicleData";
 
 export class BusLogic {
 
@@ -31,8 +32,8 @@ export class BusLogic {
    * Updates or creates a new bus depending on if it already exists or not.
    * @param busses The list of busses to update.
    */
-   public async UpdateBusses(busses : Array<VehicleData>) : Promise<void> {
-     
+   public async UpdateBusses(busses : Array<VehicleData>) : Promise<Array<VehicleDataWithId>> {
+    const updatedVehicles : Array<VehicleDataWithId> = [];
     await Promise.all(busses.map(async (bus) => {
       const foundTrip : Trip = await this.database.GetTrip(bus.journeyNumber, bus.planningNumber, bus.company);
       const foundRoute : Route = await this.database.GetRoute(foundTrip.routeId);
@@ -78,13 +79,31 @@ export class BusLogic {
 
         bus.updatedAt = Date.now();  
         if(Object.keys(foundTrip).length !== 0) this.AddPositionToTripRoute(foundTrip.tripId, foundTrip.company, bus.position);
-        await this.database.UpdateVehicle(foundVehicle, bus, true)
+        updatedVehicles.push(await this.database.UpdateVehicle(foundVehicle, bus, true))
         
       } else {
         if(process.env.APP_DO_CREATE_LOGGING == "true") console.log(`creating new vehicle ${bus.vehicleNumber} from ${bus.company}`)
-        if(bus.status === vehicleState.ONROUTE) await this.database.AddVehicle(bus)
+        if(bus.status === vehicleState.ONROUTE || bus.status === vehicleState.OFFROUTE) updatedVehicles.push(await this.database.AddVehicle(bus))
       }
     }))
+
+    return updatedVehicles;
+  }
+
+  //Todo: Fix vehicles being "null"?
+  public ConvertToWebsocket (vehicles : Array<VehicleDataWithId>) : Array<WebsocketVehicleData> {
+    const newVehicles : Array<WebsocketVehicleData> = [];
+    for(const vehicle of vehicles) {
+      if(vehicle === null) continue;
+      newVehicles.push({
+        i: vehicle._id,
+        p: vehicle.position,
+        c: vehicle.company, 
+        n: vehicle.lineNumber,
+        v: vehicle.vehicleNumber
+      })
+    }
+    return newVehicles;
   }
 
   public async AddPositionToTripRoute (tripId : number, company : string, position : [number, number]) {
@@ -93,23 +112,8 @@ export class BusLogic {
     if(retrievedTripRouteData) { 
       retrievedTripRouteData.updatedTimes.push(new Date().getTime());
       const newUpdatedTimes = retrievedTripRouteData.updatedTimes;
-      let resultArray;
-
-      if(retrievedTripRouteData.positions.length > 1) {
-        const targetPoint = turf.point(position);
-        const currentLine = turf.lineString(retrievedTripRouteData.positions)
-        const nearest = turf.nearestPointOnLine(currentLine, targetPoint);
-        const index = nearest.properties.index;
-  
-        const firstHalf = retrievedTripRouteData.positions.slice(0, index);
-        const secondHalf = retrievedTripRouteData.positions.slice(index)
-        firstHalf.push([targetPoint.geometry.coordinates[0], targetPoint.geometry.coordinates[1]]);
-        resultArray = firstHalf.concat(secondHalf);
-      } else {
-        retrievedTripRouteData.positions.push(position);
-        resultArray = retrievedTripRouteData.positions;
-      }
-      
+      retrievedTripRouteData.positions.push(position);
+      let resultArray = retrievedTripRouteData.positions;
       
       retrievedTripRouteData = {
         tripId : tripId,
@@ -131,7 +135,24 @@ export class BusLogic {
     await this.database.UpdateTripPositions(tripId, company, retrievedTripRouteData);
   }
 
-  
+  /**
+   * Fetches all the busses in the websocket format without any extra information.
+   */
+  public async FetchBussesSmall() : Promise<Array<WebsocketVehicleData>> {
+    const result = await this.database.GetAllVehiclesSmall();
+    const smallBusses : Array<WebsocketVehicleData> = [];
+    result.forEach(res => {
+      smallBusses.push({
+        i: res._id,
+        p: res.position,
+        c: res.company,
+        v: res.vehicleNumber,
+        n: res.lineNumber
+      })
+    })
+
+    return smallBusses;
+  }
 
   /**
    * Clears busses every X amount of minutes specified in .env file.
