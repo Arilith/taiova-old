@@ -115,6 +115,8 @@ export const Map = props => {
         }
       });
 
+      props.setMapLoaded(true);
+
     })
   }
 
@@ -132,19 +134,19 @@ export const Map = props => {
       if(!map.current.getSource(`busses_${company}`)) {
         map.current.loadImage(`images/${company}.png`, function (error, image) {
           if(!map.current.hasImage(`${company}-marker`)) map.current.addImage(`${company}-marker`, image);
-          
+          if(map.current.getSource(`busses_${company}`)) return;
           map.current.addSource(`busses_${company}`, {
             type: 'geojson',
             data: {
               "type": "FeatureCollection",
               "features": values
             }
-        });
-        map.current.addLayer({
-          id: `busses_${company}`,
-          type: "symbol",
-          source: `busses_${company}`,
-          ...MapOptions(company)
+          });
+          map.current.addLayer({
+            id: `busses_${company}`,
+            type: "symbol",
+            source: `busses_${company}`,
+            ...MapOptions(company)
           });
         });
         map.current.on('click', `busses_${company}`, function (e) {

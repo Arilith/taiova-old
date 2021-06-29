@@ -35,8 +35,8 @@ export default function App() {
   const [informationPanelOpen, setInformationPanelOpen] = useState(false);
 
   const [buffer, setBuffer] = useState();
-
-  const [busses, setBusses] = useState();
+  const [tempBusses, setTempBusses] = useState([]);
+  const [busses, setBusses] = useState([]);
 
   const url = window.location.href.includes("localhost")
         ? "wss://localhost:3002"
@@ -47,69 +47,73 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    if(mapHasLoaded) {
-      console.log("Connecting to socket")
-      const socket = socketIOClient(url);
-      socket.on("ovdata", data => {
-        const decoded = decodeBuffer(data);
-        setBuffer(decoded)
-        
-      });
-    }
+    //if(!mapHasLoaded) return;
+    console.log("Connecting to websocket.")
+    const socket = socketIOClient(url);
+    socket.on("ovdata", data => {
+      const decoded = decodeBuffer(data);
+      setTempBusses(tempBusses.concat(decoded))
+    });
+
   }, [mapHasLoaded, url]); 
 
+  // useEffect(() => {
+  //   if(!buffer) return;
+  //   const cleanedResponse = response.filter( x => {
+  //     return !buffer.some(t => t.v === x.v && t.c === x.c)
+  //   })
+  //   const newResponse = cleanedResponse.concat(buffer);
+  //   setResponse(newResponse);
+  // }, [buffer])
   useEffect(() => {
-    if(buffer) {
-      const cleanedResponse = response.filter( x => {
-        return !buffer.some(t => t.v === x.v && t.c === x.c)
-      })
+    setInterval(() => {
+      if(!tempBusses) return;
+      console.log(tempBusses)
+      const cleanedResponse = response.filter( x => !tempBusses.some(t => t.v === x.v && t.c === x.c))
+      const newResponse = cleanedResponse.concat(tempBusses);
+      setBusses(newResponse);
+    }, 1000)
+  }, [])
   
-      const newResponse = cleanedResponse.concat(buffer);
-      setResponse(newResponse);
-    }
-    
-  }, [buffer])
 
   useEffect(() => {
-    if(clickedBusData) {
-      const foundBus = response.find(bus => bus.v === clickedBusData.vehicleNumber && bus.c === clickedBusData.company);
-      if(foundBus.p[0] !== updatedBus?.p[0] || foundBus.p[1] !== updatedBus?.p[1]) setUpdatedBus(foundBus)
-    }     
+    if(!clickedBusData) return;
+    const foundBus = response.find(bus => bus.v === clickedBusData.vehicleNumber && bus.c === clickedBusData.company);
+    if(foundBus.p[0] !== updatedBus?.p[0] || foundBus.p[1] !== updatedBus?.p[1]) setUpdatedBus(foundBus)
+         
   }, [response, clickedBusData, updatedBus]); // es
 
-  useEffect(() => {
-    if(response) {
-      setBusses(ConvertToMapDataNew(response));
-      //Todo: this is inefficient
-      CompanyNameFromArray(Object.keys(convertToMapData(response)))
-    }
-  }, [response])
 
   useEffect(() => {
-    const fetchUpdatedBusData = async () => {
-      const fetchBusData = async bus => await new DataFetcher().FetchVehicle(bus.c, bus.v);
-      setReceivedBusData(await fetchBusData(updatedBus))
-    }
-    if(updatedBus && receivedBusData) fetchUpdatedBusData();
-  }, [updatedBus])
+    if(!busses) return;
+    console.log(busses);
+  }, [busses])
 
-  useEffect(() => {
-    const fetchBusData = async () => {
+  // useEffect(() => {
+  //   const fetchUpdatedBusData = async () => {
+  //     const fetchBusData = async bus => await new DataFetcher().FetchVehicle(bus.c, bus.v);
+  //     setReceivedBusData(await fetchBusData(updatedBus))
+  //   }
+  //   if(updatedBus && receivedBusData) fetchUpdatedBusData();
+  // }, [updatedBus])
 
-      if(clickedBusData) {
-        setInformationPanelOpen(true);
-        setReceivedBusData()
-        const fetchBusData = async bus => await new DataFetcher().FetchVehicle(bus.company, bus.vehicleNumber);
-        setReceivedBusData(await fetchBusData(clickedBusData))  
-      } 
-    }
-    fetchBusData(); 
-  }, [clickedBusData])
+  // useEffect(() => {
+  //   const fetchBusData = async () => {
+
+  //     if(clickedBusData) {
+  //       setInformationPanelOpen(true);
+  //       setReceivedBusData()
+  //       const fetchBusData = async bus => await new DataFetcher().FetchVehicle(bus.company, bus.vehicleNumber);
+  //       setReceivedBusData(await fetchBusData(clickedBusData))  
+  //     } 
+  //   }
+  //   fetchBusData(); 
+  // }, [clickedBusData])
+
 
   return (
     <div className="h-screen flex flex-col">
-      <MapNew busses={busses} setMapLoaded={setMapHasLoaded} setClickedBusData={setClickedBusData} shape={shape} drivenShape={drivenShape} setCompanies={setCompanies} filter={filter} />
-      {/* <Map busses={response} setMapLoaded={setMapHasLoaded} setClickedBusData={setClickedBusData} shape={shape} drivenShape={drivenShape} setCompanies={setCompanies} filter={filter} />  */}
+      <Map busses={busses} setMapLoaded={setMapHasLoaded} setClickedBusData={setClickedBusData} shape={shape} drivenShape={drivenShape} setCompanies={setCompanies} filter={filter} /> 
       <Search setFilter={setFilter} companies={companies} />
       <div className="flex lg:flex-row flex-col-reverse p-1 mt-auto">
         <FunctionButtons />
