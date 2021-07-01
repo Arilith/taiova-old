@@ -48,11 +48,11 @@ export class BusLogic {
   }
 
   /**
-   * Initializes the trips from the specified URL in the .env , or "../GTFS/extracted/trips.json" to the database.
+   * Initializes the trips from the specified URL in the .env , or "../GTFS/converted/trips.json" to the database.
    */
   private InitTripsNew() : void { 
-    const tripsPath = resolve("GTFS/extracted/trips.txt.json");
-    const outputPath = resolve("GTFS/converted/trips.json");
+    const tripsPath = resolve("GTFS/converted/trips.json");
+    const outputPath = resolve("GTFS/custom/trips.json");
     fs.readFile(tripsPath, 'utf8', async(error, data) => { 
       if(error) console.error(error);
       if(data && process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Loaded trips file into memory.");
@@ -98,7 +98,7 @@ export class BusLogic {
 
     if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Importing trips to mongodb");
 
-    await exec("mongoimport --db taiova --collection trips --file ./GTFS/converted/trips.json", (error, stdout, stderr) => {
+    await exec("mongoimport --db taiova --collection trips --file ./GTFS/custom/trips.json", (error, stdout, stderr) => {
       if (error) {
         console.log(`error: ${error.message}`);
         return;
@@ -115,11 +115,11 @@ export class BusLogic {
   }
 
   /**
-   * Initializes the routes from the specified URL in the .env , or "../GTFS/extracted/routes.json" to the database.
+   * Initializes the routes from the specified URL in the .env , or "../GTFS/converted/routes.json" to the database.
    */
   private InitRoutes () {
-    const routesPath = resolve("GTFS/extracted/routes.txt.json");
-    const outputPath = resolve("GTFS/converted/routes.json");
+    const routesPath = resolve("GTFS/converted/routes.json");
+    const outputPath = resolve("GTFS/custom/routes.json");
     fs.readFile(routesPath, 'utf8', async(error, data) => { 
       if(error) console.error(error);
       if(data && process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Loaded routes file into memory.");
@@ -155,7 +155,7 @@ export class BusLogic {
 
     if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Importing routes to mongodb");
 
-    await exec("mongoimport --db taiova --collection routes --file ./GTFS/converted/routes.json", (error, stdout, stderr) => {
+    await exec("mongoimport --db taiova --collection routes --file ./GTFS/custom/routes.json", (error, stdout, stderr) => {
       if (error) {
         console.log(`error: ${error.message}`);
         return;
@@ -172,11 +172,11 @@ export class BusLogic {
   }
 
   /**
-   * Initializes the shapes from the specified URL in the .env , or "../GTFS/extracted/routes.json" to the database.
+   * Initializes the shapes from the specified URL in the .env , or "../GTFS/converted/routes.json" to the database.
    */
    private InitShapes () {
-    const routesPath = resolve("GTFS/extracted/shapes.txt.json");
-    const outputPath = resolve("GTFS/converted/shapes.json");
+    const routesPath = resolve("GTFS/converted/shapes.json");
+    const outputPath = resolve("GTFS/custom/shapes.json");
     fs.readFile(routesPath, 'utf8', async(error, data) => { 
       if(error) console.error(error);
       if(data && process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Loaded shapes file into memory.");
@@ -208,7 +208,7 @@ export class BusLogic {
 
     if(process.env.APP_DO_CONVERTION_LOGGING == "true") console.log("Importing shapes to mongodb");
 
-    await exec("mongoimport --db taiova --collection shapes --file ./GTFS/converted/shapes.json", (error, stdout, stderr) => {
+    await exec("mongoimport --db taiova --collection shapes --file ./GTFS/custom/shapes.json", (error, stdout, stderr) => {
       if (error) {
         console.log(`error: ${error.message}`);
         return;

@@ -22,6 +22,7 @@ const cors = require("cors");
 import { Database } from './database';
 import { Websocket } from './socket';
 import { OVData } from './realtime';
+import { BikeDal } from './bikedb';
 
 /* --------------------
       SSL CONFIG
@@ -60,8 +61,7 @@ const AppInit = async () => {
 
   const socket = new Websocket(server, db);
   const ov = new OVData(db, socket);
-  //busLogic.InitKV78();
-  
+ // const bikedal = new BikeDal(db);
   server.listen(port, () => console.log(`Listening at http://localhost:${port}`));
 
 }

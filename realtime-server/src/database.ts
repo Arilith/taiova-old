@@ -14,6 +14,7 @@ export class Database {
   
   private db : Connection;
   private mongoose : Mongoose;
+
   private vehicleSchema : Schema;
   private tripsSchema : Schema;
   private routesSchema : Schema;

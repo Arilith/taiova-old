@@ -36,3 +36,7 @@ button:focus {
 .min-w-25 {
   min-width: 25rem;
 }
+
+.h-min-menu {
+  height: calc(100% - 5.7rem);
+}
