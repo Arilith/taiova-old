@@ -1,6 +1,6 @@
 import { Database } from "./database";
 import { SearchHandler } from "./searchhandler";
-
+var morgan = require('morgan')
 export class WebServer {
 
   private app;
@@ -14,6 +14,7 @@ export class WebServer {
   }
 
   Initialize() {
+    this.app.use(morgan('dev'))
     this.app.get("/", (req, res) => res.send("This is the API endpoint for the TAIOVA application."));
 
     this.app.get("/busses", async (req, res) => res.send(

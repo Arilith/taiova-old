@@ -62,7 +62,7 @@ const AppInit = async () => {
 
 
   //Todo: Dit moet beter.
-  downloader.DownloadGTFS(() => downloader.DownloadCentraalHalteBestand(() => busLogic.InitKV78()));
+  //downloader.DownloadGTFS(() => downloader.DownloadCentraalHalteBestand(() => busLogic.InitKV78()));
 
   
   server.listen(port, () => console.log(`Listening at http://localhost:${port}`));
