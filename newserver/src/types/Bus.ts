@@ -9,10 +9,11 @@ export interface Bus {
   status: BusState,
   createdAt: number,
   updatedAt: number,
-  punctuality: Array<number>,
-  updatedTimes: Array<number>,
-  currentRouteId: number,
-  currentTripId: number
+  routeId: number,
+  tripId: number,
+  lineNumber : string,
+  userStopCode?: string,
+  passageSequenceNumber?: string
 }
 
 export enum BusState {

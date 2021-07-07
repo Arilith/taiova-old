@@ -1,4 +1,5 @@
 import { query as db, QueryBuilder, QueryTypes } from '../database/database'
+import { SmallBus } from '../types/socket/Bus';
 import { DatabaseBus } from './models/bus';
 export class BusDal {
 
@@ -17,8 +18,8 @@ export class BusDal {
    * @returns Array of busses with only required information. 
    */
   async GetAllBussesSmall()  {
-    const { busses } = await db("SELECT company, vehicleNumber, lat, long FROM busses");
-    return busses;
+    const res = await db(`SELECT "company", "vehicleNumber", "lat", "long", "lineNumber" FROM busses`);
+    return res.rows;
   }
 
   /**
@@ -26,9 +27,9 @@ export class BusDal {
    * @param busToAdd The bus to add to the database, in the databaseBus format.
    * @returns The added bus
    */
-  async AddBus(busToAdd : DatabaseBus) : Promise<Array<DatabaseBus>> {
+  async AddBus(busToAdd : DatabaseBus) : Promise<DatabaseBus> {
     const res = await db(QueryBuilder(QueryTypes.CREATE, "busses", busToAdd))
-    return res.rows;
+    return res.rows[0];
   }
 
     /**
@@ -37,11 +38,26 @@ export class BusDal {
    * @param updatedBus The full updated bus object.
    * @returns The added bus
    */
-  async UpdateBus(busToUpdate : number, updatedBus : DatabaseBus) : Promise<Array<DatabaseBus>> {
+  async UpdateBus(busToUpdate : number, updatedBus : DatabaseBus) : Promise<DatabaseBus> {
     updatedBus["id"] = busToUpdate;
     const res = await db(QueryBuilder(QueryTypes.UPDATE, "busses", updatedBus))
-    return res.rows;
+    return res.rows ? res.rows[0] : null;
   }
 
+  async GetBus(originalCompany, vehicleNumber) : Promise<DatabaseBus> {
+    const res = await db(`SELECT * FROM busses WHERE "originalCompany" = '${originalCompany}' AND "vehicleNumber" = '${vehicleNumber}' LIMIT 1`);
+    return res.rows ? res.rows[0] : null;
+  }
+
+  async GetBusSmall(originalCompany, vehicleNumber) : Promise<SmallBus> {
+    const res = await db(`SELECT "lineNumber", "lat", "long" FROM busses WHERE "originalCompany" = '${originalCompany}' AND "vehicleNumber" = '${vehicleNumber}' LIMIT 1`);
+    return res.rows ? res.rows[0] : null;
+  }
+
+  async BusExists(originalCompany, vehicleNumber) : Promise<boolean> {
+    const res = await db(`SELECT EXISTS(SELECT 1 FROM busses WHERE "originalCompany" = '${originalCompany}' AND "vehicleNumber" = '${vehicleNumber}')`)
+
+    return res.rows[0].exists;
+  }
 
 }

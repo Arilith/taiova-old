@@ -2,7 +2,7 @@ import {createDb, migrate} from "postgres-migrations"
 import { Client } from 'pg';
 import * as dotenv from 'dotenv';
 dotenv.config()
-export const Migrator = async () => {
+export const PerformMigrations = async () => {
 
   createDb("taiova", {
     defaultDatabase: "postgres", // optional, default: "postgres"

@@ -10,7 +10,7 @@ export class DataFetcher {
   }
 
   async FetchAllVehicles() {
-    const result = await axios.get(`${this.url}/busses`);
+    const result = await axios.get(`${this.url}/busses/small`);
     return result.data;
   }
 

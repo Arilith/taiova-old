@@ -1,8 +1,7 @@
 import { Bus, BusState } from '../types/Bus'
-import { ApiBus, ApiBusKeolis, ApiBusPos  } from '../types/api/Bus'
 import { Companies } from '../types/Companies';
 import { KV6Generic } from '../types/api/KV6Arriva';
-import { DELAY, INIT, ONROUTE, Types } from '../types/api/KV6Common';
+import { DatabaseBus } from '../database/models/bus';
 export class Converter {
 
   decode(data : any, operator : string) : any {
@@ -39,8 +38,8 @@ export class Converter {
   * @param data The required data. It should be of type "KV6Generic", which works for the companies mentioned above.
   * @returns An array with the converted vehicledata.
   */
-  DecodeMain (data : KV6Generic) : Array<Bus> {
-    const returnData : Array<Bus> = [];
+  DecodeMain (data : KV6Generic) : Array<DatabaseBus> {
+    const returnData : Array<DatabaseBus> = [];
 
     if(data.VV_TM_PUSH.KV6posinfo) {
       const kv6posinfo = data.VV_TM_PUSH.KV6posinfo;
@@ -66,8 +65,8 @@ export class Converter {
   * @param data The required data. It should be of type "KV6Generic", which works for the companies mentioned above.
   * @returns An array with the converted vehicledata.
   */
-  DecodeOther(data) : Array<Bus> {
-    const returnData : Array<Bus> = [];
+  DecodeOther(data) : Array<DatabaseBus> {
+    const returnData : Array<DatabaseBus> = [];
     
 
     if(data.VV_TM_PUSH.KV6posinfo) {
@@ -95,6 +94,7 @@ export class Converter {
   }
 
   Mapper(vehiclePosData, status : string) { 
+    const coordinates = this.rdToLatLong(vehiclePosData['rd-x'], vehiclePosData['rd-y']);
     const newData = {
       company: vehiclePosData.dataownercode,
       originalCompany: vehiclePosData.dataownercode,
@@ -102,21 +102,27 @@ export class Converter {
       journeyNumber: vehiclePosData.journeynumber,
       timestamp: Date.parse(vehiclePosData.timestamp),
       vehicleNumber: vehiclePosData.vehiclenumber ? vehiclePosData.vehiclenumber : 999999,
-      lineNumber: "Onbekend",
-      position: this.rdToLatLong(vehiclePosData['rd-x'], vehiclePosData['rd-y']),
-      punctuality: [vehiclePosData.punctuality],
+      lineNumber: "999",
+      lat: coordinates[1],
+      long: coordinates[0],
       status: BusState[status],
       createdAt: Date.now(),
       updatedAt: Date.now(),
-      updatedTimes: [Date.now()],
-      currentRouteId: 0,
-      currentTripId: 0
+      routeId: 0,
+      tripId: 0,
+      userStopCode: vehiclePosData.userstopcode,
+      passageSequenceNumber: vehiclePosData.passagesequencenumber
     }
 
     return newData;
   } 
 
-  
+  /**
+   * Converts the Dutch "RD"-coordinates into Latitude / Longitude
+   * @param x RD-X Coordinate
+   * @param y RD-Y Coordinate
+   * @returns [Long, Lat]
+   */
   rdToLatLong (x, y) : [number, number] {
     if(x === undefined || y === undefined) return [0, 0];
     
@@ -146,6 +152,15 @@ export class Converter {
     const Longitude = 5.387206 + (SomE / 3600);
     
     return [Longitude, Latitude]
+  }
+
+  /**
+   * Removes every occurance of TMI8: from a string.
+   * @param data String of data to remove "TMI8:" from.
+   * @returns String without TMI8:
+   */
+  removeTmi8 (data : string) : string {
+    return data.replace(/tmi8:/g, "");
   }
 
 }

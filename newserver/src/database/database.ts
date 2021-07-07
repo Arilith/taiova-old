@@ -17,12 +17,9 @@ export const QueryTypes = {
 }
 
 export const query : any = async (text, params = []) => {
-  const start = Date.now()
   const client = await pool.connect();
   const res = await client.query(text, params)
-  const duration = Date.now() - start
   await client.release();
-  // console.log('executed query', { text, duration, rows: res.rowCount })
   return res
 }
 
@@ -53,7 +50,7 @@ export const QueryBuilder = (type : string, table : string, object : any = null)
   if(type === QueryTypes.UPDATE) {
     let query = `UPDATE ${table} SET `;
     Object.entries(object).forEach(([key, value], index) => {
-      if(key != "id" && index !== Object.keys(object).length - 1 )
+      if(index !== Object.keys(object).length - 1 )
         query += `"${key}"='${value}', `;
       else
         query += `"${key}"='${value}'`

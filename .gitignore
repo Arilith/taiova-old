@@ -131,3 +131,7 @@ server/key-ca.crt
 server/key.key
 /server-old
 /TAIOVA Alpha 1 - Universal.zip
+newserver/test/routes.csv
+.gitignore
+newserver/test/vehiclepositions.csv
+newserver/test/trips.csv

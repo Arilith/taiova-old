@@ -37,8 +37,8 @@ export default function App() {
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   const url = window.location.href.includes("localhost")
-        ? "wss://localhost:3002"
-        : "wss://taiova.trvtserver.nl:3002";
+        ? "wss://localhost:3001"
+        : "wss://taiova.trvtserver.nl:3001";
 
   const updateSpeed = localStorage.getItem('update_speed') || "fast";
 

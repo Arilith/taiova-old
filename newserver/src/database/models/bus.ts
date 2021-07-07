@@ -16,17 +16,19 @@ export interface DatabaseBus {
   routeId: number,
   tripId: number,
   lineNumber: string,
+  userStopCode?: string,
+  passageSequenceNumber?: string
 }
 
 
-export const MapBus = (databaseBus : DatabaseBus) : Bus => {
+// export const MapBus = (databaseBus : DatabaseBus) : Bus => {
 
-  return null;
+//   return null;
 
-}
+// }
 
-export const MapBusses = (databaseBusses : Array<DatabaseBus>) : Array<DatabaseBus> => {
+// export const MapBusses = (databaseBusses : Array<DatabaseBus>) : Array<DatabaseBus> => {
 
-  return null;
+//   return null;
   
-}
+// }

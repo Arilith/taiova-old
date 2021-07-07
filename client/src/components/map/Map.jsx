@@ -132,7 +132,6 @@ export const Map = props => {
     if(!map.current) InitializeMap();
 
     const convertedData = convertToMapData(props.busses)
-    
     props.setCompanies(CompanyNameFromArray(Object.keys(convertedData)));
 
     for(let [company, values] of Object.entries(convertedData)) {

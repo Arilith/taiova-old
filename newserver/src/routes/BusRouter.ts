@@ -6,14 +6,11 @@ const _busController = new BusController();
 
 busRouter.get('/', _busController.GetAllBusses)
 
-busRouter.get('/:company/:number', (req, res) => {
-  const company = req.params.company;
-  const number = req.params.number;
+busRouter.get('/small', _busController.GetAllBussesSmall)
 
-  res.status(200).json({ 
-    message: `Handling GET requests to /busses/${company}/${number}`
-  })
-})
+//Todo: Fix that for busses with subcompany, it looks for the original company.
+busRouter.get('/:company/:vehicleNumber', _busController.GetBus)
+
 
 busRouter.get('/:routeId', (req, res) => {
   const routeId = req.params.routeId;

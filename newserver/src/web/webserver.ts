@@ -6,13 +6,17 @@ import * as morgan from 'morgan';
 import { privateKey, certificate, ca } from '../ssl'
 import { busRouter } from '../routes/BusRouter'
 import { tripRouter } from '../routes/TripRouter';
+import { redirectToHTTPS } from 'express-http-to-https';
+import { Websocket } from '../realtime/socket';
+import { BusSocket } from '../realtime/BusSocket';
 
  class WebError extends Error  {
   status? : number;
 }
 
 export class WebServer {
-  private port = process.env.PORT || 3000;
+  private port = process.env.PORT || 3001;
+  public server : https.Server;
   constructor() {
     const corsOptions = {
       origin: '*',
@@ -27,7 +31,7 @@ export class WebServer {
   }
 
   private InitializeWebserver() {
-    const server = https.createServer(
+    this.server = https.createServer(
       {
         key: privateKey,
         cert: certificate,
@@ -37,7 +41,9 @@ export class WebServer {
       },
       app
     );
-    server.listen(this.port, () => console.log(`Listening at http://localhost:${this.port}`));
+
+
+    this.server.listen(this.port, () => console.log(`Listening at https://localhost:${this.port}`));
 
     this.Listeners();
   }
@@ -46,6 +52,10 @@ export class WebServer {
     if(process.env.LOG_REQUESTS == "true")
       app.use(morgan('dev'))
 
+    if(process.env.REDIRECT_HTTP == "true")
+      app.use(redirectToHTTPS())
+
+    app.get('/', (req, res) => res.send("This is the API endpoint of the TAIOVA application."))
     app.use('/busses', busRouter);
     app.use('/tripRouter', tripRouter);
 
