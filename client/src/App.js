@@ -37,8 +37,8 @@ export default function App() {
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   const url = window.location.href.includes("localhost")
-        ? "wss://localhost:3001"
-        : "wss://taiova.trvtserver.nl:3001";
+        ? "wss://localhost:3002"
+        : "wss://taiova.trvtserver.nl:3002";
 
   const updateSpeed = localStorage.getItem('update_speed') || "fast";
 
@@ -76,7 +76,7 @@ export default function App() {
   useEffect(() => {
     if(clickedBusData) {
       const foundBus = response.find(bus => bus.v === clickedBusData.vehicleNumber && bus.c === clickedBusData.company);
-      if(foundBus.p[0] !== updatedBus?.p[0] || foundBus.p[1] !== updatedBus?.p[1]) setUpdatedBus(foundBus)
+      if(foundBus?.p[0] !== updatedBus?.p[0] || foundBus?.p[1] !== updatedBus?.p[1]) setUpdatedBus(foundBus)
     }     
   }, [response, clickedBusData, updatedBus]); // es
 

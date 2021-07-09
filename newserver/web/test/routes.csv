@@ -1,0 +1,2466 @@
+company,routeDescription,routeId,routeLongName,routeShortName,routeType,subCompany
+BRENG,,67306,Wageningen Station - Arnhem CS,352,3,None
+RET,,78013,Lijn 25 voor Kralingen tijdens Schiekade,125,0,None
+RET,,74020,STOPenGO Lansingerland,574,3,None
+EBS,,78012,Spijkenisse - Schiedam - Honselersdijk,825,3,None
+IFF,,67396,Stopbus i.p.v. trein Dordrecht <-> Geldermalsen,Stopbus i.p.v. trein,3,RNET
+RET,,74019,STOPenGO Vlaardingen,557,3,None
+ARR,,75937,Brunssum/Hoensbroek via Heerlen - Bleijerheide,2,3,None
+ARR,,76468,Wolvega via Oldeberkoop - Steenwijk,519,3,None
+RET,,74018,STOPenGO Maassluis,526,3,None
+IFF,,67400,Eindhoven Centraal <-> Venlo IC13500,Intercity,2,NS
+IFF,,67402,Nachtnettrein Utrecht Centraal <-> Rotterdam Centraal,Intercity,2,NS
+BRENG,,73358,Papendal - Beekdal Lyceum,78,3,None
+IFF,,67404,Amersfoort Centraal <-> Harderwijk SPR15600,Sprinter,2,NS
+IFF,,67407,Eindhoven Centraal <-> Weert SPR6400,Sprinter,2,NS
+BRAVO,,67300,Oerle Zuid - Eindhoven Station,403,3,CXX
+IFF,,67399,Den Haag Centraal <-> Amersfoort Centraal IC2000,Intercity,2,NS
+IFF,,67405,Stopbus i.p.v. trein Boven-Hardinxveld <-> Sliedrecht,Stopbus i.p.v. trein,3,RNET
+BRAVO,,67301,Veldhoven Zonderwijk - Eindhoven Station,402,3,CXX
+BRENG,,78014,Aerdt - Zevenaar - Groot Holthuizen,555,3,None
+BRAVO,,67303,Eindhoven Airport - Eindhoven Station,400,3,CXX
+CXX,,74022,Zierikzee - Middelharnis,631,3,None
+BRAVO,,67302,Eindhoven Airport - Eindhoven Station,401,3,CXX
+IFF,,67394,Den Haag Centraal <-> Eindhoven Centraal IC1100,Intercity,2,NS
+BRAVO,,67304,High Tech Campus - Eindhoven Station,407,3,CXX
+RET,,74390,Buurtbus Capelle,607,3,None
+GVB,,74931,Westwijk - Station Zuid,25,0,None
+IFF,,67395,Nachtnettrein Rotterdam Centraal <-> Eindhoven Centraal,Intercity,2,NS
+EBS,,76136,Winkelcentrum - Kickersbloem (- Oudenhoorn),91,3,None
+CXX,,74021,St.Maartensdijk - Middelharnis,602,3,None
+BRAVO,,73360,Budel-Maarheeze-Valkenswaard,656,3,CXX
+RET,,74389,Buurtbus Kralingse Veer,606,3,None
+EBS,,76138,Spijkenisse - Botlek - Rozenburg,205,3,None
+ARR,,76784,Sittard Sportzone - Brunssum,637,3,None
+ARR,,76785,Maastricht via Gulpen - Vaals,659,3,None
+CXX,,76498,"Middelburg, Station - Station",569,3,None
+RET,,75948,STOPenGO Charlois,567,3,None
+ARR,,78250,Leiden Centraal - Katwijk ESA ESTEC,432,3,None
+BRAVO,,78018,Geldrop - Heeze - Valkenswaard,257,3,CXX
+BRAVO,,78253,Boxmeer - Venray Centrum,82,3,ARR
+KEOLIS,,75470,"Zwolle, Station - Stadshagen",1,3,None
+RET,,75943,Hoogvliet Metro via Westpunt,62,3,None
+KEOLIS,,75477,"Zwolle, Station - Ittersumerbroek",8,3,None
+RET,,75945,HVT - Binnenban - Zalmplaat - HVT,64,3,None
+RET,,75942,Hoogvliet Metro via Oudelande,61,3,None
+KEOLIS,,75474,"Zwolle, Station - Westenholte",5,3,None
+IFF,,67425,RB 61 Hengelo <-> Bielefeld Hbf,Stoptrein,2,EB
+IFF,,67428,Bus Dordrecht <-> Dordrecht Stadspolders,Bus,3,RNET
+IFF,,67427,Stopbus i.p.v. trein Amersfoort Centraal <-> Weesp,Stopbus i.p.v. trein,3,NS
+IFF,,45227,Nijmegen <-> Roermond ST32200,Stoptrein RS11,2,NOORD
+RET,,75946,Poortugaal M - Rhoon - Overhoeken - Poortugaal,65,3,None
+IFF,,76117,Zwolle <-> Emmen S13800,Sneltrein,2,BN
+BRENG,,71424,Beuningen - Dukenburg - Nijmegen CS,11,3,None
+IFF,,67431,Amsterdam Centraal <-> Amersfoort Centraal IC1500,Intercity,2,NS
+OVREGIOY,,71442,Lelystad - Kampen Pieter Zandt,663,3,None
+BRENG,,71458,Arnhem CS - Doetinchem,29,3,None
+OVREGIOY,,71450,Dronten stadsdienst,21,3,None
+BRAVO,,71399,Veldhoven MMC - Airport - Best Station,20,3,CXX
+OVREGIOY,,71449,Dronten stadsdienst,22,3,None
+RET,,75950,Buurtbus Barendrecht,603,3,None
+RET,,73393,Melanchtonweg - Park Zestienhoven,34,3,None
+OVREGIOY,,71470,Urk - Emmeloord - Kampen,681,3,None
+QBUZZ,,76311,Hoofdstation - Europapark - Euvelgunne,11,3,None
+BRENG,,71500,Millingen - Nijmegen CS,82,3,None
+RET,,75949,Buurtbus Albrandswaard,602,3,None
+QBUZZ,,76312,Europapark - Kardinge,16,3,None
+ARR,,76156,"Ruigahuizen - Balk, Harich Rotonde",9571,3,None
+BRENG,,71499,Westervoort Station - Centerpoort Nieuwgraaf,66,3,None
+ARR,,76157,"Sloten - Balk, Harich Rotonde",9581,3,None
+ARR,,76153,"Kolderwolde - Balk, Harich Rotonde",9511,3,None
+ARR,,76154,"Elahuizen - Balk, Harich Rotonde",9522,3,None
+EBS,,76135,Halfweg - Metro Centrum - De Gaard,87,3,None
+ARR,,76155,"Oudega - Balk, Harich Rotonde",9532,3,None
+OVREGIOY,,71501,Swifterbant - Lelystad via Runderweg,164,3,None
+ARR,,76159,"Tjerkgaast - Balk, Harich Rotonde",9601,3,None
+UOV,,76324,Utrecht CS - Nieuwegein,60,0,None
+OVREGIOY,,71502,Lelystad - Dronten,163,3,None
+FF,,76512,Vlissingen - Breskens,WSF,4,None
+OVREGIOY,,71474,Staphorst - Lichtmis - Kampen,674,3,None
+CXX,,71476,Goudswaard-Lombardijen,663,3,None
+CXX,,71477,Zuid-Beijerland-Oud-Beijerland,662,3,None
+ARR,,76158,"Wijckel, Kerk - Balk, Harich Rotonde",9591,3,None
+OVREGIOY,,71503,Almere - Zeewolde,160,3,None
+CXX,,71479,Strijen-Oud-Beijerland,667,3,None
+RET,,75944,HVT - Zamlplaat - Binnenban - HVT,63,3,None
+CXX,,71481,Willemstad-Oud-Beijerland,669,3,None
+CXX,,71482,"'s-Gravendeel-Oud-Beijerland",668,3,None
+CXX,,71480,Maasdam-Oud-Beijerland,666,3,None
+SYNTUS,,76325,Hilversum - Zeist via Maartensdijk,58,3,UT
+ARR,,53837,Sittard via Geleen en Beek / Stein - Sittard.,33,3,None
+CXX,,71478,Oud-Beijerland - Numansdorp Viaduct A29,664,3,None
+BRAVO,,54180,Breda - Oosterhout,325,3,ARR
+ARR,,76163,"Koudum, Centrum - Workum, Station",9441,3,None
+BRAVO,,54176,Kortendijk - Kroeven,3,3,ARR
+BRAVO,,54177,Station - WVS,4,3,ARR
+SYNTUS,,76328,Baarn - Utrecht Rijnsweerd Noord,272,3,UT
+ARR,,76162,"Hindeloopen, Hoek - Workum, Station",9431,3,None
+ARR,,76164,"Hemelum, Flinkeboskje - Balk, Harich Rotonde",9545,3,None
+SYNTUS,,76327,Uithoorn - Woerden - Oudewater,123,3,UT
+SYNTUS,,76329,Woudenberg - USP - Rijnsweerd,298,3,UT
+BRAVO,,54182,Breda via Oosterhout - Tilburg,327,3,ARR
+SYNTUS,,76330,Zeist - Austerlitz - Driebergen-Zeist,381,3,UT
+BRAVO,,54179,Breda via Baarle-Nassau - Tilburg,132,3,ARR
+ARR,,76161,"Workum, Hearewei - Workum, Station",9421,3,None
+SYNTUS,,76326,Hilversum - Zeist via Lage Vuursche,59,3,UT
+BRENG,,74195,Giesbeek - Rozendaal,70,3,None
+ARR,,53838,Sittard via Stein / Beek en Geleen - Sittard.,32,3,None
+CXX,,71672,Krommenie - Zaandam Station - Kalf,69,3,None
+CXX,,71669,Beverwijk Station - Zaandam Station,59,3,None
+IFF,,78054,Amsterdam Centraal <-> London St. Pancras Int. ES9100,Eurostar,2,NSI
+ARR,,75954,Leiden Centraal via Boerenburg - Noordwijk,21,3,None
+IFF,,78055,Brussel-Zuid/Midi <-> Den Haag HS IC9600,Intercity,2,NSI
+BRAVO,,54181,Breda via Oosterhout - Geertruidenberg,326,3,ARR
+ARR,,74941,Harlingen - Franeker,75,3,None
+QBUZZ,,73379,Koekange - Meppel,39,3,None
+ARR,,75953,Station - Goverwelle,3,3,None
+CXX,,71668,Amsterdam Leidseplein - Zaandam Station,N92,3,None
+CXX,,71664,Amsterdam CS - Zaandijk Zaanse Schans,391,3,None
+ARR,,74942,Heerenveen via Joure - Leeuwarden,95,3,None
+ARR,,74956,Wolvega - Scherpenzeel v.v.,108,3,None
+ARR,,74943,Makkum - Hindeloopen,102,3,None
+ARR,,74954,Tijnje via Gorredijk - Allardsoog,104,3,None
+ARR,,74955,Oldeberkoop - Appelscha,107,3,None
+CXX,,71510,Hulst - Breda,19,3,None
+OVREGIOY,,71520,Emmeloord - Lemmer,77,3,None
+ARR,,74950,Sneek - Leeuwarden,593,3,None
+ARR,,74949,Franeker - Witmarsum,575,3,None
+ARR,,74946,Busstation - Bilgaard v.v.,10,3,None
+ARR,,74947,Dokkum - Oostmahorn,552,3,None
+RET,,76518,Zuidplein - Kralingse Zoom,183,3,None
+ARR,,74951,Lauwersoog - Leeuwarden,655,3,None
+CXX,,63734,Nieuw Vennep - Amsterdam Elandsgracht via Airport,397,3,None
+CXX,,66385,"Schiphol P30 - A'dam Lelylaan via Badhoevedorp",195,3,None
+SYNTUS,,76348,Woerden - Montfoort,5,3,UT
+CXX,,66387,Schiphol Airport - Justitieel Complex,185,3,None
+CXX,,71700,"Terneuzen, Busstation - DOW",9,3,None
+OVREGIOY,,71511,"Scholierenlijn,  Meppel - Vollenhove",679,3,None
+ARR,,76160,"Marrum, Prov. weg - Ferwert, Prov. weg",7451,3,None
+CXX,,71666,Amsterdam CS - Zaandam Station,394,3,None
+ARR,,74953,Grootegast via Buitenpost - Kootstertille,101,3,None
+QBUZZ,,73380,Stadskanaal - Emmen,75,3,None
+QBUZZ,,73386,P+R Hoogkerk - Groningen Zernike,18,3,None
+BRENG,,74196,Eerbeek - Rozendaal,71,3,None
+CXX,,66392,St.Maartensdijk - Bergen op Zoom,108,3,None
+CXX,,66393,St.Maartensdijk - Bergen op Zoom,107,3,None
+CXX,,52505,Spaarnwoude Station - Haarlem Delftplein,2,3,None
+ARR,,74945,Dokkum - Holwerd,160,3,None
+ARR,,74948,Stiens - Oudebildtzijl v.v.,573,3,None
+ARR,,33055,Busstation - Vrijheidswijk,18,3,None
+QBUZZ,,73387,Zoutkamp - Groningen,637,3,None
+CXX,,7170,Oostburg - Terneuzen,1,3,None
+ARR,,74957,Wolvega - Oosterwolde,516,3,None
+ARR,,75961,Waddinxveen via Zoetermeer A12 - Den Haag Centraal,382,3,None
+CXX,,1338,Hilversum - Nieuw Loosdrecht,104,3,None
+ARR,,74965,Stolwijk via Berkenwoude - Lekkerkerk,725,3,None
+ARR,,78070,Warmond - Oegstgeest,150,3,None
+CXX,,1339,Bussum - Hilversum,105,3,None
+ARR,,74967,Ter Aar via Woubrugge - Ter Aar.,727,3,None
+ARR,,74963,Roelofarendsveen - Lisse,723,3,None
+ARR,,75962,Rotterdam - Den Haag Centraal,383,3,None
+ARR,,74962,Bodegraven - Alphen aan den Rijn,722,3,None
+ARR,,75958,Alphen aan den Rijn - Uithoorn,247,3,None
+CXX,,21400,Terneuzen - Zelzate,6,3,None
+ARR,,74966,Gouda via Reeuwijk - Gouda.,726,3,None
+ARR,,74964,Bodegraven via Woerden - Bodegraven.,724,3,None
+ARR,,74968,Boskoop via Boskoop Oost - Boskoop.,728,3,None
+ARR,,75960,Bodegraven via Broekvelden - Gouda,278,3,None
+ARR,,75963,Waddinxveen via Moerkapelle - Den Haag Centraal,384,3,None
+EBS,,71296,Zoetermeer - Rijswijk,50,3,None
+ARR,,75959,Leiden Centraal - Weteringbrug,256,3,None
+ARR,,75955,Leiden Centraal via Rijnsburg - Katwijk,37,3,None
+ARR,,75965,Leiden Centraal - Bio Science Park,621,3,None
+ARR,,78072,Leiden Centraal - Katwijk Boulevard-Zuid,431,3,None
+ARR,,75957,Leiden Centraal - Katwijk ESA ESTEC,230,3,None
+ARR,,75956,Leiden Centraal via Valkenburg - Katwijk,38,3,None
+ARR,,39072,Lienden - Culemborg,641,3,None
+ARR,,41740,Heerenveen via Grou - Leeuwarden,28,3,None
+ARR,,75964,Gouda via Moerkapelle - Den Haag Centraal,386,3,None
+EBS,,71297,"Rijswijk - 't Haantje - Delft",53,3,None
+EBS,,71298,Delfgauw - Pijnacker - Den Haag Ypenburg,284,3,None
+QBUZZ,,73403,Appingedam - Woldendorp,640,3,None
+QBUZZ,,73404,Spijk - Woldendorp,641,3,None
+QBUZZ,,73401,Scheemda - Woldendorp,617,3,None
+EBS,,71300,Wassenaar - Voorschoten,42,3,None
+QBUZZ,,73405,Siddeburen - Woldendorp,678,3,None
+RET,,78086,Zoetermeer - Station Rodenrijs,170,3,None
+OVERAL,,74661,Hoorn Station - Hem - Hoogkarspel - Bovenkarspel,612,3,None
+RET,,78089,Slinge - Kralingsezoom,283,3,None
+BRAVO,,78064,Busstation Vredesplein - Vaccinatielocatie,885,3,ARR
+BRAVO,,78084,Baarle-Nassau - Tilburg,632,3,ARR
+KEOLIS,,78067,TVV Zwolle - Kampen,885,3,None
+BRAVO,,78078,Centraal Station - BUas/Ignatiusstraat,8,3,ARR
+BRAVO,,78082,Moerdijk - Drie hoefijzers,618,3,ARR
+BRAVO,,78080,Buurstede/Den Hout - Centrum,226,3,ARR
+BRAVO,,78081,Willemstad - Zevenbergen,617,3,ARR
+ARR,,78071,Leiden Centraal - Katwijk ESA ESTEC,430,3,None
+BRAVO,,78083,"'s-Hertogenbosch - Werkendam",621,3,ARR
+BRAVO,,78079,Centraal Station - Avans/Loevesteinstraat,9,3,ARR
+RET,,78085,Zuidplein - Centraal Station,44,3,None
+CXX,,76400,Schiphol  P30 - Amstelveen,199,3,None
+GVB,,73418,Amstelveen Stadshart - Jordaan,5,0,None
+UOV,,75992,Wijk bij Duurstede - Zeist - Amersfoort,56,3,None
+GVB,,73417,Flevopark - Westergasfabriek,3,0,None
+GVB,,75998,Centraal Station - Houthavens,48,3,None
+UOV,,75994,Vianen Lekbrug - De Biezen,64,3,None
+UOV,,73425,Zuilen - Science Park,27,3,None
+ARR,,73421,Zaltbommel - Tiel,648,3,None
+UOV,,75990,Driebergen-Zeist - Science Park - Lunetten,35,3,None
+ARR,,73422,Asperen - Leerdam,660,3,None
+BRAVO,,75972,Prinsenbeek - Etten-Leur,216,3,ARR
+QBUZZ,,76001,Sterrenburg - Dordrecht CS - Dordtse Kil,7,3,None
+BRAVO,,75975,Klein Zundert via Achtmaal - Roosendaal,220,3,ARR
+ARR,,77388,Doetinchem Station - Sportpark Zuid,612,3,None
+ARR,,77390,Vorden - Doetinchem,651,3,None
+BRAVO,,75971,Grauwe Polder via Centrum - Leur,215,3,ARR
+BRAVO,,75983,"Almkerk via Raamsdonksveer - 's Gravenmoer",229,3,ARR
+BRAVO,,75986,Oosterhout - Utrecht,400,3,ARR
+ARR,,77387,Zutphen - Vorden,80,3,None
+BRAVO,,75978,Drimmelen via Made - Oosterhout,224,3,ARR
+BRAVO,,75977,Almkerk - Waalwijk,223,3,ARR
+BRAVO,,75970,Anna Jacobapolder - Steenbergen,214,3,ARR
+BRAVO,,75981,Hank via Wijk en Aalburg - Waalwijk,227,3,ARR
+BRAVO,,77399,"Rijen via Oosterhout - 's Gravenmoer",230,3,ARR
+BRAVO,,75974,Zevenbergen - Etten-Leur,219,3,ARR
+BRAVO,,75969,Nispen via Roosendaal - Oudenbosch,211,3,ARR
+BRAVO,,77397,Best - Schijndel,204,3,ARR
+GVB,,75999,Station Sloterdijk - Osdorpplein Noord,61,3,None
+BRAVO,,75984,Waalwijk - Wijk en Aalburg Kromme Nol,233,3,ARR
+RET,,73423,Schoolritten,668,3,None
+QBUZZ,,76002,Dordrecht CS - Binnenstad,10,3,None
+BRAVO,,75987,Breda - Utrecht,401,3,ARR
+UOV,,75996,Maarssen - Utrecht CS - Zeist,73,3,None
+BRAVO,,75976,Almkerk via Giessen en Sleeuwijk - Almkerk,221,3,ARR
+BRAVO,,75982,Almkerk - Wijk en Aalburg Kromme Nol,228,3,ARR
+BRAVO,,77398,"'s-Hertogenbosch - Cromvoirt",207,3,ARR
+UOV,,75991,Houten - Driebergen-Zeist,43,3,None
+ARR,,77391,Doetinchem - Apeldoorn,656,3,None
+ARR,,77389,Doetinchem Station - Graafschap College,623,3,None
+BRAVO,,77400,"Waalwijk via 's-Gravenmoer - Rijen",231,3,ARR
+UOV,,75995,Utrecht CS - Vianen,65,3,None
+BRAVO,,76396,High Tech Campus - Eindhoven Station,408,3,CXX
+CXX,,76399,Schiphol Airport  - Aalsmeer,198,3,None
+BRAVO,,75973,Zevenbergschen Hoek - Zevenbergen,218,3,ARR
+BRAVO,,77396,"Liempde - 's-Hertogenbosch",203,3,ARR
+BRAVO,,75967,Dinteloord via Heijningen - Fijnaart,200,3,ARR
+QBUZZ,,76003,Gorinchem Gildenwijk/Haarwijk - Station,1,3,None
+BRAVO,,75985,Oud Gastel via Steenbergen - Wouw,213,3,ARR
+QBUZZ,,76004,Avondlijn Station Zwijndrecht - Nederhoven,22,3,None
+QBUZZ,,76005,Gorinchem - Nieuw-Lekkerland via Groot-Ammers,74,3,None
+BRAVO,,75968,Klundert - Oudenbosch,210,3,ARR
+QBUZZ,,76006,Gorinchem - Meerkerk - Vianen,80,3,None
+QBUZZ,,76008,Dordrecht - Nieuw-Lekkerland,93,3,None
+QBUZZ,,76009,Sliedrecht - Rotterdam Zuidplein,191,3,None
+QBUZZ,,76010,Rotterdam Zuidplein - H.I. Ambacht - Dordrecht,192,3,None
+QBUZZ,,73452,Ridderkerk - Zwijndrecht,21,3,None
+QBUZZ,,73451,Gorinchem Station - Avelingen,6,3,None
+BRAVO,,75979,Zundert - Etten-Leur,225,3,ARR
+BRAVO,,77412,Hilvarenbeek via Diessen - Bladel,293,3,ARR
+BRAVO,,77408,Boxmeer - Venray,255,3,ARR
+QBUZZ,,76007,Rotterdam Zuidplein - H.I. Ambacht - Dordrecht,92,3,None
+QBUZZ,,76011,Dordrecht - Alblasserdam,416,3,None
+BRAVO,,77413,Oss via Ravenstein - Dieden,294,3,ARR
+BRAVO,,77409,Maren Kessel - Oss,262,3,ARR
+BRAVO,,77410,Hilvarenbeek via Moergestel - Oisterwijk,289,3,ARR
+BRAVO,,77416,Oirschot - Sint Michielsgestel,299,3,ARR
+IFF,,76977,Groningen <-> Leeuwarden S37300,Sneltrein,2,NOORD
+BRAVO,,77411,Sint Anthonis - Boxmeer,292,3,ARR
+BRAVO,,77404,"Bokhoven - 's-Hertogenbosch CS",250,3,ARR
+BRAVO,,77406,Boerdonk - Veghel,253,3,ARR
+BRAVO,,77405,Rosmalen - Uden,251,3,ARR
+BRAVO,,77407,Schaijk - Uden,254,3,ARR
+CXX,,76410,Amsterdam Leidseplein - Zaandam - Krommenie/Westz.,N94,3,None
+BRAVO,,77415,Oss - Megen,296,3,ARR
+CXX,,73691,Bergen op Zoom - St.Annaland,209,3,None
+BRAVO,,77414,Hilvarenbeek - Goirle,295,3,ARR
+CXX,,73689,Haarlem Stat. - Spaarne College - Haarlem Stat.,7,3,None
+KEOLIS,,77598,Olst - Raalte,516,3,None
+CXX,,76404,Vogelenzang Dorp - Bennebroek,9,3,None
+QBUZZ,,73450,Gorinchem Lingewijk - Beatrixziekenhuis,5,3,None
+KEOLIS,,77599,Deventer - Heeten,517,3,None
+CXX,,76419,Oud-Beijerland - Rotterdam Lombardijen,163,3,None
+KEOLIS,,77601,Zwolle Zuid - Heino,523,3,None
+KEOLIS,,77602,Wijhe - Raalte,563,3,None
+KEOLIS,,77605,Nieuwleusen  - Dalfsen,591,3,None
+KEOLIS,,77600,Lemelerveld - Luttenberg - Raalte,518,3,None
+KEOLIS,,77607,Hardenberg - Beerzerveld,597,3,None
+KEOLIS,,77604,Deventer - Nieuw-Heeten,590,3,None
+KEOLIS,,77609,Hardenberg - De Krim,599,3,None
+BRAVO,,77403,Hilvarenbeek via Diessen - Middelbeers,242,3,ARR
+KEOLIS,,77606,Meppel - IJhorst,592,3,None
+ARR,,74278,Unmanned Valley - Unmanned Valley.,35,3,None
+BRAVO,,77401,Grave - Boxmeer,238,3,ARR
+QBUZZ,,73441,Dubbeldam - Dordrecht CS - Nederhoven,2,3,None
+KEOLIS,,77608,Bruchterveld - Hardenberg,598,3,None
+QBUZZ,,73455,Sliedrecht - Goudriaan - Meerkerk A27,75,3,None
+BRAVO,,77402,"Oisterwijk via Cromvoirt - 's-Hertogenbosch",239,3,ARR
+RET,,75753,Station Schiedam - Cs - Crooswijk,38,3,None
+CXX,,76432,Kats - Kortgene,593,3,None
+EBS,,76134,Hekelingen - Metro Centrum - De Elementen,81,3,None
+RET,,77611,Station Rodenrijs - Lansingerland,173,3,None
+RET,,76541,Stat Alex - Oostgaarde - Stat Alex (Ringlijn),31,3,None
+CXX,,78102,Bennebroek - Hoofddorp Station via Spaarnegasthuis,401,3,None
+UOV,,73440,U-flex Maarssen / Utrecht-Noordwest,913,3,None
+BRAVO,,78094,Valkenswaard - Achel,276,3,CXX
+UOV,,73439,U-flex Vijfheerenlanden,903,3,None
+BRAVO,,78093,Eersel - Weebosch - Lommel,272,3,CXX
+CXX,,76436,"'s Heerenhoek - Hoedekenskerke",597,3,None
+CXX,,76433,Rilland - Kruiningen,594,3,None
+CXX,,76437,"'s Heerenhoek - Heinkenszand",598,3,None
+CXX,,76435,"'s Heerenhoek - Ellewoutsdijk",596,3,None
+CXX,,76431,Nieuwerkerk - Zierikzee via Ouwerkerk,592,3,None
+CXX,,76430,Nieuwerkerk - Zierikzee via Dreischor,591,3,None
+QBUZZ,,73442,Crabbehof - Dordrecht CS - Oudelandshoek,3,3,None
+BRAVO,,78095,Veldhoven - Valkenswaard,277,3,CXX
+KEOLIS,,77603,Dalfsen - Ommen,568,3,None
+CXX,,78648,Middelburg - Vlissingen,864,3,None
+CXX,,76407,Zaandam Station - Assendelft,63,3,None
+CXX,,73707,"'s Heerenhoek - Heinkenszand",555,3,None
+RET,,76542,Station Melanchtonweg - Station Alexander,35,3,None
+CXX,,76012,"A'dam Gaasperplas - Schiphol Airport",200,3,None
+CXX,,76434,Goes - Hoedekenskerke,595,3,None
+CXX,,76013,Uithoorn - Amsterdam Station Zuid via Amstelveen,274,3,None
+BRENG,,76363,Wkc Kronenburg - Het Duifje,4,3,None
+IFF,,66117,Venlo <-> Dordrecht IC3700,Intercity,2,NS
+QBUZZ,,73443,Laan van Europa - DordrechtCS - Staart/Papendrecht,4,3,None
+QBUZZ,,73467,Gorinchem - Utrecht,387,3,None
+QBUZZ,,73472,"R'dam Kral. Zoom - Alblasserdam - Nieuw-Lekkerland",489,3,None
+EBS,,76137,Maasvlaktehopper,203,3,None
+QBUZZ,,73468,Rotterdam Kralingse Zoom - Papendrecht - Utrecht,388,3,None
+QBUZZ,,73444,Sterrenburg - Dordrecht CS - Stadspolders,5,3,None
+QBUZZ,,76714,Arkel - Gorinchem,705,3,None
+QBUZZ,,73473,Rotterdam Zuidplein - Papendrecht - Sliedrecht,491,3,None
+QBUZZ,,73471,"R'dam Kralingse Zoom - H.I. Ambacht - Dordrecht",488,3,None
+QBUZZ,,73457,Noordeloos - Groot-Ammers,78,3,None
+QBUZZ,,73461,Utrecht - Ameide - Gelkenes,90,3,None
+QBUZZ,,76715,Giessenburg - Gorinchem,706,3,None
+QBUZZ,,76716,Boven-Hardinxveld - Giessenburg,707,3,None
+QBUZZ,,73458,Gorinchem - Hoornaar - Meerkerk A27,79,3,None
+QBUZZ,,73456,Hardinxveld-Giessendam - Sliedrecht,77,3,None
+QBUZZ,,76717,Zwijndrecht - Barendrecht,717,3,None
+QBUZZ,,76712,Papendrecht - Groot-Ammers,702,3,None
+QBUZZ,,76713,Leerdam - Arkel,704,3,None
+QBUZZ,,76711,Sliedrecht - Gorinchem,701,3,None
+CXX,,76438,Wemeldinge - Yerseke,599,3,None
+SYNTUS,,78650,Station - Vathorst - Hooglanderveen (nachtl. Amf),N3,3,UT
+SYNTUS,,78653,Amersfoort - Leusden (nachtlijn),N17,3,UT
+SYNTUS,,78651,Utrecht - Oudewater (nachtlijn),N7,3,UT
+SYNTUS,,78654,Utrecht - Maarssen (nachtlijn),N20,3,UT
+SYNTUS,,78649,Utrecht - Woerden (nachtlijn),N2,3,UT
+CXX,,76439,Oostburg - Terneuzen,601,3,None
+SYNTUS,,78655,Amsterdam Leidseplein - Wilnis (nachtlijn),N26,3,UT
+SYNTUS,,78652,Utrecht - Veenendaal - Wageningen (nachtlijn),N8,3,UT
+BRAVO,,76376,Helmond Station - Brouwhuis,54,3,CXX
+BRAVO,,76378,"Helmond Station - Station 't Hout",150,3,CXX
+CXX,,76441,Hoek - Axel,607,3,None
+BRAVO,,76373,Veldhoven Abdijlaan - Eindhoven Station,15,3,CXX
+CXX,,76444,Amsterdam Station Noord - Zaandam Station,392,3,None
+CXX,,76445,Amsterdam Station Sloterdijk - Zaandam ZMC,395,3,None
+BRAVO,,76377,Helmond - Stiphout,55,3,CXX
+BRAVO,,76374,Helmond Station - Rijpelberg,52,3,CXX
+BRAVO,,73684,Nuenen - Summa College - Eindhoven Station,404,3,CXX
+EBS,,74089,van Purmerend naar De Rijp,416,3,None
+SYNTUS,,78656,Utrecht - Amerongen (nachtlijn),N50,3,UT
+CXX,,76369,Blaricum - Hilversum,107,3,None
+IFF,,75036,Stopbus i.p.v. trein Dordrecht <-> Geldermalsen,Stopbus i.p.v. trein,3,NOORD
+IFF,,75037,Stopbus i.p.v. trein Dordrecht <-> Gorinchem,Stopbus i.p.v. trein,3,NOORD
+CXX,,73733,Domburg - Krabbendijke,647,3,None
+IFF,,75034,Stopbus i.p.v. trein Boven-Hardinxveld <-> Dordrecht,Stopbus i.p.v. trein,3,NOORD
+CXX,,77644,Haarlem Station - Zandvoort Station,84,3,None
+UOV,,76720,Lexmond - Leerdam - Ameide,703,3,None
+IFF,,67406,Amersfoort Centraal <-> Barneveld Zuid ST31400,Stoptrein,2,VALLEI
+RET,,76238,Barendrecht Postkantoor - Ridderkerk Olmenlaan,608,3,None
+IFF,,67410,Stopbus i.p.v. trein Amersfoort Centraal <-> Hilversum,Stopbus i.p.v. trein,3,NS
+ARR,,74519,Kerkrade via Luckerheide - Landgraaf Station,9,3,None
+EBS,,74088,van Purmerend naar Beets,413,3,None
+EBS,,74090,van Ilpendam naar Broek in Waterland,419,3,None
+CXX,,73730,St.Annaland - Goes,643,3,None
+BRAVO,,78109,P+R De Vliert - Centrum v.v.,70,3,ARR
+CXX,,73725,Vlissingen - Zierikzee,633,3,None
+SYNTUS,,78658,Amersfoort - Bunschoten-Spakenburg (nachtlijn),N76,3,UT
+ARR,,76239,P3 - Vertrekhallen - Plaza,3,3,None
+CXX,,73731,Stavenisse - Goes,644,3,None
+IFF,,67411,Stopbus i.p.v. trein Geldermalsen <-> Gorinchem,Stopbus i.p.v. trein,3,RNET
+SYNTUS,,78657,Amersfoort - Soest - Baarn (nachtlijn),N70,3,UT
+SYNTUS,,78660,Wijk bij Duurstede - Maarsbergen Vakcollege,695,3,UT
+IFF,,67412,Tilburg Universiteit <-> Eindhoven Centraal SPR5200,Sprinter,2,NS
+RET,,76235,Station Barendrecht - Ridderkerk de Schans,609,3,None
+ARR,,74507,Heerlen via Simpelveld - Vaals,43,3,None
+SYNTUS,,78659,Eemdijk - Nijkerk,603,3,UT
+OVREGIOY,,77619,Zeewolde - Amersfoort,625,3,None
+BRENG,,76364,Station Arnhem Zuid - Arnhem CS,11,3,None
+IFF,,67414,Stopbus i.p.v. trein Geldermalsen <-> Leerdam,Stopbus i.p.v. trein,3,RNET
+CXX,,73726,Dreischor - Zierikzee,634,3,None
+OVERAL,,76733,Texelhopper,TXL,3,None
+CXX,,75707,Uithoorn - Amstelveen,149,3,None
+ARR,,74505,Sittard via Lindenheuvel - Geleen,38,3,None
+UOV,,76718,Utrecht CS - IJsselstein,61,0,None
+CXX,,75703,Hoofddorp Station - Hoofddorp Centrum,160,3,None
+ARR,,74500,Sittard via Born - Obbicht,16,3,None
+ARR,,74486,Venray Station via A73 - Horst,289,3,None
+ARR,,74511,Hoensbroek via Heerlen - Bleijerheide,1,3,None
+BRAVO,,77624,Maarheeze station - Valkenswaard,256,3,CXX
+BRAVO,,77630,Deurne - Someren - Geldrop,266,3,CXX
+IFF,,67416,Dordrecht <-> Eindhoven Centraal IC1900,Intercity,2,NS
+ARR,,74508,Kerkrade Parkstad Stadion - Avantis,46,3,None
+ARR,,74491,Weert via Ittervoort - Heythuysen,790,3,None
+IFF,,67422,Nachtnettrein Utrecht Centraal <-> Amersfoort Centraal,Intercity,2,NS
+IFF,,67419,Amersfoort Centraal <-> Ede-Wageningen ST31300,Stoptrein,2,VALLEI
+BRAVO,,77629,Helenaveen - Deurne,262,3,CXX
+ARR,,74493,Boukoul - Roermond Leeuwen,794,3,None
+ARR,,74494,Heythuysen - Nederweert,796,3,None
+BRAVO,,77623,Budel - Soerendonk - Maarheeze,255,3,CXX
+BRAVO,,77626,Weert - Maarheeze - Heeze,258,3,CXX
+IFF,,78662,Snelbus i.p.v. trein Arnhem Centraal <-> Oberhausen Hbf,Snelbus i.p.v. trein,3,ABRN
+IFF,,78661,Stopbus i.p.v. trein Arnhem Centraal <-> Emmerich,Stopbus i.p.v. trein,3,ABRN
+IFF,,78663,Snelbus i.p.v. trein Arnhem Centraal <-> Wesel,Snelbus i.p.v. trein,3,ABRN
+CXX,,76420,Axel - St.Jansteen,507,3,None
+IFF,,78665,Stopbus i.p.v. trein Raalte <-> Zwolle,Stopbus i.p.v. trein,3,BN
+ARR,,74484,Maria Hoop via Koningsbosch - Echt,60,3,None
+IFF,,78664,Stopbus i.p.v. trein Kampen <-> Zwolle,Stopbus i.p.v. trein,3,BN
+IFF,,78666,Snelbus i.p.v. trein Raalte <-> Zwolle,Snelbus i.p.v. trein,3,BN
+ARR,,74482,Roermond via Linne - Echt,67,3,None
+IFF,,67424,Heerlen <-> Maastricht S19800,Stoptrein RE18,2,NOORD
+ARR,,74509,Hoensbroek via Schinnen - Geleen,53,3,None
+IFF,,67449,RE18 Aachen Hbf <-> Maastricht,Sneltrein,2,NOORD
+IFF,,78668,Stopbus i.p.v. trein Dalfsen <-> Zwolle,Stopbus i.p.v. trein,3,NOORD
+IFF,,78669,Stopbus i.p.v. trein Delfzijl <-> Stedum,Stopbus i.p.v. trein,3,NOORD
+IFF,,78667,Stopbus i.p.v. trein Aachen Hbf <-> Heerlen,Stopbus i.p.v. trein,3,NOORD
+IFF,,78671,Stopbus i.p.v. trein Beverwijk <-> Santpoort Noord,Stopbus i.p.v. trein,3,NS
+IFF,,78670,Stopbus i.p.v. trein Arnhem Centraal <-> Nijmegen,Stopbus i.p.v. trein,3,NS
+IFF,,78672,Stopbus i.p.v. trein Driehuis <-> Santpoort Noord,Stopbus i.p.v. trein,3,NS
+IFF,,78673,"Stopbus i.p.v. trein Harde ('t) <-> Meppel",Stopbus i.p.v. trein,3,NS
+IFF,,78674,"Stopbus i.p.v. trein Harde ('t) <-> Zwolle",Stopbus i.p.v. trein,3,NS
+ARR,,74503,Sittard Station via Baandert - Kemperkoul,31,3,None
+ARR,,74510,Gulpen - Heerlen,658,3,None
+IFF,,78675,Stopbus i.p.v. trein Haarlem <-> Uitgeest,Stopbus i.p.v. trein,3,NS
+ARR,,74506,Urmond via Berg a/d Maas - Sittard,39,3,None
+IFF,,78676,Stopbus i.p.v. trein Kampen Zuid <-> Meppel,Stopbus i.p.v. trein,3,NS
+ARR,,74504,Sittard Station via Stadhuis - Kemperkoul,34,3,None
+ARR,,74501,Sittard via NedCar/Holtum en Born - Sittard.,17,3,None
+ARR,,74502,Sittard via Born en Holtum/NedCar - Sittard.,18,3,None
+ARR,,74535,Beek-Elsloo via Geulle - Meerssen,797,3,None
+EBS,,73570,van Volendam naar Hoorn,614,3,None
+ARR,,74531,Landgraaf Mondo Verde - Ubach Palenberg,723,3,None
+EBS,,73569,van Marken naar Volendam,610,3,None
+ARR,,74517,Ubach over Worms via Heerlen - Zuyderland MC,7,3,None
+ARR,,74534,Beek-Elsloo via Groot Genhout - Spaubeek,795,3,None
+EBS,,73572,van Amsterdam CS naar Hoorn,N14,3,None
+EBS,,73573,van Amsterdam CS naar Purmerend,N01,3,None
+ARR,,74524,Kerkrade via Eygelshoven - Zuyd Hogeschool,606,3,None
+ARR,,74514,Hoensbroek via Heerlen - Parkstad Stadion,4,3,None
+ARR,,74516,Kerkrade via Eygelshoven - Heerlen,6,3,None
+EBS,,73574,van Amsterdam CS naar Purmerend,N04,3,None
+ARR,,74513,Schinveld/Brunssum via Heerlen - Parkstad Stadion,3,3,None
+BRENG,,74320,Millingen - Groesbeek,76,3,None
+ARR,,74526,Sittard Station - Chemelot Campus,632,3,None
+ARR,,74527,Beek-Elsloo via Chemelot - Sittard,633,3,None
+ARR,,74522,Brunssum via Heerlen Station - Kerkrade,603,3,None
+ARR,,74523,Vaals via Parkstad Stadion - Heerlen,643,3,None
+ARR,,74525,Beek-Elsloo via Zuyd Hogeschool - Heerlen,631,3,None
+ARR,,74521,Bocholtz via Gulpen - Maastricht,650,3,None
+CXX,,75708,Rijsenhout - Hoofddorp Station,163,3,None
+ARR,,74529,Urmond via Berg a/d Maas - Sittard,639,3,None
+CXX,,75712,Assendelft - Zaandam Station,456,3,None
+CXX,,76427,Westkapelle - Veere,583,3,None
+ARR,,74520,Vaals Busstation - Drielandenpunt,259,3,None
+ARR,,74533,Margraten via Banholt - Eijsden,793,3,None
+IFF,,78680,"Snelbus i.p.v. trein Harde ('t) <-> Meppel",Snelbus i.p.v. trein,3,NS
+CXX,,76425,Vlissingen Oost - Middelburg,581,3,None
+IFF,,78682,Snelbus i.p.v. trein Kampen Zuid <-> Meppel,Snelbus i.p.v. trein,3,NS
+IFF,,78681,"Snelbus i.p.v. trein Harde ('t) <-> Zwolle",Snelbus i.p.v. trein,3,NS
+IFF,,78683,Snelbus i.p.v. trein Olst <-> Zwolle,Snelbus i.p.v. trein,3,NS
+CXX,,76421,Terneuzen - Sas van Gent,511,3,None
+EBS,,76915,Centrum West - Dorp - Station Lansingerland,73,3,None
+ARR,,74515,Heerlen via Landgraaf - Parkstad Stadion,5,3,None
+EBS,,76907,Station Delft - Nootdorp,60,3,None
+BRAVO,,54218,Bergen op Zoom via Dinteloord - Roosendaal,111,3,ARR
+CXX,,76424,Kattendijke - Goes,580,3,None
+BRAVO,,54222,Breda via Prinsenbeek - Zevenbergen,119,3,ARR
+ARR,,74532,Meerssen via Valkenburg - Margraten,791,3,None
+IFF,,78678,Stopbus i.p.v. trein Olst <-> Zwolle,Stopbus i.p.v. trein,3,NS
+IFF,,78677,Stopbus i.p.v. trein Kampen Zuid <-> Zwolle,Stopbus i.p.v. trein,3,NS
+RET,,74907,Ridderkerk (Spinozastraat ) - Kralingsezoom,245,3,None
+RET,,74908,Zuidplein - Ridderkerk ( Donkersloot ),290,3,None
+CXX,,76429,Ossenisse - Clinge,589,3,None
+EBS,,76916,Rotterdam - Schiedam - Honselersdijk,824,3,None
+IFF,,78679,Stopbus i.p.v. trein Santpoort Noord <-> Uitgeest,Stopbus i.p.v. trein,3,NS
+CXX,,76423,Breskens - Biervliet,515,3,None
+EBS,,76914,Centrum West - Rokkeveen - Station Lansingerland,71,3,None
+CXX,,75709,Buitenkaag - Nieuw Vennep,164,3,None
+EBS,,76917,Schiedam - Maassluis - Honselersdijk - Naaldwijk,826,3,None
+ARR,,74518,Ubach over Worms via Heerlen - Parkstad Stadion,8,3,None
+BRAVO,,54224,Loon op Zand - Andel Prinsentuin,674,3,ARR
+BRAVO,,54223,Hank - Andel Prinsentuin,676,3,ARR
+OVREGIOY,,77426,Zwolle - Kampen - Emmeloord - Urk,641,3,None
+EBS,,76918,Den Haag - Honselersdijk,827,3,None
+EBS,,76908,Kuyperwijk - Station Delft,61,3,None
+EBS,,76906,Den Haag - Delft,37,3,None
+CXX,,76428,Middelburg - Veere,584,3,None
+CXX,,76426,Oud Sabbinge - Goes,582,3,None
+EBS,,76909,Delfgauw - Station Delft,62,3,None
+EBS,,76912,Station Delft - TU/Technopolis,69,3,None
+EBS,,76911,Station Delft - Tanthof,64,3,None
+BRAVO,,77434,Geldrop - Son en Breugel - Best,260,3,CXX
+CXX,,71487,Blaricum - Amsterdam,609,3,None
+EBS,,76913,Centrum West - Noordhove,70,3,None
+CXX,,71486,Naarden - Amsterdam,602,3,None
+EBS,,76910,Station Delft - IKEA - Delftsehout,63,3,None
+BRAVO,,54228,Wagenberg - Andel Prinsentuin,670,3,ARR
+IFF,,77656,Winschoten <-> Groningen ST37900,Stoptrein,2,NOORD
+BRAVO,,54226,Dongen - Andel Prinsentuin,672,3,ARR
+CXX,,63638,"Haarlem Station - A'dam Bijlmer ArenA via Airport",300,3,None
+BRAVO,,54230,Willemstad via Oud Gastel - Roosendaal,103,3,ARR
+IFF,,76975,Snelbus i.p.v. trein Groningen <-> Leer (Ostfriesl),Snelbus i.p.v. trein,3,NOORD
+CXX,,76402,Schalkwijk Centrum - Vogelenzang Dorp,4,3,None
+CXX,,76409,Wormer - Zaandam Station,67,3,None
+CXX,,76406,Haarlem Station - Waarderpolder,15,3,None
+CXX,,76405,Heemstede Station - Haarlemmerl. Pont Buitenhuizen,14,3,None
+CXX,,76408,Zaandam Staion - De Vlinder,65,3,None
+IFF,,77660,Haarlem <-> Zandvoort aan Zee SPR15400,Sprinter,2,NS
+CXX,,76422,Sas Van Gent - Axel,513,3,None
+BRAVO,,76375,Helmond Station - Helmond Straakven,53,3,CXX
+BRAVO,,73666,Boxmeer - Gemert,123,3,CXX
+OVERAL,,76767,Alkmaar Station - Bergen Europese School,606,3,None
+CXX,,71448,Bussum - Blaricum,101,3,None
+CXX,,71462,Hellevoetsluis-Middelharnis,630,3,None
+CXX,,71453,Heinenoord-Barendrecht,680,3,None
+IFF,,77661,Haarlem <-> Zandvoort aan Zee SPR25400,Sprinter,2,NS
+CXX,,71452,Schiphol P30 - Amstelveen Busstation via KLM,186,3,None
+QBUZZ,,78684,EVENEMENT: Stadskanaal - Secret Forest Festival,1,3,None
+ARR,,75368,Roermond via Stevensweert - Echt,68,3,None
+ARR,,75757,Noordwolde - Steenwijk,19,3,None
+ARR,,75365,Roermond via Montfort - Echt,61,3,None
+ARR,,75366,Roermond via Herkenbosch - Roermond.,62,3,None
+ARR,,75756,Dokkum - Holwerd,660,3,None
+ARR,,75369,Venray via Horst/Lottum - Venlo,89,3,None
+CXX,,71464,Ouddorp-Middelharnis,639,3,None
+RET,,76589,Station Schiedam - Maassluis,126,3,None
+CXX,,71494,"Strijensas s'Gravendeel",185,3,None
+CXX,,71472,Bergen op Zoom - Oude Tonge,102,3,None
+ARR,,75374,Ospel - Weert,674,3,None
+ARR,,76774,"Oosterzee, Gietersebrug - Lemmer, Busstation",9651,3,None
+CXX,,71495,"Middelburg, Station - Podium/Scalda",65,3,None
+QBUZZ,,76068,Zernike - HS - De Wijert - Europapark,19,3,None
+ARR,,75372,Roermond - Herkenbosch,662,3,None
+CXX,,71673,Zaandijk Rooswijk - Zaandam Kogerveld,64,3,None
+OVERAL,,63642,Hoorn Station - Noordbeemster,128,3,None
+CXX,,63640,Knooppunt Noord - P30/Knooppunt ZW via Airport,N90,3,None
+IFF,,76979,Weener <-> Groningen ST20100,Stoptrein,2,NOORD
+CXX,,71507,Blaricum - Amsterdam,209,3,None
+CXX,,63651,Schiphol Knooppunt Noord - P30 via Airport,190,3,None
+CXX,,73729,Middelburg - Goes,641,3,None
+CXX,,63648,IJmuiden Seaport - Amsterdam Station Sloterdijk,382,3,None
+CXX,,73732,Middelburg - Goes,646,3,None
+CXX,,73723,Westenschouwen - Goes,628,3,None
+QBUZZ,,77966,Buurtbus Zoutkamp - Leens,565,3,None
+CXX,,52484,Zandvoort - Haarlem Station,81,3,None
+CXX,,73727,Goes Station Goes Zwembadweg,638,3,None
+CXX,,73724,Bruinisse - Goes,629,3,None
+CXX,,73728,Krabbendijke - Goes,639,3,None
+KEOLIS,,77278,TVV Zutphen - Oldenzaal,812,3,None
+IFF,,76980,Leeuwarden <-> Sneek ST37000,Stoptrein,2,NOORD
+QBUZZ,,77967,Buurtbus Leek - De Wilp,589,3,None
+OVERAL,,73953,"Heiloo 't Loo - Egmond aan Zee",408,3,None
+TWENTS,,77279,Denekamp - Almelo,264,3,None
+BRENG,,77665,Spankeren - Dieren Station,524,3,None
+BRAVO,,77675,Nuenen - Beek en Donk,259,3,CXX
+TWENTS,,77281,Boekelo - Enschede,506,3,None
+BRENG,,77668,Heteren - Elst,556,3,None
+BRENG,,77666,Dieren Station - Dieren West,525,3,None
+IFF,,74608,Nachtnettrein Haarlem <-> Amsterdam Centraal,Intercity,2,NS
+BRENG,,77667,Dieren Station - Dieren Noord,526,3,None
+QBUZZ,,77968,Buurtbus Sellingen - Stadskanaal,512,3,None
+ARR,,75373,Roermond - Herkenbosch,663,3,None
+QBUZZ,,76048,Emmen - Sleen (- De Kiel),29,3,None
+QBUZZ,,76047,Coevorden - Zweeloo,25,3,None
+ARR,,75375,Horst - Evertsoord,789,3,None
+EBS,,77663,Den Haag - Wassenaar,144,3,None
+QBUZZ,,76049,Hoogeveen - Coevorden,33,3,None
+OVERAL,,73957,Hoorn Station - Hem - Hoogkarspel - Bovenkarspel,412,3,None
+OVERAL,,73954,Obdam - Ursem - Heerhugowaard,409,3,None
+OVERAL,,73952,Buurtbus Heerhugowaard,407,3,None
+OVERAL,,73955,Egmond aan Zee - Schoorl,410,3,None
+OVERAL,,73956,Tuitjenhorn - Schagen Station,411,3,None
+IFF,,76983,Groningen <-> Leeuwarden ST37400,Stoptrein,2,NOORD
+OVERAL,,73951,Schagen Station - Zijdewind - Waarland,406,3,None
+IFF,,76981,Leeuwarden <-> Stavoren ST37100,Stoptrein,2,NOORD
+ARR,,75376,Koningsbosch via Slek - Echt,792,3,None
+IFF,,76982,Leeuwarden <-> Harlingen Haven ST37200,Stoptrein,2,NOORD
+IFF,,76984,Winschoten <-> Groningen ST37500,Stoptrein,2,NOORD
+IFF,,76987,Veendam <-> Groningen ST37800,Stoptrein,2,NOORD
+BRAVO,,77676,Beek en Donk - Mariahout - Helmond,261,3,CXX
+IFF,,76985,Groningen <-> Roodeschool ST37600,Stoptrein,2,NOORD
+IFF,,76986,Groningen <-> Delfzijl ST37700,Stoptrein,2,NOORD
+TWENTS,,77283,Nijverdal - Raalte,513,3,None
+KEOLIS,,75386,Nunspeet - Zwolle - Dedemsvaart,C1,3,None
+KEOLIS,,75396,Dedemsvaart - Coevorden,129,3,None
+CXX,,74160,Hoofdplaat - Oostburg,604,3,None
+IFF,,76537,Snelbus i.p.v. trein Leiden Centraal <-> Schiphol Airport,Snelbus i.p.v. trein,3,NS
+KEOLIS,,75385,Zwolle - Dedemsvaart,83,3,None
+KEOLIS,,75384,Zwolle - Meppel,40,3,None
+KEOLIS,,75395,Nunspeet - Elspeet - Apeldoorn,112,3,None
+KEOLIS,,75387,Harderwijk - Putten - Amersfoort Vathorst,101,3,None
+QBUZZ,,76052,Emmen - Klazienaveen - Zwartemeer,93,3,None
+QBUZZ,,76050,Hoogeveen - Westerbork,37,3,None
+KEOLIS,,75393,Scherpenzeel - Barneveld,110,3,None
+KEOLIS,,75392,Apeldoorn - De Maten - Eerbeek,109,3,None
+KEOLIS,,75391,Otterlo - Nationaal Park Hoge Veluwe,106,3,None
+QBUZZ,,76051,Emmen - Èmmercompascuum - Zwartemeer,92,3,None
+KEOLIS,,75389,Barneveld - Voorthuizen - Wittenberg - Apeldoorn,103,3,None
+KEOLIS,,75388,Amersfoort - Hoevelaken - Voorthuizen - Apeldoorn,102,3,None
+QBUZZ,,76056,Assen - Annen,52,3,None
+QBUZZ,,76058,Emmen - Ter Apel - Winschoten,72,3,None
+KEOLIS,,75397,Zwolle Hessenpoort - Deventer,161,3,None
+KEOLIS,,75390,Harderwijk - Elspeet - Barneveld,104,3,None
+KEOLIS,,75394,Nunspeet - Harderwijk,111,3,None
+QBUZZ,,76054,Emmen - Klazienaveen - Nw Schoonebeek Grens,95,3,None
+QBUZZ,,76053,Emmen - Klazienaveen - Coevorden,94,3,None
+QBUZZ,,76060,Assen - P+R Haren - Groningen Zernike,109,3,None
+CXX,,76624,Uithoorn - Amstelveen,FLEX,3,None
+EBS,,60887,van Amsterdam CS naar Purmerend,306,3,None
+IFF,,75318,Nurnberg Hbf <-> Wien Hbf NJ10400,Nightjet,2,NSI
+KEOLIS,,75383,Hoogeveen - Hardenberg,30,3,None
+CXX,,76625,Buitenkaag - Nieuw Vennep,FLEX,3,None
+EBS,,60886,van Amsterdam CS naar De Rijp,305,3,None
+KEOLIS,,75398,Deventer - Raalte,165,3,None
+QBUZZ,,78177,Buurtbus Delfzijl - Delfzijl,545,3,None
+EBS,,60885,van Amsterdam Noord naar Purmerend,304,3,None
+EBS,,60891,van Amsterdam Noord naar Purmerend,308,3,None
+IFF,,73488,"Woerden <-> Hertogenbosch ('s) SPR6000",Sprinter,2,NS
+QBUZZ,,78178,Buurtbus Veendam,510,3,None
+IFF,,73489,Den Haag Centraal <-> Tiel SPR6900,Sprinter,2,NS
+EBS,,60889,van Amsterdam Noord naar Purmerend/ Edam,301,3,None
+QBUZZ,,78179,Buurtbus Hoogezand - Sappemeer,515,3,None
+KEOLIS,,75403,Apeldoorn - Zwolle (direct),201,3,None
+EBS,,60888,Van Amsterdam Noord naar Purmerend,307,3,None
+KEOLIS,,75399,Zwolle Hessenpoort - Raalte,166,3,None
+BRENG,,75763,Doorwerth De Weerd - Wolfheze Het Schild,589,3,None
+IFF,,73941,Eindhoven Centraal <-> Deurne SPR14400,Sprinter,2,NS
+BRENG,,77975,Spijk - Zevenaar Station,566,3,None
+BRENG,,75764,Doorwerth De Weerd - Wolfheze Het Schild,590,3,None
+KEOLIS,,75400,Zwolle Hessenpoort - Lemelerveld,167,3,None
+IFF,,76452,Amsterdam Centraal <-> Berlin Hbf IC140,Intercity,2,NSI
+IFF,,75061,Amsterdam Centraal <-> Utrecht Centraal IC21500,Intercity,2,NS
+ARR,,76069,"Moddergat - Lauwersoog, Veerhaven",7273,3,None
+BRENG,,77974,Herwen - Zevenaar Ziekenhuis,560,3,None
+ARR,,76072,"Morra - Lauwersoog, Veerhaven",7303,3,None
+ARR,,76073,"Oostmahorn, Esonstad - Lauwersoog, Veerhaven",7313,3,None
+ARR,,76075,"Wetsens - Dokkum, Sionsberg",7372,3,None
+IFF,,75064,Amsterdam Centraal <-> Innsbruck Hbf NJ400,Nightjet,2,NSI
+ARR,,76070,"Paesens - Lauwersoog, Veerhaven",7283,3,None
+ARR,,76077,"Tzum, Vrijburgstraat - Franeker, Station",8082,3,None
+ARR,,76078,"Tzum, Vrijburgstraat - Winsum, Busstation",8083,3,None
+ARR,,76076,"Tzum, Vrijburgstraat- Franeker, Voorstraat",8081,3,None
+ARR,,76071,"Lioessens - Lauwersoog, Veerhaven",7293,3,None
+QBUZZ,,78180,Buurtbus Hoogezand - Harkstede,516,3,None
+OVREGIOY,,77460,Zwolle - Vollenhove,171,3,None
+ARR,,76084,"Parrega - Bolsward, Busstation",9295,3,None
+ARR,,74496,Oud Caberg via Heer - De Heeg,2,3,None
+ARR,,76080,"Hinnaard - Sneek, Busstation",8841,3,None
+ARR,,76090,"Mirns - Balk, Harich Rotonde",9551,3,None
+ARR,,76091,"Rijs - Balk, Harich Rotonde",9555,3,None
+BRENG,,77696,Wijchen Moziek - Grave Kindcentrum,568,3,None
+ARR,,76082,"Munnekeburen - Wolvega, Station",6341,3,None
+ARR,,76081,"Hinnaard - Wommels, De Terp",8842,3,None
+ARR,,76083,"Tjerkwerd - Bolsward, Busstation",9291,3,None
+ARR,,76074,"Wetsens - Dokkum, Busstation",7371,3,None
+BRENG,,77693,Wijchen Mozaiek - Batenburg RK Kerk,563,3,None
+ARR,,76079,"Idaerd, Rijksweg - Grou, Station",8311,3,None
+ARR,,76092,Oudemirdum - Balk Harich Rotonde,9559,3,None
+BRENG,,77695,Beuningen Kerk - Wijchen Mozaiek,565,3,None
+ARR,,76089,"Bakhuizen - Balk, Harich Rotonde",9549,3,None
+BRENG,,77692,Beek - Groesbeek - Malden,562,3,None
+SYNTUS,,77312,Uithoorn - Breukelen,526,3,UT
+BRENG,,77691,Wijchen Station - Malden Schoolstraat,561,3,None
+ARR,,75830,Haaksbergen/Neede - Varsseveld,470,3,None
+KEOLIS,,75401,"'t Harde - Epe - Twello",170,3,None
+KEOLIS,,75460,"Apeldoorn, Station - Zuidbroek",2,3,None
+KEOLIS,,75461,"Apeldoorn, Station - De Maten (rechtsom)",3,3,None
+KEOLIS,,75459,"Apeldoorn, Station - Orden",1,3,None
+ARR,,75827,"'s-Heerenberg - Terborg",197,3,None
+KEOLIS,,75463,"Apeldoorn, Station - Malkenschoten/Zuid",10,3,None
+ARR,,75832,Vlinder Lochem,852,3,None
+ARR,,75846,Enspijk via Geldermalsen - Gorinchem,647,3,None
+OVERAL,,73960,Schagen Station - Obdam,417,3,None
+BRENG,,77694,Groesbeek Stekkenberg - Molenhoek Station,564,3,None
+ARR,,75843,Zaltbommel - Wijk en Aalburg,266,3,None
+ARR,,75115,Centrum VVV - Badstrand,5,3,None
+KEOLIS,,75462,"Apeldoorn, Station - De Maten (linksom)",4,3,None
+OVERAL,,73961,Enkhuizen - Bovenkarspel - Wervershoof,438,3,None
+ARR,,75829,Haaksbergen via Rekken - Eibergen,199,3,None
+ARR,,75819,Vlinder Doetinchem,1,3,None
+ARR,,75820,Lochem West - Lochem Station,52,3,None
+ARR,,75828,Neede via Borculo - Groenlo,198,3,None
+KEOLIS,,75457,Elburg - Kampen PZ,686,3,None
+ARR,,75824,Zelhem via Dinxperlo - Aalten,194,3,None
+ARR,,75821,Varsseveld - Westendorp,174,3,None
+ARR,,75845,Hedel - Gorinchem,626,3,None
+KEOLIS,,75458,Nijkerk - Barneveld,687,3,None
+ARR,,75839,Geldermalsen - Est,261,3,None
+OVERAL,,73959,Kreileroord - Schagen Station,416,3,None
+ARR,,75834,Tiel - Wadenoijen,243,3,None
+OVERAL,,73958,Medemblik - Wervershoof - Westwoud - Hoorn Station,415,3,None
+ARR,,75823,Zutphen via Wichmond - Kranenburg,193,3,None
+ARR,,75833,Heteren - Kesteren,237,3,None
+ARR,,75838,Geldermalsen - Leerdam,260,3,None
+ARR,,75826,"Nieuw-Dijk via Wehl - 's-Heerenberg",196,3,None
+ARR,,75822,Ruurlo - Aalten,191,3,None
+SYNTUS,,77318,Amersfoort - GSG Hoornbeeck/Van Lodenstein College,10,3,UT
+ARR,,75835,Tiel - Zoelen,244,3,None
+SYNTUS,,76639,Amersfoort Nieuwland - Vianen Lekbrug,202,3,UT
+ARR,,75844,Zaltbommel - Giessen,268,3,None
+ARR,,75836,Tiel Station - Tiel Oost,245,3,None
+ARR,,75825,Megchelen - Terborg,195,3,None
+ARR,,75837,Tiel - Zaltbommel,248,3,None
+BRAVO,,78110,P+R Pettelaarpark - Centrum v.v.,80,3,ARR
+ARR,,76093,"Nijemirdum - Balk, Harich Rotonde",9561,3,None
+IFF,,77703,Groningen <-> Winschoten S37900,Sneltrein,2,NOORD
+ARR,,75817,Parkhaven - Buitenhof,9,3,None
+ARR,,75842,Beneden-Leeuwen - Dreumel,265,3,None
+QBUZZ,,77471,Buurtbus Uithuizen - Loppersum,562,3,None
+ARR,,75818,Station - Buitenhof,10,3,None
+ARR,,75841,Maurik - Beusichem,263,3,None
+QBUZZ,,77470,Buurtbus Appingedam - Oosterwijtwerd - Loppersum,561,3,None
+KEOLIS,,77319,Barneveld - Leusden (ReserveerRRReis),509,3,None
+ARR,,76094,"Sondel - Balk, Harich Rotonde",9565,3,None
+CXX,,78190,Huizen - Hilversum,108,3,None
+CXX,,78188,Bussum - Huizen,100,3,None
+CXX,,73987,Haarlem Vijver  - Haarlem Delftplein,481,3,None
+CXX,,78189,Weesp - Hilversum via Nederhorst den Berg,106,3,None
+QBUZZ,,77475,Beilen - Hoogersmilde,520,3,None
+QBUZZ,,77473,Buurtbus Appingedam - Overschild - Ten Boer,564,3,None
+CXX,,78192,Bussum - Weesp,110,3,None
+ARR,,75847,Vlinder Bommelerwaard,860,3,None
+QBUZZ,,77474,Buurtbus Appingedam - Meedhuizen - Delfzijl,566,3,None
+QBUZZ,,77472,Buurtbus Ten Boer - Thesinge - Lewenborg,563,3,None
+CXX,,78201,Haarlem Station - Hogeschool INHOLLAND,8,3,None
+BRAVO,,77715,Grave - Cuijk,638,3,ARR
+BRAVO,,71437,Sterksel-Heeze-Leende-Valkenswaard,657,3,CXX
+CXX,,78191,Bussum - Hilversum,109,3,None
+IFF,,77710,Brussel-Zuid/Midi <-> Rotterdam Centraal IC9200,Intercity,2,NSI
+CXX,,71410,Aalsmeer - Amsterdam CS IJzijde via Amstelveen,N57,3,None
+CXX,,71406,Sas van Gent - Hulst,608,3,None
+CXX,,71504,van Zuid-Beijerland naar Oud-Beijerland,712,3,None
+CXX,,71427,Bussum - Weesp,210,3,None
+CXX,,71426,"Middelharnis, Gemeentehuis-Binnenhof",134,3,None
+ARR,,75840,Geldermalsen - Tricht,262,3,None
+OVERAL,,78194,Alkmaar Station - Alkmaar Hogeschool,660,3,None
+OVERAL,,71428,Schagen Station - Anna Paulowna Station,658,3,None
+CXX,,71412,Hoofddorp - Schiphol Knooppunt Noord,192,3,None
+OVERAL,,71429,Den Helder Station - Schagen Station,652,3,None
+OVERAL,,71430,Kreileroord - Wieringerwerf - Middenmeer - Schagen,653,3,None
+OVERAL,,71446,Hoogwoud - Obdam,617,3,None
+OVERAL,,71431,Lelystad - Enkhuizen - Wervershoof,650,3,None
+CXX,,71439,Goudswaard-Rotterdam,170,3,None
+BRAVO,,77718,Reeshof - Centraal Station,3,3,ARR
+KEOLIS,,78007,TVV Zwolle - Enschede,879,3,None
+OVERAL,,71447,Alkmaar Station - De Mare - Daalmeer,3,3,None
+DELIJN,,78205,Turnhout - Weelde - Baarle Hertog - Hoogstraten,457,3,None
+DELIJN,,78206,Arendonk - Retie - Dessel - Mol,390,3,None
+BRAVO,,77716,Grave - Heesch,690,3,ARR
+BRAVO,,77719,Hoogerheide via Huijbergen - Roosendaal,104,3,ARR
+DELIJN,,78207,Sint-Niklaas - Stekene Hellestraat - Hulst,43,3,None
+DELIJN,,78208,Eisden - Maasmechelen - Lanaken - Maastricht,63,3,None
+BRAVO,,77717,Landhorst - Boxmeer,692,3,ARR
+BRAVO,,61767,Centraal Station - De Aawijk,1,3,ARR
+BRAVO,,61769,Maren-Kessel - Oss,662,3,ARR
+BRAVO,,61768,Rosmalen - Centraal Station,3,3,ARR
+BRAVO,,61772,Dongen - Rijen,631,3,ARR
+BRAVO,,61774,Hambaken - Centraal Station,2,3,ARR
+BRAVO,,61775,Raamsdonksveer - Waalwijk,134,3,ARR
+GVB,,75849,Olof Palmeplein - Noorderpark,34,3,None
+GVB,,75851,Station Noord - Buiksloterham,38,3,None
+BRAVO,,61776,Tilburg via Gilze - Rijen,131,3,ARR
+CXX,,77521,Krommeniedijk - Oost-Knollendam,414,3,None
+CXX,,77522,St.Maartensdijk - Bergen op Zoom,603,3,None
+BRAVO,,77508,Aalst - Waalre - Veldhoven,271,3,CXX
+GVB,,75850,Station Sloterdijk - Schiphol Airport/Plaza,369,3,None
+GVB,,75852,Centraal Station - Borneo Eiland,43,3,None
+DELIJN,,78209,Hasselt - Universiteit - Genk - Maaseik/Maastricht,45,3,None
+DELIJN,,78210,Poppel - Hoogstraten Scholen via Merksplas,458,3,None
+DELIJN,,78211,Hasselt - Bilzen - Maastricht/Lanaken - Rekem,20a,3,None
+DELIJN,,78214,Tongeren - Vroenhoven - Maastricht,62,3,None
+DELIJN,,78212,Meersel Dreef - Hoogstraten - Turnhout - Reusel,430,3,None
+DELIJN,,78215,Gent - Eeklo - Brugge,58,3,None
+GVB,,75857,Buiksloterweg - Centraal Station,F3,4,None
+GVB,,75858,IJplein - Centraal Station,F2,4,None
+DELIJN,,78213,Belbus Stekene - Sint-Gillis-Waas - Moerbeke,240,3,None
+GVB,,75856,Distelweg - Pontsteiger,F6,4,None
+GVB,,75861,NDSM - Centraal Station,F4,4,None
+GVB,,75859,Pontsteiger - NDSM,F7,4,None
+GVB,,75862,Hempontplein - Zaandam,F20,4,None
+GVB,,75864,Velsen Zuid - Velsen Noord,F22,4,None
+GVB,,75863,Spaarndam - Assendelft,F21,4,None
+GVB,,75865,Zamenhofstraat - Azartplein,F1,4,None
+OVREGIOY,,77496,Wilsum - Kampen - Hattem,506,3,None
+TWENTS,,77285,Buurtbus Borne lus A,530,3,None
+TWENTS,,77286,Buurtbus Borne lus B,531,3,None
+TWENTS,,77287,Buurtbus Borne lus C,532,3,None
+TWENTS,,77284,"Almelo, Station - Aalderinkshoek",525,3,None
+TWENTS,,77288,Bruinehaar - Tubbergen,591,3,None
+TWENTS,,77291,Daarlerveen/Den Ham - Nijverdal,594,3,None
+TWENTS,,77289,Weerselo - Borne,592,3,None
+TWENTS,,77292,Buurse - Haaksbergen,595,3,None
+TWENTS,,77294,Nijverdal - Hellendoorn,597,3,None
+TWENTS,,77293,Ootmarsum - Denekamp,596,3,None
+TWENTS,,77295,Rossum - Ootmarsum,599,3,None
+TWENTS,,77300,Den Ham - Almelo,681,3,None
+SYNTUS,,77316,De Klomp-  Hoevelaken Van Lodenstein College,683,3,UT
+SYNTUS,,77314,Rhenen - GSG Hoornbeeck/Van Lodenstein College,680,3,UT
+ARR,,74499,P&R Noord via Centrum - Heer,10,3,None
+SYNTUS,,77315,Houten - GSG Hoornbeeck/Van Lodenstein College,682,3,UT
+GVB,,78417,VUmc - Centraal Station,24,0,None
+RET,,75872,Vlaardingen West - Holy,56,3,None
+ARR,,78010,Venlo Station via Noorderpoort - Venlo Station.,5,3,None
+DELIJN,,78217,Geel - Dessel - Retie - Arendonk/Oud-Turnhout,380,3,None
+HTM,,78687,Lijn 4,4B,0,None
+ARR,,78009,Venlo Station via Stalberg - Venlo Station.,4,3,None
+DELIJN,,78218,Sint-Niklaas - Kemzeke Paal - Hulst,42,3,None
+ARR,,78008,Roermond via Sint Odilienberg - Roermond.,63,3,None
+DELIJN,,78216,Tilburg - Poppel - Turnhout,450,3,None
+ALLGO,,75643,Lijn 24 Station Poort - Duin,24,3,None
+DELIJN,,78221,Turnhout - Baarle,460,3,None
+ALLGO,,75632,Lijn 327 Haven - Amstel,327,3,None
+DELIJN,,78220,Arendonk - Poppel via Eel Kerk,456,3,None
+DELIJN,,78219,Brugge-Breskens,42,3,None
+DELIJN,,78222,Hulst - St-Niklaas - Belsele - Sinaai - (Lokeren),22,3,None
+KEOLIS,,75645,"Zwolle, Station - Berkum (ReserveerRRReis)",3,3,None
+ALLGO,,75631,Lijn 326 Almere Stad - Blaricum,326,3,None
+ALLGO,,75634,Lijn 525 Buurtbus Nobelhorst,525,3,None
+ARR,,74944,Stavoren - Hemelum,103,3,None
+KEOLIS,,75647,Stat. Colmschate - Colmschate zuid (ReserveerRRR),9,3,None
+KEOLIS,,75646,"Zwolle, Station - Westenholte (ReserveerRRReis)",5,3,None
+KEOLIS,,75648,"Zwolle, Station - Ittersumerbr. (ReserveerRRReis)",14,3,None
+KEOLIS,,75649,"Harderwijk, Station - Drielanden (ReserveerRRReis)",101,3,None
+KEOLIS,,75651,Ede - Harskamp/Wittenberg - Putten (ReserveerRRR),107,3,None
+KEOLIS,,75655,Thermen Bussloo - Twello (ReserveerRRReis),506,3,None
+KEOLIS,,75650,Harderwijk - Elspeet - Barneveld (ReserveerRRReis),104,3,None
+KEOLIS,,75652,Nunspeet - Harderwijk (ReserveerRRReis),111,3,None
+KEOLIS,,75654,Epe - Terwolde - Twello (ReserveerRRReis),170,3,None
+KEOLIS,,75653,Nunspeet - Elspeet - Apeldoorn (ReserveerRRReis),112,3,None
+ALLGO,,75633,Lijn 328 Haven - Bijlmer,328,3,None
+RET,,77531,Zuidplein - Ridderkerk,143,3,None
+RET,,77532,Zuidplein - Ridderkerk Drievliet,146,3,None
+ALLGO,,75636,Lijn M2 CS - Stripheldenbuurt,M2,3,None
+ALLGO,,75638,Lijn M4 CS - Almere Poort,M4,3,None
+ALLGO,,75639,Lijn M5 CS - Sallandsekant via Danswijk,M5,3,None
+HTM,,78692,Lijn Delft Noord - Leidschendam leidsenhage,19,0,None
+ALLGO,,75637,Lijn M3 CS - Muziekwijk,M3,3,None
+ALLGO,,75635,Lijn M1 CS - Almere Haven,M1,3,None
+HTM,,78696,Scheveningen Noord - Station HS,9,0,None
+HTM,,78693,Lijn 33,3A,0,None
+HTM,,78695,Lijn 52 Station Laan van NOI - Leidschendam Noord,2B,0,None
+HTM,,78694,Leidschendam Noord - Station Laan van NOI,6B,0,None
+KEOLIS,,75408,Horst - Ermelo - Speuld - Garderen,501,3,None
+KEOLIS,,75409,Vorchten - Heerde - Wezep,502,3,None
+KEOLIS,,75410,Eerbeek - Brummen,503,3,None
+KEOLIS,,75415,Twello - Klarenbeek - De Maten (rechtsom),508,3,None
+KEOLIS,,75412,Wekerom - Overberg,505,3,None
+HTM,,78697,Lijn 94,4A,0,None
+KEOLIS,,75418,Scherpenzeel - De Glind - Barneveld,511,3,None
+KEOLIS,,75437,Eerbeek - Zutphen,604,3,None
+KEOLIS,,75413,Twello - De Maten - Klarenbeek (linksom),506,3,None
+KEOLIS,,75411,Eerbeek - Hall - Tonden - Oeken - Zutphen,504,3,None
+KEOLIS,,75421,Zutphen - Brummen - Leuvenheim,515,3,None
+KEOLIS,,75414,Twello - Wilp - Voorst Empe,507,3,None
+KEOLIS,,75420,"'t Harde - Elburg - Wezep",514,3,None
+KEOLIS,,75416,Barneveld - Leusden - Hoevelaken - Nijkerk,509,3,None
+KEOLIS,,75417,Oosterhuizen - Lieren - Apeldoorn,510,3,None
+KEOLIS,,75444,Ede - Harskamp - Apeldoorn JFC / HB,651,3,None
+KEOLIS,,75446,Heelsum - Ede - Apeldoorn JFC,653,3,None
+KEOLIS,,75439,Harderwijk - Putten - Amersfoort GdB,620,3,None
+KEOLIS,,75443,Wekerom - Harskamp - Apeldoorn JFC,650,3,None
+KEOLIS,,75445,Wekerom - Harskamp - Apeldoorn JFC,652,3,None
+KEOLIS,,75448,Barneveld - KwBroek - Apeldoorn JFC,657,3,None
+KEOLIS,,75450,Lunteren - Harskamp -Apeldoorn JFC,660,3,None
+KEOLIS,,75449,Nunspeet - Elspeet - Apeldoorn JFC,658,3,None
+KEOLIS,,75453,Harderwijk - Putten - Amersfoort HB,674,3,None
+KEOLIS,,75447,Ermelo - Uddel - Apeldoorn JFC,654,3,None
+KEOLIS,,75455,Schooldienst De Valk - KwBroek - Amersfoort HB,679,3,None
+KEOLIS,,75456,Nunspeet - Elburg - Kampen PZ,685,3,None
+KEOLIS,,75454,Schooldienst Elspeet - Voorthuizen - Amersfoort HB,676,3,None
+KEOLIS,,75405,Apeldoorn - Heerde - Wapenveld - Zwolle,203,3,None
+KEOLIS,,75471,"Zwolle, Station - Holtenbroek",2,3,None
+KEOLIS,,75407,Harderwijk - Putten - Voorthuizen - Barneveld,205,3,None
+KEOLIS,,75404,Apeldoorn - Vaassen - Heerde - Zwolle,202,3,None
+KEOLIS,,75465,"Apeldoorn, Station - Apenheul",12,3,None
+KEOLIS,,75468,"Apeldoorn, Station - Twello",15,3,None
+KEOLIS,,75402,Elburg - Oldebroek - Zwolle Oosterenk,200,3,None
+KEOLIS,,75472,"Zwolle, Station - Hessenpoort",3,3,None
+KEOLIS,,75469,"Apeldoorn, Station - Woudhuis",16,3,None
+KEOLIS,,75467,"Apeldoorn, Station - Kerschoten",14,3,None
+KEOLIS,,75464,"Apeldoorn, Station - Gelre Ziekenhuis",11,3,None
+KEOLIS,,75466,"Apeldoorn, Station - Kerschoten",13,3,None
+KEOLIS,,75434,Nunspeet - Elburg - Zwolle Deltion,600,3,None
+KEOLIS,,75436,Epe - Heerde - Zwolle Deltion,602,3,None
+KEOLIS,,75451,Lemelerveld - Zwolle,664,3,None
+KEOLIS,,75441,Meppel - Zwolle,640,3,None
+ALLGO,,75641,Lijn M7 CS - Oostvaarders via Parkwijk,M7,3,None
+ALLGO,,75640,Lijn M6 CS - Noorderplassen,M6,3,None
+KEOLIS,,75442,Zwolle - Dedemsvaart,649,3,None
+KEOLIS,,75406,Apeldoorn - Vaassen - Wapenveld - Zwolle,204,3,None
+KEOLIS,,75435,Apeldoorn - Zwolle Deltion,601,3,None
+KEOLIS,,75440,Dedemsvaart - Hardenberg,629,3,None
+KEOLIS,,75452,Zwolle - Herfte,668,3,None
+KEOLIS,,75481,"Zwolle, Station - Ittersumerbroek via Schelle",14,3,None
+KEOLIS,,75494,Apeldoorn - De Maten - Arnhem,231,3,None
+KEOLIS,,75508,Servicebus Ede (vaste ritten),6,3,None
+KEOLIS,,75488,Apeldoorn - Beekbergen - Arnhem,C2,3,None
+KEOLIS,,75492,Ede - Otterlo - Hoenderloo - Apeldoorn,108,3,None
+KEOLIS,,75419,Harderwijk - Ermelo,513,3,None
+HTM,,63413,Lijn 4,4,0,None
+KEOLIS,,75507,Station Ede-W. - Kernhem - De Klomp,5,3,None
+TWENTS,,75514,Borculo - Denekamp,62,3,None
+KEOLIS,,75438,Zwolle - Deltion - Heerde,609,3,None
+KEOLIS,,75486,Wageningen - Bennekom - Ede,86,3,None
+KEOLIS,,75498,"Deventer, Station - Platvoet",2,3,None
+KEOLIS,,75491,Ede - Wekerom - Stroe - Garderen - Putten,107,3,None
+KEOLIS,,75502,Deventer Station - Colmschate Zuid,6,3,None
+TWENTS,,75513,Overdinkel - Enschede,61,3,None
+KEOLIS,,75499,"Deventer, Station - Platvoet",3,3,None
+TWENTS,,75515,Overdinkel - Almelo,64,3,None
+KEOLIS,,75501,Deventer Station - De Vijfhoek,5,3,None
+KEOLIS,,75497,Deventer Station - De Vijfhoek via Blauwenoord,1,3,None
+KEOLIS,,75473,"Zwolle, Station - Aa-Landen",4,3,None
+KEOLIS,,75485,Veenendaal - Frankeneng - Ede,85,3,None
+KEOLIS,,75506,Station Ede-W. - Veldhuizen - Ziekenhuis (l.o.),2,3,None
+TWENTS,,75509,Almelo - Hengelo,51,3,None
+KEOLIS,,75483,Apeldoorn - Beekbergen - Eerbeek - Dieren - Arnhem,43,3,None
+KEOLIS,,75490,Barneveld - Otterlo - Arnhem,105,3,None
+ARR,,62664,"Bontebok - Heerenveen, Busstation",6231,3,None
+TWENTS,,75518,Ommen - Almelo,81,3,None
+KEOLIS,,75500,"Deventer, Station - Schalkhaar",4,3,None
+KEOLIS,,75475,"Zwolle, Station - Ittersumerbroek",6,3,None
+KEOLIS,,75479,"Zwolle, Station - Breecamp Oost",11,3,None
+TWENTS,,75510,Hengelo - Eibergen,53,3,None
+KEOLIS,,75482,"Harderwijk, Station - Frankrijk",1,3,None
+KEOLIS,,75505,Station Ede-W. - Ziekenhuis - Veldhuizen (r.o.),1,3,None
+KEOLIS,,75489,Wageningen - Ede,C3,3,None
+KEOLIS,,75487,"Veenendaal, de Klomp - Wageningen, UT Campus/Forum",89,3,None
+KEOLIS,,75493,Deventer - Bathmen,160,3,None
+KEOLIS,,75504,"Deventer, Station - Bedrijvenpark A1",8,3,None
+KEOLIS,,75503,"Deventer, Station - Hanzepark",7,3,None
+KEOLIS,,75496,Deventer - Holten,660,3,None
+KEOLIS,,75478,"Zwolle, Station - Deltion",9,3,None
+KEOLIS,,75495,Apeldoorn - De Maten - Arnhem HAN,293,3,None
+KEOLIS,,75484,Veenendaal - De Klomp,83,3,None
+KEOLIS,,75476,"Zwolle, Station - Stadion",7,3,None
+KEOLIS,,75480,"Zwolle, Station - Zwartewaterallee",12,3,None
+TWENTS,,75522,Holten - Haaksbergen,97,3,None
+TWENTS,,75511,Tubbergen - Haaksbergen,59,3,None
+TWENTS,,75516,Neede - Oldenzaal,66,3,None
+TWENTS,,75520,Almelo - Borculo,95,3,None
+HTM,,78689,Vrederust -Scheveningen Noord,9,0,None
+HTM,,78688,Den Haag Leyenburg - Leidschendam Noord,6A,0,None
+TWENTS,,75521,Rijssen - Nijverdal,96,3,None
+HTM,,78685,Lijn 2 Kraaijenstein - Leidschendam Leidsenhage,2A,0,None
+TWENTS,,75512,Enschede - Oldenzaal,60,3,None
+HTM,,78690,Nootdorp -CS,15,0,None
+SYNTUS,,75567,Hilversum - Amersfoort,70,3,UT
+TWENTS,,75546,"Enschede, Helmerhoek - Deppenbroek",2,3,None
+TWENTS,,75517,Hardenberg - Westerhaar,80,3,None
+TWENTS,,75545,"Enschede, Wesselerbrink - UT",1,3,None
+SYNTUS,,75593,Utrecht - Rotterdam metrostation Capelsebrug,295,3,UT
+TWENTS,,75558,"Hengelo, Station - Hasseler Es",13,3,None
+SYNTUS,,75577,Utrecht - Gouda,107,3,UT
+SYNTUS,,75565,U-link Utrecht - Wageningen / Veenendaal,50,3,UT
+SYNTUS,,75575,Utrecht - Woerden,102,3,UT
+TWENTS,,75519,Vriezenveen - Almelo,83,3,None
+HTM,,78691,CS - Wateringen,17,0,None
+SYNTUS,,75578,Utrecht - Amsterdam station Bijlmer ArenA,120,3,UT
+IFF,,67615,Arnhem Centraal <-> Terborg ST36900,Stoptrein,2,NOORD
+SYNTUS,,75579,Mijdrecht - Hilversum,121,3,UT
+TWENTS,,75548,"Enschede, Stroinkslanden - Station",4,3,None
+TWENTS,,75562,"Almelo, Station - Schelfhorst",24,3,None
+HTM,,78686,Lijn 3,3B,0,None
+TWENTS,,75550,"Enschede, Station - Stokhorst",6,3,None
+TWENTS,,75547,Enschede - Glanerbrug,3,3,None
+SYNTUS,,75581,Mijdrecht - Amsterdam station Bijlmer ArenA,126,3,UT
+TWENTS,,75557,"Hengelo, Gezondheidspark - Groot Driene",12,3,None
+TWENTS,,75553,Hengelo - Enschede,9,3,None
+SYNTUS,,75569,Amersfoort - Bunschoten-Spakenburg,76,3,UT
+SYNTUS,,75570,Amersfoort - Veenendaal-De Klomp,80,3,UT
+SYNTUS,,75583,Schoonhoven - IJsselstein (-Utrecht) via Benschop,195,3,UT
+TWENTS,,75549,"Enschede, 't Zwering - Station",5,3,None
+SYNTUS,,75586,Amersfoort Vathorst - Utrecht Rijnsweerd Noord,203,3,UT
+SYNTUS,,75576,Nieuwegein - Gouda,106,3,UT
+SYNTUS,,75564,VE: Ede - Kernhem - De Klomp,5,3,UT
+TWENTS,,75560,"Almelo, Station - Windmolenbroek",22,3,None
+SYNTUS,,75568,Soestdijk Noord - Soest Zuid,74,3,UT
+SYNTUS,,75592,Veenendaal - Amersfoort (sneldienst),280,3,UT
+SYNTUS,,75571,Amersfoort - Doorn,82,3,UT
+SYNTUS,,75572,Veenendaal - De Klomp,83,3,UT
+SYNTUS,,75582,Breukelen - Mijdrecht - Uithoorn,130,3,UT
+SYNTUS,,75574,Veenendaal-De Klomp - Petenbos via Veenendaal-Oost,87,3,UT
+SYNTUS,,75595,Leusden - Utrecht Rijnsweerd Noord,299,3,UT
+TWENTS,,75556,"Hengelo, Station - Hasseler Es",11,3,None
+TWENTS,,75561,"Almelo, Station - Schelfhorst",23,3,None
+SYNTUS,,75590,Amersfoort - Leusden De Horst (sneldienst),217,3,UT
+TWENTS,,75563,"Almelo, Station - Ziekenhuis",26,3,None
+TWENTS,,75559,"Almelo, Station - Windmolenbroek",21,3,None
+TWENTS,,75551,"Enschede, Station - Marssteden",7,3,None
+CXX,,75929,Oud-Beijerland-Zuid-Beijerland,711,3,None
+TWENTS,,75555,"Hengelo, Station - Veldwijk",10,3,None
+SYNTUS,,75573,VE: Veenendaal - Frankeneng - Ede,85,3,UT
+TWENTS,,75552,Hengelo - Enschede - Hengelo,8,3,None
+HTM,,78698,"Den Haag CS - Den Haag, Laan van Noi",62,3,None
+SYNTUS,,75626,SyntusFlex Woerden A,A,3,UT
+KEOLIS,,75656,Twello - Wilp - Voorst Empe (ReserveerRRReis),507,3,None
+SYNTUS,,75627,SyntusFlex Woerden B,B,3,UT
+CXX,,75930,Nachtbus,860,3,None
+KEOLIS,,75659,"Apeldoorn, Station - Apenheul (ReserveerRRReis)",12,3,None
+KEOLIS,,75657,Twello - Thermen (ReserveerRRReis),508,3,None
+KEOLIS,,75660,"Apeldoorn, Station - Kerschoten (ReserveerRRReis)",13,3,None
+KEOLIS,,75661,"Apeldoorn, Station - Kerschoten (ReserveerRRReis)",14,3,None
+KEOLIS,,75663,"Apeldoorn, Station - Woudhuis (ReserveerRRReis)",16,3,None
+KEOLIS,,75665,Servicebus Ede (ReserveerRRReis),6,3,None
+KEOLIS,,75664,Apeldoorn JFC - Stadhoudersmolen (ReserveerRRR),17,3,None
+KEOLIS,,75666,Harderwijk (ReserveerRRReis),1,3,None
+SYNTUS,,75611,Station - Nieuwland (Amersfoort),2,3,UT
+SYNTUS,,75620,Amersfoort - Leusden,17,3,UT
+ALLGO,,75629,Lijn 322 Parkwijk - Amstel,322,3,None
+SYNTUS,,75628,SyntusFlex De Ronde Venen,M,3,UT
+ALLGO,,75630,Lijn 323 Parkwijk - Bijlmer,323,3,None
+SYNTUS,,75618,Station - Leusderkwartier (2020),9,3,UT
+SYNTUS,,75612,Station - Vathorst (Amersfoort),3,3,UT
+SYNTUS,,75617,Station - Schuilenburg (2020),8,3,UT
+SYNTUS,,75616,Station - Vathorst (Amersfoort) - 2018,7,3,UT
+SYNTUS,,75613,Station - Kattenbroek (Amersfoort),4,3,UT
+KEOLIS,,75662,"Apeldoorn, Station - Twello (ReserveerRRReis)",15,3,None
+SYNTUS,,75615,Station - Liendert - Rustenburg (Amersfoort),6,3,UT
+SYNTUS,,75614,Station - Schothorst - Vathorst (Amersfoort),5,3,UT
+SYNTUS,,75621,Station - Rusthof (2020),19,3,UT
+BRAVO,,77761,Deurne - Bakel - Elsendorp,268,3,CXX
+BRAVO,,77767,Veldhoven - Eersel - Vessem,294,3,CXX
+BRAVO,,77766,Veldhoven - Hoogeloon,292,3,CXX
+ARR,,62752,"Wanswert - Ferwert, Prov. weg",7144,3,None
+SYNTUS,,75602,Amersfoort Vathorst - Soest,572,3,UT
+SYNTUS,,75604,Soest Raadhuisplein - Driebergen-Rijsenburg,575,3,UT
+CXX,,75931,Rotterdam CS - Numansdorp,867,3,None
+SYNTUS,,75601,Woerden - Breukelen,524,3,UT
+ARR,,62753,"Burdaard - Dokkum, Busstation",7151,3,None
+BRAVO,,77765,Middelbeers - Hoogeloon - Hapert - Bladel,291,3,CXX
+SYNTUS,,75623,Woerden Station - Molenvliet via Schilderskwartier,4,3,UT
+ARR,,62754,"Kubaard, Tsjerkebuorren - Wommels, De Terp",9121,3,None
+ARR,,62766,"Jirnsum, Douwemastrjitte - Akkrum, Station",8382,3,None
+HTM,,41836,Lijn 24: Kijkduin - Station Mariahoeve,24,3,None
+ARR,,62841,"Hilaard - Dronryp, Hoek Dronryp",8011,3,None
+ARR,,62839,"Baijum - Dronryp, Hoek Dronryp",8021,3,None
+ARR,,62846,"Schalsum - Franeker, Voorstraat",8031,3,None
+ARR,,62842,"Hilaard - Deinum, Station",8012,3,None
+ARR,,62847,"Sint Nicolaasga - Joure, Busstation",8771,3,None
+ARR,,62755,"Iens - Wommels, De Terp",9111,3,None
+ARR,,62840,"Baijum - Dronryp, Station",8022,3,None
+HTM,,63415,Lijn 3,3,0,None
+ARR,,62848,"Scharsterbrug - Joure, Busstation",8761,3,None
+ARR,,62849,"Ysbrechtum - Sneek, Busstation",8821,3,None
+ARR,,62855,"Itens, Hervormde Kerk - Wommels, De Terp",8852,3,None
+HTM,,41838,Lijn 21: Vrederust - Scheveningen Noorderstrand,21,3,None
+ARR,,62850,"Tirns - Sneek, Busstation",8811,3,None
+ARR,,62851,"Hidaard - Wommels, De Terp",8832,3,None
+DELIJN,,78700,Turnhout - Baarle,460,3,None
+SYNTUS,,75622,Woerden Station - Molenvliet via Middelland,3,3,UT
+ARR,,62838,"Dongjum, Tzummarumerweg - Franeker, Voorstraat",8051,3,None
+ARR,,62910,"De Hoeve - Wolvega, Station",6331,3,None
+ARR,,62764,"Blauwhuis - Bolsward, Busstation",9042,3,None
+ARR,,62860,"Raard - Dokkum, Busstation",7091,3,None
+DELIJN,,78699,Tilburg - Poppel - Turnhout,450,3,None
+WATERBUS,,316,Dordrecht Hooikade - Zwijndrecht Veerplein,21,4,None
+SYNTUS,,75598,IJsselstein - Montfoort,504,3,UT
+ARR,,62911,"Kollum, De Colle - Buitenpost, Station",7611,3,None
+SYNTUS,,75600,Weesp - Vreeland,522,3,UT
+SYNTUS,,75603,Soest - Blaricum Tergooi Ziekenhuis,573,3,UT
+SYNTUS,,75610,Soesterkwartier - Station (Amersfoort) - 2018,1,3,UT
+ARR,,62914,"Augsbuurt, Lutjewoude - Buitenpost, Station",7561,3,None
+ARR,,62915,"Triemen - Buitenpost, Station",7591,3,None
+ARR,,62913,Veenklooster - Buitenpost,7571,3,None
+SYNTUS,,75599,IJsselstein - Woerden,505,3,UT
+ARR,,62917,"Munnekezijl, Kerkstraat - Buitenpost, Station",7542,3,None
+ARR,,62912,"Oudwoude - Buitenpost, Station",7601,3,None
+ARR,,62918,"Munnekezijl, Kerkstraat - Grijpskerk, Station",7541,3,None
+ARR,,62919,"Burum, Waardshiem - Buitenpost, Station",7552,3,None
+ARR,,62922,"Jistrum - Buitenpost, Station",6032,3,None
+ARR,,62923,"Heechsan - Burgum, Kwekerstrjitte",6081,3,None
+SYNTUS,,75597,Eemdijk - Nijkerk,503,3,UT
+ARR,,62921,"Eastermar - Drachten, Transferium Oost",6072,3,None
+ARR,,62925,"Earnewald - Nijega, Dorpshuis",6091,3,None
+ARR,,62920,"Burum, Waardshiem - Grijpskerk, Station",7551,3,None
+ARR,,62924,"Eastermar - Burgum, Kwekerstrjitte",6071,3,None
+ARR,,62928,"Garyp, Dorp - Burgum, Kwekerstrjitte",6061,3,None
+ARR,,62929,"Garyp, Dorp - Nijega, Rijksweg",6062,3,None
+ARR,,62932,"Makkum, Botterstraat - Kop Afsluitdijk",9281,3,None
+ARR,,62931,"Wons, Salverdastraat - Bolsward, Busstation",9321,3,None
+ARR,,62926,"Earnewald - Nijega, Rijksweg",6092,3,None
+ARR,,62933,"Makkum, Botterstraat - Bolsward, Busstation",9271,3,None
+ARR,,62936,"Idsegahuizum Dorp - Bolsward, Busstation",9241,3,None
+OVERAL,,63628,Alkmaar Station - Heerhugowaard Icaruslaan,162,3,None
+ARR,,62935,"Exmorra - Bolsward, Busstation",9251,3,None
+ARR,,62937,"Piaam - Bolsward, Busstation",9231,3,None
+OVERAL,,63643,"Alkmaar Station - Noordbeemster - P'rend Tramplein",129,3,None
+ARR,,62934,"Allingawier - Bolsward, Busstation",9261,3,None
+OVERAL,,63644,Den Helder Station - Station Zuid - Julianadorp,30,3,None
+CXX,,63657,Amsterdam - Hilversum,320,3,None
+OVERAL,,63662,Alkmaar Station - de Hoef,1,3,None
+OVERAL,,63659,Hoorn Station - Abbekerk - Opperdoes - Medemblik,139,3,None
+OVERAL,,63685,Middenmeer - Alkmaar Station,250,3,None
+CXX,,63678,"Haarlem Station - A'dam Bijlmer ArenA via KP Noord",356,3,None
+IFF,,66763,"Hertogenbosch ('s) <-> Deurne SPR4400",Sprinter,2,NS
+IFF,,66765,Nachtnettrein Utrecht Centraal <-> Rotterdam Centraal,Intercity,2,NS
+UOV,,67104,Overvecht - Nieuw-Loosdrecht,122,3,None
+UOV,,67106,Leerdam - Utrecht,85,3,None
+CXX,,63680,Wijk aan Zee - Beverwijk Station,78,3,None
+UOV,,67116,Vianen - Utrecht CS - Zeist,74,3,None
+IFF,,66772,Apeldoorn <-> Winterswijk S30400,Sneltrein,2,NOORD
+UOV,,67121,Utrecht - Wageningen/Veenendaal,50,3,None
+UOV,,67144,Vleuten - Kockengen,127,3,None
+UOV,,67145,Wijk bij Duurstede - Utrecht CS,41,3,None
+UOV,,67150,Houten - Nieuwegein - Maarssen,48,3,None
+BRAVO,,67257,Helmond Station - Donk - Gemert,25,3,CXX
+BRAVO,,67259,Son en Breugel - Ekkersrijt,21,3,CXX
+BRENG,,67282,St Maartenskliniek - Nijmegen CS - Lindenholt West,2,3,None
+BRAVO,,67260,Helmond Station - Boxmeer Station,23,3,CXX
+OVREGIOY,,67299,Emmeloord - Marknesse - Steenwijk,76,3,None
+BRENG,,67283,Nijmegen Aldenhof - Dukenburg - Lindenholt Oost,4,3,None
+BRENG,,67284,Nijmegen CS - Grave - Uden Busstation,99,3,None
+BRAVO,,67269,Veldhoven Centrum - De Hurk - Eindhoven Station,14,3,CXX
+UOV,,67148,Vleuterweide - Utrecht CS - Science Park,28,3,None
+BRAVO,,67288,Eindhoven Blixembosch West - Station,3,3,CXX
+BRAVO,,67287,Veldhoven MMC - Eindhoven Station,7,3,CXX
+BRAVO,,67289,Best Station - Eindhoven Station,9,3,CXX
+CXX,,67292,Beverwijk Station - Heemskerk Centrum,72,3,None
+BRAVO,,45136,"Boxtel - 's-Hertogenbosch",643,3,ARR
+ARR,,62046,Kop Afsluitdijk via Makkum - Bolsward,96,3,None
+BRAVO,,67296,Luyksgestel - Valkenswaard - Eindhoven Station,318,3,CXX
+BRAVO,,67295,Reusel - Eersel - Eindhoven Station,319,3,CXX
+ARR,,45413,Veerdam - Ballum/Hollum,1,3,None
+ARR,,45416,West-Terschelling - West aan Zee,2,3,None
+BRAVO,,67297,Dommelen - Valkenswaard - Eindhoven Station,317,3,CXX
+ARR,,45411,Veerdam - Buren/Nes,2,3,None
+ARR,,45415,West-Terschelling - Oosterend,1,3,None
+BRAVO,,45139,Oss via Uden - Eindhoven,305,3,ARR
+ARR,,45366,Veerdam - Posthuys,1,3,None
+CXX,,52485,Zandvoort - Amsterdam Busstation Elandsgracht,80,3,None
+ARR,,45368,Venlo via Reuver - Roermond,66,3,None
+ARR,,45373,Geilenkirchen - Sittard,3,3,None
+ARR,,49864,Tiel - Geldermalsen,543,3,None
+ARR,,66732,Station via Rijnvicus en Kerk en Zanen - Station.,4,3,None
+ARR,,62393,Sneek - Oudega v.v.,46,3,None
+ARR,,52915,Station via Groenhoven en Plaswijck - Station.,4,3,None
+RET,,66821,Vlaardingen West - Holy,156,3,None
+ARR,,62557,"Hantumeruitburen - Holwerd, Prov. weg",7053,3,None
+ARR,,66907,Velddriel - Andel,668,3,None
+ARR,,66908,Leerdam - Gorinchem,673,3,None
+ARR,,62632,"Bears - Deinum, Station",8141,3,None
+ARR,,67331,Kitskensberg via Donderberg - Roermond Station,1,3,None
+IFF,,67971,RE 13 Venlo <-> Hamm (Westf.),Sneltrein,2,EB
+QBUZZ,,2607,Scheemda - Winschoten,17,3,None
+CXX,,65606,Haarlem Station - Uithoorn via Hoofddorp Station,340,3,None
+CXX,,30603,Herkingen-Middelharnis,138,3,None
+OVREGIOY,,1621,Harderwijk - Zeewolde,144,3,None
+BRAVO,,71251,Valkenswaard - Bladel Pius X-College,618,3,CXX
+BRAVO,,71252,Eindhoven Internationale school - Station,610,3,CXX
+QBUZZ,,18788,Zweeloo - Assen,22,3,None
+QBUZZ,,18791,Winsum - Leens,68,3,None
+ARR,,17305,Den Haag Centraal - Lisse,90,3,None
+ARR,,17309,Leiden Station De Vink - Leiden Merenwijk,3,3,None
+ARR,,19293,Vorden - Doetinchem,51,3,None
+ARR,,65454,"Doniaga - Joure, Busstation",8641,3,None
+EBS,,71304,Hellevoetsluis - Spijkenisse,102,3,None
+BRAVO,,42346,Son - Ekkersrijt - Eindhoven Station,406,3,CXX
+QBUZZ,,2626,Assen - Groningen,309,3,None
+BRENG,,7190,Nijmegen Station Dukenburg - CS - Neerbosch Oost,6,3,None
+BRENG,,41310,Druten Busstation - Tiel Station,42,3,None
+CXX,,30582,Middelharnis-Ooltgensplaat,135,3,None
+QBUZZ,,2636,Oosterwolde - Groningen,85,3,None
+ARR,,282,Zaltbommel - Wijk en Aalburg,669,3,None
+ARR,,19303,Zutphen - Doetinchem,82,3,None
+ARR,,5444,Leiden Centraal - Haarlem,50,3,None
+CXX,,30584,Numansdorp-Rotterdam,174,3,None
+BRAVO,,42347,Eindhoven Achtse Barrier - Station,405,3,CXX
+QBUZZ,,2627,Appingedam - Groningen,178,3,None
+ARR,,19358,"Dreumel - 's-Hertogenbosch",665,3,None
+ARR,,5449,Leiden Centraal - Voorschoten Starrenburg,5,3,None
+QBUZZ,,23097,Groningen - Surhuisterveen,133,3,None
+RET,,30800,Station Barendrecht - Zuidplein,84,3,None
+CXX,,30586,Oud Beijerland-Rotterdam,171,3,None
+QBUZZ,,2643,Stadsdienst Emmen Rietlanden,3,3,None
+QBUZZ,,41880,Assen - Leek,83,3,None
+RET,,32575,Zuidplein - Keizerswaard,76,3,None
+QBUZZ,,2642,Stadsdienst Emmen Angelslo,2,3,None
+CXX,,30601,Oud Beijerland-Rotterdam,172,3,None
+ARR,,53859,Veulen - Geijsteren,799,3,None
+ARR,,42409,Sassenheim via Lisse - Schiphol Airport,361,3,None
+ARR,,43026,Sittard via Merkelbeek - Brunssum,37,3,None
+ARR,,43016,Mheer via Banholt - Gulpen,657,3,None
+ARR,,43154,Busstation - Bilgaard v.v.,16,3,None
+ARR,,42420,Leiden Centraal via Boulevard - Noordwijk,20,3,None
+BRAVO,,45094,Engelen - Centraal Station,5,3,ARR
+BRAVO,,45101,Boxtel - Veghel,644,3,ARR
+BRAVO,,45135,Oss - Eindhoven,157,3,ARR
+BRAVO,,45125,"Tilburg  via Oisterwijk - 's-Hertogenbosch",140,3,ARR
+BRAVO,,45096,Empel - Centraal Station,6,3,ARR
+BRAVO,,45121,"Uden - 's-Hertogenbosch",306,3,ARR
+ARR,,50348,Van Knobelsdorffplein - Nij Smellinghe,514,3,None
+ARR,,43027,Sittard via Schinveld - Brunssum,36,3,None
+ARR,,52871,Gulpen via Simpelveld - Parkstad Stadion,47,3,None
+QBUZZ,,2630,Stadskanaal - Winschoten,14,3,None
+EBS,,43163,van Purmerend naar De Purmer Zuid,101,3,None
+BRAVO,,45103,Maasoever via CS en JBZ - Vught,9,3,ARR
+ARR,,53482,Zutphen Station - Zutphen Zuidwijken,84,3,None
+ARR,,53855,Heerlen via Hoensbroek Busstation - Sittard,40,3,None
+ARR,,53478,Neede - Lichtenvoorde,72,3,None
+ARR,,53865,Roermond - Panningen,372,3,None
+EBS,,71305,Geervliet - Abbenbroek - Oudenhoorn,107,3,None
+ARR,,42397,Alphen aan den Rijn - Zoetermeer,165,3,None
+ARR,,53867,Nederweert via Weert - Stramproy,74,3,None
+ARR,,33046,Busstation - Scholen Nijlan,615,3,None
+ARR,,53868,Meijel - Roermond,75,3,None
+QBUZZ,,2610,Winschoten - Veendam,13,3,None
+ARR,,53884,Leiderdorp Ziekenhuis - Leiden Centraal,410,3,None
+BRAVO,,54144,Centraal Station - Galder/Meersel Dreef,6,3,ARR
+BRAVO,,54145,Breda via Etten-Leur - Oud Gastel,311,3,ARR
+BRAVO,,54147,Breda via Etten-Leur - Roosendaal,312,3,ARR
+BRAVO,,54157,"Hank - 's-Hertogenbosch",628,3,ARR
+BRAVO,,54146,Rotterdam - Bergen op Zoom,310,3,ARR
+BRAVO,,54148,Breda - Etten-Leur,316,3,ARR
+BRAVO,,54150,Werkendam - Dordrecht,620,3,ARR
+BRAVO,,54194,"Wijk en Aalburg - 's-Hertogenbosch",135,3,ARR
+BRAVO,,54186,Klundert - Oudenbosch,610,3,ARR
+BRAVO,,54174,Tolberg West - Kortendijk,1,3,ARR
+BRAVO,,54196,Breda - Lage Zwaluwe,122,3,ARR
+BRAVO,,54198,Werkendam - Gorinchem,120,3,ARR
+BRAVO,,54171,Station - Bergse Plaat,25,3,ARR
+BRAVO,,54183,Oosterhout - Tilburg,328,3,ARR
+ARR,,53869,Horst/Sevenum - Panningen,679,3,None
+BRAVO,,54269,Veghel - Gemert,155,3,ARR
+BRAVO,,54270,"'s-Hertogenbosch - Eindhoven",156,3,ARR
+BRAVO,,54276,Goirle via CS - Reeshof,2,3,ARR
+BRAVO,,54282,Centraal Station - Noord-Stokhasselt,5,3,ARR
+BRAVO,,54280,De Blaak via CS - West-Paletplein,7,3,ARR
+BRAVO,,54279,Centraal Station - Noord-Heikant,6,3,ARR
+BRAVO,,54197,Breda via Made - Raamsdonksveer,123,3,ARR
+BRAVO,,54278,ETZ Elisabeth via CS - Noord-Quirijnstok,1,3,ARR
+BRAVO,,54284,Centraal Station via Berkel-Enschot - Udenhout,9,3,ARR
+BRAVO,,54289,"Udenhout - 's-Hertogenbosch",639,3,ARR
+BRAVO,,54283,Centraal Station - Het Laar,8,3,ARR
+BRAVO,,54291,"Tilburg  via Waalwijk - 's-Hertogenbosch",136,3,ARR
+BRAVO,,54311,Centraal Station - Stappegoor,601,3,ARR
+QBUZZ,,58998,Winschoten - Veendam,23,3,None
+ARR,,58937,Holwerd - Leeuwarden,166,3,None
+ARR,,60709,Dokkum via Holwerd - Leeuwarden,150,3,None
+RET,,57850,Hoek van Holland - Maasvlakte,1,4,None
+BRENG,,60781,Arnhem CS - De Laar West,2,3,None
+CXX,,71378,Zwanenburg - Hoofddorp Station,161,3,None
+ARR,,53526,Busstation - Aldlan Oost,2,3,None
+CXX,,71369,Abcoude - Amsterdam,612,3,None
+CXX,,71367,Strijensas-Strijen,197,3,None
+CXX,,71379,Ouddorp-Rotterdam,437,3,None
+EBS,,60892,van Volendam naar Purmerend,110,3,None
+EBS,,60896,van Amsterdam CS naar Volendam-Edam,316,3,None
+EBS,,60895,van Amsterdam Noord naar Edam-Volendam,312,3,None
+EBS,,60899,van Amsterdam Noord naar Landsmeer,319,3,None
+ARR,,62560,"Sibrandahus - Dokkum, Busstation",7081,3,None
+EBS,,60898,van Amsterdam Sloterdijk naar Purmerend,125,3,None
+ARR,,60911,Alphen aan den Rijn - Schiphol Airport,870,3,None
+GVB,,61515,Olof Palmeplein - Molenwijk,35,3,None
+ARR,,62567,"Folsgare - Sneek, Busstation",8891,3,None
+ARR,,62570,"Easterein - Sneek, Busstation",8921,3,None
+ARR,,62569,"Rien - Sneek, Busstation",8881,3,None
+ARR,,62571,"Tjalhuizum - Sneek, Busstation",8911,3,None
+ARR,,62572,"Nes, Buorren - Dokkum, Busstation",7261,3,None
+ARR,,62573,"Nes Buorren - Dokkum, Sionsberg",7262,3,None
+ARR,,62574,"Moddergat - Dokkum, Busstation",7271,3,None
+EBS,,60897,van Amsterdam Noord naar Marken,315,3,None
+ARR,,62575,"Moddergat - Dokkum, Sionsberg",7272,3,None
+BRAVO,,61793,Langdonk - Tolberg Oost,2,3,ARR
+BRAVO,,61784,Hoge Vucht via CS - Nieuw Wolfslaar/Bavel,1,3,ARR
+ARR,,61812,Maastricht Centrum via MUMC - Eijsden,15,3,None
+ARR,,61807,Venlo - Panningen,670,3,None
+BRAVO,,62189,Nuenen - Eindhoven Station,6,3,CXX
+CXX,,62512,Spaarne Gasthuis - WTC/Zuid via Hoofddorp Station,341,3,None
+ARR,,61866,Leiden Station De Vink - Leiden Merenwijk,4,3,None
+CXX,,62511,Uithoorn - Amsterdam Station Zuid via Amstelveen,348,3,None
+BRENG,,62193,Bemmel - Elst - Zetten,35,3,None
+CXX,,62520,Lisse - Hoofddorp Station,162,3,None
+BRENG,,62190,Millingen - Ooij - Nijmegen CS,80,3,None
+CXX,,62545,"Kudelstaart/Aalsmeer - A'dam Station Zuid via ASV",358,3,None
+CXX,,62548,Aalsmeer - Amsterdam Bijlmer ArenA,171,3,None
+ARR,,61932,Dinxperlo via Terborg - Doetinchem,40,3,None
+CXX,,62523,Hoofddorp Sportcomplex KWA - Hoofddorp Station,169,3,None
+ARR,,61943,Venlo via Grubbenvorst - Venray Station,88,3,None
+ARR,,61937,Vlinder Almen Laren,854,3,None
+EBS,,61993,Rockanje - Oostvoorne - Brielle - Spijkenisse,403,3,None
+ARR,,62387,Well - Venlo,683,3,None
+CXX,,62547,Aalsmeer - Amsterdam Elandsgracht via Amstelveen,357,3,None
+RET,,62402,Zuidplein - Heyplaat,68,3,None
+RET,,62323,Zuidplein - Kralingse Zoom,75,3,None
+EBS,,61992,Rockanje - Hellevoetsluis - Spijkenisse,404,3,None
+ARR,,62555,"Hiaure - Dokkum, Sionsberg",7062,3,None
+RET,,62404,Zuidplein Laag - Keizerswaard,70,3,None
+ARR,,62556,"Hiaure - Dokkum, Busstation",7061,3,None
+ARR,,62581,"Lioessens - Dokkum, Sionsberg",7292,3,None
+ARR,,62580,"Lioessens - Dokkum, Busstation",7291,3,None
+ARR,,62578,"Paesens - Dokkum, Sionsberg",7282,3,None
+ARR,,62582,"Swichum - Leeuwarden, Station",7761,3,None
+ARR,,62584,"Warstiens - Leeuwarden, Station",7741,3,None
+ARR,,62602,"Broeksterwald - Dokkum, Sionsberg",7422,3,None
+QBUZZ,,67503,Assen - Dieverbrug - Steenwijk (- Meppel),20,3,None
+ARR,,62603,"Broeksterwald - Dokkum, Busstation",7421,3,None
+ARR,,62605,"Jouswier - Dokkum, Sionsberg",7412,3,None
+ARR,,62583,"Goutum, It Blauwe Slot - Leeuwarden, Station",7771,3,None
+ARR,,62607,"Ee - Buitenpost, Station",7403,3,None
+ARR,,62628,"Hindeloopen, Museum - Hindeloopen, Station",9411,3,None
+ARR,,62630,"Jellum - Deinum, Station",8131,3,None
+ARR,,62631,"Jellum - Mantgum, Station",8132,3,None
+ARR,,62600,"Echtenerbrug - Lemmer, Busstation",8502,3,None
+ARR,,62637,"Baard - Winsum, Busstation",8162,3,None
+ARR,,62636,"Baard - Mantgum, Station",8161,3,None
+ARR,,62585,"Wyns - Leeuwarden, Station",7751,3,None
+ARR,,62639,"Britswert, Froonackerdyk - Winsum, Busstation",8172,3,None
+ARR,,62638,"Britswert, Froonackerdyk - Mantgum, Station",8171,3,None
+ARR,,62641,Alde Leie - Sint Annaparochie,7912,3,None
+ARR,,62606,"Jouswier - Dokkum, Busstation",7411,3,None
+ARR,,62640,Nij Altoenae - Sint Annaparochie,7921,3,None
+ARR,,62608,"Ee - Dokkum, Sionsberg",7402,3,None
+ARR,,62645,"Scherpenzeel - Wolvega, Station",6421,3,None
+ARR,,62644,"Zandhuizen - Oosterwolde, Busstation",6482,3,None
+ARR,,62643,"Zandhuizen - Wolvega, Station",6481,3,None
+ARR,,62646,"Slijkenburg - Wolvega, Station",6431,3,None
+ARR,,62604,"Jouswier - Buitenpost, Station",7413,3,None
+ARR,,62642,"Ter Idzard - Wolvega, Station",6461,3,None
+ARR,,62647,"Sonnega - Wolvega, Station",6441,3,None
+ARR,,62648,"Spanga - Wolvega, Station",6451,3,None
+ARR,,62661,"Nieuweschoot - Heerenveen, Busstation",6251,3,None
+ARR,,62662,"Oranjewoud - Heerenveen, Busstation",6261,3,None
+ARR,,62663,"Terband - Heerenveen, Busstation",6271,3,None
+ARR,,62650,"Elahuizen - Woudsend, Centrum",9521,3,None
+ARR,,62610,"Anjum, Nieuweweg - Dokkum, Busstation",7431,3,None
+ARR,,62622,"Nijhuizum - Workum, Station",9351,3,None
+ARR,,62620,"Hegebeintum - Dokkum, Busstation",7171,3,None
+ARR,,62621,"Ginnum - Ferwert, Prov. weg",7164,3,None
+ARR,,62609,"Ee - Dokkum, Busstation",7401,3,None
+ARR,,62649,"Kolderwolde - Hemelum, Flinkeboskje",9512,3,None
+ARR,,62623,"Ferwoude - Workum, Station",9361,3,None
+ARR,,62625,"Hegebeintum - Ferwert, Prov. weg",7174,3,None
+ARR,,62626,"Molkwerum, Hellingstrjitte - Koudum, Molkwerum",9391,3,None
+ARR,,62611,"Broeksterwald - Feanwalden, Station",7423,3,None
+ARR,,62612,"Wytgaard - Leeuwarden, Station",7811,3,None
+ARR,,62624,"De Falom - Dokkum, Busstation",7181,3,None
+ARR,,62627,"Warns, Buorren - Koudum, Molkwerum",9401,3,None
+ARR,,62656,"Oudega - Woudsend, Centrum",9531,3,None
+ARR,,62651,"Gaast - Workum, Station",9371,3,None
+ARR,,62657,"Indijk - Woudsend, Centrum",9541,3,None
+ARR,,62658,"Oudega - Hemelum, Flinkeboskje",9533,3,None
+ARR,,62653,"Elahuizen - Hemelum, Flinkeboskje",9523,3,None
+ARR,,62670,"Greonterp - IJlst, Station",8991,3,None
+ARR,,62671,"Easterein - Wommels, De Terp",8922,3,None
+ARR,,62601,"Nijeholtwolde - Wolvega, Station",6361,3,None
+ARR,,62673,"Gauw, De Eker - Sneek, Busstation",8941,3,None
+ARR,,62676,"Sandfirden - IJlst, Station",9011,3,None
+ARR,,62675,"Oosthem - IJlst, Station",9001,3,None
+ARR,,62678,"Jonkerslan - Heerenveen, Busstation",6192,3,None
+ARR,,62677,"Jonkerslan - Gorredijk, Busstation",6191,3,None
+ARR,,62672,"Offingawier, Fiifgeawei - Sneek, Busstation",8931,3,None
+ARR,,62681,"Luxwoude - Gorredijk, Busstation",6212,3,None
+ARR,,62693,"Aalsum - Dokkum, Busstation",7011,3,None
+ARR,,62691,Oudebildtzijl - Stiens,7901,3,None
+ARR,,62692,"De Hemrik - Leeuwarden, St. Camminghaburen",7821,3,None
+ARR,,62679,"Hemrik - Drachten, Transferium Oost",6181,3,None
+ARR,,62682,"Terwispel, Dorp - Gorredijk, Busstation",6221,3,None
+ARR,,62652,"It Heidenskip - Workum, Station",9381,3,None
+ARR,,62696,"Ezumazijl - Dokkum, Sionsberg",7022,3,None
+ARR,,62698,"Oostrum - Dokkum, Sionsberg",7032,3,None
+ARR,,62697,"Oostrum - Dokkum, Busstation",7031,3,None
+ARR,,62702,"Achlum, Jonkerschap - Franeker, Voorstraat",8101,3,None
+ARR,,62694,"Aalsum - Dokkum, Sionsberg",7012,3,None
+ARR,,62700,"Wijnaldum - Harlingen, Zorgplein",8122,3,None
+ARR,,62699,"Hantumhuizen - Dokkum, Busstation",7041,3,None
+ARR,,62703,"Wjelsryp - Winsum, Busstation",8093,3,None
+ARR,,62704,"Achlum, Jonkerschap - Harlingen, Station",8103,3,None
+ARR,,62705,"Achlum, Jonkerschap - Franeker, Station",8102,3,None
+ARR,,62709,"Pingjum - Harlingen, Zorgplein",8112,3,None
+ARR,,62708,Pingjum - Kop Afsluitdijk,8113,3,None
+ARR,,62695,"Ezumazijl - Dokkum, Busstation",7021,3,None
+ARR,,62710,"Blessum - Deinum, Station",8002,3,None
+ARR,,62713,"Ried - Franeker, Voorstraat",7972,3,None
+ARR,,62707,"Achlum, Jonkerschap - Harlingen, Zorgplein",8104,3,None
+ARR,,62723,"Rotsterhaule, Kampweg - Heerenveen, Busstation",8461,3,None
+ARR,,62722,"Rottum, Molenlaan - Heerenveen, Busstation",8451,3,None
+ARR,,62725,"Sintjohannesga - Heerenveen, Busstation",8471,3,None
+ARR,,62816,Firdgum - Sint Annaparochie,7941,3,None
+ARR,,62674,"Goenga, It Mediel - Sneek, Busstation",8951,3,None
+ARR,,62724,"Rotsterhaule, Kampweg - Joure, Busstation",8462,3,None
+ARR,,62735,"Kortehemmen - Drachten, Transferium Oost",6141,3,None
+ARR,,62726,"Rotstergaast - Heerenveen, Busstation",8421,3,None
+ARR,,62736,"Oudega - Nijega, Dorpshuis",6151,3,None
+ARR,,62738,"Reitsum - Dokkum, Busstation",7111,3,None
+ARR,,62665,"Bontebok - Gorredijk, Busstation",6232,3,None
+ARR,,62737,"Oudega - Nijega, Rijksweg",6152,3,None
+ARR,,62739,"Lichtaard - Ferwert, Prov. weg",7104,3,None
+ARR,,62741,"Reitsum - Dokkum, Sionsberg",7112,3,None
+ARR,,62742,"Jannum - Dokkum, Busstation",7121,3,None
+ARR,,62667,"Scharnegoutum - Sneek, Busstation",8961,3,None
+ARR,,62666,"Katlijk, Dorp - Heerenveen, Busstation",6241,3,None
+ARR,,62743,"Reitsum - Ferwert, Prov. weg",7114,3,None
+ARR,,62745,"Jannum - Dokkum, Sionsberg",7122,3,None
+ARR,,62680,"Hemrik - Gorredijk, Busstation",6182,3,None
+ARR,,62747,"Jannum - Ferwert, Prov. weg",7124,3,None
+ARR,,62746,"Jislum, Dokkum, Busstation",7131,3,None
+ARR,,62749,Suwald - Swarteweisein,6101,3,None
+ARR,,62750,"Wanswert - Dokkum, Sionsberg",7142,3,None
+ARR,,62767,"Jirnsum, Douwemastrjitte - Grou, Station",8381,3,None
+ARR,,62751,Wanswert - Oentsjerk,7143,3,None
+ARR,,62744,Jannum - Oentsjerk,7123,3,None
+ARR,,62770,"Tersoal, Nij Wigara - Sneek, Busstation",8362,3,None
+ARR,,62783,Readtsjerk - Oentsjerk,7511,3,None
+ARR,,62784,"Kollumerpomp, 't Trefpunt - Grijpskerk, Station",7521,3,None
+ARR,,62916,Kollumerzwaag - Buitenpost,7581,3,None
+ARR,,62769,"Terherne, Gravinnewei - Akkrum, Station",8391,3,None
+ARR,,62787,"Stroobos - Buitenpost, Station",6041,3,None
+ARR,,62740,Reitsum - Oentsjerk,7113,3,None
+ARR,,62771,"Tersoal, Nij Wigara - Grou, Station",8361,3,None
+ARR,,62788,"Twijzel - Buitenpost, Station",6021,3,None
+ARR,,62786,"Gerkesklooster - Buitenpost, Station",6051,3,None
+ARR,,62768,"Terherne, Gravinnewei - Joure, Busstation",8392,3,None
+ARR,,62797,"Oosterzee, Buren - Lemmer, Busstation",9641,3,None
+ARR,,62790,"Bantega - Lemmer, Busstation",9611,3,None
+ARR,,62791,"Eesterga - Lemmer, Busstation",9621,3,None
+ARR,,62706,"Pingjum - Harlingen, Station",8111,3,None
+ARR,,62799,"Goutum, Crematorium - Leeuwarden, Station",7831,3,None
+ARR,,62796,"Follega - Lemmer, Busstation",9631,3,None
+ARR,,62801,"Walterswald - Dokkum, Busstation",7331,3,None
+ARR,,62803,"Walterswald - Buitenpost, Station",7333,3,None
+ARR,,62804,"Westergeest - Buitenpost, Station",7343,3,None
+ARR,,62800,"Walterswald - Dokkum, Sionsberg",7332,3,None
+ARR,,62808,"Hantum - Dokkum, Busstation",7361,3,None
+ARR,,62798,"Bartlehiem, Wiereweg - Leeuwarden, Station",7731,3,None
+ARR,,62802,"Westergeest - Dokkum, Busstation",7341,3,None
+ARR,,62785,"Kollumerpomp, 't Trefpunt - Buitenpost, Station",7522,3,None
+ARR,,62809,"Ternaard, Stationsweg - Holwerd, Prov. weg",7353,3,None
+ARR,,62810,"Smalle Ee - Drachten, Transferium Oost",6171,3,None
+ARR,,62807,"Ternaard, Stationsweg - Dokkum, Busstation",7351,3,None
+ARR,,62817,"Firdgum - Franeker, Voorstraat",7942,3,None
+ARR,,62805,"Westergeest - Dokkum, Sionsberg",7342,3,None
+ARR,,62818,"Firdgum - Franeker, Station",7943,3,None
+ARR,,62806,"Ternaard, Stationsweg - Dokkum, Sionsberg",7352,3,None
+ARR,,62823,"Waaxens - Dokkum, Busstation",7221,3,None
+ARR,,62822,"Oosternijkerk, Nijkerk - Dokkum, Busstation",7241,3,None
+ARR,,62824,"Brantgum - Holwerd, Prov. weg",7213,3,None
+ARR,,62821,"Oosternijkerk, Nijkerk - Dokkum, Sionsberg",7242,3,None
+ARR,,62825,"Waaxens - Holwerd, Prov. weg",7223,3,None
+ARR,,62819,"Niawier - Dokkum, Sionsberg",7232,3,None
+ARR,,62827,"Wjelsryp - Franeker, Voorstraat",8091,3,None
+ARR,,62831,"Dongjum, Tzummarumerweg - Franeker, Station",8052,3,None
+ARR,,62829,"Herbaijum - Franeker, Station",8062,3,None
+ARR,,62830,"Hitzum - Franeker, Voorstraat",8071,3,None
+ARR,,62828,Wjelsryp - Franeker Station,8092,3,None
+ARR,,62832,"Herbaijum - Franeker, Voorstraat",8061,3,None
+ARR,,62835,"Hitzum - Franeker, Station",8072,3,None
+ARR,,62844,"Boer - Franeker, Voorstraat",8041,3,None
+ARR,,62845,"Baijum - Winsum, Busstation",8023,3,None
+ARR,,62859,"Sibrandahus - Ferwert, Prov. weg",7084,3,None
+ARR,,62856,"Itens, Hervormde Kerk - Sneek, Busstation",8851,3,None
+ARR,,62837,"Boer - Franeker, Station",8042,3,None
+ARR,,62843,"Schalsum - Franeker, Station",8032,3,None
+ARR,,62863,"Raard - Ferwert, Prov. weg",7094,3,None
+ARR,,62861,"Sibrandahus - Dokkum, Sionsberg",7082,3,None
+ARR,,62820,"Niawier - Dokkum, Busstation",7231,3,None
+ARR,,62865,"Raard - Dokkum, Sionsberg",7092,3,None
+ARR,,62864,"Lichtaard - Dokkum, Busstation",7101,3,None
+ARR,,62866,Raard - Oentsjerk,7093,3,None
+ARR,,62877,"Haule - Oosterwolde, Busstation",6291,3,None
+ARR,,62875,"Ravenswoud - Oosterwolde, Busstation",6321,3,None
+ARR,,62879,"Oldelamer - Wolvega, Station",6401,3,None
+ARR,,62883,"Hichtum - Bolsward, Busstation",9201,3,None
+ARR,,62862,Sibrandahus - Oentsjerk,7083,3,None
+ARR,,62826,"Waaxens - Dokkum, Sionsberg",7222,3,None
+ARR,,62878,"Oldetrijne - Wolvega, Station",6411,3,None
+ARR,,62880,"Hieslum - Bolsward, Busstation",9211,3,None
+ARR,,62890,"Eagum - Grou, Station",8331,3,None
+ARR,,62894,"Winsum, Kleasterdyk - Winsum, Busstation",8271,3,None
+ARR,,62896,"Easterlittens - Winsum, Busstation",8251,3,None
+ARR,,62891,"Friens - Grou, Station",8341,3,None
+ARR,,62897,"Spannum - Winsum, Busstation",8261,3,None
+ARR,,62895,"Grou, Parkstraat  - Grou, Station",8301,3,None
+ARR,,62898,"Poppenwier - Grou, Station",8351,3,None
+ARR,,62893,"Reduzum - Grou, Station",8321,3,None
+ARR,,62900,"Driezum, Nijewei - Buitenpost, Station",7323,3,None
+ARR,,62902,"Driezum, Nijewei - Dokkum, Busstation",7321,3,None
+ARR,,62901,"Driezum, Nijewei - Dokkum, Sionsberg",7322,3,None
+ARR,,62899,"Poppenwier - Sneek, Busstation",8352,3,None
+ARR,,62907,"Morra - Dokkum, Sionsberg",7302,3,None
+ARR,,62876,"Fochteloo - Oosterwolde, Busstation",6281,3,None
+ARR,,62904,"Oostmahorn, Esonstad - Dokkum, Sionsberg",7312,3,None
+ARR,,62905,"Oostmahorn, Esonstad - Dokkum, Busstation",7311,3,None
+ARR,,62908,"Morra - Dokkum, Busstation",7301,3,None
+ARR,,62938,Cornwerd - Kop Afsluitdijk,9341,3,None
+ARR,,62886,"Schraard - Bolsward, Busstation",9151,3,None
+ARR,,62961,"Foudgum - Dokkum, Busstation",7201,3,None
+ARR,,62962,"Bornwird - Dokkum, Busstation",7191,3,None
+ARR,,62959,"Foudgum - Holwerd, Prov. weg",7203,3,None
+ARR,,62960,"Bornwird - Holwerd, Prov. weg",7193,3,None
+ARR,,62965,"De Falom - Feanwalden, Station",7183,3,None
+ARR,,62966,"Boazum - Sneek, Busstation",8242,3,None
+ARR,,62967,"Boazum - Mantgum, Station",8241,3,None
+ARR,,62969,"Dearsum - Mantgum, Station",8231,3,None
+ARR,,62881,"Dedgum - Bolsward, Busstation",9221,3,None
+ARR,,62972,"Jorwert, Hoek - Mantgum, Station",8201,3,None
+ARR,,62971,"Weidum, Sanpaed - Mantgum, Station",8211,3,None
+ARR,,62882,"Burgwerd, de Opfeart - Bolsward, Busstation",9191,3,None
+ARR,,62970,"Wiuwert - Mantgum, Station",8221,3,None
+ARR,,62964,"De Falom - Dokkum, Sionsberg",7182,3,None
+ARR,,62973,"Easterwierrum - Mantgum, Station",8191,3,None
+ARR,,62887,"Longerhouw - Bolsward, Busstation",9161,3,None
+ARR,,62968,"Dearsum - Sneek, Busstation",8232,3,None
+ARR,,62889,"Lollum - Wommels, De Terp",9141,3,None
+ARR,,62885,"Hartwerd - Bolsward, Busstation",9181,3,None
+ARR,,62939,Breezanddijk - Kop Afsluitdijk,9331,3,None
+ARR,,62884,"Schettens - Bolsward, Busstation",9171,3,None
+ARR,,62974,"Raerd, Selanswei - Grou, Station",8182,3,None
+ARR,,62888,"Waaksens - Wommels, De Terp",9131,3,None
+ARR,,62963,"Bornwird - Dokkum, Sionsberg",7192,3,None
+ARR,,62976,"Rohel - Joure, Busstation",8681,3,None
+ARR,,62978,"Oldeouwer - Joure, Busstation",8661,3,None
+ARR,,62984,"Nijeholtpade - Wolvega, Station",6351,3,None
+ARR,,62977,"Teroele - Joure, Busstation",8691,3,None
+UOV,,67090,Utrecht CS - Museumkwartier - Utrecht CS,2,3,None
+ARR,,62981,"Akmarijp - Joure, Busstation",8731,3,None
+QBUZZ,,67052,Groningen - Hoogezand,76,3,None
+UOV,,67092,Terwijde - Utrecht CS - Voordorp,4,3,None
+UOV,,67094,Overvecht-Zuid - Utrecht CS - Galgenwaard,6,3,None
+ARR,,62982,"Idskenhuizen - Joure, Busstation",8701,3,None
+UOV,,67096,Wilhelminapark - Utrecht CS - Lunetten,8,3,None
+UOV,,67153,Utrecht CS - Science Park,22,0,None
+ARR,,62983,"Langweer - Joure, Busstation",8711,3,None
+UOV,,67155,Nieuwegein Stadscentrum - Het Klooster,46,3,None
+UOV,,67159,Utrecht CS - De Meern,24,3,None
+UOV,,67091,Utrecht CS - Terwijde - Maarssen,5,3,None
+UOV,,67093,Zuilen - Utrecht CS - Kanaleneiland,7,3,None
+UOV,,67154,Utrecht - Houten,47,3,None
+ARR,,62980,"Ouwsterhaule - Joure, Busstation",8721,3,None
+BRAVO,,67255,Uden - Gerwen - Eindhoven Station,322,3,CXX
+QBUZZ,,67051,Middelstum - Loppersum - Spijk - Eemshaven,45,3,None
+QBUZZ,,67049,Meppel - Beilen,28,3,None
+ARR,,62987,"Terkaple - Joure, Busstation",8751,3,None
+ARR,,62985,"Jislum - Dokkum, Sionsberg",7132,3,None
+ARR,,5442,Leiden Centraal - Leimuiden,56,3,None
+GVB,,67176,"Centraal Station - A'veen Busstation",N84,3,None
+ARR,,67236,Station - Hollandse Hout,8,3,None
+ARR,,67328,Boxmeer - Gennep,84,3,None
+GVB,,67183,Centraal Station - Nieuw Sloten,N88,3,None
+ARR,,62986,"Goingarijp - Joure, Busstation",8741,3,None
+ARR,,67237,Lelystad Haven - Herman Bekius School,612,3,None
+ARR,,67330,Venlo - Horst,687,3,None
+TEXELHOPPER,,71263,Texel Veerhaven - Den Burg - De Koog,28,3,None
+ARR,,67329,Boxmeer - Gennep,684,3,None
+ARR,,62044,Makkum - Heerenveen,98,3,None
+BRENG,,71395,Druten - Nijmegen CS,12,3,None
+BRENG,,71394,Nijmegen CS - Heyendaal - CS,10,3,None
+CXX,,71368,Zuid-Beijerland-Heinenoord,194,3,None
+CXX,,71357,Ouddorp-Brielle,604,3,None
+CXX,,71361,Strijensas-Strijen,587,3,None
+CXX,,71385,Axel - Terneuzen,220,3,None
+ARR,,62975,"Raerd, Selanswei - Mantgum, Station",8181,3,None
+CXX,,71358,Eede - Oostburg,612,3,None
+CXX,,71388,"'s-Gravendeel-Heinenoord",168,3,None
+GVB,,67177,Centraal Station - Gein,N85,3,None
+CXX,,71387,"Goes - 's-Gravenpolder - Goes",225,3,None
+GVB,,67184,Centraal Station - IJburg,N89,3,None
+ARR,,66759,Parkstad Stadion via Gracht - Rolduc,627,3,None
+GVB,,67171,Centraal Station - Molenwijk,N93,3,None
+ARR,,67229,Station via Kempenaar - Batavia Stad,13,3,None
+OVERAL,,71397,Hoorn Station - Blokker - Wervershoof - Andijk,232,3,None
+BRAVO,,71393,Gemert - Eindhoven Station,321,3,CXX
+CXX,,71396,Middelburg - Vlissingen,57,3,None
+OVREGIOY,,71414,Nijkerk - Zeewolde - Harderwijk,142,3,None
+OVREGIOY,,71415,Kampen - Dronten,143,3,None
+GVB,,67172,Centraal Station - Nieuwendam,N91,3,None
+OVREGIOY,,71416,Urk - Nagele,149,3,None
+BRAVO,,71413,Eeuwsels - Helmond Station,51,3,CXX
+CXX,,71420,Terneuzen - Vlissingen,660,3,None
+CXX,,71497,Zwanenburg - Heemstede,680,3,None
+CXX,,71467,Blaricum - Amsterdam,202,3,None
+CXX,,71469,Terneuzen - Krabbendijke,645,3,None
+OVERAL,,71518,Aartswoud - Hoogwoud - Hoorn Station,636,3,None
+UOV,,71685,Ringlijn Bilthoven,78,3,None
+UOV,,71684,Bilthoven Station - Berg en Bosch,258,3,None
+OVREGIOY,,71519,Marknesse - Steenwijk,75,3,None
+ARR,,66991,Dinxperlo via Gendringen - Doetinchem,428,3,None
+QBUZZ,,65446,Beijum - Roden,4,3,None
+BRAVO,,54255,"Tilburg via Waalwijk - 's-Hertogenbosch",301,3,ARR
+UOV,,67133,Utrecht CS - Lage Weide - Maarssen,38,3,None
+QBUZZ,,62277,Groningen - Middelstum - Uithuizen,61,3,None
+EBS,,71676,van Amsterdam ZO naar Edam,378,3,None
+GVB,,63691,Station Sloterdijk - Buikslotermeerplein,36,3,None
+EBS,,66238,Delft - Maassluis,33,3,None
+EBS,,66240,"Den Haag - 's-Gravenzande - Hoek van Holland",31,3,None
+EBS,,66239,Zoetermeer - Rijswijk - Naaldwijk,30,3,None
+EBS,,66242,Den Haag - Wassenaar - Leiden,43,3,None
+ARR,,62711,"Blessum - Dronryp, Hoek Dronryp",8001,3,None
+ARR,,53529,Busstation - Friese Poort Wilaarderburen,603,3,None
+ARR,,66733,Leiden Centraal - Oegstgeest Haaswijk,8,3,None
+CXX,,67251,AML-FLEX: Rijsenhout - Schiphol Rijk,FLEX,3,None
+EBS,,66236,Monster - Naaldwijk - Maassluis,34,3,None
+EBS,,66251,Den Haag - Leidschendam - Leiden,45,3,None
+ARR,,53524,Minnertsga via Stiens - Leeuwarden,72,3,None
+EBS,,66237,"Delft - Naaldwijk - 's-Gravenzande",32,3,None
+ARR,,62857,"Langelille - Wolvega, Station",6311,3,None
+EBS,,66252,Den Haag - Wassenaar,44,3,None
+OVERAL,,63687,Alkmaar Station - Tuitjenhorn,157,3,None
+EBS,,66250,Den Haag - Leidschendam - Voorschoten,46,3,None
+OVERAL,,63686,Alkmaar Station - Petten,151,3,None
+ARR,,53530,Busstation - Friese Poort Kalverdijkje,633,3,None
+ARR,,62712,"Ried - Franeker, Station",7973,3,None
+RET,,62403,Zuidplein - Pernis,69,3,None
+EBS,,62399,Maaswijk - Metro Centrum,84,3,None
+ARR,,72969,Kerkdriel - Zaltbommel,667,3,None
+EBS,,72570,Delft - Pijnacker - Zoetermeer,455,3,None
+CXX,,63689,IJmuiden Dennekoplaan - Amsterdam Bijlmer ArenA,N30,3,None
+ARR,,62558,"Hantumeruitburen - Dokkum, Sionsberg",7052,3,None
+ARR,,62559,"Hantumeruitburen - Dokkum, Busstation",7051,3,None
+ARR,,62562,"Reahus - Wommels, De Terp",8872,3,None
+ARR,,62563,"Reahus - Sneek, Busstation",8871,3,None
+ARR,,62561,"Holwerd, Veerdam - Holwerd, Prov. weg",7073,3,None
+ARR,,62564,"Lytsewierrum - Wommels, De Terp",8862,3,None
+ARR,,62565,"Lytsewierrum - Sneek, Busstation",8861,3,None
+ARR,,62566,"Loenga - Sneek, Busstation",8901,3,None
+ARR,,62633,"Bears - Mantgum, Station",8142,3,None
+ARR,,62634,"Leons - Mantgum, Station",8151,3,None
+ARR,,62729,"Nieuwebrug - Heerenveen, Busstation",8441,3,None
+ARR,,62727,"Rotstergaast - Joure, Busstation",8422,3,None
+ARR,,62635,"Leons - Winsum, Busstation",8152,3,None
+ARR,,62730,"De Tike, Dorp - Drachten, Transferium Oost",6111,3,None
+ARR,,62776,"Warfstermolen, De Warf - Grijpskerk, Station",7531,3,None
+ARR,,62778,"Anjum, Nieuweweg - Dokkum, Sionsberg",7432,3,None
+ARR,,62728,"Haskerdijken - Heerenveen, Busstation",8431,3,None
+ARR,,62777,"Warfstermolen, De Warf - Buitenpost, Station",7532,3,None
+ARR,,62782,Munein - Oentsjerk,7501,3,None
+ARR,,62811,"Dronryp, Breggebuorren - Dronryp, Hoek Dronryp",7951,3,None
+ARR,,62568,"Rien - Wommels, De Terp",8882,3,None
+ARR,,62812,"Dronryp, Breggebuorren - Dronryp, Station",7952,3,None
+ARR,,62813,"Peins - Dronryp, Hoek Dronryp",7961,3,None
+ARR,,62814,"Peins - Franeker, Voorstraat",7962,3,None
+BRAVO,,66994,Centrum via CS - Heusdenhout,5,3,ARR
+ARR,,62815,"Sint Jacobiparochie, Westhoek - Sint Annaparochie",7931,3,None
+BRAVO,,66998,Steenbergen - Wouw,613,3,ARR
+BRAVO,,66999,Dinteloord via Bergen op Zoom - Ossendrecht,110,3,ARR
+ARR,,62731,"De Tike, Dorp - Nijega, Rijksweg",6112,3,None
+BRAVO,,67000,Bergen op Zoom - Ossendrecht,105,3,ARR
+BRAVO,,67001,Bergen op Zoom - Putte,106,3,ARR
+ARR,,67003,Minnertsga - Oudebildtzijl,273,3,None
+ARR,,67008,Olderberkoop - Oosterwolde,216,3,None
+ARR,,67010,Heerenveen via Tijnje - Drachten,23,3,None
+ARR,,67007,Tijnje - Drachten,224,3,None
+ARR,,67009,Gorredijk - Noordwolde,219,3,None
+ARR,,67002,Drachten via Norg - Assen,84,3,None
+ARR,,67006,Heerenveen - Nij Beets,223,3,None
+QBUZZ,,67058,Uithuizen - Appingedam (- Delfzijl),41,3,None
+ARR,,67015,Feanwalden - Surhuisterveen,213,3,None
+ARR,,67018,Buitenpost - Drachten,212,3,None
+ARR,,67017,Drachten via Veenhuizen - Assen,584,3,None
+QBUZZ,,67062,Delfzijl - Appingedam - Groningen - P+R Haren,6,3,None
+ARR,,67012,Wolvega via De Blesse - Steenwijk,517,3,None
+QBUZZ,,67066,Winschoten - Bellingwolde (- Bad Nieuweschans),12,3,None
+QBUZZ,,67069,Drachten - Groningen,314,3,None
+QBUZZ,,67072,Drachten - Groningen,304,3,None
+ARR,,62734,"Goengahuizen - Akkrum, Station",6131,3,None
+ARR,,62773,"Sibrandabuorren - Grou, Station",8371,3,None
+ARR,,67014,Akkrum - Nij Beets,211,3,None
+ARR,,62774,"Vegelinsoord - Heerenveen, Busstation",8411,3,None
+ARR,,67016,Noordwolde - Oosterwolde,217,3,None
+QBUZZ,,67073,Veendam - Gieten - Assen,310,3,None
+ARR,,62732,"De Veenhoop - Drachten, Transferium Oost",6121,3,None
+ARR,,62772,"Sibrandabuorren - Sneek, Busstation",8372,3,None
+ARR,,62733,"De Veenhoop - Akkrum, Station",6122,3,None
+ARR,,62775,"Nes, De Opsteker - Akkrum, Station",8401,3,None
+QBUZZ,,67077,Groningen - Eemshaven,160,3,None
+UOV,,67087,Overvecht-Noord - Utrecht CS - Hoograven,1,3,None
+QBUZZ,,67076,Zuidhorn - Reitdiep - Zernike - UMCG - Europapark,2,3,None
+UOV,,67088,Westraven - Science Park - Amersfoort,34,3,None
+UOV,,67089,Utrecht CS - Overvecht - Zuilen - Utrecht CS,3,3,None
+CXX,,1101,Middelburg - Oude Tonge,133,3,None
+ARR,,62874,"Langedijke - Oosterwolde, Busstation",6301,3,None
+IFF,,45223,Heerlen <-> Maastricht Randwyck ST32000,Stoptrein RS18,2,NOORD
+IFF,,34238,Amsterdam Centraal <-> Frankfurt (M) Hbf ICE200,ICE International,2,NSI
+IFF,,45231,Sittard <-> Kerkrade Centrum ST32500,Stoptrein RS15,2,NOORD
+IFF,,61918,Dordrecht <-> Geldermalsen ST7200,Stoptrein,2,RNET
+IFF,,40775,Snelbus i.p.v. trein Arnhem Centraal <-> Nijmegen,Snelbus i.p.v. trein,3,NS
+GVB,,455,Nieuw Sloten - Centraal Station,2,0,None
+ARR,,273,Ammerzoden - Zaltbommel,267,3,None
+GVB,,471,Osdorp Dijkgraafplein - Centraal Station,17,0,None
+IFF,,41220,Zwolle <-> Groningen SPR8100,Sprinter,2,NS
+IFF,,41221,Alphen a/d Rijn <-> Gouda SPR8600,Sprinter,2,RNET
+ARR,,24,Zutphen - Deventer,81,3,None
+IFF,,52988,Stopbus i.p.v. trein Alkmaar <-> Zaandam,Stopbus i.p.v. trein,3,NS
+IFF,,52980,Stopbus i.p.v. trein Alkmaar <-> Amsterdam Centraal,Stopbus i.p.v. trein,3,NS
+UOV,,67120,Utrecht - Maartensdijk,55,3,None
+UOV,,67122,Utrecht CS - Maarssen,12,3,None
+UOV,,67124,Lunetten - Leidsche Rijn,10,3,None
+UOV,,67132,Nieuwegein - Utrecht CS - Bilthoven,77,3,None
+UOV,,67126,Overvecht - Science Park,30,3,None
+UOV,,67125,Maarssen - Leidsche Rijn - Overvecht,11,3,None
+IFF,,45224,Roermond <-> Maastricht Randwyck ST32400,Stoptrein RS12,2,NOORD
+UOV,,67137,Leerdam - Utrecht,285,3,None
+NIAG,,67385,Kleve Bahnhof - Nijmegen CS - Heyendaal,SB58,3,None
+BRENG,,67338,Oosterhout - Nijmegen CS,3,3,None
+UOV,,67127,IJsselstein - Science Park - Bilthoven,31,3,None
+UOV,,67139,Houten - Vianen,44,3,None
+GVB,,67179,Centraal Station - Station Bijlmer ArenA,N87,3,None
+GVB,,67181,Centraal Station - Geuzenveld,N82,3,None
+ARR,,67365,Midlum - Harlingen Station,8281,3,None
+GVB,,67178,Centraal Station - Station Bijlmer ArenA,N86,3,None
+GVB,,67182,Centraal Station - Osdorp de Aker,N83,3,None
+GVB,,67180,Centraal Station - Station Sloterdijk,N81,3,None
+RET,,67369,Lijn 611,611,3,None
+UOV,,67372,U-flex Houten,945,3,None
+QBUZZ,,67376,Annen - Haren - P+R Meerstad - Tersluis/Harkstede,5,3,None
+ARR,,67435,Rotterdam Alexander - Gouda,175,3,None
+ARR,,67434,Leiden Centraal - Zoeterwoude-Rd Grote Polder,7,3,None
+OVERAL,,65697,Overal Flex Winkel,FLX,3,None
+CXX,,65615,Uithoorn - Amstelveen KLM Hoofdkantoor,174,3,None
+QBUZZ,,67375,P+R Reitdiep - Zernike - Hoofdstation,1,3,None
+OVERAL,,65702,Overal Flex Castricum,FLX,3,None
+OVERAL,,65696,Overal Flex Schagen,FLX,3,None
+ARR,,67433,"Twijzelerheide - Buitenpost, Station",6011,3,None
+OVERAL,,65698,Overal Flex Anna Paulowna,FLX,3,None
+OVERAL,,65704,Overal Flex Alkmaar,FLX,3,None
+OVERAL,,65715,Overal Flex Hoorn,FLX,3,None
+IFF,,45189,Groningen <-> Amsterdam Centraal IC12600,Intercity,2,NS
+ARR,,65675,Sittard via Born - Obbicht,616,3,None
+EBS,,66233,Delft - Rijswijk - Den Haag,51,3,None
+OVERAL,,65703,Overal Flex Heiloo,FLX,3,None
+GVB,,65789,Station RAI - Centraal Station,4,0,None
+UOV,,67147,Vleuterweide - Vaartsche Rijn - Science Park,29,3,None
+IFF,,45194,Den Haag Centraal <-> Gouda Goverwelle SPR6800,Sprinter,2,NS
+CXX,,66484,Schiphol P30 - Nieuw West via Badhoevedorp,194,3,None
+CXX,,66483,Schiphol Zuidoost - Schiphol,191,3,None
+CXX,,66486,Cirkellijn Schiphol [P30 - P30 via Oost & Rijk],180,3,None
+BRENG,,1453,Arnhem CS - Doetinchem,27,3,None
+BRENG,,1063,Oosterbeek - Velp,1,3,None
+CXX,,66485,Cirkellijn Schiphol [Noord - Noord via Rijk&Oost],181,3,None
+ARR,,66661,Blerick Klingerberg - Venlo Station,2,3,None
+EBS,,66223,Den Haag - Naaldwijk - Schiedam,456,3,None
+ARR,,66665,Venlo Station - Stalberg,7,3,None
+EBS,,73315,Vierpolders - Brielle Centrum - Ommeloop,192,3,None
+ARR,,66668,Blerick - Tegelen,6,3,None
+ARR,,66670,Roermond - Herten,2,3,None
+ARR,,66660,Venlo Station via Tegelen - Kaldenkirchen,1,3,None
+ARR,,66743,Leiden Centraal - Boskoop,187,3,None
+IFF,,17725,Amsterdam Centraal <-> Hannover Hbf IC240,Intercity,2,NSI
+ARR,,66662,Blerick Vossener - Venlo Station,3,3,None
+BRAVO,,66698,Grave - Oss,96,3,ARR
+BRAVO,,66697,"Oss - 's-Hertogenbosch",90,3,ARR
+IFF,,34264,Amsterdam Centraal <-> Frankfurt (M) Hbf ICE100,ICE International,2,NSI
+BRAVO,,66700,Breda via Rijen - Gilze,130,3,ARR
+BRAVO,,66699,Maaspoort - CS,10,3,ARR
+BRAVO,,66701,"'s-Hertogenbosch - Gorinchem",121,3,ARR
+ARR,,66726,Rotterdam Capelsebrug - Utrecht Jaarbeurszijde,295,3,None
+ARR,,66738,Leiden Centraal - Katwijk ESA ESTEC,30,3,None
+ARR,,66730,Station via Kerk en Zanen en Rijnvicus - Station.,3,3,None
+BRENG,,67274,Wageningen Station - Arnhem CS,56,3,None
+ARR,,66742,Oegstgeest Leidsebuurt - Den Haag Centraal,685,3,None
+BRENG,,67275,Wageningen Station - Arnhem CS,51,3,None
+BRAVO,,67271,Veldhoven MMC - Eindhoven Station,16,3,CXX
+BRAVO,,67273,Bladel - Eersel - Eindhoven Station,19,3,CXX
+BRAVO,,67272,Bergeijk - Veldhoven - Eindhoven Station,18,3,CXX
+BRAVO,,67279,Eindhoven Airport - Eindhoven Station,10,3,CXX
+BRAVO,,67278,Eindhoven Kortonjolaan - Station,17,3,CXX
+BRAVO,,67280,Weert Station - Maarheeze - Eindhoven Station,11,3,CXX
+ARR,,67930,Station - Lelystad Haven,1,3,None
+GVB,,67507,Centraal Station - Geuzenveld,21,3,None
+BRENG,,67945,Wageningen - Heteren,54,3,None
+ARR,,66755,Nieuwstadt - Sittard,19,3,None
+ARR,,67931,Station - Batavia Stad,3,3,None
+IFF,,17792,Den Helder <-> Nijmegen IC3000,Intercity,2,NS
+RET,,32543,De Esch - Holy,24,0,None
+EBS,,68140,Hellevoetsluis - Zuidland - Spijkenisse,106,3,None
+ARR,,67934,Station - Airport Plaza,7,3,None
+EBS,,68141,Hellevoetsluis - Rozenburg - Spijkenisse,105,3,None
+ARR,,66744,Leiden Centraal - Katwijk Boulevard-Zuid,31,3,None
+OVERAL,,68813,Alkmaar Station - De Rijp - Alkmaar Station,123,3,None
+ARR,,67932,Station - Kustwijk,2,3,None
+CXX,,68983,Schalkwijk Centrum - Uitgeest Station,73,3,None
+CXX,,68984,IJmuiden Dennekoplaan - Heemskerk Centrum,74,3,None
+CXX,,68464,"Goes, Station - Ziekenhuis",185,3,None
+CXX,,68839,Haarlem Station - IJmuiden,385,3,None
+CXX,,68808,Haarlem - Cruquius Paswerk,568,3,None
+CXX,,68987,Schalkwijk Centrum - IJmuiden,3,3,None
+CXX,,69334,Zierikzee - Brouwershaven - Zierikzee,134,3,None
+BRAVO,,69365,Helmond Station - Gemert,26,3,CXX
+BRAVO,,69381,Eindhoven Station - De Hurk,114,3,CXX
+IFF,,61913,Dordrecht <-> Gorinchem ST7100,Stoptrein,2,RNET
+IFF,,61914,Arnhem Centraal <-> Dordrecht SPR6600,Sprinter,2,NS
+IFF,,61916,"Hertogenbosch ('s) <-> Arnhem Centraal SPR16600",Sprinter,2,NS
+ARR,,68758,"Wons, Salverdastraat - Kop Afsluitdijk",9322,3,None
+BRENG,,1741,Apeldoorn Station - Arnhem CS,43,3,None
+OVREGIOY,,6383,Zwolle - Emmeloord,71,3,None
+BRENG,,69502,Nijmegen CS - Druten Busstation,89,3,None
+OVREGIOY,,6379,Kampen Station - Flevowijk - Bovenbroek,11,3,None
+IFF,,61920,Uitgeest <-> Rhenen SPR7400,Sprinter,2,NS
+OVREGIOY,,6384,Steenwijk - Zwartsluis - Zwolle,70,3,None
+CXX,,69646,Amsterdam Gaasperplas - Aalsmeer Floraholland,271,3,None
+ARR,,69557,"Foudgum - Dokkum, Sionsberg",7202,3,None
+ARR,,62057,Kerkdriel - Zaltbommel,67,3,None
+ARR,,62045,Kop Afsluitdijk - Heerenveen,90,3,None
+ARR,,62684,"Luxwoude - Heerenveen, Busstation",6211,3,None
+ARR,,62686,"Hantumhuizen - Holwerd, Prov. weg",7043,3,None
+ARR,,62683,"Lippenhuizen - Gorredijk, Busstation",6201,3,None
+ARR,,62687,"Wergea, Leeuwarderweg - Leeuwarden, Station",7791,3,None
+ARR,,62685,"Hantumhuizen - Dokkum, Sionsberg",7042,3,None
+ARR,,62669,"Abbega - IJlst, Station",8981,3,None
+ARR,,62689,Alde Leie - Stiens,7911,3,None
+ARR,,62701,"Wijnaldum - Harlingen, Station",8121,3,None
+ARR,,62688,"Warten, Hoofdstraat - Leeuwarden, Station",7781,3,None
+BRENG,,1276,Arnhem CS - Papendal,10,3,None
+EBS,,62477,van Amsterdam ZO naar Purmerend,377,3,None
+CXX,,69906,Zuid-Beijerland-Heinenoord,264,3,None
+ARR,,62690,Oudebildtzijl - Sint Annaparochie,7902,3,None
+CXX,,70215,"Strijensas s'Gravendeel",585,3,None
+EBS,,62475,van Amsterdam Sloterdijk naar Purmerend,309,3,None
+ARR,,62719,"Slappeterp - Franeker, Voorstraat",7992,3,None
+ARR,,62718,"Slappeterp - Franeker, Station",7993,3,None
+ARR,,62716,"Slappeterp - Dronryp, Hoek Dronryp",7991,3,None
+ARR,,19208,Leiderdorp Oranjewijk - Leiden Station De Vink,2,3,None
+ARR,,62748,"Jistrum - Drachten, Transferium Oost",6031,3,None
+ARR,,62717,"Skingen - Franeker, Station",7983,3,None
+ARR,,41723,Drachten - Oosterwolde,322,3,None
+ARR,,33056,Bolsward - Leeuwarden,192,3,None
+ARR,,42396,Nieuw-Vennep via Noordwijkerhout - Leiden Centraal,57,3,None
+BRAVO,,42294,Eindhoven Gijzenrooi - Eindhoven Station,12,3,CXX
+ARR,,41727,Wolvega - Oosterwolde,116,3,None
+BRENG,,30495,Schaarsbergen - Arnhem CS,9,3,None
+BRENG,,1278,Arnhem CS - Elst - Nijmegen Brakkenstein,14,3,None
+BRENG,,30503,Velp Zuid - Nijmegen Weezenhof,331,3,None
+BRENG,,30494,Velp - Arnhem CS,8,3,None
+CXX,,30576,Goudswaard-Rotterdam,160,3,None
+ARR,,62715,"Skingen - Dronryp, Hoek Dronryp",7981,3,None
+ARR,,62714,"Skingen - Franeker, Voorstraat",7982,3,None
+CXX,,30578,Strijen-Heinenoord,167,3,None
+ARR,,7095,"Well - 's-Hertogenbosch",166,3,None
+ARR,,66731,Station - Archeonlaan,5,3,None
+ARR,,71218,Station via Horst - Duinbeek,16,3,None
+ARR,,7093,Druten via Beuningen - Nijmegen,85,3,None
+ARR,,52851,Valkenburg via Hoensbroek - Brunssum,56,3,None
+ARR,,52850,Gulpen via Valkenburg - Geleen,54,3,None
+ARR,,41729,Leeuwarden via Drachten - Assen,114,3,None
+ARR,,71220,Station via Zuiderzeewijk - Lelycentre,4,3,None
+ARR,,71221,Station via Waterwijk - Duinbeek,6,3,None
+ARR,,71219,Station - Lelycentre,5,3,None
+ARR,,19413,Strandhotel - Veerdam,1,3,None
+CXX,,1316,Middelburg - Vlissingen,58,3,None
+CXX,,52493,Beverwijk Station - Castricum Soomerwegh,79,3,None
+ARR,,52849,Heerlen via Hulsberg - Meerssen,52,3,None
+ARR,,19409,de Monnik - Veerdam,4,3,None
+ARR,,19412,Karrepad/Klein Zwitserland - Veerdam,3,3,None
+BRAVO,,54256,"Tilburg via Waalwijk - 's-Hertogenbosch",300,3,ARR
+QBUZZ,,2536,Meppel - Hoogeveen,32,3,None
+BRAVO,,45105,Tilburg via Hilvarenbeek - Reusel,143,3,ARR
+IFF,,17522,Rotterdam Centraal <-> Amsterdam Centraal HSN1000,Intercity direct,2,NS
+IFF,,41236,Wijchen <-> Zutphen SPR7600,Sprinter,2,NS
+ARR,,7094,"Druten - 's-Hertogenbosch",165,3,None
+CXX,,62510,Uithoorn Busstation - Amsterdam CS via Amstelveen,N47,3,None
+IFF,,17573,Leiden Centraal <-> Utrecht Centraal IC8800,Intercity,2,NS
+CXX,,63147,Vervangend vervoer Parkshuttle,91,3,None
+OVERAL,,63660,Nibbixwoud - Oostwoud - Hoorn Station,136,3,None
+ARR,,17514,Sneek - Franeker,35,3,None
+IFF,,17562,Rotterdam Centraal <-> Utrecht Centraal IC2800,Intercity,2,NS
+BRAVO,,54225,Vlijmen - Andel Prinsentuin,675,3,ARR
+IFF,,17601,Den Haag Centraal <-> Amersfoort Schothorst IC11700,Intercity,2,NS
+ARR,,43049,Gulpen via Ubachsberg - Heerlen,55,3,None
+CXX,,62515,Haarlem Station - Amsterdam Station Zuid,346,3,None
+BRAVO,,54215,Breda via Zevenbergen - Fijnaart,117,3,ARR
+BRAVO,,45095,Maasoever - Centraal Station,7,3,ARR
+GVB,,460,Station Bijlmer ArenA - Diemen Noord,44,3,None
+ARR,,43056,Heerlen via Parkstad Stadion - Aachen,44,3,None
+QBUZZ,,2511,Emmen - Assen,21,3,None
+GVB,,462,Station Holendrecht - Station Bijlmer ArenA,47,3,None
+BRENG,,1086,Arnhem CS - Huissen Bergerden,72,3,None
+BRENG,,1065,Arnhem Burgers Zoo - Het Duifje,3,3,None
+BRAVO,,54216,Breda - Zundert,115,3,ARR
+CXX,,52494,Beverwijk Station - Uitgeest Station,71,3,None
+CXX,,52498,Beverwijk Station - Beverwijk Bazaar,76,3,None
+BRAVO,,45107,Uden - Cuijk,91,3,ARR
+BRENG,,1133,Arnhem CS - Nijmegen Heyendaal,300,3,None
+BRAVO,,45111,Nijmegen - Uden,99,3,ARR
+CXX,,51727,Haarlem - Cruquius Paswerk,567,3,None
+BRAVO,,54248,Maasoever via CS en JBZ - Vught,8,3,ARR
+BRAVO,,54258,Tilburg  via Hilvarenbeek - Best,142,3,ARR
+BRAVO,,54259,Tilburg  via Moergestel - Best,141,3,ARR
+BRAVO,,54281,Centraal Station - Reeshof,4,3,ARR
+CXX,,1742,Hilversum Station - Erfgooierskwartier,2,3,None
+ARR,,53433,Horst/Sevenum - Panningen,79,3,None
+QBUZZ,,57954,Lewenborg - Leek,3,3,None
+ARR,,53420,Merselo - Blitterswijck,798,3,None
+QBUZZ,,60585,Lauwersoog - Groningen,163,3,None
+GVB,,54664,Henk Sneevlietweg - John M.Keynesplein,68,3,None
+BRAVO,,54217,Roosendaal via Heerle - Bergen op Zoom,112,3,ARR
+BRAVO,,54229,Oosterhout - Andel Prinsentuin,671,3,ARR
+BRAVO,,62366,Gilze AZC - Tilburg,630,3,ARR
+BRAVO,,54251,Grave - Gennep,92,3,ARR
+ARR,,62721,"Delfstrahuizen - Heerenveen, Busstation",8481,3,None
+IFF,,17599,Hoofddorp <-> Almere Oostvaarders SPR4300,Sprinter,2,NS
+EBS,,62400,Metro Akkers - Metro Centrum,85,3,None
+BRAVO,,52774,Groote Wielen via CS - De Kruiskamp,4,3,ARR
+ARR,,62720,"Sintjohannesga - Joure, Busstation",8472,3,None
+ARR,,255,Sneek - Lemmer,42,3,None
+BRENG,,1683,Arnhem CS - Bemmel -  Nijmegen CS,33,3,None
+BRENG,,7175,Lent - CS - Wijchen Zuid,15,3,None
+BRENG,,1591,Tolkamer Lobede - Arnhem CS,60,3,None
+OVREGIOY,,1255,Lelystad - Harderwijk,148,3,None
+OVREGIOY,,1449,Almere Stad - Zeewolde - Harderwijk,159,3,None
+BRENG,,1618,Nijmegen CS - Druten Busstation,85,3,None
+OVREGIOY,,6372,Kampen - Emmeloord - Urk,141,3,None
+CXX,,1299,Kamperland - Goes,31,3,None
+CXX,,1227,Middelburg - Vlissingen,56,3,None
+CXX,,1295,Goes - Zierikzee,132,3,None
+ARR,,53432,Baarlo - Grashoek,78,3,None
+CXX,,1364,Zierikzee - Rotterdam,395,3,None
+BRAVO,,54261,Centraal Station - De Aawijk,11,3,ARR
+GVB,,60658,Amstelstation - Station Noord,37,3,None
+GVB,,60659,Station Sloterdijk - Muiderpoortstation,22,3,None
+GVB,,60673,Flevopark - Centraal Station,14,0,None
+ARR,,62385,Venray Station via Venray Centrum - Deurne,80,3,None
+GVB,,60674,Amstelstation - Centraal Station,12,0,None
+ARR,,19411,Oosterreeweg - Veerdam,2,3,None
+ARR,,61868,Leiden Centraal via Bio Science Park - Noordwijk,221,3,None
+BRAVO,,54227,Dongen - Andel Prinsentuin,673,3,ARR
+CXX,,19209,Brugge - Breskens,42,3,None
+OVREGIOY,,19248,Kampen - Genemuiden - Hasselt - Zwolle,74,3,None
+CXX,,30585,Strijen-Rotterdam,177,3,None
+CXX,,1486,Hulst - Goes,20,3,None
+GVB,,473,Station Sloterdijk - Station Zuid,15,3,None
+QBUZZ,,53535,Emmen - Groningen,300,3,None
+CXX,,32189,Zuid-Beijerland-Heinenoord,164,3,None
+CXX,,41656,Middelburg - Terneuzen(Gent),50,3,None
+ARR,,62869,"Lichtaard - Dokkum, Sionsberg",7102,3,None
+ARR,,62870,Lichtaard - Oentsjerk,7103,3,None
+ARR,,62868,"Kop Afsluitdijk - Bolsward, Busstation",9301,3,None
+ARR,,62852,"Hidaard - Sneek, Busstation",8831,3,None
+ARR,,62872,"Holwerd, Veerdam - Dokkum, Sionsberg",7075,3,None
+OVREGIOY,,19241,Emmeloord - Dronten,146,3,None
+BRENG,,1589,Duiven Centerpoort Noord - Arnhem CS,62,3,None
+ARR,,41439,Zutphen - Laren,54,3,None
+CXX,,1487,Yerseke - Goes,27,3,None
+OVREGIOY,,1319,Harderwijk - Dronten,147,3,None
+BRENG,,1068,Arnhem De Laar West - Elsweide,6,3,None
+BRENG,,1397,Groesbeek - Nijmegen CS - Beuningen,5,3,None
+BRENG,,1452,Arnhem CS - Dieren Station,26,3,None
+BRENG,,1387,Nijmegen Hatert - CS - Berg en Dal,8,3,None
+OVREGIOY,,19222,Lelystad - Swifterbant,145,3,None
+ARR,,52900,Rotterdam Capelsebrug - Lekkerkerk,292,3,None
+ARR,,61801,Nieuwstadt via Susteren - Maaseik,65,3,None
+BRENG,,1069,Arnhem Geitenkamp - Rijkerswoerd,7,3,None
+BRENG,,1615,Nijmegen CS - Gennep - Venlo Station,83,3,None
+BRENG,,1386,Nijmegen CS - Grave Busstation,9,3,None
+CXX,,1188,Middelburg - Domburg,53,3,None
+CXX,,1062,Domburg - Middelburg,52,3,None
+BRAVO,,1214,Helmond Station - Mierlo - Eindhoven Station,24,3,CXX
+GVB,,428,Station Lelylaan - Amstelstation,62,3,None
+CXX,,21416,"'s-Heerenhoek - Goes",23,3,None
+ARR,,41719,Bolsward - Groningen Zernike,335,3,None
+RET,,63525,Woudestein - Willemsplein,7,0,None
+CXX,,1743,Hilversum Station - Tergooi Ziekenhuis,3,3,None
+BRAVO,,1537,Eindhoven Blixembosch Oost - Station,2,3,CXX
+BRAVO,,42264,Acht - Station,8,3,CXX
+CXX,,30599,Dordrecht-Rotterdam,176,3,None
+BRENG,,19218,Lent - CS - Wijchen Noord,13,3,None
+CXX,,30574,Willemstad-Numansdorp A29,169,3,None
+CXX,,30577,Dordrecht-Rotterdam,166,3,None
+ARR,,61941,Venlo via Horst/Sevenum - Venray,87,3,None
+BRENG,,41657,Arnhem CS - IJsseloord 2,12,3,None
+BRAVO,,42271,Meijel - Deurne,28,3,CXX
+BRAVO,,42269,Geldrop Coevering - Eindhoven Station,324,3,CXX
+ARR,,62391,Leeuwarden - Oudebildtzijl v.v.,73,3,None
+BRAVO,,42267,Helmond Station - Asten - Eindhoven Station,320,3,CXX
+GVB,,21613,Bos en Lommerplein - Schiphol Zuid,247,3,None
+GVB,,461,KNSM Eiland - Station Zuid,65,3,None
+ARR,,62389,Gulpen via Simpelveld - Heerlen,647,3,None
+BRENG,,41667,Westervoort Station - Duiven Centerpoort Noord,61,3,None
+OVERAL,,61050,Den Helder Station - Veerhaven,33,3,None
+CXX,,62514,Uithoorn - Amsterdam Elandsgracht via Amstelveen,347,3,None
+GVB,,475,Geuzenveld - Centraal Station,13,0,None
+ARR,,62979,"Ouwster-Nijega - Joure, Busstation",8671,3,None
+GVB,,63556,Station Sloterdijk - Diemen Sniep,19,0,None
+QBUZZ,,2644,Stadsdienst Emmen Emmerhout,1,3,None
+QBUZZ,,2573,Groningen - Oldehove,35,3,None
+ARR,,41731,Sintjohannesga - Joure,249,3,None
+GVB,,30633,Station Holendrecht - Muiderpoortstation,41,3,None
+GVB,,494,Station Sloterdijk - Abberdaan,231,3,None
+QBUZZ,,2522,Delfzijl - Winschoten,119,3,None
+QBUZZ,,2651,Stadskanaal - Gieten - Groningen,312,3,None
+QBUZZ,,2617,Veendam - Groningen,171,3,None
+QBUZZ,,2570,Emmen - Gieten,59,3,None
+CXX,,41674,Terneuzen - Hulst,10,3,None
+QBUZZ,,2603,Veendam - Groningen,174,3,None
+QBUZZ,,2574,Surhuisterveen - Groningen,39,3,None
+QBUZZ,,2562,Emmen - Schoonebeek,44,3,None
+GVB,,6139,Amstelstation - Muiderpoortstation,40,3,None
+QBUZZ,,2567,Assen - Groningen,50,3,None
+GVB,,21612,Oostzanerdijk - Schiphol Zuid,245,3,None
+ARR,,258,Sneek - Hemelum,45,3,None
+QBUZZ,,2602,Stadsdienst Emmen Bargeres,4,3,None
+QBUZZ,,6737,Siddeburen - Delfzijl,43,3,None
+QBUZZ,,2576,Zoutkamp - Groningen,65,3,None
+ARR,,290,Leerdam - Culemborg,650,3,None
+ARR,,293,Tiel - Wageningen,45,3,None
+ARR,,6792,Arnhem via Giesbeek - Doetinchem,27,3,None
+ARR,,6793,"'s-Heerenberg - Doetinchem",24,3,None
+ARR,,41696,Kop Afsluitdijk via Minnertsga - Leeuwarden,71,3,None
+ARR,,41695,Dokkum via Damwald - Leeuwarden,651,3,None
+ARR,,6794,Arnhem via Rheden - Doetinchem,29,3,None
+ARR,,41705,Leeuwarden via Surhuisterveen - Drachten,13,3,None
+ARR,,41710,Emmeloord via Drachten - Groningen,324,3,None
+ARR,,41726,Sneek via Balk - Lemmer,47,3,None
+ARR,,41721,Leeuwarden via Drachten - Heerenveen,320,3,None
+ARR,,52861,Kerkrade Parkstad Stadion - Herzogenrath,27,3,None
+ARR,,41706,Akkrum - Drachten,11,3,None
+ARR,,42424,Westergouwe - Station,2,3,None
+BRAVO,,54235,Breda - Gorinchem,402,3,ARR
+ARR,,52841,Gulpen via Ubachsberg - Heerlen,655,3,None
+ARR,,195,Buitenpost - Leeuwarden,62,3,None
+ARR,,41734,Harlingen via Franeker - Leeuwarden,97,3,None
+ARR,,196,Dokkum - Buitenpost,63,3,None
+ARR,,41709,Dokkum via Damwald - Leeuwarden,51,3,None
+CXX,,62526,Nieuw Vennep - Amsterdam CS IJzijde via Airport,N97,3,None
+ARR,,52870,Sittard via Munstergeleen - Geleen,41,3,None
+ARR,,198,Holwerd - Leeuwarden,66,3,None
+ARR,,200,Busstation - Nijlan,4,3,None
+ARR,,226,Dokkum - Oostmahorn,52,3,None
+ARR,,41699,Dokkum via Holwerd - Leeuwarden,60,3,None
+ARR,,41702,Heerenveen via Noordwolde - Oosterwolde,17,3,None
+ARR,,206,Busstation - Camminghaburen,3,3,None
+BRAVO,,45126,"Veghel - 's-Hertogenbosch",158,3,ARR
+ARR,,234,Sneek - Reduzum,94,3,None
+ARR,,19302,Zutphen - Warnsveld,83,3,None
+ARR,,43015,Voerendaal - Heerlen Zuyd Hogeschool,652,3,None
+ARR,,5435,Leiden Centraal - Alphen aan den Rijn,169,3,None
+ARR,,4128,Bodegraven - Gouda,178,3,None
+ARR,,254,Balk - Heerenveen,41,3,None
+ARR,,289,Tiel - Druten,42,3,None
+ARR,,33048,Damwald - Buitenpost,261,3,None
+ARR,,248,Ferwoude - Sneek,239,3,None
+ARR,,243,Warten - Leeuwarden,22,3,None
+ARR,,41487,Weert Station - Weert Boshoven,1,3,None
+ARR,,5440,Alphen aan den Rijn - Uithoorn,147,3,None
+ARR,,257,Bolsward - Balk,44,3,None
+ARR,,43031,Nuth - Voerendaal,28,3,None
+ARR,,41495,Venlo - Weert,370,3,None
+ARR,,41488,Weert Station - Altweerterheide,4,3,None
+ARR,,41478,Meijel - Roermond,675,3,None
+ARR,,41497,Roermond - Weert,73,3,None
+ARR,,41499,Maasbracht - Ell,76,3,None
+ARR,,41485,Weert Station - Leuken,3,3,None
+ARR,,42987,Siebengewald - Boxmeer,85,3,None
+ARR,,52856,Maastricht via Gulpen - Aachen,350,3,None
+ARR,,41486,Weert Station - Laar,2,3,None
+ARR,,43025,Maastricht via MA Airport - Sittard,30,3,None
+ARR,,53427,Venlo via Kessel - Roermond,377,3,None
+ARR,,62553,"Holwerd, Veerdam - Dokkum, Busstation",7071,3,None
+ARR,,62552,"Holwerd, Veerdam - Dokkum, Sionsberg",7072,3,None
+IFF,,17614,Rotterdam Centraal <-> Groningen IC500,Intercity,2,NS
+IFF,,17615,Breda <-> Amsterdam Centraal HSN900,Intercity direct,2,NS
+IFF,,17627,Utrecht Centraal <-> Baarn SPR5500,Sprinter,2,NS
+ARR,,53422,Venray via Wanssum - Well,81,3,None
+IFF,,41223,Den Haag Centraal <-> Leeuwarden IC1800,Intercity,2,NS
+ARR,,53421,Roermond - Heinsberg,64,3,None
+IFF,,52982,Zwolle <-> Kampen SPR8500,Sprinter,2,BN
+IFF,,53003,Stopbus i.p.v. trein Almere Centrum <-> Lelystad Centrum,Stopbus i.p.v. trein,3,NS
+IFF,,17620,Meppel <-> Leeuwarden SPR9000,Sprinter,2,NS
+IFF,,17641,Utrecht Centraal <-> Zwolle SPR5600,Sprinter,2,NS
+IFF,,17651,Utrecht Centraal <-> Rotterdam Centraal SPR14000,Sprinter,2,NS
+IFF,,52644,Stopbus i.p.v. trein Alkmaar <-> Uitgeest,Stopbus i.p.v. trein,3,NS
+IFF,,17658,Zwolle <-> Roosendaal IC3600,Intercity,2,NS
+IFF,,52993,Zutphen <-> Oldenzaal ST31200,Stoptrein,2,BN
+IFF,,52996,Zwolle <-> Emmen S3800,Sneltrein,2,BN
+IFF,,17705,Den Haag Centraal <-> Enschede IC1700,Intercity,2,NS
+IFF,,53004,Zwolle <-> Emmen ST8000,Stoptrein,2,BN
+IFF,,17661,Amsterdam Centraal <-> Den Haag Centraal IC2100,Intercity,2,NS
+IFF,,52983,Stopbus i.p.v. trein Alkmaar <-> Den Helder,Stopbus i.p.v. trein,3,NS
+ARR,,62554,"Hiaure - Holwerd, Prov. Weg",7063,3,None
+IFF,,41228,Hoorn Kersenboogerd <-> Leiden Centraal SPR3300,Sprinter,2,NS
+IFF,,17803,Amsterdam Centraal <-> Zandvoort aan Zee SPR5400,Sprinter,2,NS
+IFF,,45383,RE 19 Arnhem Centraal <-> Dusseldorf Hbf,Stoptrein RE19,2,ABRN
+IFF,,50060,Stopbus i.p.v. trein Leer (Ostfriesl) <-> Weener,Stopbus i.p.v. trein,3,NOORD
+IFF,,46093,Hoofddorp <-> Amsterdam Centraal SPR5800,Sprinter,2,NS
+IFF,,46092,Amsterdam Centraal <-> Zwolle SPR14600,Sprinter,2,NS
+IFF,,46036,Den Haag Centraal <-> Amsterdam Centraal SPR4600,Sprinter,2,NS
+RET,,32512,Rotterdam Centraal - Station Delft,40,3,None
+RET,,32514,Cairostraat - Marconiplein,42,3,None
+RET,,32518,Station Noord - Station Delft,174,3,None
+IFF,,17782,Den Haag Centraal <-> Groningen IC700,Intercity,2,NS
+RET,,32542,Hof van Spaland - Woudhoek,121,3,None
+RET,,32528,Zuidplein - Willem Egmondstraat,72,3,None
+RET,,32554,Schiedam - Gorzen - Schiedam,54,3,None
+IFF,,46084,Amsterdam Centraal <-> Amersfoort Vathorst SPR15800,Sprinter,2,NS
+RET,,32568,Station Alexander - Station Kralingse Zoom,36,3,None
+BRAVO,,54159,Wijk en Aalburg - Waalwijk,633,3,ARR
+BRAVO,,45132,"'s-Hertogenbosch - Eindhoven",154,3,ARR
+BRAVO,,54190,Zundert  - Breda,615,3,ARR
+RET,,32520,Station Schiedam - Woudhoek,51,3,None
+OVERAL,,60783,Den Helder Station Zuid - Den Helder Station,31,3,None
+BRAVO,,54189,Anna Jacobapolder - Steenbergen,614,3,ARR
+OVERAL,,63629,Castricum Station - Egmond Binnen - Egmond aan Zee,164,3,None
+RET,,32513,Zuidplein - Ridderkerk Drievliet,144,3,None
+OVERAL,,60791,Alkmaar Station - Oudkarspel,169,3,None
+IFF,,37294,Ede-Wageningen <-> Arnhem Centraal SPR7500,Sprinter,2,NS
+ARR,,61973,Maastricht via Epen - Gulpen,57,3,None
+ARR,,62586,"Miedum - Leeuwarden, Station",7711,3,None
+ARR,,61925,Vlinder Zutphen,880,3,None
+OVERAL,,63631,Castricum Station - Alkmaar Station,167,3,None
+ARR,,61972,Heerlen - Sittard,640,3,None
+ARR,,61929,Hengelo - Eibergen,53,3,None
+ARR,,62587,"Lekkum - Leeuwarden, Station",7721,3,None
+OVERAL,,63634,Luslijn Hoorn Station - Kersenboogerd,14,3,None
+IFF,,45226,Nijmegen <-> Venray ST32300,Stoptrein RS11,2,NOORD
+ARR,,62588,"Damwald - Feanwalden, Station",7641,3,None
+ARR,,62589,"Zwagerbosch - De Westereen, Station",7701,3,None
+IFF,,52979,Utrecht Centraal <-> Houten Castellum SPR6500,Sprinter,2,NS
+OVERAL,,63676,Den Helder Station - De Schooten,34,3,None
+ARR,,61974,Maastricht Boschpoort - Kanne (B),48,3,None
+ARR,,62593,"Echtenerbrug - Heerenveen, Busstation",8501,3,None
+ARR,,62592,"Legemeer - Joure, Busstation",8651,3,None
+ARR,,62577,"Paesens - Dokkum, Busstation",7281,3,None
+ARR,,62591,"Dokkum, Busstation - Feanwalden, Station",7631,3,None
+OVERAL,,63632,St. Pancras - Alkmaar Station,10,3,None
+CXX,,63635,Ouddorp-Rotterdam,436,3,None
+ARR,,62594,"Echten, Middenvaart - Lemmer, Busstation",8492,3,None
+CXX,,62455,Renesse-Spijkenisse,104,3,None
+OVERAL,,63630,Bergen - Alkmaar Station,166,3,None
+OVERAL,,63633,Hoorn Station - Zwaag Risdam,11,3,None
+ARR,,62595,"Echten, Middenvaart - Heerenveen, Busstation",8491,3,None
+ARR,,62590,"Kollumerpomp - Buitenpost, Station",7621,3,None
+ARR,,62596,"Delfstrahuizen - Lemmer, Busstation",8482,3,None
+ARR,,62597,"Dijken - Joure, Busstation",8631,3,None
+ARR,,62599,"Boornzwaag - Joure, Busstation",8611,3,None
+ARR,,62598,"Broek - Joure, Busstation",8621,3,None
+ARR,,52885,Alphen aan den Rijn - Schiphol Airport,470,3,None
+ARR,,52889,Schoonhoven - Gouda,497,3,None
+ARR,,62615,"Ginnum - Dokkum, Sionsberg",7162,3,None
+ARR,,62616,"Ginnum - Dokkum, Busstation",7161,3,None
+ARR,,62617,"Burdaard - Ferwert, Prov. weg",7154,3,None
+ARR,,62614,Ginnum - Oentsjerk,7163,3,None
+ARR,,62618,Hegebeintum - Oentsjerk,7173,3,None
+ARR,,62619,"Hegebeintum - Dokkum, Sionsberg",7172,3,None
+ARR,,62613,"Wirdum, Rijksweg - Leeuwarden, Station",7801,3,None
+ARR,,52884,Schiphol Airport - Leiden Centraal,365,3,None
+ARR,,52879,Leiden Centraal - Leiderdorp Leyhof,6,3,None
+ARR,,52888,Station via Ridderveld West en Oost - Station.,2,3,None
+ARR,,52904,Rotterdam Capelsebrug - Gouda,196,3,None
+ARR,,52914,Station via Plaswijck en Groenhoven - Station.,1,3,None
+OVERAL,,60817,Hoorn Station - Wieringerwerf - Den Helder,135,3,None
+OVERAL,,60818,Hoorn Station - Abbekerk Dorp - Wieringerwerf,134,3,None
+ARR,,52890,Station via Ridderveld Oost en West - Station.,1,3,None
+IFF,,52984,Enkhuizen <-> Heerlen IC3900,Intercity,2,NS
+OVERAL,,60819,Hoorn Station - Wognum - Opmeer - Hoogwoud,133,3,None
+IFF,,52985,Almelo <-> Hardenberg ST31000,Stoptrein,2,BN
+IFF,,52987,Vlissingen <-> Roosendaal IC12200,Intercity,2,NS
+IFF,,52990,Alkmaar <-> Maastricht IC800,Intercity,2,NS
+RET,,54672,Kleiweg - Spangen,8,0,None
+ARR,,52893,Leiden Centraal via Ter Aar - Alphen aan den Rijn,182,3,None
+IFF,,52989,Zwolle <-> Enschede SPR7900,Sprinter,2,BN
+IFF,,59426,Brussel-Zuid/Midi <-> Amsterdam Centraal HSN9200,Intercity direct,2,NSI
+ARR,,52901,Leiderdorp Ziekenhuis - Leiden Station De Vink,1,3,None
+ARR,,52905,Leiden Centraal - Zoetermeer,400,3,None
+IFF,,52986,Enkhuizen <-> Maastricht IC2900,Intercity,2,NS
+ARR,,52895,Alphen aan den Rijn via Zoetermeer - Den Haag,381,3,None
+ARR,,62060,Zaltbommel - Brakel,49,3,None
+ARR,,52899,Sassenheim via Noordwijk - Den Haag Centraal,385,3,None
+ARR,,62062,Brakel - Zaltbommel,649,3,None
+ARR,,52906,Rotterdam Alexander via Moordrecht - Gouda,190,3,None
+EBS,,62478,van Amsterdam ZO naar Purmerend,376,3,None
+IFF,,52991,Breukelen <-> Rhenen SPR7300,Sprinter,2,NS
+GVB,,444,IJburg - Centraal Station,26,0,None
+ARR,,62058,Zaltbommel - Aalst,68,3,None
+ARR,,52878,Rotterdam Capelsebrug - Bergambacht,194,3,None
+GVB,,482,Slotervaart - Centraal Station,18,3,None
+QBUZZ,,41867,Assen - Annen - Groningen,51,3,None
+EBS,,62476,van Amsterdam ZO naar Purmerend,375,3,None
+ARR,,62756,"Jislum - Ferwert, Prov. weg",7134,3,None
+QBUZZ,,41869,Winschoten - Stadskanaal - Borger - Assen,24,3,None
+ARR,,62757,"Wanswert - Dokkum, Busstation",7141,3,None
+ARR,,62758,"Heeg, De Skatting - IJlst, Station",9061,3,None
+ARR,,62759,"Gaastmeer - IJlst, Station",9051,3,None
+ARR,,62761,"Idzega - IJlst, Station",9071,3,None
+ARR,,62763,"Wolsum - IJlst, Station",9021,3,None
+ARR,,62762,"Westhem, De Kat - IJlst, Station",9031,3,None
+ARR,,62760,"Oudega - IJlst, Station",9081,3,None
+ARR,,62765,"Blauwhuis - IJlst, Station",9041,3,None
+OVERAL,,60820,Hoorn Station - Wervershoof - Andijk,132,3,None
+IFF,,60129,Utrecht Centraal <-> Utrecht Maliebaan,Sprinter,2,NS
+ARR,,52894,Alphen aan den Rijn via Zoetermeer - Den Haag,380,3,None
+ARR,,52896,Rotterdam Capelsebrug - Krimpen aan de Lek,293,3,None
+ARR,,62039,Busstation - NHL Stenden,612,3,None
+ARR,,62038,Buitenpost - Drachten,12,3,None
+ARR,,62042,Sneek - Wommels,235,3,None
+ARR,,62041,Harlingen - Heerenveen,199,3,None
+ARR,,62043,Harlingen - Heerenveen,99,3,None
+OVERAL,,60837,Schagen Station - Callantsoog,152,3,None
+ARR,,62944,"Hantum - Dokkum, Sionsberg",7362,3,None
+ARR,,62941,"Wierum - Dokkum, Busstation",7251,3,None
+ARR,,62946,"Metslawier - Buitenpost, Station",7383,3,None
+ARR,,62945,"Hantum - Holwerd, Prov. weg",7363,3,None
+ARR,,62040,Makkum - Sneek,698,3,None
+ARR,,62948,"Metslawier - Dokkum, Busstation",7381,3,None
+ARR,,62947,"Engwierum - Dokkum, Busstation",7391,3,None
+ARR,,62951,"Rottevalle, Dorp - Nijega, Rijksweg",6162,3,None
+ARR,,62950,"Rottevalle, Dorp - Drachten, Transferium Oost",6161,3,None
+ARR,,62955,"Ried - Dronryp, Hoek Dronryp",7971,3,None
+ARR,,62954,"Peins - Franeker, Station",7963,3,None
+ARR,,62956,"Brantgum - Dokkum, Busstation",7211,3,None
+ARR,,62953,"Engwierum - Buitenpost, Station",7393,3,None
+ARR,,62957,"Brantgum - Dokkum, Sionsberg",7212,3,None
+ARR,,62952,"Engwierum - Dokkum, Sionsberg",7392,3,None
+GVB,,427,Station Lelylaan - Osdorp De Aker,63,3,None
+CXX,,1744,Hilversum Station - Kerkelanden,1,3,None
+ARR,,62949,"Metslawier - Dokkum, Sionsberg",7382,3,None
+IFF,,53898,Schiphol Airport <-> Venlo IC3500,Intercity,2,NS
+IFF,,44947,Almere Centrum <-> Utrecht Centraal SPR4900,Sprinter,2,NS
+ARR,,3,Borculo - Deventer,56,3,None
+IFF,,37247,Arnhem Centraal <-> Doetinchem ST30700,Stoptrein,2,BRENG
+IFF,,37307,Tiel <-> Arnhem Centraal ST31100,Stoptrein,2,NOORD
+IFF,,31682,Schiphol Airport <-> Enschede IC1600,Intercity,2,NS
+IFF,,61275,Zwolle <-> Enschede IC17900,Intercity,2,BN
+ARR,,7,Enschede - Winterswijk,73,3,None
+ARR,,5,Enschede - Doetinchem,74,3,None
+ARR,,16,Borculo - Doetinchem,23,3,None
+ARR,,23,Gendringen - Doetinchem,28,3,None
+ARR,,102,Geldermalsen - Gorinchem,47,3,None
+ARR,,123,Emmeloord - Groningen,315,3,None
+ARR,,41732,Dokkum via Holwerd - Leeuwarden,154,3,None
+GVB,,60661,Slotermeer - Azartplein,7,0,None
+GVB,,60170,Anderlechtlaan - John M.Keynesplein,267,3,None
+ARR,,199,Busstation - Zuiderburen,7,3,None
+IFF,,41202,Vlissingen <-> Amsterdam Centraal IC2200,Intercity,2,NS
+IFF,,41210,Rotterdam Centraal <-> Leeuwarden IC600,Intercity,2,NS
+IFF,,41226,Amsterdam Centraal <-> Hoorn SPR4800,Sprinter,2,NS
+QBUZZ,,6731,Stadsdienst Assen,1,3,None
+IFF,,41208,Dordrecht <-> Roosendaal SPR5900,Sprinter,2,NS
+IFF,,41217,Almere Centrum <-> Utrecht Centraal SPR14900,Sprinter,2,NS
+GVB,,60662,Osdorp De Aker - Muiderpoortstation,1,0,None
+ARR,,210,Alkmaar - Leeuwarden,350,3,None
+IFF,,17752,Zutphen <-> Winterswijk ST30800,Stoptrein,2,NOORD
+IFF,,41206,Hoofddorp <-> Utrecht Centraal SPR5700,Sprinter,2,NS
+ARR,,211,Busstation - Westeinde,1,3,None
+ARR,,222,Minnertsga - Leeuwarden,70,3,None
+RET,,32578,Zuidplein - Barendrecht Bedrijventerrein,187,3,None
+IFF,,17773,Apeldoorn <-> Zutphen ST17800,Stoptrein,2,NOORD
+ARR,,11447,Leiden Centraal - Alphen aan den Rijn,183,3,None
+RET,,32566,Overschie-Noordereiland,32,3,None
+IFF,,17748,Uitgeest <-> Rotterdam Centraal SPR4000,Sprinter,2,NS
+RET,,32567,Capelsebrug - Krimpen a/d IJssel Stormpolder v.v.,96,3,None
+ARR,,11436,Nieuwkoop - Woerden,101,3,None
+ARR,,30613,Tiel - Wageningen,44,3,None
+ARR,,230,Bolsward - Leeuwarden,92,3,None
+QBUZZ,,6744,Winsum - Oldehove,36,3,None
+ARR,,235,Busstation - Vrijheidswijk,8,3,None
+RET,,32563,Centraal Station - Rotterdam Airport,33,3,None
+ARR,,246,Lemmer - Heerenveen,48,3,None
+ARR,,41480,Nijmegen - Venlo,83,3,None
+EBS,,418,van Monnickendam naar Purmerend,103,3,None
+BRAVO,,61782,P+R Deutersestraat - Centrum v.v.,60,3,ARR
+RET,,1796,Zuidplein - Pendrecht,67,3,None
+ARR,,203,Langweer - Joure,243,3,None
+ARR,,41720,Akkrum - Gorredijk,621,3,None
+IFF,,44942,Amsterdam Centraal <-> Almere Centrum IC2600,Intercity,2,NS
+IFF,,51587,Alphen a/d Rijn <-> Gouda SPR8700,Sprinter,2,RNET
+IFF,,37218,Arnhem Centraal <-> Winterswijk ST30900,Stoptrein,2,NOORD
+IFF,,51610,Assen <-> Groningen SPR6200,Sprinter,2,NS
+RET,,32555,Woudhoek - Station Schiedam Centrum,53,3,None
+IFF,,43187,Den Haag Centraal <-> Dordrecht SPR5000,Sprinter,2,NS
+IFF,,31675,Schiphol Airport <-> Amersfoort Schothorst IC11600,Intercity,2,NS
+QBUZZ,,2509,Hoogeveen - Emmen,27,3,None
+IFF,,31704,Alkmaar <-> Haarlem IC3400,Intercity,2,NS
+RET,,32577,Zuidplein - Portland,82,3,None
+IFF,,31677,Schiphol Airport <-> Nijmegen IC3100,Intercity,2,NS
+IFF,,41200,Rotterdam Centraal <-> Gouda Goverwelle SPR7700,Sprinter,2,NS
+EBS,,409,van Amsterdam CS naar Hoorn,314,3,None
+EBS,,412,van Wormerveer naar Purmerend,121,3,None
+IFF,,41214,Enkhuizen <-> Amsterdam Centraal IC4500,Intercity,2,NS
+IFF,,41238,Lelystad Centrum <-> Dordrecht IC2400,Intercity,2,NS
+IFF,,41216,Apeldoorn <-> Almelo SPR7000,Sprinter,2,NS
+BRAVO,,54140,Hoge Vucht via CS - Haagse Beemden,2,3,ARR
+BRAVO,,54142,Princenhage via CS - Haagse Beemden,4,3,ARR
+IFF,,41239,Den Haag Centraal <-> Dordrecht SPR5100,Sprinter,2,NS
+IFF,,41201,Leiden Centraal <-> Alphen a/d Rijn SPR8900,Sprinter,2,NS
+BRAVO,,54143,Nieuw Wolfslaar via CS - Heusdenhout,7,3,ARR
+IFF,,20895,Nachtnettrein Amsterdam Bijlmer ArenA <-> Leiden Centraal,Intercity,2,NS
+IFF,,17828,Haarlem <-> Den Haag Centraal SPR6300,Sprinter,2,NS
+GVB,,439,Station Bijlmer ArenA - Station Weesp,49,3,None
+RET,,19010,Charlois - Keizerswaard,2,0,None
+RET,,32516,Capelsebrug - Krimpen a/d IJssel,97,3,None
+RET,,32534,Blaak - Noordereiland - Blaak,47,3,None
+RET,,32535,Molenlaan - Marconiplein,4,0,None
+RET,,32559,Zuidplein - SS Rotterdam,77,3,None
+RET,,32519,Carnisselande - Schiebroek,25,0,None
+RET,,32560,Station Alexander -Schollevaar,30,3,None
+RET,,32553,Lombardijen - Rotterdam Centraal,20,0,None
+IFF,,18752,Nachtnettrein Utrecht Centraal <-> Nijmegen,Intercity,2,NS
+IFF,,40272,Snelbus i.p.v. trein Delft <-> Rotterdam Centraal,Snelbus i.p.v. trein,3,NS
+IFF,,40788,Snelbus i.p.v. trein Delft <-> Den Haag HS,Snelbus i.p.v. trein,3,NS
+RET,,32532,Hoogvliet M. - Delta - Hoogvliet. M.,79,3,None
+GVB,,21432,Borneolaan - Schiphol Zuid,246,3,None
+RET,,32572,Capelsebrug - Krimpen a/d IJssel,98,3,None
+RET,,32527,Zuidplein - Feijenoord - Zuidplein,66,3,None
+ARR,,41460,Zaltbommel - Heerewaarden,664,3,None
+ARR,,41494,Weert - Roggel,371,3,None
+ARR,,41733,Lauwersoog - Leeuwarden,155,3,None
+ARR,,41464,Tiel - Culemborg,46,3,None
+ARR,,41717,Dokkum - Leeuwarden,355,3,None
+ARR,,41463,Culemborg - Vianen,146,3,None
+BRENG,,1067,Arnhem Schuytgraaf - Presikhaaf,5,3,None
+BRAVO,,1534,"Eindhoven 't Hofke - Station",5,3,CXX
+OVREGIOY,,18977,Emmeloord - Lelystad,140,3,None
+BRAVO,,1535,Eindhoven Heesterakker - Station,4,3,CXX
+GVB,,441,Station Bijlmer ArenA - IJburg,66,3,None
+ARR,,41703,Leeuwarden via Drachten - Assen,14,3,None
+ARR,,41713,Leeuwarden via Drachten - Heerenveen,21,3,None
+ARR,,41730,Dokkum - Drachten,55,3,None
+ARR,,41728,Heerenveen via Oosterwolde - Assen,115,3,None
+ARR,,41711,Makkum via Bolsward - Leeuwarden,692,3,None
+RET,,32545,Kralingsezoom - Slikkerveer,140,3,None
+RET,,32539,De Esch - Woudhoek,21,0,None
+RET,,32569,Station Alexander - Capelsebrug,37,3,None
+ARR,,41712,Lemmer via Joure - Leeuwarden,695,3,None
+ARR,,41714,Leeuwarden via Drachten - Heerenveen,20,3,None
+ARR,,43043,Mamelis via Vijlen - Vaals,59,3,None
+ARR,,43155,Busstation - Aldlan/Nijlan v.v.,5,3,None
+OVERAL,,60784,Alkmaar Station - Heerhugowaard,160,3,None
+ARR,,43161,Busstation - Caparis Hemrik,611,3,None
+ARR,,43046,Valkenburg via Sibbe - Margraten,51,3,None
+ARR,,43160,Busstation - Nijlan/Aldlan v.v.,15,3,None
+ARR,,43156,Busstation - Bilgaard v.v.,6,3,None
+OVERAL,,60786,Alkmaar Station - Akersloot - Uitgeest,163,3,None
+OVERAL,,60788,Alkmaar Station -  Egmond a/Zee,165,3,None
+OVERAL,,60811,Alkmaar Station - Bestevaerstraat,8,3,None
+ARR,,62940,"Wierum - Dokkum, Sionsberg",7252,3,None
+ARR,,62993,Burdaard - Oentsjerk,7153,3,None
+ARR,,62991,Jislum - Oentsjerk,7133,3,None
+OVERAL,,60813,Alkmaar Daalmeer - Station - Overdie,2,3,None
+WATERBUS,,314,Dordrecht Merwekade - Sliedrecht Middeldiep,23,4,None
+RET,,62286,Beverwaard - Marconiplein,23,0,None
+OVERAL,,60814,Alkmaar Station - Vroonermeer - Daalmeer,4,3,None
+RET,,76357,B lijn,B,1,None
+RET,,78186,C lijn,C,1,None
+ARR,,62989,"Nijetrijne - Wolvega, Station",6381,3,None
+GVB,,3337,Gaasperplas - Centraal Station,53,1,None
+ARR,,62988,"Oldeholtwolde - Wolvega, Station",6391,3,None
+GVB,,59759,Noord - Station Zuid,52,1,None
+OVREGIOY,,78409,Walibi World Harderwijk - Biddinghuizen (247),247,3,None
+GVB,,468,Gein - Centraal Station,54,1,None
+RET,,76710,A lijn,A,1,None
+ARR,,62990,"Nijelamer - Wolvega, Station",6371,3,None
+OVERAL,,78397,Bergen aan Zee - Alkmaar Station,866,3,None
+GVB,,31664,Gelderlandplein - Zuidas,461,3,None
+BRENG,,78408,Malden Schoolstraat - Middelaar Gemeenschapshuis,569,3,None
+CXX,,78406,Halsteren - St.Maartensdijk,618,3,None
+OVERAL,,78398,Castricum Station - Bakkum - Castricum aan Zee,868,3,None
+WATERBUS,,313,Dordrecht Merwekade - Papendrecht Veerdam,22,4,None
+ARR,,62992,"Burdaard - Dokkum, Sionsberg",7152,3,None
+CXX,,78407,St.Annaland - Tholen,619,3,None
+WATERBUS,,315,Dordrecht Merwekade - Rotterdam Erasmusbrug,20,4,None
+WATERBUS,,317,Zwijndrecht Veerplein - Dordrecht Merwekade,24,4,None
+HTM,,76233,Lijn 29: Station Rijswijk - Oude Waalsdorperweg,29,3,None
+HTM,,76231,Lijn 34,34,0,None
+WATERBUS,,25834,Heijplaat RDM - Erasmusbrug,18,4,None
+HTM,,62081,Lijn 20: Centraal Station - Duinzigt,20,3,None
+WATERBUS,,75997,Kinderdijk - Rotterdam Erasmusbrug,202,4,None
+HTM,,76232,Lijn 2K Kraaijenstein - Station Laan van NOI,2,0,None
+RET,,78418,Kralingse Zoom - Keizerswaard,83,3,None
+ARR,,74497,Pottenberg/Caberg via Scharn - Valkenburg,4,3,None
+WATERBUS,,18931,Piekstraat - Plantagelaan,19,4,None
+BRAVO,,78420,"'s-Hertogenbosch - De Efteling",800,3,ARR
+RET,,78419,Lijn 711,711,3,None
+HTM,,62082,Lijn 22: Duindorp - Rijswijk De Schilp,22,3,None
+ARR,,74495,Oud Caberg/Malberg via MUMC - De Heeg,1,3,None
+GVB,,480,Isolatorweg - Gein,50,1,None
+ARR,,61983,Daalhof via MUMC - Heugem,5,3,None
+IFF,,78434,Stopbus i.p.v. trein Amsterdam Muiderpoort <-> Weesp,Stopbus i.p.v. trein,3,NS
+IFF,,78444,Stopbus i.p.v. trein Heerhugowaard <-> Hoorn,Stopbus i.p.v. trein,3,NS
+IFF,,78431,Stopbus i.p.v. trein Akkrum <-> Leeuwarden,Stopbus i.p.v. trein,3,NS
+GVB,,31665,Gelderlandplein - Bolestein,463,3,None
+RET,,76921,E lijn,E,1,None
+ALLGO,,75644,Lijn 25 Sallandsekant - Nobelhorst,25,3,None
+IFF,,78426,Snelbus i.p.v. trein Dalfsen <-> Zwolle,Snelbus i.p.v. trein,3,BN
+GVB,,75853,Gelderlandplein O - De Boelelaan/Klencke,464,3,None
+ARR,,61982,MUMC/MECC via Sibemaweg  - Caberg/Pottenberg,7,3,None
+IFF,,78432,Stopbus i.p.v. trein Alkmaar <-> Schagen,Stopbus i.p.v. trein,3,NS
+ALLGO,,75642,Lijn 22 Station Buiten - De Vaart,22,3,None
+IFF,,78433,Stopbus i.p.v. trein Amsterdam Muiderpoort <-> Amsterdam Science Park,Stopbus i.p.v. trein,3,NS
+QBUZZ,,78470,Hoogeveen - Balkbrug,31,3,None
+ARR,,54568,Maastricht Boschpoort via Bemelen - Valkenburg,8,3,None
+ARR,,54551,Daalhof via De Geusselt - Amby,6,3,None
+ARR,,74498,Maastricht Waldeckpark via Borgharen - Bunde,9,3,None
+GVB,,63198,Isolatorweg - Centraal Station,51,1,None
+ARR,,54566,Wolder via Centrum - Nazareth,3,3,None
+RET,,75952,D lijn,D,1,None
+BRAVO,,78421,Tilburg - De Efteling,801,3,ARR
+QBUZZ,,78471,Hoogeveen - Meppel,34,3,None
+QBUZZ,,78472,Emmen - Ter Apel,42,3,None
+QBUZZ,,78473,Onderdendam - Winsum,63,3,None
+QBUZZ,,78474,Emmen - Ter Apel - Veendam,73,3,None
+QBUZZ,,78476,Drachten - P+R Hoogkerk,189,3,None
+QBUZZ,,78475,Stadskanaal - Emmen,74,3,None
+QBUZZ,,78477,Hoogkerk - Hoendiep - HS - Europapark,8,3,None
+QBUZZ,,78469,Pendelbus Stadspolders,805,3,None
+QBUZZ,,78478,Station Noord - HS - Korreweg - Hoornsemeer,10,3,None
+CXX,,78456,Hilversum Station - Erfgooierskwartier,2,3,None
+CXX,,78455,Hilversum Station - Kerkelanden,1,3,None
+OVERAL,,78460,Petten - Callantsoog - Den Helder Station,851,3,None
+CXX,,78457,Hilversum Station - Tergooi Ziekenhuis,3,3,None
+QBUZZ,,78480,Zernike - HS - Martini - Eelde,9,3,None
+QBUZZ,,78479,St.Noord - Vinkhuizen - HS - De Wijert - Hoogkerk,7,3,None
+IFF,,78862,Stopbus i.p.v. trein Delft <-> Delft Campus,Stopbus i.p.v. trein,3,NS
+IFF,,78861,Stopbus i.p.v. trein Alkmaar <-> Beverwijk,Stopbus i.p.v. trein,3,NS
+IFF,,78866,Snelbus i.p.v. trein Alkmaar <-> Zaandam,Snelbus i.p.v. trein,3,NS
+IFF,,78863,Stopbus i.p.v. trein Den Haag HS <-> Rotterdam Centraal,Stopbus i.p.v. trein,3,NS
+IFF,,78868,Snelbus i.p.v. trein Den Haag HS <-> Rotterdam Centraal,Snelbus i.p.v. trein,3,NS
+IFF,,78865,Brussel-Zuid/Midi <-> Amsterdam Centraal HSN9600,Intercity direct,2,NSI
+TWENTS,,78869,"Enschede, Station - Hogeland",505,3,None
+IFF,,78867,Snelbus i.p.v. trein Amsterdam Centraal <-> Utrecht Centraal,Snelbus i.p.v. trein,3,NS
+TWENTS,,78871,De Lutte - Oldenzaal,593,3,None
+ALLGO,,78874,Lijn 805 pendel Romy Schneiderweg - Danswijk,805,3,None
+IFF,,78864,Stopbus i.p.v. trein Den Haag HS <-> Schiedam Centrum,Stopbus i.p.v. trein,3,NS
+ALLGO,,78872,Lijn N22 Leidseplein - Poort - Almere Buiten,N22,3,None
+TWENTS,,78870,Enschede Zuid,508,3,None
+ALLGO,,78873,"Lijn N23 A'dam CS - Filmwijk - Almere Centrum",N23,3,None
+ARR,,78876,Koarnjum - Franeker Sjukelan,891,3,None
+ARR,,78877,Holwerd - Franeker Sjukelan,892,3,None
+ARR,,78878,Warten - Franeker Sjukelan,893,3,None
+HTM,,41835,Lijn 25: Vrederust - Grote Markt,25,3,None
+HTM,,41839,Lijn 23: Scheveningen Noorderstrand - Kijkduin,23,3,None
+HTM,,62084,Lijn 28: Zuiderstrand - Voorburg Station,28,3,None
+ARR,,78879,Akkrum - Franeker Sjukelan,894,3,None
+HTM,,63410,Den Haag Duindorp - Station Den Haag HS,12,0,None
+HTM,,63155,Wateringen - Den Haag Statenkwartier,16,0,None
+HTM,,63163,Scheveningen Noord - Delft Tanthof,1,0,None
+HTM,,63412,Den Haag Leyenburg - Leidschendam Noord,6,0,None
+HTM,,65637,Nootdorp - Kalvermarkt,15,0,None
+HTM,,65891,Scheveningen Haven - Rijswijkseplein,11,0,None
+HTM,,65638,Centrum - Wateringen,17,0,None
+HTM,,65896,Vrederust -Scheveningen Noorderstrand,9,0,None
+ARR,,78875,Dokkum - Drachten,356,3,None
+HTM,,41837,Lijn 26: Kijkduin - Voorburg Station,26,3,None
+HTM,,78603,Lijn Delft Noord - Leidschendam leidsenhage,19,0,None
+IFF,,78615,Stopbus i.p.v. trein Almere Oostvaarders <-> Lelystad Centrum,Stopbus i.p.v. trein,3,NS
+IFF,,78616,Stopbus i.p.v. trein Breukelen <-> Utrecht Centraal,Stopbus i.p.v. trein,3,NS
+HTM,,78602,Lijn Kraaijenstein - Leidschendam Leidsenhage,2,0,None
+IFF,,78618,Snelbus i.p.v. trein Alkmaar <-> Den Helder,Snelbus i.p.v. trein,3,NS
+IFF,,78617,Stopbus i.p.v. trein Den Helder <-> Schagen,Stopbus i.p.v. trein,3,NS
+IFF,,78619,Snelbus i.p.v. trein Alkmaar <-> Heerhugowaard,Snelbus i.p.v. trein,3,NS
+RET,,78623,Rotterdam Centraal- Vlaardingen-Rotterdam Centraal,B2,3,None
+IFF,,78614,Stopbus i.p.v. trein Harlingen <-> Leeuwarden,Stopbus i.p.v. trein,3,NOORD
+RET,,78622,Rotterdam Centraal-Nesselande-Rotterdam Centraal,B1,3,None
+RET,,78624,Rotterdam Centraal-Woudhoek-Rotterdam Centraal,B3,3,None
+RET,,78625,Rotterdam Centraal-Krimpen-Capelle-Rotterdam Centr,B4,3,None
+RET,,78627,Rotterdam Centraal-Hoogvliet Ct-Rotterdam Centraal,B7,3,None
+RET,,78628,Rotterdam Centraal-Spijkenisse-Rotterdam Centraal,B8,3,None
+RET,,78629,Rotterdam Centraal-Maassluis-Rotterdam Centraal,B9,3,None
+RET,,78630,Rotterdam Centraal-Pijnacker-Rotterdam Centraal,B10,3,None
+RET,,78626,Rotterdam Centraal-Schollevaar-Rotterdam Centraal,B5,3,None
+RET,,78632,Rotterdam - Airport,B13,3,None
+RET,,78633,Rotterdam Centraal-Ridderkerk-Rotterdam Centraal,B16,3,None
+RET,,78631,Rotterdam Centraal-Barendrecht-Rotterdam Centraal,B11,3,None
+RET,,78634,Rotterdam Centraal-Bergschehoek-Rotterdam Centraal,B17,3,None
+RET,,78636,Rotterdam Centraal-HoekvHolland-Rotterdam Centraal,B19,3,None
+RET,,78635,"R'dam Centraal - Rozenburg - R'dam Centraal",B18,3,None
